@@ -13,10 +13,22 @@ const firebaseConfig = {
 };
 
 // Safety check for initialization
-if (!firebaseConfig.apiKey) {
-    console.warn("Firebase API key is missing. Authentication features will be disabled.");
+let app;
+let auth: any;
+let db: any;
+
+try {
+    if (!firebaseConfig.apiKey) {
+        throw new Error("Firebase API key is missing");
+    }
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    db = getFirestore(app);
+} catch (error) {
+    console.error("Firebase initialization failed:", error);
+    // Provide minimal mock to prevent crashes in components
+    auth = { onAuthStateChanged: (cb: any) => { cb(null); return () => { }; }, signOut: () => Promise.resolve() };
+    db = {};
 }
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+export { auth, db };
