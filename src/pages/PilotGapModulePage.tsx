@@ -122,7 +122,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             </p>
                             <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', margin: 0 }}>
                                 <li>
-                                    <strong>1. Learning What the Gap Is:</strong> Understanding the harsh realities of the industry, why you face the "Experience Void," and the psychological shift required from a student reacting to commands to a commercial manager.
+                                    <strong>1. Understanding Pilot Recognition fundamentals within Aviation industry & the Pilot Gap:</strong> Understanding the harsh realities of the industry, why you face the "Experience Void," and the psychological shift required from a student reacting to commands to a commercial manager.
                                 </li>
                                 <li>
                                     <strong>2. Identifying Pilot Error in Investments and Pathways:</strong> Analyzing common pitfalls in post-graduate choices, such as the dangerous financial trap of purchasing a "shiny type rating" without operational experience.
