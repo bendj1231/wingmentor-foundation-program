@@ -108,6 +108,32 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
 
+                    {/* Program Introduction */}
+                    <section style={{ backgroundColor: '#f0f9ff', padding: '2.5rem', borderRadius: '16px', border: '1px solid #bae6fd' }}>
+                        <h2 style={{ fontSize: '1.75rem', fontWeight: 600, color: '#0369a1', marginBottom: '1rem', fontFamily: 'Georgia, serif' }}>
+                            Welcome to the Foundation Program
+                        </h2>
+                        <div style={{ color: '#0c4a6e', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                            <p>
+                                Welcome to the very first module of the Wingmentor Foundation Program. This module is designed to recalibrate your mindset, providing you with clarity and direction as you navigate the turbulent transition from flight school to the commercial flight deck.
+                            </p>
+                            <p>
+                                Throughout this module, we will guide you through three critical segments:
+                            </p>
+                            <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', margin: 0 }}>
+                                <li>
+                                    <strong>1. Learning What the Gap Is:</strong> Understanding the harsh realities of the industry, why you face the "Experience Void," and the psychological shift required from a student reacting to commands to a commercial manager.
+                                </li>
+                                <li>
+                                    <strong>2. Identifying Pilot Error in Investments and Pathways:</strong> Analyzing common pitfalls in post-graduate choices, such as the dangerous financial trap of purchasing a "shiny type rating" without operational experience.
+                                </li>
+                                <li>
+                                    <strong>3. The Wingmentor Approach:</strong> Introducing our proactive solution to actively build your necessary non-technical skills (NOTECHS) and standardized competencies, breaking the cycle of waiting on the sidelines.
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
                     {/* Chapter 1: The Why */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
