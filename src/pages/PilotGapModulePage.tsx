@@ -108,7 +108,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
 
-                    {/* Chapter 1: The Low-Timer Pilot */}
+                    {/* Chapter 1: The Why */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ paddingTop: '0.6rem' }}>
@@ -119,26 +119,31 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                     Chapter 01
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                    What is a "Low-Timer" Pilot?
+                                    The "Why": Why is the Foundational Program Made?
                                 </h2>
                             </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                When you graduate from flight school, you're at a crossroads. You've earned your wings, but in the eyes of most major airlines, you're what's known as a <strong>"Low-Timer."</strong>
+                                The aviation industry faces a fundamental disconnect between the supply of freshly graduated commercial pilots and the operational demands of modern airlines. While there is a documented global shortage of pilots, major carriers often cannot hire you directly out of flight school at 200 hours.
                             </p>
                             <p>
-                                Typically, this refers to pilots with between 200 and 500 total flight hours. You have the technical license, but you lack the operational "miles" that airlines look for. You're qualified to fly, but you're not yet "industry-ready" to manage a complex multi-crew cockpit under high pressure. This phase is the biggest hurdle in any pilot's career.
+                                This program exists because simply "building hours" in a light piston aircraft does not prepare you for the right seat of a multi-crew jet. It was built to solve the two biggest hurdles in a pilot's career transition:
                             </p>
-                            <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', borderLeft: '4px solid #64748b' }}>
-                                <p style={{ margin: 0, fontSize: '0.95rem', color: '#334155' }}>
-                                    <strong>Real Talk:</strong> Most people think the hard part is over once you pass your CPL. In reality, being a low-timer means you're in the "Experience Void"—you're too experienced for basic training, but not experienced enough for the right seat of a jet.
-                                </p>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem' }}>
+                                <div>
+                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>The Insurance Block</h3>
+                                    <p style={{ fontSize: '0.95rem' }}>Insurance providers view a 200-hour pilot as a high risk. Without a proven record of complex decision-making, it is financially unviable for airlines to place you in a multi-million-dollar aircraft, even if they desperately need crew.</p>
+                                </div>
+                                <div>
+                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>The Operational Wall</h3>
+                                    <p style={{ fontSize: '0.95rem' }}>Airlines need more than stickers in a logbook; they need proof that you can think like an airline captain before you've even had the job. They require advanced CRM (Crew Resource Management) and standardized behaviors.</p>
+                                </div>
                             </div>
                         </div>
                     </section>
 
-                    {/* Chapter 2: The Industry Pilot Gap */}
+                    {/* Chapter 2: The What */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ paddingTop: '0.6rem' }}>
@@ -149,28 +154,26 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                     Chapter 02
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                    What is the Industry Pilot Gap?
+                                    The "What": What is a Low-Timer Pilot and the Industry Gap?
                                 </h2>
                             </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                The <strong>Pilot Gap</strong> is the disconnect between the supply of new pilots and the airlines' ability to hire them. While there is a global shortage of pilots, airlines often cannot hire you directly at 200 hours.
+                                When you graduate from flight school with 200 to 500 total flight hours, you're at a crossroads. You possess the technical licenses, but lack the "operational miles." In the eyes of the airlines, you are a <strong>"Low-Timer."</strong>
                             </p>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem' }}>
-                                <div>
-                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>The Insurance Block</h3>
-                                    <p style={{ fontSize: '0.95rem' }}>Insurance providers view a 200-hour pilot as a high risk. This makes it incredibly expensive for airlines to put you in a cockpit, even if they desperately need you.</p>
-                                </div>
-                                <div>
-                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>The Operational Wall</h3>
-                                    <p style={{ fontSize: '0.95rem' }}>Airlines need more than stickers in a logbook; they need proof that you can think like an airline captain before you've even had the job.</p>
-                                </div>
+                            <p>
+                                This phase creates the <strong>Pilot Gap</strong>—a developmental void where you are too experienced for basic training, but not experienced enough to safely manage a dynamic multi-crew environment under high pressure without extensive structured intervention.
+                            </p>
+                            <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', borderLeft: '4px solid #64748b' }}>
+                                <p style={{ margin: 0, fontSize: '0.95rem', color: '#334155' }}>
+                                    <strong>Real Talk:</strong> Most people think the hard part is over once you pass your CPL. In reality, the "Experience Void" is the hardest part of the journey. The gap isn't just about flight hours; it is about the maturity of your non-technical skills (NOTECHS).
+                                </p>
                             </div>
                         </div>
                     </section>
 
-                    {/* Chapter 3: Understanding the Core Fundamentals */}
+                    {/* Chapter 3: The How */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ paddingTop: '0.6rem' }}>
@@ -181,28 +184,31 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                     Chapter 03
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                    Understanding the Core Fundamentals
+                                    The "How": Understanding Core Fundamentals
                                 </h2>
                             </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                To bridge the gap, the industry is moving away from just "counting hours" and toward <strong>Competency-Based Training (CBTA)</strong>. It’s not just about <i>how long</i> you’ve flown, but <i>how well</i> you handle specific cores.
+                                To bridge this gap, the global aviation industry has shifted from merely "counting hours" to <strong>Competency-Based Training and Assessment (CBTA)</strong>. It is no longer about <i>how long</i> you've flown, but <i>how well</i> you handle specific behavioral cores under stress.
+                            </p>
+                            <p>
+                                We approach this through rigorous peer-mentorship, scenario-based evaluations, and guided indoctrination into airline-centric workflows. We break down the pilot into three critical psychological pillars:
                             </p>
                             <div style={{ padding: '2rem', backgroundColor: '#eff6ff', borderRadius: '12px', border: '1px solid #dbeafe' }}>
                                 <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#1e40af', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                     <Icons.Zap style={{ width: 20, height: 20 }} /> The 3 Psychological Cores
                                 </h3>
                                 <ul style={{ margin: 0, paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', color: '#1e3a8a' }}>
-                                    <li><strong>Behaviorism:</strong> How you act and standardise your procedures.</li>
-                                    <li><strong>Cognitive Abilities:</strong> How you process information and make decisions.</li>
-                                    <li><strong>Constructivism:</strong> How you build on your experience and learn in the cockpit.</li>
+                                    <li><strong>Behaviorism:</strong> How you act, standardise your procedures, and adhere to SOPs.</li>
+                                    <li><strong>Cognitive Abilities:</strong> How you process complex information, manage workload, and make critical decisions.</li>
+                                    <li><strong>Constructivism:</strong> How you build on your experiences, self-critique, and continuously learn in the cockpit.</li>
                                 </ul>
                             </div>
                         </div>
                     </section>
 
-                    {/* Chapter 4: Why the Foundational Program exists? */}
+                    {/* Chapter 4: The Result */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ paddingTop: '0.6rem' }}>
@@ -213,20 +219,22 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                     Chapter 04
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                    Why is the Foundational Program Made?
+                                    The Result Factor: Changes and Industry Credibility
                                 </h2>
                             </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                This program wasn't made to just give you more hours—you could go to a flight school for that. It was built to give you <strong>Industry Credibility.</strong>
+                                The ultimate result of this methodology is <strong>Industry Credibility</strong>. By focusing intensely on the core fundamentals that airlines actually evaluate during simulator checks and interviews, we transform "Low-Timer" risk into verifiable "High-Competency" value.
                             </p>
                             <p>
-                                By focusing on the fundamentals that airlines actually care about, we turn "Low-Timer" risk into "High-Competency" value. We provide the mentorship and data that let insurance companies and airlines say "Yes" to you sooner.
+                                As you complete this module and generate Pilot Quality Assurance (PQA) metrics, you build a data-driven portfolio. This portfolio proves your capability beyond the basic CPL. It demonstrates standardized behavior, advanced CRM, and operational readiness.
                             </p>
-                            <p style={{ padding: '1.5rem', borderLeft: '4px solid #2563eb', backgroundColor: '#f8fafc', borderRadius: '0 8px 8px 0', fontSize: '1rem', fontStyle: 'italic', fontWeight: 500, color: '#1e293b' }}>
-                                "We don't just teach you to fly a plane; we train you to lead a career."
-                            </p>
+                            <div style={{ padding: '1.5rem', borderLeft: '4px solid #2563eb', backgroundColor: '#f8fafc', borderRadius: '0 8px 8px 0', marginTop: '0.5rem' }}>
+                                <p style={{ margin: 0, fontSize: '1.05rem', fontStyle: 'italic', fontWeight: 500, color: '#1e293b' }}>
+                                    "We don't just teach you to fly a plane; we train you to lead a career. This is the difference between hoping for a job and being undeniably hirable."
+                                </p>
+                            </div>
                         </div>
                     </section>
                 </div>
