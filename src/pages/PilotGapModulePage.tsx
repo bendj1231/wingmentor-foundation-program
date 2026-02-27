@@ -131,7 +131,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                 Why does this paradox exist? Because the structured, repetitive environment of a flight school naturally breeds a very specific type of <strong>Behaviorism</strong>. You learned to fly by rote. You memorized maneuvers for a checkride, learned to navigate controlled airspace under the watchful eye of an instructor, and reacted to standard emergencies with rehearsed, step-by-step <strong>Cognitive Thinking</strong>.
                             </p>
                             <p>
-                                But the commercial industry does not operate on rote memorization. It requires complex dynamic problem solving. Flight schools teach you how to pass a test; the industry demands that you know how to survive, standardise, and lead in an unpredictable operational environment. This foundational program exists to bridge that massive psychological and operational chasm. It’s designed to answer the "Why": Why aren't you getting hired instantly, and why is your current level of training insufficient for the harsh realities of the industry?
+                                But the commercial industry does not operate on rote memorization. It requires complex dynamic problem solving. Flight schools teach you how to pass a test; the industry demands that you know how to survive, standardise, and lead in an unpredictable operational environment. This foundational program exists to bridge that massive psychological and operational chasm. It’s designed to answer the "Why": Why aren't you getting hired instantly, and why is your current level of experience insufficient for the harsh realities of the industry?
                             </p>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem' }}>
                                 <div>
@@ -163,10 +163,10 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                The psychological excitement of flight school quickly collides with a severe statistical reality. Most pilots are entirely unaware of the impossible position they will face once the training wheels come off. With no clear guidance, you are forced to rely on rumors and anecdotal advice from other equally lost low-timer pilots. You begin to fear your future, because the math—and the industry profiling—is terrifying.
+                                The psychological excitement of flight school quickly collides with a severe statistical reality. Most pilots are entirely unaware of the impossible position they will face once the flight-school safety net is gone. With no clear guidance, you are forced to rely on rumors and anecdotal advice from other equally lost low-timer pilots. You begin to fear your future, because the math—and the industry profiling—is terrifying.
                             </p>
                             <p>
-                                Some critics outside the industry look at this gap and cynically label flight training a "Ponzi scheme," where new students fund the dreams of the old. But the reality is far more complex. The demand is real; the mechanism connecting the graduate to the flight deck is broken. The statistics tell the true story of the pilot's financial and operational downfall:
+                                Some critics outside the industry look at this gap and cynically label flight education a "Ponzi scheme," where new students fund the dreams of the old. But the reality is far more complex. The demand is real; the mechanism connecting the graduate to the flight deck is broken. The statistics tell the true story of the pilot's financial and operational downfall:
                             </p>
 
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '0.5rem' }}>
@@ -194,7 +194,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             </p>
                             <div style={{ padding: '1.5rem', borderLeft: '4px solid #10b981', backgroundColor: '#ecfdf5', borderRadius: '0 8px 8px 0', marginTop: '0.5rem' }}>
                                 <p style={{ margin: 0, fontSize: '1.05rem', fontWeight: 400, color: '#065f46', lineHeight: 1.6 }}>
-                                    <strong>This is why Wingmentor exists.</strong> We are the first establishment dedicated to solving this specific industry gap. We don't just train; we create a pipeline. By instilling the new global standard of EBT (Evidence-Based Training) and CBTA mindset, we connect highly vetted, pre-informed, and standardized pilots directly with our partners—airlines, manufacturers, and private sector operators seeking recognized quality over raw logbook hours.
+                                    <strong>This is why Wingmentor exists.</strong> We are the first establishment dedicated to solving this specific industry gap. We are not a flight school; we create a pipeline. By instilling the new global standard of EBT (Evidence-Based Training) and CBTA mindset, we connect highly vetted, pre-informed, and standardized pilots directly with our partners—airlines, manufacturers, and private sector operators seeking recognized quality over raw logbook hours.
                                 </p>
                             </div>
                         </div>
@@ -223,7 +223,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                 In flight school, the environment dictated your schedule, your weather minimums, and your stress levels. Every scenario was predictable. Now, you’re facing the <strong>Industry Gap</strong>—an intimidating, developmental void. You are going to face chief pilots who look at your logbook and see a liability. You will face intense simulator assessments that don't test your ability to fly a steeper turn, but rather test your capacity to manage a failing system while communicating effectively with a stressed colleague.
                             </p>
                             <p>
-                                You are going to face the harsh reality that your previous <strong>Constructivism</strong>—how you built your knowledge base—was flawed. You built knowledge based on passing tests, not on practical, commercial survival. You will realize that the gap isn't just about a lack of flight hours; it is about the immaturity of your non-technical skills (NOTECHS). It’s about learning to un-learn the rigid habits of primary training and adopting the flexible, standardized mindset of a professional aviator.
+                                You are going to face the harsh reality that your previous <strong>Constructivism</strong>—how you built your knowledge base—was flawed. You built knowledge based on passing tests, not on practical, commercial survival. You will realize that the gap isn't just about a lack of flight hours; it is about the immaturity of your non-technical skills (NOTECHS). It’s about learning to un-learn the rigid habits of initial flight instruction and adopting the flexible, standardized mindset of a professional aviator.
                             </p>
                             <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', borderLeft: '4px solid #64748b' }}>
                                 <p style={{ margin: 0, fontSize: '0.95rem', color: '#334155' }}>
@@ -298,7 +298,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             </p>
                             <div style={{ padding: '1.5rem', borderLeft: '4px solid #2563eb', backgroundColor: '#f8fafc', borderRadius: '0 8px 8px 0', marginTop: '0.5rem' }}>
                                 <p style={{ margin: 0, fontSize: '1.05rem', fontStyle: 'italic', fontWeight: 500, color: '#1e293b' }}>
-                                    "We don't just teach you to fly a plane; we train you to lead a career across the entire industry. This is the foundation of turning flight hours into true operational knowledge."
+                                    "We don't just teach you to fly a plane; we prepare you to lead a career across the entire industry. This is the foundation of turning flight hours into true operational knowledge."
                                 </p>
                             </div>
                         </div>
@@ -316,7 +316,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.875rem', fontWeight: 600, color: '#475569' }}>
-                                <span>Verified Training Time</span>
+                                <span>Verified Mentorship Time</span>
                                 <span>{hours}h / {targetHours}h</span>
                             </div>
                             <div style={{ height: '8px', width: '100%', backgroundColor: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
@@ -402,7 +402,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         >
                             <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Internal Exam 01.A</div>
                             <h4 style={{ fontSize: '1rem', fontWeight: 600, color: '#1e293b', marginBottom: '0.5rem', margin: '0 0 0.5rem 0' }}>The Multi-Engine Piston to Jet Transition</h4>
-                            <p style={{ fontSize: '0.875rem', color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: 1.5 }}>"What is the single highest cause of checklist non-compliance during line training?"</p>
+                            <p style={{ fontSize: '0.875rem', color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: 1.5 }}>"What is the single highest cause of checklist non-compliance during line operations?"</p>
                             <button style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
                                 Start Quiz <Icons.ArrowRight style={{ width: 16, height: 16 }} />
                             </button>
