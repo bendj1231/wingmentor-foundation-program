@@ -480,7 +480,7 @@ function App() {
       ) : currentView === 'mentorship' ? (
         <MentorshipSupervisionPage onBack={() => setCurrentView('foundational')} onLogout={handleLogout} />
       ) : currentView === 'module-01' ? (
-        <PilotGapModulePage onBack={() => setCurrentView('foundational')} onLogout={handleLogout} />
+        <PilotGapModulePage onBack={() => setCurrentView('foundational')} />
       ) : currentView === 'module-02' ? (
         <MentorshipProtocolsModulePage onBack={() => setCurrentView('foundational')} onLogout={handleLogout} />
       ) : currentView === 'module-03' ? (
