@@ -356,8 +356,19 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                             <p style={{ marginBottom: '1.25rem' }}>
                                 The Pilot Gap—often referred to as the Experience Void—is the massive developmental chasm you are standing in right now. It is the brutal, multi-year waiting period between holding a fresh 250-hour CPL and possessing the operational maturity that airlines actually demand.
                             </p>
+                            <p style={{ marginBottom: '1.25rem' }}>
+                                This gap affects everyone: from fresh <strong>students</strong> just starting their journey, to <strong>flight instructors</strong> trapped in the loop, and even <strong>airline pilots</strong> who are time-constrained and lack the resources to actively search for new opportunities.
+                            </p>
                             <p>
                                 You are trapped in an industry Catch-22: you need a job to gain commercial experience, but operators demand commercial experience before giving you a job. Because governing bodies and insurers rely on blunt metrics—like sheer time in the air—to measure safety, you are commercially unemployable for the right seat of a multi-million-dollar jet.
+                            </p>
+                        </div>
+
+                        {/* Pilot Database Callout */}
+                        <div style={{ padding: '2rem', backgroundColor: '#f0f9ff', borderRadius: '16px', border: '1px solid #bae6fd', margin: '1rem 0' }}>
+                            <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0369a1', marginBottom: '0.75rem' }}>The Wingmentor Pilot Database</h4>
+                            <p style={{ color: '#0c4a6e', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+                                We handle and maintain a comprehensive <strong>database of pilots</strong>. Your profile in our database is not just a resume; it is a quantified record recognized through our <strong>Pilot Recognition System</strong>, making you visible to our network of industry partners who are looking for standardized excellence.
                             </p>
                         </div>
 
@@ -387,29 +398,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                 </p>
                             </div>
 
-                            <p style={{ marginBottom: '2rem' }}>
-                                Current instructors will blindly point you toward their own path: the "traditional" instructor route. But many of those same instructors are now realizing they are trapped, facing upwards of five years instructing before airlines even glance at their CVs. In reality, some argue the flight instructor route has structurally become akin to a <strong>ponzi scheme</strong>—constantly promising returns to new investors (low-timers needing hours) funded by the time and money of older investors who also had the exact same dream of reaching the airlines. This is no longer a viable modern pathway.
-                            </p>
-
-                            {/* Instructor Trap Image with Description */}
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', margin: '1rem 0 2rem 0' }}>
-                                <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', border: '1px solid rgba(0,0,0,0.05)', backgroundColor: '#f8fafc' }}>
-                                    <img src="/instructor-trap-pilot-gap.jpg" alt="Cartoon showing the flight instructor trap" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
-                                </div>
-                                <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', maxWidth: '500px', textAlign: 'center', margin: 0 }}>
-                                    <strong>The Instructor Loop:</strong> Pilots have virtually no choice but to route straight back to their flight schools as instructors, creating massive bottlenecks.
-                                </p>
-                            </div>
-
-                            {/* Pilot Dream Paradox Image with Description */}
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', margin: '1rem 0 2rem 0' }}>
-                                <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', border: '1px solid rgba(0,0,0,0.05)', backgroundColor: '#f8fafc' }}>
-                                    <img src="/dream-paradox-pilot-gap.png" alt="Comic showing the pilot dream paradox" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
-                                </div>
-                                <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', maxWidth: '500px', textAlign: 'center', margin: 0 }}>
-                                    <strong>The Pilot Dream Paradox:</strong> The system relies on older instructors selling the identical dream they once had to incoming students—perpetuating a cycle where wait times for airline roles continually extend.
-                                </p>
-                            </div>
 
 
                         </div>
@@ -521,6 +509,42 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                         <p>
                             Airlines simply cannot absorb the financial and operational risk of placing un-standardized graduates into those empty seats. The jobs exist, and the demand is historic, but until you can prove your multi-crew proficiency and Non-Technical Skills (NOTECHS), that global shortage does not apply to you.
                         </p>
+
+                        <div style={{ padding: '1.75rem', backgroundColor: '#fff7ed', borderRadius: '12px', borderLeft: '4px solid #f97316', margin: '1rem 0' }}>
+                            <p style={{ margin: 0, fontSize: '0.95rem', color: '#9a3412', fontWeight: 600 }}>
+                                <strong>The Operational Bottleneck:</strong> This misalignment inadvertently fuels the <strong>Instructor Loop</strong> and the <strong>Pilot Dream Paradox</strong>. Because airlines aren't hiring from the bottom, veteran instructors stay trapped at flight schools for years, inadvertently clogging the pipeline for the next generation of pilots who are sitting at home, waiting for their chance to even begin instructing.
+                            </p>
+                        </div>
+
+                        <p>
+                            At <strong>Wingmentor</strong>, we are dedicated to <strong>unclogging these pipes</strong>. Our mission is to provide the standardization and recognition required to move these veteran instructors into airline flight decks where they belong. By facilitating this transition, we free up critical instructor positions, allowing the new generation to enter the industry and start their journey, rather than being stalled at the starting line.
+                        </p>
+
+                        <div style={{ height: '1px', background: '#e2e8f0', margin: '1rem 0' }} />
+
+                        <p>
+                            This misalignment creates what we call the <strong>Instructor Loop</strong>. Current instructors will blindly point you toward their own path: the "traditional" instructor route. But many of those same instructors are now realizing they are trapped, facing upwards of five years instructing before airlines even glance at their CVs. In reality, some argue the flight instructor route has structurally become akin to a <strong>ponzi scheme</strong>—constantly promising returns to new investors (low-timers needing hours) funded by the time and money of older investors who also had the exact same dream of reaching the airlines. This is no longer a viable modern pathway.
+                        </p>
+
+                        {/* Instructor Trap Image with Description */}
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', margin: '1rem 0 2rem 0' }}>
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', border: '1px solid rgba(0,0,0,0.05)', backgroundColor: '#f8fafc' }}>
+                                <img src="/instructor-trap-pilot-gap.jpg" alt="Cartoon showing the flight instructor trap" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+                            </div>
+                            <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', maxWidth: '500px', textAlign: 'center', margin: 0 }}>
+                                <strong>The Instructor Loop:</strong> Pilots have virtually no choice but to route straight back to their flight schools as instructors, creating massive bottlenecks.
+                            </p>
+                        </div>
+
+                        {/* Pilot Dream Paradox Image with Description */}
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', margin: '1rem 0 2rem 0' }}>
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', border: '1px solid rgba(0,0,0,0.05)', backgroundColor: '#f8fafc' }}>
+                                <img src="/dream-paradox-pilot-gap.png" alt="Comic showing the pilot dream paradox" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+                            </div>
+                            <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', maxWidth: '500px', textAlign: 'center', margin: 0 }}>
+                                <strong>The Pilot Dream Paradox:</strong> The system relies on older instructors selling the identical dream they once had to incoming students—perpetuating a cycle where wait times for airline roles continually extend.
+                            </p>
+                        </div>
                     </div>
                     <div style={{ height: '1px', background: '#e2e8f0', marginBottom: '2rem' }} />
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '6rem' }}>
@@ -587,6 +611,47 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                             <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', maxWidth: '550px', textAlign: 'center', margin: 0 }}>
                                 <strong>The Outsourcing Filter:</strong> The insurmountable stack of identical resumes is exactly why airlines rely entirely on third-party recruitment agencies to do the filtering for them.
                             </p>
+                        </div>
+
+                        <div style={{ padding: '1.25rem', backgroundColor: '#eff6ff', borderRadius: '12px', border: '1px solid #bfdbfe', marginBottom: '2rem' }}>
+                            <p style={{ margin: 0, fontSize: '0.9rem', color: '#2563eb', fontWeight: 500, textAlign: 'center' }}>
+                                ℹ️ <em>You will learn more about the Pilot Recognition System and ATLAS CV Format throughout the program.</em>
+                            </p>
+                        </div>
+
+                        <div style={{ marginTop: '2rem' }}>
+                            <h4 style={{ fontSize: '1.4rem', fontWeight: 600, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1rem' }}>
+                                Beyond the "Blind Submit"
+                            </h4>
+                            <p style={{ marginBottom: '1.5rem' }}>
+                                Majority of pilots send resumes blindly to airlines or upload them to sites like <em>pilotcenter.com</em>. While you may technically meet the basic requirements, the "Next Step"—the follow-up response—is where most careers stall.
+                            </p>
+                            <p style={{ marginBottom: '1.5rem' }}>
+                                Wingmentor provides a <strong>direct network</strong> of pilots who already know the specific expectations of major carriers like <strong>Etihad</strong>, <strong>Air Asia</strong>, or <strong>Eurowings</strong>, as well as the private sector, including <strong>private jets</strong>. We give you the opportunity to choose a pathway and familiarize yourself with the industry before you even step into the interview room.
+                            </p>
+
+                            <div style={{ backgroundColor: '#f8fafc', padding: '2rem', borderRadius: '16px', border: '1px solid #e2e8f0', marginTop: '2rem' }}>
+                                <h5 style={{ fontSize: '1rem', fontWeight: 700, color: '#1e293b', marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                    Direct Industry Connections
+                                </h5>
+                                <p style={{ color: '#475569', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+                                    Wingmentor maintains direct, active contact with the decision-makers shaping the future of flight:
+                                </p>
+                                <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#0f172a', fontWeight: 500 }}>
+                                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#eab308' }}></div>
+                                        Etihad Cadet Program
+                                    </li>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#0f172a', fontWeight: 500 }}>
+                                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#eab308' }}></div>
+                                        Head of Training at Airbus
+                                    </li>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#0f172a', fontWeight: 500 }}>
+                                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#eab308' }}></div>
+                                        Head of Infrastructure at Archer (Pioneering Pilot Air Taxis)
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -1273,7 +1338,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
             {/* Main Layout wrapper for sidebar and content */}
             <div style={{ display: 'flex', minHeight: 'calc(100vh - 80px)' }}>
                 {/* Module Viewer Sidebar */}
-                <aside style={{ width: '320px', flexShrink: 0, backgroundColor: 'white', borderRight: '1px solid #e2e8f0', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', overflowY: 'auto' }}>
+                <aside style={{ width: '320px', flexShrink: 0, backgroundColor: 'white', borderRight: '1px solid #e2e8f0', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', position: 'sticky', top: '104px', height: 'calc(100vh - 104px)', overflowY: 'auto' }}>
                     <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Module Viewer</div>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                         {([
