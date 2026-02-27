@@ -110,12 +110,18 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
 
                     {/* Chapter 1: The Low-Timer Pilot */}
                     <section>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                            <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
-                            <span style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>01</span>
-                            <h2 style={{ fontSize: '1.75rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0 }}>
-                                What is a "Low-Timer" Pilot?
-                            </h2>
+                        <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                            <div style={{ paddingTop: '0.6rem' }}>
+                                <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                            </div>
+                            <div>
+                                <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                                    Chapter 01
+                                </div>
+                                <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
+                                    What is a "Low-Timer" Pilot?
+                                </h2>
+                            </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
@@ -134,12 +140,18 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
 
                     {/* Chapter 2: The Industry Pilot Gap */}
                     <section>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                            <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
-                            <span style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>02</span>
-                            <h2 style={{ fontSize: '1.75rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0 }}>
-                                What is the Industry Pilot Gap?
-                            </h2>
+                        <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                            <div style={{ paddingTop: '0.6rem' }}>
+                                <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                            </div>
+                            <div>
+                                <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                                    Chapter 02
+                                </div>
+                                <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
+                                    What is the Industry Pilot Gap?
+                                </h2>
+                            </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
@@ -160,12 +172,18 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
 
                     {/* Chapter 3: Understanding the Core Fundamentals */}
                     <section>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                            <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
-                            <span style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>03</span>
-                            <h2 style={{ fontSize: '1.75rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0 }}>
-                                Understanding the Core Fundamentals
-                            </h2>
+                        <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                            <div style={{ paddingTop: '0.6rem' }}>
+                                <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                            </div>
+                            <div>
+                                <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                                    Chapter 03
+                                </div>
+                                <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
+                                    Understanding the Core Fundamentals
+                                </h2>
+                            </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
@@ -186,12 +204,18 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
 
                     {/* Chapter 4: Why the Foundational Program exists? */}
                     <section>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                            <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
-                            <span style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>04</span>
-                            <h2 style={{ fontSize: '1.75rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0 }}>
-                                Why is the Foundational Program Made?
-                            </h2>
+                        <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                            <div style={{ paddingTop: '0.6rem' }}>
+                                <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                            </div>
+                            <div>
+                                <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                                    Chapter 04
+                                </div>
+                                <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
+                                    Why is the Foundational Program Made?
+                                </h2>
+                            </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
