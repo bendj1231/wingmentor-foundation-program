@@ -242,13 +242,13 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                     Chapter 04
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                    The "What": What are you going to face?
+                                    The "What": What am I going to do now? What am I going to face?
                                 </h2>
                             </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                You are what the industry universally labels a <strong>"Low-Timer."</strong> It’s a term that carries a heavy stigma. It means you have the legal right to fly, but you lack the "operational miles" to be trusted.
+                                You are what the industry universally labels a <strong>"Low-Timer."</strong> It’s a term that carries a heavy stigma. It means you have the legal right to fly, but you lack the "operational miles" to be trusted. The most agonizing question you must ask yourself is: <i>What am I going to do now? What am I actually going to face?</i>
                             </p>
                             <p>
                                 In flight school, the environment dictated your schedule, your weather minimums, and your stress levels. Every scenario was predictable. Now, you’re facing the <strong>Industry Gap</strong>—an intimidating, developmental void. You are going to face chief pilots who look at your logbook and see a liability. You will face intense simulator assessments that don't test your ability to fly a steeper turn, but rather test your capacity to manage a failing system while communicating effectively with a stressed colleague.
