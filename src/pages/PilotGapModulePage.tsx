@@ -163,32 +163,40 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                The psychological excitement of flight school quickly collides with a severe statistical reality. Most pilots are entirely unaware of the impossible position they will face once the training wheels come off. With no clear guidance, you are forced to rely on rumors and anecdotal advice from other equally lost low-timer pilots. You begin to fear your future, because the math is terrifying.
+                                The psychological excitement of flight school quickly collides with a severe statistical reality. Most pilots are entirely unaware of the impossible position they will face once the training wheels come off. With no clear guidance, you are forced to rely on rumors and anecdotal advice from other equally lost low-timer pilots. You begin to fear your future, because the math—and the industry profiling—is terrifying.
                             </p>
                             <p>
-                                This fear is rooted in the harsh financial downfall that characterizes this industry gap. Students invest colossal amounts of capital—often incurring life-altering debt—only to hit a professional brick wall. The statistics paint a grim, undeniable picture of this transition:
+                                Some critics outside the industry look at this gap and cynically label flight training a "Ponzi scheme," where new students fund the dreams of the old. But the reality is far more complex. The demand is real; the mechanism connecting the graduate to the flight deck is broken. The statistics tell the true story of the pilot's financial and operational downfall:
                             </p>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginTop: '0.5rem' }}>
-                                <div style={{ padding: '1.25rem', backgroundColor: '#fee2e2', borderRadius: '8px', borderLeft: '4px solid #ef4444' }}>
-                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#991b1b', margin: '0 0 0.5rem 0' }}>75%</h3>
-                                    <p style={{ fontSize: '0.85rem', color: '#7f1d1d', margin: 0, lineHeight: 1.4 }}>Drop out of pilot training before completion due to financial and operational stress.</p>
+
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '0.5rem' }}>
+                                <div style={{ padding: '1.5rem', backgroundColor: '#fef3c7', borderRadius: '8px', borderLeft: '4px solid #f59e0b' }}>
+                                    <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#92400e', margin: '0 0 0.5rem 0' }}>87%</h3>
+                                    <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#b45309', margin: '0 0 0.5rem 0' }}>The Year 1 Illusion</h4>
+                                    <p style={{ fontSize: '0.9rem', color: '#78350f', margin: 0, lineHeight: 1.5 }}>Of 1st-year commercial students believe they will transition directly to airlines, entirely unaware of how airlines aggressively utilize psychological and operational profiling to filter candidates.</p>
                                 </div>
-                                <div style={{ padding: '1.25rem', backgroundColor: '#fef3c7', borderRadius: '8px', borderLeft: '4px solid #f59e0b' }}>
-                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#92400e', margin: '0 0 0.5rem 0' }}>25%</h3>
-                                    <p style={{ fontSize: '0.85rem', color: '#78350f', margin: 0, lineHeight: 1.4 }}>Successfully obtain their commercial licenses, believing the hard part is over.</p>
+
+                                <div style={{ padding: '1.5rem', backgroundColor: '#fee2e2', borderRadius: '8px', borderLeft: '4px solid #ef4444' }}>
+                                    <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#991b1b', margin: '0 0 0.5rem 0' }}>92%</h3>
+                                    <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#b91c1c', margin: '0 0 0.5rem 0' }}>The Year 3 Shift</h4>
+                                    <p style={{ fontSize: '0.9rem', color: '#7f1d1d', margin: 0, lineHeight: 1.5 }}>Of pilots, after 2 to 3 years of bleeding finances while waiting for an opportunity, decide to shift careers altogether. They realize a CPL alone is not enough to secure a job.</p>
                                 </div>
-                                <div style={{ padding: '1.25rem', backgroundColor: '#e0e7ff', borderRadius: '8px', borderLeft: '4px solid #6366f1' }}>
-                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#3730a3', margin: '0 0 0.5rem 0' }}>5%</h3>
-                                    <p style={{ fontSize: '0.85rem', color: '#312e81', margin: 0, lineHeight: 1.4 }}>Of those graduates find immediate employment as low-timer pilots.</p>
-                                </div>
-                                <div style={{ padding: '1.25rem', backgroundColor: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #4b5563' }}>
-                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#1f2937', margin: '0 0 0.5rem 0' }}>95%</h3>
-                                    <p style={{ fontSize: '0.85rem', color: '#111827', margin: 0, lineHeight: 1.4 }}>Of stranded graduates shift to a different career entirely.</p>
+
+                                <div style={{ padding: '1.5rem', backgroundColor: '#e0e7ff', borderRadius: '8px', borderLeft: '4px solid #6366f1' }}>
+                                    <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#3730a3', margin: '0 0 0.5rem 0' }}>660,000</h3>
+                                    <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#4f46e5', margin: '0 0 0.5rem 0' }}>The 2035 Demand</h4>
+                                    <p style={{ fontSize: '0.9rem', color: '#312e81', margin: 0, lineHeight: 1.5 }}>The projected number of new pilots needed globally (USA alone representing a massive sector). The jobs exist, but operators refuse to hire un-vetted, un-standardized risk.</p>
                                 </div>
                             </div>
+
                             <p>
-                                The vast majority are forced to shift careers halfway through their journey because they cannot endure the financial bleed of paying for unguided flight hours while waiting for an opportunity. This program intervenes precisely at this critical juncture to prevent that 95% career death rate.
+                                The industry desperately needs pilots, yet a 92% career shift occurs because operators simply cannot take the operational risk on a 250-hour graduate.
                             </p>
+                            <div style={{ padding: '1.5rem', borderLeft: '4px solid #10b981', backgroundColor: '#ecfdf5', borderRadius: '0 8px 8px 0', marginTop: '0.5rem' }}>
+                                <p style={{ margin: 0, fontSize: '1.05rem', fontWeight: 400, color: '#065f46', lineHeight: 1.6 }}>
+                                    <strong>This is why Wingmentor exists.</strong> We are the first establishment dedicated to solving this specific industry gap. We don't just train; we create a pipeline. By instilling the new global standard of EBT (Evidence-Based Training) and CBTA mindset, we connect highly vetted, pre-informed, and standardized pilots directly with our partners—airlines, manufacturers, and private sector operators seeking recognized quality over raw logbook hours.
+                                </p>
+                            </div>
                         </div>
                     </section>
 
