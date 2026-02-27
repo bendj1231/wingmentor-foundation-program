@@ -87,11 +87,13 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
     const progress = (currentChapter / (totalChapters - 1)) * 100;
 
     const navigationFlow = [
-        { chapter: 0, topic: null }, // Intro
-        { chapter: 1, topic: null }, // The What
+        { chapter: 0, topic: 'welcome' }, // New Prior Welcome Page
+        { chapter: 0, topic: null },      // Industry Familiarization Hub
+        { chapter: 1, topic: null },      // The What
         { chapter: 1, topic: 'what-low-timer' },
         { chapter: 1, topic: 'what-pilot-gap' },
         { chapter: 1, topic: 'what-pilot-shortage' },
+        { chapter: 1, topic: 'what-pilot-recognition' },
         { chapter: 2, topic: null }, // The Why
         { chapter: 2, topic: 'why-statistics' },
         { chapter: 2, topic: 'why-trap' },
@@ -673,6 +675,105 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
             );
         }
 
+        // ── Welcome Aboard Page ──────────────────────────────────────────────
+        if (currentTopic === 'welcome') {
+            return (
+                <div style={{ maxWidth: '800px', margin: '0 auto', animation: 'fadeIn 0.5s ease-in-out' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '4rem', paddingTop: '2rem' }}>
+                        <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
+                            <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '280px', height: 'auto', objectFit: 'contain' }} />
+                        </div>
+                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+                            Welcome Aboard
+                        </h1>
+                        <div style={{ width: '80px', height: '4px', backgroundColor: '#eab308', margin: '0 auto' }}></div>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+                        <section>
+                            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#1e293b', marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                Welcome to the Wingmentor Foundation Program
+                            </h2>
+                            <p style={{ color: '#334155', fontSize: '18px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                                You have taken a decisive step towards bridging the critical gap between licensure and a professional career. This program is engineered to provide you with the structure, support, and verifiable experience necessary to navigate the complexities of the aviation industry. Your journey towards command starts now.
+                            </p>
+                        </section>
+
+                        <section style={{ backgroundColor: '#f8fafc', padding: '2.5rem', borderRadius: '20px', border: '1px solid #e2e8f0' }}>
+                            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#1e293b', marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                A Message From the Wingmentor Team
+                            </h2>
+                            <p style={{ color: '#334155', fontSize: '17px', lineHeight: 1.8, margin: 0 }}>
+                                The entire Wingmentor operational team is here to support you. We are a collective of active pilots, instructors, and industry professionals dedicated to your success. We manage the logistics, verify the experience, and ensure the standards of this program are upheld with unwavering integrity. Consider us your ground crew, ready to ensure your flight path is clear and your objectives are met.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#1e293b', marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                A Welcome From the Founders
+                            </h2>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                                <p style={{ color: '#334155', fontSize: '17px', lineHeight: 1.8, margin: 0 }}>
+                                    On behalf of the entire Wingmentor team, we extend our warmest welcome. You have officially joined a dedicated Pilot Recognition Program committed to excellence, mutual support, and overcoming one of the industry's greatest challenges.
+                                </p>
+                                <p style={{ color: '#334155', fontSize: '17px', lineHeight: 1.8, margin: 0 }}>
+                                    You are now more than a pilot; you are a vital contributor to a movement that is reshaping the future of aviation careers. We operate with professionalism, integrity, and a relentless focus on our collective success. This handbook is your guide. Welcome aboard.
+                                </p>
+                            </div>
+
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '3rem', borderTop: '1px solid #e2e8f0', paddingTop: '2rem' }}>
+                                <div style={{ textAlign: 'center', flex: 1 }}>
+                                    <div style={{ fontWeight: 700, color: '#334155', letterSpacing: '0.05em', fontSize: '0.9rem' }}>BENJAMIN TIGER BOWLER</div>
+                                    <div style={{ color: '#64748b', fontSize: '0.8rem', marginTop: '0.25rem' }}>FOUNDER</div>
+                                </div>
+                                <div style={{ textAlign: 'center', flex: 1 }}>
+                                    <div style={{ fontWeight: 700, color: '#334155', letterSpacing: '0.05em', fontSize: '0.9rem' }}>KARL VOGT</div>
+                                    <div style={{ color: '#64748b', fontSize: '0.8rem', marginTop: '0.25rem' }}>FOUNDER</div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div style={{ padding: '3rem', backgroundColor: '#eff6ff', borderRadius: '24px', borderLeft: '6px solid #2563eb', marginTop: '2rem', boxShadow: '0 4px 20px rgba(37, 99, 235, 0.1)' }}>
+                            <p style={{ color: '#1e3a8a', fontStyle: 'italic', fontSize: '1.3rem', lineHeight: 1.7, margin: 0, textAlign: 'center', fontWeight: 500 }}>
+                                "We couldn't stand by and watch qualified pilots give up. The gap in the industry isn't a lack of talent; it's a lack of opportunity. Wingmentor is our answer to the 'experience paradox'—providing a structured environment where pilots can prove their worth and keep their dreams alive."
+                            </p>
+                        </div>
+
+                        <div style={{ textAlign: 'center', marginTop: '4rem', paddingBottom: '6rem' }}>
+                            <button
+                                onClick={handleNext}
+                                style={{
+                                    background: '#2563eb',
+                                    color: 'white',
+                                    fontWeight: 700,
+                                    fontSize: '1.1rem',
+                                    padding: '1.25rem 3rem',
+                                    borderRadius: '50px',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 10px 25px rgba(37, 99, 235, 0.3)',
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '1rem'
+                                }}
+                                onMouseEnter={e => {
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                    e.currentTarget.style.boxShadow = '0 15px 30px rgba(37, 99, 235, 0.4)';
+                                }}
+                                onMouseLeave={e => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = '0 10px 25px rgba(37, 99, 235, 0.3)';
+                                }}
+                            >
+                                Continue to Briefing <Icons.ArrowRight style={{ width: 20, height: 20 }} />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
         switch (currentChapter) {
 
 
@@ -681,78 +782,24 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', animation: 'fadeIn 0.5s ease-in-out' }}>
                         {/* Hub-Style Header */}
                         <div style={{ textAlign: 'center', paddingBottom: '2.5rem', borderBottom: '1px solid #e2e8f0', background: 'linear-gradient(to bottom, #f8fafc, #ffffff)', paddingTop: '3rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
-                            <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
-                                <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '240px', height: 'auto', objectFit: 'contain' }} />
-                            </div>
                             <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>MODULE 01</div>
                             <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0' }}>Industry Familiarization & Indoctrination</h1>
+
                             <div style={{ maxWidth: '44rem', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem', textAlign: 'left' }}>
-
-                                {/* Welcome Aboard & The Team */}
-                                <div>
-                                    <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase', letterSpacing: '-0.02em', borderBottom: '3px solid #eab308', paddingBottom: '0.5rem', display: 'inline-block' }}>
-                                        Welcome Aboard
-                                    </h2>
-                                    <div style={{ marginTop: '1.5rem' }}>
-                                        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
-                                            Welcome to the Wingmentor Foundation Program
-                                        </h3>
-                                        <p style={{ color: '#334155', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
-                                            Welcome to the Wingmentor Foundation Program. You have taken a decisive step towards bridging the critical gap between licensure and a professional career. This program is engineered to provide you with the structure, support, and verifiable experience necessary to navigate the complexities of the aviation industry. Your journey towards command starts now.
-                                        </p>
-                                    </div>
-
-                                    <div style={{ marginTop: '2rem' }}>
-                                        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
-                                            A Message From the Wingmentor Team
-                                        </h3>
-                                        <p style={{ color: '#334155', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
-                                            The entire Wingmentor operational team is here to support you. We are a collective of active pilots, instructors, and industry professionals dedicated to your success. We manage the logistics, verify the experience, and ensure the standards of this program are upheld with unwavering integrity. Consider us your ground crew, ready to ensure your flight path is clear and your objectives are met.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                {/* Founders Message */}
-                                <div style={{ paddingTop: '2rem', borderTop: '1px solid #e2e8f0' }}>
-                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '1rem', textTransform: 'uppercase' }}>
-                                        A Welcome From the Founders
-                                    </h3>
-                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                                        <p style={{ color: '#334155', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
-                                            On behalf of the entire Wingmentor team, we extend our warmest welcome. You have officially joined a dedicated Pilot Recognition Program committed to excellence, mutual support, and overcoming one of the industry's greatest challenges.
-                                        </p>
-                                        <p style={{ color: '#334155', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
-                                            You are now more than a pilot; you are a vital contributor to a movement that is reshaping the future of aviation careers. We operate with professionalism, integrity, and a relentless focus on our collective success. This handbook is your guide. Welcome aboard.
-                                        </p>
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2.5rem', borderTop: '1px solid #e2e8f0', paddingTop: '1.5rem' }}>
-                                            <div style={{ textAlign: 'center', flex: 1 }}>
-                                                <div style={{ fontWeight: 700, color: '#334155', letterSpacing: '0.05em' }}>BENJAMIN TIGER BOWLER</div>
-                                                <div style={{ color: '#64748b', fontSize: '0.85rem', marginTop: '0.25rem' }}>FOUNDER</div>
-                                            </div>
-                                            <div style={{ textAlign: 'center', flex: 1 }}>
-                                                <div style={{ fontWeight: 700, color: '#334155', letterSpacing: '0.05em' }}>KARL VOGT</div>
-                                                <div style={{ color: '#64748b', fontSize: '0.85rem', marginTop: '0.25rem' }}>FOUNDER</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div style={{ padding: '2rem', backgroundColor: '#f0f9ff', borderRadius: '12px', borderLeft: '4px solid #0284c7', marginTop: '1rem' }}>
-                                    <p style={{ color: '#1e3a8a', fontStyle: 'italic', fontSize: '1.1rem', lineHeight: 1.6, margin: 0, textAlign: 'center' }}>
-                                        "We couldn't stand by and watch qualified pilots give up. The gap in the industry isn't a lack of talent; it's a lack of opportunity. Wingmentor is our answer to the 'experience paradox'—providing a structured environment where pilots can prove their worth and keep their dreams alive."
-                                    </p>
-                                </div>
-
-
                                 {/* Mission & Symbiotic Airframe */}
                                 <div style={{ marginTop: '1.5rem' }}>
                                     <div style={{ marginBottom: '2rem' }}>
-                                        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
-                                            Our Mission: Bridging the Gap
-                                        </h3>
-                                        <p style={{ color: '#334155', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
-                                            The Wingmentor Foundation Program is an operational framework engineered to address a critical system failure in the aviation career pipeline: The Low Timer Gap. Our mission is to provide newly licensed commercial pilots with a structured, verifiable pathway to build the essential experience, command authority, and professional acumen required by the industry.
-                                        </p>
+                                        <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.25rem', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase', letterSpacing: '-0.02em', borderBottom: '3px solid #eab308', paddingBottom: '0.5rem', display: 'inline-block' }}>
+                                            The Mission
+                                        </h2>
+                                        <div style={{ marginTop: '1rem' }}>
+                                            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
+                                                Bridging the Gap
+                                            </h3>
+                                            <p style={{ color: '#334155', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
+                                                The Wingmentor Foundation Program is an operational framework engineered to address a critical system failure in the aviation career pipeline: The Low Timer Gap. Our mission is to provide newly licensed commercial pilots with a structured, verifiable pathway to build the essential experience, command authority, and professional acumen required by the industry.
+                                            </p>
+                                        </div>
                                     </div>
 
                                     <div>
@@ -764,7 +811,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                         </p>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
 
@@ -1342,6 +1388,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                     <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Module Viewer</div>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                         {([
+                            { title: 'Welcome Aboard', id: 0, topics: [{ label: 'Welcome Aboard', slug: 'welcome' }] },
                             { title: 'Introduction & Overview', id: 0 },
                             {
                                 title: 'The "What"', id: 1,
