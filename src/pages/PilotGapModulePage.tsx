@@ -782,6 +782,9 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', animation: 'fadeIn 0.5s ease-in-out' }}>
                         {/* Hub-Style Header */}
                         <div style={{ textAlign: 'center', paddingBottom: '2.5rem', borderBottom: '1px solid #e2e8f0', background: 'linear-gradient(to bottom, #f8fafc, #ffffff)', paddingTop: '3rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
+                            <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+                                <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '240px', height: 'auto', objectFit: 'contain' }} />
+                            </div>
                             <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>MODULE 01</div>
                             <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0' }}>Industry Familiarization & Indoctrination</h1>
 
