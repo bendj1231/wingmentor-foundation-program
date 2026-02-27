@@ -194,7 +194,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             </p>
                             <div style={{ padding: '1.5rem', borderLeft: '4px solid #10b981', backgroundColor: '#ecfdf5', borderRadius: '0 8px 8px 0', marginTop: '0.5rem' }}>
                                 <p style={{ margin: 0, fontSize: '1.05rem', fontWeight: 400, color: '#065f46', lineHeight: 1.6 }}>
-                                    <strong>This is why Wingmentor exists.</strong> We are the first establishment dedicated to solving this specific industry gap. We are not a flight school; we create a pipeline. By instilling the new global standard of EBT (Evidence-Based Training) and CBTA mindset, we connect highly vetted, pre-informed, and standardized pilots directly with our partners—airlines, manufacturers, and private sector operators seeking recognized quality over raw logbook hours.
+                                    <strong>This is why Wingmentor exists.</strong> We are the first establishment dedicated to solving this specific industry gap. We are not a flight school; we create a pipeline. By instilling the new global standard of EBTA (Evidence-Based Training and Assessment) mindset, we connect highly vetted, pre-informed, and standardized pilots directly with our partners—airlines, manufacturers, and private sector operators seeking recognized quality over raw logbook hours.
                                 </p>
                             </div>
                         </div>
@@ -250,7 +250,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                We bridge this intimidating gap not by tossing you into the deep end, but through structured, psychologically-driven <strong>Competency-Based Training and Assessment (CBTA)</strong>. It is no longer about <i>how long</i> you've flown, but <i>how well</i> you handle specific behavioural cores under operational stress.
+                                We bridge this intimidating gap not by tossing you into the deep end, but through the new global industry standard: structured, psychologically-driven <strong>Evidence-Based Training and Assessment (EBTA)</strong>. It is no longer about <i>how long</i> you've flown, but <i>how well</i> you handle specific behavioural cores under operational stress.
                             </p>
                             <p>
                                 You will take part through rigorous peer-mentorship, deep scenario-based evaluations, and guided indoctrination into professional workflows. We dissect the pilot into three core psychological pillars. We reconstruct your <strong>Behaviorism</strong> so that adhering to SOPs becomes an ingrained reflex rather than an active choice. We elevate your <strong>Cognitive Thinking</strong> so you learn to anticipate industry-wide multi-crew dynamics, manage immense workloads, and make critical, split-second safety decisions.
