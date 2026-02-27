@@ -256,6 +256,9 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             <p>
                                 You are going to face the harsh reality that your previous <strong>Constructivism</strong>—how you built your knowledge base—was flawed. You built knowledge based on passing tests, not on practical, commercial survival. You will realize that the gap isn't just about a lack of flight hours; it is about the immaturity of your non-technical skills (NOTECHS). It’s about learning to un-learn the rigid habits of initial flight instruction and adopting the flexible, standardized mindset of a professional aviator.
                             </p>
+                            <p>
+                                And here is the unspoken truth: you are not the only one who knows this reality. Deep down, the instructors who taught you know it. The head of your flight college knows it. But they are bound by a different directive. Their job is simply to keep the aviation pipeline flowing—churning out licenses to meet the foundational demand, while leaving the massive burden of operational readiness entirely on your shoulders.
+                            </p>
                             <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', borderLeft: '4px solid #64748b' }}>
                                 <p style={{ margin: 0, fontSize: '0.95rem', color: '#334155' }}>
                                     <strong>Real Talk:</strong> Most pilots think the hard part is over once the CPL is printed. In reality, the true test is the "Experience Void." It is the intensely psychological shift from being a student reacting to commands, to becoming a manager of an aircraft system.
