@@ -110,10 +110,13 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
 
                     {/* Chapter 1: The Low-Timer Pilot */}
                     <section>
-                        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <span style={{ color: '#2563eb', fontSize: '1rem', fontWeight: 900 }}>01</span>
-                            What is a "Low-Timer" Pilot?
-                        </h2>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                            <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                            <span style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>01</span>
+                            <h2 style={{ fontSize: '1.75rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0 }}>
+                                What is a "Low-Timer" Pilot?
+                            </h2>
+                        </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
                                 When you graduate from flight school, you're at a crossroads. You've earned your wings, but in the eyes of most major airlines, you're what's known as a <strong>"Low-Timer."</strong>
@@ -131,10 +134,13 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
 
                     {/* Chapter 2: The Industry Pilot Gap */}
                     <section>
-                        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <span style={{ color: '#2563eb', fontSize: '1rem', fontWeight: 900 }}>02</span>
-                            What is the Industry Pilot Gap?
-                        </h2>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                            <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                            <span style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>02</span>
+                            <h2 style={{ fontSize: '1.75rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0 }}>
+                                What is the Industry Pilot Gap?
+                            </h2>
+                        </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
                                 The <strong>Pilot Gap</strong> is the disconnect between the supply of new pilots and the airlines' ability to hire them. While there is a global shortage of pilots, airlines often cannot hire you directly at 200 hours.
@@ -154,10 +160,13 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
 
                     {/* Chapter 3: Understanding the Core Fundamentals */}
                     <section>
-                        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <span style={{ color: '#2563eb', fontSize: '1rem', fontWeight: 900 }}>03</span>
-                            Understanding the Core Fundamentals
-                        </h2>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                            <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                            <span style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>03</span>
+                            <h2 style={{ fontSize: '1.75rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0 }}>
+                                Understanding the Core Fundamentals
+                            </h2>
+                        </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
                                 To bridge the gap, the industry is moving away from just "counting hours" and toward <strong>Competency-Based Training (CBTA)</strong>. It’s not just about <i>how long</i> you’ve flown, but <i>how well</i> you handle specific cores.
@@ -177,10 +186,13 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
 
                     {/* Chapter 4: Why the Foundational Program exists? */}
                     <section>
-                        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <span style={{ color: '#2563eb', fontSize: '1rem', fontWeight: 900 }}>04</span>
-                            Why is the Foundational Program Made?
-                        </h2>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                            <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                            <span style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>04</span>
+                            <h2 style={{ fontSize: '1.75rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0 }}>
+                                Why is the Foundational Program Made?
+                            </h2>
+                        </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
                                 This program wasn't made to just give you more hours—you could go to a flight school for that. It was built to give you <strong>Industry Credibility.</strong>
