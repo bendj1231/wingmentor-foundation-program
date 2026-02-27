@@ -200,7 +200,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         </div>
                     </section>
 
-                    {/* Chapter 3: The What */}
+                    {/* Chapter 3: The Easy Way Out Trap */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ paddingTop: '0.6rem' }}>
@@ -209,6 +209,37 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             <div>
                                 <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                                     Chapter 03
+                                </div>
+                                <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
+                                    The Easy Way Out Trap: The Shiny Type Rating
+                                </h2>
+                            </div>
+                        </div>
+                        <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            <p>
+                                When the reality of the pilot gap sets in, many desperate graduates look for a shortcut. The industry calls this the "shiny type rating trap." Instead of building foundational operational experience, low-timers are often convinced to borrow even more money to buy a type rating (like an A320 or B737) in hopes of skipping the queue.
+                            </p>
+                            <p>
+                                We recently sought direct affirmation from <strong>Airbus</strong> regarding a critical industry question: <i>Are low-timer pilots actually considered underqualified to fly a multi-engine jet?</i> The answer from the manufacturer—the entity that actually dictates the aircraft's training footprint—was a resounding <strong>no</strong>. Airbus considers a 200-hour graduate with an Airbus rating fully capable and qualified to operate their aircraft safely.
+                            </p>
+                            <p>
+                                The barrier to the flight deck is not dictated by the aircraft's capability requirements, but by <strong>commercial regulation and insurance.</strong> While the manufacturer says you are ready, governing bodies impose arbitrary roadblocks (like the 1500-hour rule in certain sectors), and insurance companies actively devalue a 200-hour graduate as an un-standardized risk. Airlines must bow to these regulatory and financial pressures.
+                            </p>
+                            <p>
+                                Buying a shiny type rating without the foundational operational experience is buying a very expensive piece of paper. It does not mitigate the insurance risk; it only exacerbates your financial downfall. You cannot buy your way out of the experience gap.
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* Chapter 4: The What */}
+                    <section>
+                        <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                            <div style={{ paddingTop: '0.6rem' }}>
+                                <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                            </div>
+                            <div>
+                                <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                                    Chapter 04
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
                                     The "What": What are you going to face?
@@ -233,7 +264,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         </div>
                     </section>
 
-                    {/* Chapter 4: The How */}
+                    {/* Chapter 5: The How */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ paddingTop: '0.6rem' }}>
@@ -241,7 +272,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             </div>
                             <div>
                                 <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                                    Chapter 04
+                                    Chapter 05
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
                                     The "How": How are you going to take part?
@@ -251,12 +282,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
                                 We bridge this intimidating gap not by tossing you into the deep end, but through the new global industry standard: structured, psychologically-driven <strong>Evidence-Based Training and Assessment (EBTA)</strong>. It is no longer about <i>how long</i> you've flown, but <i>how well</i> you handle specific behavioural cores under operational stress.
-                            </p>
-                            <p>
-                                We recently sought direct affirmation from <strong>Airbus</strong> regarding a critical industry question: <i>Are low-timer pilots actually considered underqualified to fly a multi-engine jet?</i> The answer from the manufacturer—the entity that actually dictates the aircraft's training footprint—was a resounding <strong>no</strong>. Airbus considers a 200-hour graduate with an Airbus rating fully capable and qualified to operate their aircraft safely.
-                            </p>
-                            <p>
-                                The barrier to the flight deck is not dictated by the aircraft's capability requirements, but by <strong>commercial regulation and insurance.</strong> While the manufacturer says you are ready, governing bodies impose arbitrary roadblocks (like the 1500-hour rule in certain sectors), and insurance companies actively devalue a 200-hour graduate as an un-standardized risk. Airlines must bow to these regulatory and financial pressures.
                             </p>
                             <p>
                                 You will take part through rigorous peer-mentorship, deep scenario-based evaluations, and guided indoctrination into professional workflows aimed directly at mitigating that perceived risk. We dissect the pilot into three core psychological pillars. We reconstruct your <strong>Behaviorism</strong> so that adhering to SOPs becomes an ingrained reflex rather than an active choice. We elevate your <strong>Cognitive Thinking</strong> so you learn to anticipate industry-wide multi-crew dynamics, manage immense workloads, and make critical, split-second safety decisions.
@@ -277,7 +302,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         </div>
                     </section>
 
-                    {/* Chapter 5: The Result */}
+                    {/* Chapter 6: The Result */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ paddingTop: '0.6rem' }}>
@@ -285,7 +310,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             </div>
                             <div>
                                 <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                                    Chapter 05
+                                    Chapter 06
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
                                     The Result Factor: What will you achieve?
