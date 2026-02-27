@@ -119,25 +119,28 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                     Chapter 01
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                    The "Why": Why is the Foundational Program Made?
+                                    The "Why": Why is this happening in the first place?
                                 </h2>
                             </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                The aviation industry faces a fundamental disconnect between the supply of freshly graduated commercial pilots and the operational demands of modern airlines. While there is a documented global shortage of pilots, major carriers often cannot hire you directly out of flight school at 200 hours.
+                                When you emerge from flight school with a freshly printed license, you're stepping out of a highly controlled simulator bubble and into the vast wilderness of the commercial aviation industry. You quickly realize that the industry is facing a massive disconnect: operators across all sectors—from regional airlines to corporate jet charters and cargo haulers—are desperately short on crew, yet they are extremely hesitant to hand the keys of a multi-million dollar aircraft to a pilot with 250 hours.
                             </p>
                             <p>
-                                This program exists because simply "building hours" in a light piston aircraft does not prepare you for the right seat of a multi-crew jet. It was built to solve the two biggest hurdles in a pilot's career transition:
+                                Why does this paradox exist? Because the structured, repetitive environment of a flight school naturally breeds a very specific type of <strong>Behaviorism</strong>. You learned to fly by rote. You memorized maneuvers for a checkride, learned to navigate controlled airspace under the watchful eye of an instructor, and reacted to standard emergencies with rehearsed, step-by-step <strong>Cognitive Thinking</strong>.
+                            </p>
+                            <p>
+                                But the commercial industry does not operate on rote memorization. It requires complex dynamic problem solving. Flight schools teach you how to pass a test; the industry demands that you know how to survive, standardise, and lead in an unpredictable operational environment. This foundational program exists to bridge that massive psychological and operational chasm. It’s designed to answer the "Why": Why aren't you getting hired instantly, and why is your current level of training insufficient for the harsh realities of the industry?
                             </p>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem' }}>
                                 <div>
                                     <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>The Insurance Block</h3>
-                                    <p style={{ fontSize: '0.95rem' }}>Insurance providers view a 200-hour pilot as a high risk. Without a proven record of complex decision-making, it is financially unviable for airlines to place you in a multi-million-dollar aircraft, even if they desperately need crew.</p>
+                                    <p style={{ fontSize: '0.95rem' }}>Insurance providers view the rote-learned 250-hour pilot as a catastrophic risk. Without a proven record of complex, dynamic decision-making, it is financially unviable for any operator across the industry to place you in a complex aircraft.</p>
                                 </div>
                                 <div>
                                     <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>The Operational Wall</h3>
-                                    <p style={{ fontSize: '0.95rem' }}>Airlines need more than stickers in a logbook; they need proof that you can think like an airline captain before you've even had the job. They require advanced CRM (Crew Resource Management) and standardized behaviors.</p>
+                                    <p style={{ fontSize: '0.95rem' }}>Operators don't just want stick-and-rudder skills; they require advanced Crew Resource Management (CRM), standardized behaviors, and the maturity of <strong>Constructivism</strong>—the ability to adapt and learn from new, unscripted scenarios instantly.</p>
                                 </div>
                             </div>
                         </div>
@@ -154,20 +157,23 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                     Chapter 02
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                    The "What": What is a Low-Timer Pilot and the Industry Gap?
+                                    The "What": What are you going to face?
                                 </h2>
                             </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                When you graduate from flight school with 200 to 500 total flight hours, you're at a crossroads. You possess the technical licenses, but lack the "operational miles." In the eyes of the airlines, you are a <strong>"Low-Timer."</strong>
+                                You are what the industry universally labels a <strong>"Low-Timer."</strong> It’s a term that carries a heavy stigma. It means you have the legal right to fly, but you lack the "operational miles" to be trusted.
                             </p>
                             <p>
-                                This phase creates the <strong>Pilot Gap</strong>—a developmental void where you are too experienced for basic training, but not experienced enough to safely manage a dynamic multi-crew environment under high pressure without extensive structured intervention.
+                                In flight school, the environment dictated your schedule, your weather minimums, and your stress levels. Every scenario was predictable. Now, you’re facing the <strong>Industry Gap</strong>—an intimidating, developmental void. You are going to face chief pilots who look at your logbook and see a liability. You will face intense simulator assessments that don't test your ability to fly a steeper turn, but rather test your capacity to manage a failing system while communicating effectively with a stressed colleague.
+                            </p>
+                            <p>
+                                You are going to face the harsh reality that your previous <strong>Constructivism</strong>—how you built your knowledge base—was flawed. You built knowledge based on passing tests, not on practical, commercial survival. You will realize that the gap isn't just about a lack of flight hours; it is about the immaturity of your non-technical skills (NOTECHS). It’s about learning to un-learn the rigid habits of primary training and adopting the flexible, standardized mindset of a professional aviator.
                             </p>
                             <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', borderLeft: '4px solid #64748b' }}>
                                 <p style={{ margin: 0, fontSize: '0.95rem', color: '#334155' }}>
-                                    <strong>Real Talk:</strong> Most people think the hard part is over once you pass your CPL. In reality, the "Experience Void" is the hardest part of the journey. The gap isn't just about flight hours; it is about the maturity of your non-technical skills (NOTECHS).
+                                    <strong>Real Talk:</strong> Most pilots think the hard part is over once the CPL is printed. In reality, the true test is the "Experience Void." It is the intensely psychological shift from being a student reacting to commands, to becoming a manager of an aircraft system.
                                 </p>
                             </div>
                         </div>
@@ -184,25 +190,28 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                     Chapter 03
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                    The "How": Understanding Core Fundamentals
+                                    The "How": How are you going to take part?
                                 </h2>
                             </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                To bridge this gap, the global aviation industry has shifted from merely "counting hours" to <strong>Competency-Based Training and Assessment (CBTA)</strong>. It is no longer about <i>how long</i> you've flown, but <i>how well</i> you handle specific behavioral cores under stress.
+                                We bridge this intimidating gap not by tossing you into the deep end, but through structured, psychologically-driven <strong>Competency-Based Training and Assessment (CBTA)</strong>. It is no longer about <i>how long</i> you've flown, but <i>how well</i> you handle specific behavioural cores under operational stress.
                             </p>
                             <p>
-                                We approach this through rigorous peer-mentorship, scenario-based evaluations, and guided indoctrination into airline-centric workflows. We break down the pilot into three critical psychological pillars:
+                                You will take part through rigorous peer-mentorship, deep scenario-based evaluations, and guided indoctrination into professional workflows. We dissect the pilot into three core psychological pillars. We reconstruct your <strong>Behaviorism</strong> so that adhering to SOPs becomes an ingrained reflex rather than an active choice. We elevate your <strong>Cognitive Thinking</strong> so you learn to anticipate industry-wide multi-crew dynamics, manage immense workloads, and make critical, split-second safety decisions.
+                            </p>
+                            <p>
+                                Finally, we foster true <strong>Constructivism</strong>: teaching you how to build upon your failures constructively, actively self-critique your performances, and continuously learn in the cockpit, day after day.
                             </p>
                             <div style={{ padding: '2rem', backgroundColor: '#eff6ff', borderRadius: '12px', border: '1px solid #dbeafe' }}>
                                 <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#1e40af', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                     <Icons.Zap style={{ width: 20, height: 20 }} /> The 3 Psychological Cores
                                 </h3>
                                 <ul style={{ margin: 0, paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', color: '#1e3a8a' }}>
-                                    <li><strong>Behaviorism:</strong> How you act, standardise your procedures, and adhere to SOPs.</li>
-                                    <li><strong>Cognitive Abilities:</strong> How you process complex information, manage workload, and make critical decisions.</li>
-                                    <li><strong>Constructivism:</strong> How you build on your experiences, self-critique, and continuously learn in the cockpit.</li>
+                                    <li><strong>Behaviorism:</strong> Unlearning flight-school reflex actions; developing standardized procedures and strict SOP adherence for all industry sectors.</li>
+                                    <li><strong>Cognitive Abilities:</strong> Evolving from single-pilot test-taking to processing complex systemic information, managing high-stress workloads, and making mature command decisions.</li>
+                                    <li><strong>Constructivism:</strong> Building a framework to continuously learn from operational experiences, self-critique deeply, and adapt to unpredictable environments.</li>
                                 </ul>
                             </div>
                         </div>
@@ -219,20 +228,23 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                     Chapter 04
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                    The Result Factor: Changes and Industry Credibility
+                                    The Result Factor: What will you achieve?
                                 </h2>
                             </div>
                         </div>
                         <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <p>
-                                The ultimate result of this methodology is <strong>Industry Credibility</strong>. By focusing intensely on the core fundamentals that airlines actually evaluate during simulator checks and interviews, we transform "Low-Timer" risk into verifiable "High-Competency" value.
+                                Experience is the true foundation of knowledge. The ultimate result of this rigorous module is unquestionable <strong>Industry Credibility</strong>.
                             </p>
                             <p>
-                                As you complete this module and generate Pilot Quality Assurance (PQA) metrics, you build a data-driven portfolio. This portfolio proves your capability beyond the basic CPL. It demonstrates standardized behavior, advanced CRM, and operational readiness.
+                                This program isn't designed to get you a job at one specific airline; it is designed to make you undeniably hirable across the entire commercial aviation spectrum—whether you're flying cargo at 3 AM, navigating complex corporate charter operations, or flying for a legacy carrier. By focusing intensely on the core fundamentals that all operators actually evaluate during simulator checks and technical interviews, we take your "Low-Timer" risk and forge it into verifiable "High-Competency" value.
+                            </p>
+                            <p>
+                                As you complete this module and generate irrefutable Pilot Quality Assurance (PQA) metrics, you build a data-driven portfolio. This portfolio proves that you have the psychological maturity, the standardized behavior, and the advanced CRM capabilities that the industry desperately seeks. You will have transitioned from a student pilot into a professional airman.
                             </p>
                             <div style={{ padding: '1.5rem', borderLeft: '4px solid #2563eb', backgroundColor: '#f8fafc', borderRadius: '0 8px 8px 0', marginTop: '0.5rem' }}>
                                 <p style={{ margin: 0, fontSize: '1.05rem', fontStyle: 'italic', fontWeight: 500, color: '#1e293b' }}>
-                                    "We don't just teach you to fly a plane; we train you to lead a career. This is the difference between hoping for a job and being undeniably hirable."
+                                    "We don't just teach you to fly a plane; we train you to lead a career across the entire industry. This is the foundation of turning flight hours into true operational knowledge."
                                 </p>
                             </div>
                         </div>
