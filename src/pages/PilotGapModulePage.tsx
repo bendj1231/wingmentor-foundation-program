@@ -122,13 +122,13 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             </p>
                             <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', margin: 0 }}>
                                 <li>
-                                    <strong>1. Understanding Pilot Recognition fundamentals within Aviation industry & the Pilot Gap:</strong> Understanding the harsh realities of the industry, why you face the "Experience Void," and the psychological shift required from a student reacting to commands to a commercial manager.
+                                    <strong>1. Understanding Pilot Recognition fundamentals within Aviation industry & the Pilot Gap:</strong> Discover the harsh realities of the "Experience Void" and the necessary psychological shift from reacting student to commercial manager.
                                 </li>
                                 <li>
-                                    <strong>2. Pilot Career development & Progression:</strong> Analyzing common pitfalls in post-graduate choices, such as the dangerous financial trap of purchasing a "shiny type rating" without operational experience.
+                                    <strong>2. Pilot Career development & Progression:</strong> Navigate post-graduate choices and learn to avoid common financial traps, like purchasing a type rating without operational experience.
                                 </li>
                                 <li>
-                                    <strong>3. The Wingmentor Approach:</strong> Introducing our proactive solution to actively build your necessary non-technical skills (NOTECHS) and standardized competencies, breaking the cycle of waiting on the sidelines.
+                                    <strong>3. The Wingmentor Approach:</strong> Learn our proactive solution to actively build your non-technical skills (NOTECHS) and break the cycle of waiting on the sidelines.
                                 </li>
                             </ul>
                         </div>
