@@ -146,7 +146,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         </div>
                     </section>
 
-                    {/* Chapter 2: The What */}
+                    {/* Chapter 2: The Financial Downfall */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ paddingTop: '0.6rem' }}>
@@ -155,6 +155,52 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             <div>
                                 <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                                     Chapter 02
+                                </div>
+                                <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
+                                    The Statistical Reality: The Financial Downfall
+                                </h2>
+                            </div>
+                        </div>
+                        <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            <p>
+                                The psychological excitement of flight school quickly collides with a severe statistical reality. Most pilots are entirely unaware of the impossible position they will face once the training wheels come off. With no clear guidance, you are forced to rely on rumors and anecdotal advice from other equally lost low-timer pilots. You begin to fear your future, because the math is terrifying.
+                            </p>
+                            <p>
+                                This fear is rooted in the harsh financial downfall that characterizes this industry gap. Students invest colossal amounts of capital—often incurring life-altering debt—only to hit a professional brick wall. The statistics paint a grim, undeniable picture of this transition:
+                            </p>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginTop: '0.5rem' }}>
+                                <div style={{ padding: '1.25rem', backgroundColor: '#fee2e2', borderRadius: '8px', borderLeft: '4px solid #ef4444' }}>
+                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#991b1b', margin: '0 0 0.5rem 0' }}>75%</h3>
+                                    <p style={{ fontSize: '0.85rem', color: '#7f1d1d', margin: 0, lineHeight: 1.4 }}>Drop out of pilot training before completion due to financial and operational stress.</p>
+                                </div>
+                                <div style={{ padding: '1.25rem', backgroundColor: '#fef3c7', borderRadius: '8px', borderLeft: '4px solid #f59e0b' }}>
+                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#92400e', margin: '0 0 0.5rem 0' }}>25%</h3>
+                                    <p style={{ fontSize: '0.85rem', color: '#78350f', margin: 0, lineHeight: 1.4 }}>Successfully obtain their commercial licenses, believing the hard part is over.</p>
+                                </div>
+                                <div style={{ padding: '1.25rem', backgroundColor: '#e0e7ff', borderRadius: '8px', borderLeft: '4px solid #6366f1' }}>
+                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#3730a3', margin: '0 0 0.5rem 0' }}>5%</h3>
+                                    <p style={{ fontSize: '0.85rem', color: '#312e81', margin: 0, lineHeight: 1.4 }}>Of those graduates find immediate employment as low-timer pilots.</p>
+                                </div>
+                                <div style={{ padding: '1.25rem', backgroundColor: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #4b5563' }}>
+                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#1f2937', margin: '0 0 0.5rem 0' }}>95%</h3>
+                                    <p style={{ fontSize: '0.85rem', color: '#111827', margin: 0, lineHeight: 1.4 }}>Of stranded graduates shift to a different career entirely.</p>
+                                </div>
+                            </div>
+                            <p>
+                                The vast majority are forced to shift careers halfway through their journey because they cannot endure the financial bleed of paying for unguided flight hours while waiting for an opportunity. This program intervenes precisely at this critical juncture to prevent that 95% career death rate.
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* Chapter 3: The What */}
+                    <section>
+                        <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                            <div style={{ paddingTop: '0.6rem' }}>
+                                <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                            </div>
+                            <div>
+                                <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                                    Chapter 03
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
                                     The "What": What are you going to face?
@@ -179,7 +225,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         </div>
                     </section>
 
-                    {/* Chapter 3: The How */}
+                    {/* Chapter 4: The How */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ paddingTop: '0.6rem' }}>
@@ -187,7 +233,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             </div>
                             <div>
                                 <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                                    Chapter 03
+                                    Chapter 04
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
                                     The "How": How are you going to take part?
@@ -217,7 +263,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                         </div>
                     </section>
 
-                    {/* Chapter 4: The Result */}
+                    {/* Chapter 5: The Result */}
                     <section>
                         <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ paddingTop: '0.6rem' }}>
@@ -225,7 +271,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                             </div>
                             <div>
                                 <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                                    Chapter 04
+                                    Chapter 05
                                 </div>
                                 <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
                                     The Result Factor: What will you achieve?
