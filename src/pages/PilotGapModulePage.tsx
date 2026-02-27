@@ -1,0 +1,337 @@
+import React, { useState } from 'react';
+import { Icons } from '../App';
+
+interface PilotGapModulePageProps {
+    onBack: () => void;
+    onLogout: () => void;
+}
+
+const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogout }) => {
+    const [hours] = useState(12.5);
+    const [showCalculator, setShowCalculator] = useState(false);
+    const [investment, setInvestment] = useState(30000);
+
+    const targetHours = 20;
+    const progress = (hours / targetHours) * 100;
+
+    return (
+        <div className="animate-fade-in" style={{
+            minHeight: '100vh',
+            backgroundColor: '#ffffff',
+            color: '#0f172a',
+            fontFamily: 'Inter, system-ui, sans-serif',
+            lineHeight: 1.6
+        }}>
+            {/* Header Actions */}
+            <div style={{
+                padding: '2rem 3rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                position: 'relative',
+                zIndex: 10
+            }}>
+                <button
+                    onClick={onBack}
+                    style={{
+                        background: 'none',
+                        border: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        color: '#64748b',
+                        cursor: 'pointer',
+                        fontWeight: 600,
+                        fontSize: '0.9rem',
+                        transition: 'color 0.2s'
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.color = '#1e293b'}
+                    onMouseOut={(e) => e.currentTarget.style.color = '#64748b'}
+                >
+                    <Icons.ArrowLeft style={{ width: 18, height: 18 }} />
+                    Back
+                </button>
+
+                <button
+                    onClick={onLogout}
+                    style={{
+                        background: '#ffffff',
+                        border: '1px solid #e2e8f0',
+                        borderRadius: '10px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        color: '#64748b',
+                        cursor: 'pointer',
+                        fontWeight: 600,
+                        fontSize: '0.875rem',
+                        padding: '0.625rem 1rem',
+                        boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+                        transition: 'all 0.2s'
+                    }}
+                    onMouseOver={(e) => {
+                        e.currentTarget.style.backgroundColor = '#f8fafc';
+                        e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.1)';
+                    }}
+                    onMouseOut={(e) => {
+                        e.currentTarget.style.backgroundColor = '#ffffff';
+                        e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.05)';
+                    }}
+                >
+                    <Icons.LogOut style={{ width: 16, height: 16 }} />
+                    Logout
+                </button>
+            </div>
+
+            <main style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem 10rem' }}>
+                <div className="dashboard-header" style={{ textAlign: 'center', marginBottom: '6rem', borderBottom: 'none', background: 'none' }}>
+                    <div className="dashboard-logo" style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
+                        <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '280px', height: 'auto' }} />
+                    </div>
+                    <div className="dashboard-subtitle" style={{ marginBottom: '1.5rem' }}>
+                        CONNECTING PILOTS TO THE INDUSTRY
+                    </div>
+                    <h1 className="dashboard-title" style={{ fontSize: '4.5rem', marginBottom: '2rem' }}>
+                        Industry Familiarization <br /> & Indoctrination
+                    </h1>
+                    <p style={{
+                        fontSize: '1.25rem',
+                        color: '#64748b',
+                        maxWidth: '750px',
+                        margin: '0 auto',
+                        lineHeight: 1.6,
+                        fontWeight: 400
+                    }}>
+                        Discover exactly what it takes to break into the industry as a new pilot. This module demystifies the hurdles you'll face—from insurance rules to manufacturer standards—giving you the clarity you need to navigate your career & the Wingmentorship Program.
+                    </p>
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
+
+                    {/* Chapter 1: The Low-Timer Pilot */}
+                    <section>
+                        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <span style={{ color: '#2563eb', fontSize: '1rem', fontWeight: 900 }}>01</span>
+                            What is a "Low-Timer" Pilot?
+                        </h2>
+                        <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            <p>
+                                When you graduate from flight school, you're at a crossroads. You've earned your wings, but in the eyes of most major airlines, you're what's known as a <strong>"Low-Timer."</strong>
+                            </p>
+                            <p>
+                                Typically, this refers to pilots with between 200 and 500 total flight hours. You have the technical license, but you lack the operational "miles" that airlines look for. You're qualified to fly, but you're not yet "industry-ready" to manage a complex multi-crew cockpit under high pressure. This phase is the biggest hurdle in any pilot's career.
+                            </p>
+                            <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', borderLeft: '4px solid #64748b' }}>
+                                <p style={{ margin: 0, fontSize: '0.95rem', color: '#334155' }}>
+                                    <strong>Real Talk:</strong> Most people think the hard part is over once you pass your CPL. In reality, being a low-timer means you're in the "Experience Void"—you're too experienced for basic training, but not experienced enough for the right seat of a jet.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Chapter 2: The Industry Pilot Gap */}
+                    <section>
+                        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <span style={{ color: '#2563eb', fontSize: '1rem', fontWeight: 900 }}>02</span>
+                            What is the Industry Pilot Gap?
+                        </h2>
+                        <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            <p>
+                                The <strong>Pilot Gap</strong> is the disconnect between the supply of new pilots and the airlines' ability to hire them. While there is a global shortage of pilots, airlines often cannot hire you directly at 200 hours.
+                            </p>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem' }}>
+                                <div>
+                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>The Insurance Block</h3>
+                                    <p style={{ fontSize: '0.95rem' }}>Insurance providers view a 200-hour pilot as a high risk. This makes it incredibly expensive for airlines to put you in a cockpit, even if they desperately need you.</p>
+                                </div>
+                                <div>
+                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>The Operational Wall</h3>
+                                    <p style={{ fontSize: '0.95rem' }}>Airlines need more than stickers in a logbook; they need proof that you can think like an airline captain before you've even had the job.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Chapter 3: Understanding the Core Fundamentals */}
+                    <section>
+                        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <span style={{ color: '#2563eb', fontSize: '1rem', fontWeight: 900 }}>03</span>
+                            Understanding the Core Fundamentals
+                        </h2>
+                        <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            <p>
+                                To bridge the gap, the industry is moving away from just "counting hours" and toward <strong>Competency-Based Training (CBTA)</strong>. It’s not just about <i>how long</i> you’ve flown, but <i>how well</i> you handle specific cores.
+                            </p>
+                            <div style={{ padding: '2rem', backgroundColor: '#eff6ff', borderRadius: '12px', border: '1px solid #dbeafe' }}>
+                                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#1e40af', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    <Icons.Zap style={{ width: 20, height: 20 }} /> The 3 Psychological Cores
+                                </h3>
+                                <ul style={{ margin: 0, paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', color: '#1e3a8a' }}>
+                                    <li><strong>Behaviorism:</strong> How you act and standardise your procedures.</li>
+                                    <li><strong>Cognitive Abilities:</strong> How you process information and make decisions.</li>
+                                    <li><strong>Constructivism:</strong> How you build on your experience and learn in the cockpit.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Chapter 4: Why the Foundational Program exists? */}
+                    <section>
+                        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <span style={{ color: '#2563eb', fontSize: '1rem', fontWeight: 900 }}>04</span>
+                            Why is the Foundational Program Made?
+                        </h2>
+                        <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            <p>
+                                This program wasn't made to just give you more hours—you could go to a flight school for that. It was built to give you <strong>Industry Credibility.</strong>
+                            </p>
+                            <p>
+                                By focusing on the fundamentals that airlines actually care about, we turn "Low-Timer" risk into "High-Competency" value. We provide the mentorship and data that let insurance companies and airlines say "Yes" to you sooner.
+                            </p>
+                            <p style={{ padding: '1.5rem', borderLeft: '4px solid #2563eb', backgroundColor: '#f8fafc', borderRadius: '0 8px 8px 0', fontSize: '1rem', fontStyle: 'italic', fontWeight: 500, color: '#1e293b' }}>
+                                "We don't just teach you to fly a plane; we train you to lead a career."
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                {/* Progress Tracker & Interactive Elements */}
+                <div style={{ marginTop: '3rem', borderTop: '1px solid #e2e8f0', paddingTop: '4rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+                    {/* 20-Hour Progress Tracker */}
+                    <div style={{ backgroundColor: '#f8fafc', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '2rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                            <h3 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>Flight Phase Status</h3>
+                            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4f46e5', backgroundColor: '#e0e7ff', padding: '0.25rem 0.5rem', borderRadius: '4px' }}>20h Pre-req</span>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.875rem', fontWeight: 600, color: '#475569' }}>
+                                <span>Verified Training Time</span>
+                                <span>{hours}h / {targetHours}h</span>
+                            </div>
+                            <div style={{ height: '8px', width: '100%', backgroundColor: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
+                                <div style={{ height: '100%', backgroundColor: '#4f46e5', width: `${progress}%`, transition: 'width 0.5s ease-in-out' }}></div>
+                            </div>
+                            <p style={{ fontSize: '0.75rem', color: '#64748b', fontStyle: 'italic', margin: 0 }}>
+                                Observation flight hours will be unlocked after 20 verified handling hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Interactive Calculator CTA */}
+                    <div style={{ backgroundColor: '#1e3a8a', borderRadius: '16px', padding: '2rem', color: 'white', overflow: 'hidden', position: 'relative', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}>
+                        <div style={{ position: 'relative', zIndex: 10 }}>
+                            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem', margin: 0 }}>Type Rating ROI</h3>
+                            <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+                                Analyze the financial impact of self-funded type ratings versus structured cadet pathways.
+                            </p>
+                            <button
+                                onClick={() => setShowCalculator(!showCalculator)}
+                                style={{
+                                    width: '100%',
+                                    backgroundColor: '#3b82f6',
+                                    color: 'white',
+                                    fontWeight: 700,
+                                    padding: '0.75rem',
+                                    borderRadius: '12px',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    transition: 'background-color 0.2s',
+                                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                                }}
+                                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
+                                onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#3b82f6'}
+                            >
+                                {showCalculator ? 'Close Calculator' : 'Launch ROI Calculator'}
+                            </button>
+
+                            {showCalculator && (
+                                <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(59, 130, 246, 0.5)', display: 'flex', flexDirection: 'column', gap: '1.5rem', animation: 'fadeIn 0.3s ease-in-out' }}>
+                                    <div>
+                                        <label style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', color: '#93c5fd', display: 'block', marginBottom: '0.5rem' }}>Investment Amount (€)</label>
+                                        <input
+                                            type="range"
+                                            min="15000"
+                                            max="45000"
+                                            step="1000"
+                                            value={investment}
+                                            onChange={(e) => setInvestment(parseInt(e.target.value))}
+                                            style={{ width: '100%', cursor: 'pointer' }}
+                                        />
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.5rem', fontSize: '0.75rem', fontFamily: 'monospace', color: '#bfdbfe' }}>
+                                            <span>€15k</span>
+                                            <span style={{ color: 'white', fontWeight: 700, fontSize: '0.875rem' }}>€{investment.toLocaleString()}</span>
+                                            <span>€45k</span>
+                                        </div>
+                                    </div>
+                                    <div style={{ padding: '1rem', backgroundColor: 'rgba(30, 58, 138, 0.5)', borderRadius: '12px', border: '1px solid rgba(59, 130, 246, 0.3)' }}>
+                                        <div style={{ fontSize: '0.75rem', color: '#93c5fd', marginBottom: '0.25rem' }}>Est. Payback Period</div>
+                                        <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white' }}>{(investment / 12000).toFixed(1)} Years</div>
+                                        <div style={{ fontSize: '0.7rem', color: '#93c5fd', marginTop: '0.5rem' }}>*Based on Junior FO average salary minus living expenses.</div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Knowledge Foundations */}
+                    <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '2rem', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)' }}>
+                        <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '0 0 1.5rem 0' }}>
+                            <Icons.Zap style={{ width: 22, height: 22, color: '#2563eb' }} />
+                            Gap Theory Quiz
+                        </h3>
+                        <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', cursor: 'pointer', transition: 'all 0.2s ease-in-out' }}
+                            onMouseOver={(e) => {
+                                e.currentTarget.style.borderColor = '#93c5fd';
+                                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+                            }}
+                            onMouseOut={(e) => {
+                                e.currentTarget.style.borderColor = '#e2e8f0';
+                                e.currentTarget.style.boxShadow = 'none';
+                            }}
+                        >
+                            <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Internal Exam 01.A</div>
+                            <h4 style={{ fontSize: '1rem', fontWeight: 600, color: '#1e293b', marginBottom: '0.5rem', margin: '0 0 0.5rem 0' }}>The Multi-Engine Piston to Jet Transition</h4>
+                            <p style={{ fontSize: '0.875rem', color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: 1.5 }}>"What is the single highest cause of checklist non-compliance during line training?"</p>
+                            <button style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
+                                Start Quiz <Icons.ArrowRight style={{ width: 16, height: 16 }} />
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+            {/* Bottom Advocacy Banner */}
+            <div style={{ backgroundColor: '#0f172a', color: 'white', padding: '4rem 2rem', textAlign: 'center' }}>
+                <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1rem', margin: '0 0 1rem 0' }}>Industry Credibility Starts Here</h2>
+                <p style={{ color: '#94a3b8', marginBottom: '2.5rem' }}>Building the future of Pilot Quality Assurance.</p>
+                <div style={{ display: 'inline-block' }}>
+                    <button
+                        onClick={onBack}
+                        style={{
+                            backgroundColor: '#2563eb',
+                            color: 'white',
+                            border: 'none',
+                            padding: '1rem 3rem',
+                            borderRadius: '12px',
+                            fontWeight: 700,
+                            cursor: 'pointer',
+                            fontSize: '1rem',
+                            transition: 'all 0.2s',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem'
+                        }}
+                        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
+                        onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
+                    >
+                        Return to Hub
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default PilotGapModulePage;

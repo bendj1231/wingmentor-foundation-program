@@ -7,9 +7,10 @@ interface EnrollmentOnboardingPageProps {
     onComplete: () => void;
     onBackToPrograms: () => void;
     onLogout: () => void;
+    onShowTerms: () => void;
 }
 
-export const EnrollmentOnboardingPage: React.FC<EnrollmentOnboardingPageProps> = ({ onComplete, onBackToPrograms, onLogout }) => {
+export const EnrollmentOnboardingPage: React.FC<EnrollmentOnboardingPageProps> = ({ onComplete, onBackToPrograms, onLogout, onShowTerms }) => {
     const [interest, setInterest] = useState('');
     const [goals, setGoals] = useState('');
     const [agreed, setAgreed] = useState(false);
@@ -149,7 +150,7 @@ export const EnrollmentOnboardingPage: React.FC<EnrollmentOnboardingPageProps> =
                                 maxWidth: '650px',
                                 margin: '0 auto'
                             }}>
-                                Transforming low-time pilots into verifiable assets.
+                                Transforming low-time pilots into verifiable assets through Pilot Quality Assurance and Pathway Credibility.
                             </p>
                         </div>
 
@@ -187,16 +188,29 @@ export const EnrollmentOnboardingPage: React.FC<EnrollmentOnboardingPageProps> =
                                         </h3>
                                         <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                                             {[
-                                                "Master advanced Crew Resource Management (CRM) and diagnostic problem-solving skills.",
-                                                "Transform your training hours into a verifiable portfolio of leadership experience.",
-                                                "Earn an industry-recognized 50-Hour Mentorship Certificate.",
-                                                "Enter airline interviews equipped with verified logged guidance, proving you are a professional asset rather than a liability."
+                                                "Master advanced Crew Resource Management (CRM) and diagnostic problem-solving skills for multi-crew environments.",
+                                                "Synthesize your flight hours into a Pilot Quality Assurance (PQA) profile that provides verifiable credibility.",
+                                                "Earn an industry-recognized 50-Hour Mentorship Certificate through an accredited and structured program pathway.",
+                                                "Utilize manufacturer-specific modules (Airbus & more) to bridge the 'Pilot Gap' and demonstrate airline readiness."
                                             ].map((item, i) => (
-                                                <li key={i} style={{ display: 'flex', alignItems: 'start', gap: '0.875rem', color: '#475569', lineHeight: 1.5, fontSize: '0.95rem' }}>
-                                                    <div style={{ marginTop: '0.3rem', width: '20px', height: '20px', backgroundColor: '#dcfce7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                                        <div style={{ width: '8px', height: '8px', backgroundColor: '#166534', borderRadius: '50%' }}></div>
+                                                <li key={i} style={{ display: 'flex', alignItems: 'start', gap: '1rem', color: '#475569', lineHeight: 1.6, fontSize: '0.95rem' }}>
+                                                    <div style={{
+                                                        marginTop: '0.35rem',
+                                                        width: '22px',
+                                                        height: '22px',
+                                                        backgroundColor: 'rgba(15, 23, 42, 0.05)',
+                                                        borderRadius: '50%',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        flexShrink: 0,
+                                                        border: '1px solid rgba(15, 23, 42, 0.1)',
+                                                        backdropFilter: 'blur(4px)',
+                                                        WebkitBackdropFilter: 'blur(4px)'
+                                                    }}>
+                                                        <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
                                                     </div>
-                                                    <span>{item}</span>
+                                                    <span style={{ fontWeight: 500 }}>{item}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -282,7 +296,7 @@ export const EnrollmentOnboardingPage: React.FC<EnrollmentOnboardingPageProps> =
                                                 />
                                             </div>
                                             <label htmlFor="agreement" style={{ fontSize: '0.875rem', color: '#64748b', cursor: 'pointer', lineHeight: 1.5 }}>
-                                                I agree to the <span onClick={(e) => { e.preventDefault(); setShowLegal(true); }} style={{ color: '#2563eb', fontWeight: 600, textDecoration: 'underline' }}>Terms and Conditions</span>, acknowledge that WingMentor is <strong>not</strong> a flight school, and fully release WingMentor from any legal liability regarding the outcomes of this training program.
+                                                I agree to the <span onClick={(e) => { e.preventDefault(); onShowTerms(); }} style={{ color: '#2563eb', fontWeight: 600, textDecoration: 'underline' }}>Terms and Conditions</span>, acknowledge that WingMentor is <strong>not</strong> a training program or flight school, but a <strong>Pilot Quality Assurance and Credibility Experience provider</strong>, and fully release WingMentor from any legal liability regarding the outcomes of this experience.
                                             </label>
                                         </div>
 
@@ -354,48 +368,27 @@ export const EnrollmentOnboardingPage: React.FC<EnrollmentOnboardingPageProps> =
 
                             <div style={{ padding: '2.5rem', overflowY: 'auto', flex: 1, backgroundColor: '#fcfdfe' }}>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-                                    {/* User Agreement */}
-                                    <section>
-                                        <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.25rem', borderBottom: '2px solid #eff6ff', paddingBottom: '0.5rem' }}>User Agreement & Release of Liability</h3>
-                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', color: '#475569', fontSize: '1rem', lineHeight: 1.6 }}>
-                                            <div>
-                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.5rem' }}>1. Acknowledgment of Program Nature & Scope of Service</strong>
-                                                WingMentor ("The Program") provides supplementary leadership training, consultation, and professional development designed to transition graduate pilots into industry-ready professionals. WingMentor is strictly an advisory and mentorship platform; it is <strong>not</strong> an ab-initio flight school, a Part 141/142 training center, or a governing civil aviation authority. We do <strong>not</strong> teach initial aviation concepts, conduct primary flight lectures, or replace your official flight school's authorized curriculum. Our sole role is to provide supplemental consultation, CRM development, and performance analysis based on your existing flight training.
-                                            </div>
-                                            <div>
-                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.5rem' }}>2. No Guarantee of Employment</strong>
-                                                While The Program is recognized by various industry partners (including presentations at the Etihad Aviation Career Fair and recognition by Airbus personnel), enrollment or completion of the 50-Hour Mentorship Certificate does not guarantee employment, licensing, or placement with any specific airline or aviation entity.
-                                            </div>
-                                            <div>
-                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.5rem' }}>3. Assumption of Risk & Release of Liability (Hold Harmless)</strong>
-                                                By enrolling in WingMentor, you ("The Mentee") acknowledge that aviation and simulator training carry inherent professional and academic challenges. You agree to fully release, hold harmless, and indemnify WingMentor, its founders, mentors, and affiliates from any and all legal liability, claims, or damages arising from your participation in the program. You explicitly agree not to sue or pursue legal action against WingMentor regarding the outcomes of this training, your career progression, or your performance in official airline assessments.
-                                            </div>
-                                            <div>
-                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.5rem' }}>4. Professional Conduct</strong>
-                                                Mentees are expected to assess scenarios and peers with the highest level of professionalism, mimicking a flight-instructor-ready environment. WingMentor reserves the right to terminate enrollment without refund for unprofessional conduct.
-                                            </div>
-                                        </div>
-                                    </section>
+                                    {/* Privacy Policy moves to top or stays as main content of this modal */}
 
                                     {/* Privacy Policy */}
                                     <section>
                                         <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.25rem', borderBottom: '2px solid #eff6ff', paddingBottom: '0.5rem' }}>Privacy Policy</h3>
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', color: '#475569', fontSize: '1rem', lineHeight: 1.6 }}>
                                             <div>
-                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.5rem' }}>1. Data Collection</strong>
-                                                To provide personalized mentorship, WingMentor collects information provided during enrollment, including but not limited to: your name, email address, aviation background, primary interests, and long-term career goals.
+                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.5rem' }}>1. Data Collection & Advocacy</strong>
+                                                To provide personalized mentorship and industry advocacy, WingMentor collects information provided during enrollment and subsequent training sessions. This data is used to give pilots "a voice" within the industry, ensuring your input reaches major aviation governing bodies.
                                             </div>
                                             <div>
-                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.4rem' }}>2. Logbook & Performance Data</strong>
-                                                As part of the program, WingMentor tracks and securely stores your mentorship hours, session descriptions, and peer-verification statuses within our database architecture. This data is used strictly to validate your 50-Hour Mentorship Certificate and track your progress.
+                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.4rem' }}>2. Logbook & Performance Synthesis</strong>
+                                                Your mentorship hours, session metrics, and peer-verification statuses are stored in our secure architecture. This data is synthesized into the "WingMentor Portfolio," which serves as evidence of your leadership and technical CRM skills to potential employers.
                                             </div>
                                             <div>
-                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.5rem' }}>3. Data Sharing & Security</strong>
-                                                Your personal data and logbook entries are secured using industry-standard database encryption. WingMentor does not sell your personal data to third parties. We may share anonymized, aggregated performance metrics with our airline and manufacturing partners (such as Airbus or Etihad) to demonstrate program efficacy. Your personal profile will only be shared directly with airline recruiters if you explicitly opt-in during a WingMentor placement initiative.
+                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.5rem' }}>3. Industry Sharing & Efficacy</strong>
+                                                Your personal data is never sold. However, anonymized data is shared with manufacturing partners (like <strong>Airbus</strong>) and airlines to optimize program efficacy and advocate for pilot needs. Your full portfolio is only shared with recruiters upon your explicit opt-in for specific placement initiatives.
                                             </div>
                                             <div>
-                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.5rem' }}>4. Account Deletion</strong>
-                                                You maintain the right to request the deletion of your account and associated logbook data at any time by contacting WingMentor support.
+                                                <strong style={{ display: 'block', color: '#1e293b', marginBottom: '0.5rem' }}>4. Professional Transparency</strong>
+                                                WingMentor maintains a high standard of data integrity. Falsification of session data or logbook entries will result in immediate termination of the mentorship agreement and potentially impact industry-recognized certifications.
                                             </div>
                                         </div>
                                     </section>
