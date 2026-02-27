@@ -3,8 +3,20 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+  console.error("Critical Error: Container element #root not found in the DOM.");
+} else {
+  // Global error handler for catching unhandled promise rejections and errors
+  window.addEventListener('error', (event) => {
+    console.error('Captured live error:', event.error);
+    // Optional: display overlay if in development or specific debug mode
+  });
+
+  createRoot(rootElement).render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  )
+}

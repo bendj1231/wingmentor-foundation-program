@@ -9,7 +9,9 @@ export default defineConfig({
     federation({
       name: 'host-app',
       remotes: {
-        remote_segment: 'http://localhost:5001/assets/remoteEntry.js',
+        remote_segment: process.env.NODE_ENV === 'development'
+          ? 'http://localhost:5001/assets/remoteEntry.js'
+          : 'https://wingmentor-remote.vercel.app/assets/remoteEntry.js', // Placeholder or production URL
       },
       shared: ['react', 'react-dom'],
     }),
