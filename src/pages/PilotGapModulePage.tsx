@@ -125,7 +125,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onLogou
                                     <strong>1. Understanding Pilot Recognition fundamentals within Aviation industry & the Pilot Gap:</strong> Understanding the harsh realities of the industry, why you face the "Experience Void," and the psychological shift required from a student reacting to commands to a commercial manager.
                                 </li>
                                 <li>
-                                    <strong>2. Identifying Pilot Error in Investments and Pathways:</strong> Analyzing common pitfalls in post-graduate choices, such as the dangerous financial trap of purchasing a "shiny type rating" without operational experience.
+                                    <strong>2. Pilot Career development & Progression:</strong> Analyzing common pitfalls in post-graduate choices, such as the dangerous financial trap of purchasing a "shiny type rating" without operational experience.
                                 </li>
                                 <li>
                                     <strong>3. The Wingmentor Approach:</strong> Introducing our proactive solution to actively build your necessary non-technical skills (NOTECHS) and standardized competencies, breaking the cycle of waiting on the sidelines.
