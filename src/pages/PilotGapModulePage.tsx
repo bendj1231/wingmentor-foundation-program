@@ -119,7 +119,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
             const nextStep = navigationFlow[currentIndex + 1];
             setCurrentChapter(nextStep.chapter);
             setCurrentTopic(nextStep.topic);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
@@ -129,7 +128,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
             const prevStep = navigationFlow[currentIndex - 1];
             setCurrentChapter(prevStep.chapter);
             setCurrentTopic(prevStep.topic);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
@@ -149,6 +147,11 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [handleNext, handlePrev, editingEl]);
+
+    // Global scroll-to-top on navigation change
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [currentChapter, currentTopic]);
 
     const renderChapterContent = () => {
         // ── Page 1: What is a Low-Timer Pilot? ──────────────────────────────
@@ -1071,9 +1074,69 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                             The Flight School Waiting List
                                         </h5>
                                         <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', marginBottom: '1rem' }} />
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '1.5rem' }}>
+                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2.5rem' }}>
                                             The dilemma extends beyond the airlines. The universally accepted 'Plan B' for low-timer pilots—becoming a Flight or Ground Instructor to build hours—has become as saturated as the airline market itself. This creates a secondary bottleneck, trapping pilots in a prolonged holding pattern.
                                         </p>
+
+                                        {/* Instructor Bottleneck Illustration */}
+                                        <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                            <img src="/instructor-bottleneck.png" alt="Illustration of the Instructor Bottleneck" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
+                                        </div>
+
+                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2rem' }}>
+                                            This illustration vividly captures the <strong>"Saturation Event"</strong> at flight academies. While the front door (left) continues to welcome new students with the promise of a dream, the back door (right) reveals a staggering reality: a massive queue of graduates—some waiting since 2015—competing for a single instructor position. With selection rates as low as <strong>1 out of 400</strong>, the 'Plan B' is no longer a guaranteed safety net, but a highly competitive bottleneck that leaves thousands stranded in an experience vacuum.
+                                        </p>
+
+                                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '1rem' }}>
+                                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                                THE RECRUITMENT CHASM
+                                            </div>
+                                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
+                                                Navigating the Experience Void
+                                            </h2>
+                                        </section>
+
+                                        {/* Aviation Career Pathways Illustration */}
+                                        <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                            <img src="/pilot-gap-pathways.png" alt="Aviation Career Pathways Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
+                                        </div>
+
+                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2.5rem' }}>
+                                            The <strong>"Experience Void"</strong> represents a structural imbalance where both commercial airlines and flight academies reach an operational saturation point, resulting in a dual-ended rejection of low-timer applicants. This terminal phase of career navigation is defined by <strong>Institutional Fatigue</strong>.
+                                            <br /><br />
+                                            Recruiters and administrators encounter a standardized "herd" of applicants so frequently that personalized mentorship and feedback are no longer feasible. Consequently, the industry has transitioned from providing nuanced professional guidance to implementing automated deferral routines. In practice, this manifests as high-volume, low-engagement interactions where applicants are redirected to automated systems (e.g., <em>"Scan the QR code and please move on"</em>) or placed on indefinite administrative hold, reflecting a system that lacks the bandwidth to manage individual career progression.
+                                        </p>
+
+                                        {/* WingMentor Insight Card */}
+                                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '1rem', textAlign: 'left' }}>
+                                            <div style={{
+                                                backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                                backdropFilter: 'blur(16px)',
+                                                WebkitBackdropFilter: 'blur(16px)',
+                                                borderRadius: '24px',
+                                                padding: '4rem 3rem',
+                                                boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                                border: '1px solid rgba(255, 255, 255, 0.8)',
+                                                textAlign: 'center',
+                                                width: '100%',
+                                                boxSizing: 'border-box'
+                                            }}>
+                                                <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
+                                                <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                                    WINGMENTOR INSIGHT
+                                                </div>
+                                                <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
+                                                    Untying the Knot
+                                                </h2>
+                                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: '0 auto', maxWidth: '40rem', textAlign: 'left' }}>
+                                                    The aviation industry is moving at a pace where it simply doesn't have the time or resources to focus on individual low-timer navigation. This creates the "knot" of confusion you see today.
+                                                    <br /><br />
+                                                    <strong>Our solution is to provide the missing infrastructure:</strong> clear pathways, structured programs, coordinated applications, and robust pilot recognition systems. We untie this mess by providing the industry with pre-vetted, high-quality candidates, while providing you with the roadmap to bypass the chasm.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div style={{ textAlign: 'left', marginBottom: '2rem', backgroundColor: '#fafafa', padding: '1.5rem', borderRadius: '8px', borderLeft: '4px solid #b91c1c' }}>
@@ -2497,7 +2560,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                             onClick={() => {
                                                 setCurrentChapter(item.id);
                                                 setCurrentTopic(null);
-                                                window.scrollTo({ top: 0, behavior: 'smooth' });
                                             }}
                                             style={{
                                                 display: 'block', width: '100%', textAlign: 'left',
@@ -2523,7 +2585,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                                     return (
                                                         <li key={topic.slug}>
                                                             <button
-                                                                onClick={() => { setCurrentTopic(topic.slug); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                                                                onClick={() => { setCurrentTopic(topic.slug); }}
                                                                 style={{
                                                                     display: 'block', width: '100%', textAlign: 'left',
                                                                     padding: '0.5rem 0.75rem', borderRadius: '6px',
