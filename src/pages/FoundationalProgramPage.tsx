@@ -145,17 +145,33 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
         {
             id: 'stage-8',
             number: '08',
-            title: 'Runway to 50hrs & AIRBUS Recognition',
+            title: 'Advanced Mentorship & Leadership Milestone',
             bullets: [
                 '50-Hour Milestone',
-                'Leadership Demonstration',
-                'AIRBUS Recognition Interview'
+                'Advanced Instruction Prep',
+                'Ecosystem Leadership'
             ],
-            description: 'Continue your mentorship to the 50-hour milestone to demonstrate sustained leadership, culminating in the AIRBUS Recognition Interview to verify readiness for airline placement.',
-            badge: 'Certification',
+            description: 'Continue your mentorship to the 50-hour milestone to demonstrate sustained leadership and advanced instructional readiness within the WingMentor ecosystem.',
+            badge: '50h Milestone',
             badgeColor: '#ecfdf5',
-            icon: 'CheckCircle',
+            icon: 'Award',
             onLaunch: () => console.log('Launch Stage 8')
+        },
+        {
+            id: 'stage-9',
+            number: '09',
+            title: 'AIRBUS Recognition Interview',
+            bullets: [
+                'Industry Evaluation',
+                'AIRBUS Recognition',
+                'Airline Placement Prep'
+            ],
+            description: 'The final culmination of the program: the AIRBUS Recognition Interview. This rigorous assessment verifies your readiness for direct airline placement and official industry recognition.',
+            status: 'Examination',
+            badge: 'Final Evaluation',
+            badgeColor: '#ecfdf5',
+            icon: 'Activity',
+            onLaunch: () => console.log('Launch Stage 9')
         }
     ];
 
@@ -760,7 +776,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                 {modules.map((module) => {
                                     const isHovered = hoveredModule === module.id;
                                     const isExam = module.status === 'Examination';
-                                    const isSuccessStage = ['03', '07', '08'].includes(module.number);
+                                    const isSuccessStage = ['03', '07', '08', '09'].includes(module.number);
                                     const isResultFactor = module.number === '03';
 
                                     return (
