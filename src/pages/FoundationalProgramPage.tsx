@@ -153,7 +153,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             ],
             description: 'Continue your mentorship to the 50-hour milestone to demonstrate sustained leadership, culminating in the AIRBUS Recognition Interview to verify readiness for airline placement.',
             badge: 'Certification',
-            badgeColor: '#fef2f2',
+            badgeColor: '#ecfdf5',
             icon: 'CheckCircle',
             onLaunch: () => console.log('Launch Stage 8')
         }
@@ -760,6 +760,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                 {modules.map((module) => {
                                     const isHovered = hoveredModule === module.id;
                                     const isExam = module.status === 'Examination';
+                                    const isSuccessStage = ['03', '07', '08'].includes(module.number);
                                     const isResultFactor = module.number === '03';
 
                                     return (
@@ -769,15 +770,15 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                 position: 'relative',
                                                 backgroundColor: isExam
                                                     ? (isHovered ? 'rgba(255, 255, 255, 0.95)' : 'rgba(239, 246, 255, 0.55)')
-                                                    : (isResultFactor
+                                                    : (isSuccessStage
                                                         ? (isHovered ? 'rgba(220, 252, 231, 0.8)' : 'rgba(220, 252, 231, 0.4)')
                                                         : (isHovered ? 'rgba(255, 255, 255, 0.95)' : 'rgba(241, 245, 249, 0.6)')),
                                                 backdropFilter: 'blur(16px)',
                                                 WebkitBackdropFilter: 'blur(16px)',
                                                 border: isExam
                                                     ? '1px solid rgba(191, 219, 254, 0.6)'
-                                                    : (isResultFactor ? '1px solid rgba(134, 239, 172, 0.5)' : '1px solid rgba(255, 255, 255, 0.8)'),
-                                                borderLeft: isExam ? '4px solid #1e3a8a' : (isResultFactor ? '4px solid #22c55e' : '1px solid rgba(255, 255, 255, 0.8)'),
+                                                    : (isSuccessStage ? '1px solid rgba(134, 239, 172, 0.5)' : '1px solid rgba(255, 255, 255, 0.8)'),
+                                                borderLeft: isExam ? '4px solid #1e3a8a' : (isSuccessStage ? '4px solid #22c55e' : '1px solid rgba(255, 255, 255, 0.8)'),
                                                 borderRadius: '24px',
                                                 cursor: isResultFactor ? 'default' : 'pointer',
                                                 boxShadow: isHovered
@@ -810,8 +811,8 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                     borderRadius: '12px',
                                                     background: isExam
                                                         ? (isHovered ? 'linear-gradient(135deg, #eab308 0%, #ca8a04 100%)' : 'linear-gradient(135deg, #facc15 0%, #eab308 100%)')
-                                                        : (isResultFactor ? (isHovered ? '#16a34a' : '#22c55e') : (isHovered ? '#0f172a' : '#ffffff')),
-                                                    border: isExam ? '1px solid #fef08a' : (isResultFactor ? 'none' : '1px solid #e2e8f0'),
+                                                        : (isSuccessStage ? (isHovered ? '#16a34a' : '#22c55e') : (isHovered ? '#0f172a' : '#ffffff')),
+                                                    border: isExam ? '1px solid #fef08a' : (isSuccessStage ? 'none' : '1px solid #e2e8f0'),
                                                     display: 'flex',
                                                     alignItems: 'center',
                                                     justifyContent: 'center',
@@ -830,7 +831,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                     <div style={{
                                                         fontSize: '0.75rem',
                                                         fontWeight: 700,
-                                                        color: isExam ? '#0f172a' : (isResultFactor ? '#15803d' : '#0284c7'),
+                                                        color: isExam ? '#0f172a' : (isSuccessStage ? '#15803d' : '#0284c7'),
                                                         textTransform: 'uppercase',
                                                         letterSpacing: '0.15em',
                                                         marginBottom: '0.4rem',
