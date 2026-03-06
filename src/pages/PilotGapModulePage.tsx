@@ -3,11 +3,41 @@ import { Icons } from '../App';
 
 interface PilotGapModulePageProps {
     onBack: () => void;
+    onComplete?: () => void;
 }
 
-const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
+const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack, onComplete }) => {
     const [currentChapter, setCurrentChapter] = useState(0);
     const [currentTopic, setCurrentTopic] = useState<string | null>('welcome');
+
+    const navigationFlow = [
+        { chapter: 0, topic: 'welcome' },
+        { chapter: 0, topic: 'mission' },
+        { chapter: 0, topic: 'program-syllabus' },
+        { chapter: 0, topic: null },
+        { chapter: 1, topic: null },
+        { chapter: 1, topic: 'what-low-timer' },
+        { chapter: 1, topic: 'what-pilot-shortage' },
+        { chapter: 1, topic: 'what-pilot-gap' },
+        { chapter: 1, topic: 'pilot-risk-management' },
+        { chapter: 1, topic: 'what-pilot-recognition' },
+        { chapter: 1, topic: 'what-now' },
+        { chapter: 2, topic: null },
+        { chapter: 2, topic: 'why-statistics' },
+        { chapter: 2, topic: 'w1000-poh' },
+        { chapter: 2, topic: 'initial-exam-access' }
+    ];
+
+    const getCurrentStepIndex = () => {
+        return navigationFlow.findIndex(step => step.chapter === currentChapter && step.topic === currentTopic);
+    };
+
+    useEffect(() => {
+        const isLastStep = getCurrentStepIndex() === navigationFlow.length - 1;
+        if (isLastStep && onComplete) {
+            onComplete();
+        }
+    }, [currentChapter, currentTopic, onComplete]);
 
     // ── Inline editing ──────────────────────────────────────────────────────
     const [contextMenu, setContextMenu] = useState<{ x: number; y: number; target: HTMLElement } | null>(null);
@@ -85,30 +115,10 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
     };
     // ────────────────────────────────────────────────────────────────────────
 
-    const totalChapters = 6;
-    const progress = (currentChapter / (totalChapters - 1)) * 100;
+    const totalChapters = 3;
+    const progress = ((getCurrentStepIndex() + 1) / navigationFlow.length) * 100;
 
-    const navigationFlow = [
-        { chapter: 0, topic: 'welcome' }, // New Prior Welcome Page
-        { chapter: 0, topic: 'mission' }, // Our Mission Page
-        { chapter: 0, topic: 'program-syllabus' }, // Program Syllabus Page
-        { chapter: 0, topic: null },      // Industry Familiarization Hub
-        { chapter: 1, topic: null },      // The What
-        { chapter: 1, topic: 'what-low-timer' },
-        { chapter: 1, topic: 'what-pilot-shortage' },
-        { chapter: 1, topic: 'what-pilot-gap' },
-        { chapter: 1, topic: 'pilot-risk-management' },
-        { chapter: 1, topic: 'what-pilot-recognition' },
-        { chapter: 1, topic: 'what-now' },
-        { chapter: 2, topic: null }, // The Solution
-        { chapter: 2, topic: 'why-statistics' },
-        { chapter: 2, topic: 'w1000-poh' },
-        { chapter: 2, topic: 'initial-exam-access' }
-    ];
 
-    const getCurrentStepIndex = () => {
-        return navigationFlow.findIndex(step => step.chapter === currentChapter && step.topic === currentTopic);
-    };
 
     const handleNext = () => {
         const currentIndex = getCurrentStepIndex();

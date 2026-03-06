@@ -25,6 +25,7 @@ interface FoundationalProgramPageProps {
     onLaunchModule01?: () => void;
     onLaunchModule02?: () => void;
     onLaunchModule03?: () => void;
+    completedModules?: string[];
 }
 
 const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
@@ -35,7 +36,8 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
     onLaunchMentorship,
     onLaunchModule01,
     onLaunchModule02,
-    onLaunchModule03
+    onLaunchModule03,
+    completedModules = []
 }) => {
     const [activeView, setActiveView] = useState<'cards' | 'core' | 'profile' | 'overview' | 'module-detail'>('cards');
     const [selectedModule, setSelectedModule] = useState<Module | null>(null);
@@ -883,7 +885,24 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                     </div>
                                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 400, fontFamily: 'Georgia, serif', color: '#0f172a', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{module.title}</h3>
                                                 </div>
-                                                {module.badge && (
+                                                {completedModules.includes(module.id) ? (
+                                                    <div style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '0.5rem',
+                                                        backgroundColor: '#ecfdf5',
+                                                        color: '#059669',
+                                                        padding: '0.4rem 1rem',
+                                                        borderRadius: '20px',
+                                                        fontSize: '0.75rem',
+                                                        fontWeight: 800,
+                                                        border: '1px solid #10b981',
+                                                        boxShadow: '0 2px 4px rgba(16, 185, 129, 0.1)'
+                                                    }}>
+                                                        <Icons.CheckCircle style={{ width: 14, height: 14 }} />
+                                                        COMPLETED
+                                                    </div>
+                                                ) : module.badge && (
                                                     <span style={{
                                                         padding: '0.35rem 0.85rem',
                                                         backgroundColor: module.badgeColor === '#fef2f2' ? '#fee2e2' :

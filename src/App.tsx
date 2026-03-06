@@ -362,6 +362,11 @@ function App() {
     'foundational' | 'atpl' | 'airtaxi' | 'privatesector' | 'foundational-onboarding' | 'post-enrollment-slideshow' | 'ai-screening' | 'remote-segment' | 'terms-conditions' | 'w1000' | 'mentorship' |
     'module-01' | 'module-02' | 'module-03'
   >('login');
+  const [completedModules, setCompletedModules] = useState<string[]>([]);
+
+  const handleModuleComplete = (moduleId: string) => {
+    setCompletedModules(prev => prev.includes(moduleId) ? prev : [...prev, moduleId]);
+  };
   const handleSelectDownload = () => {
     setCurrentView('remote-segment');
   };
@@ -450,6 +455,7 @@ function App() {
           onLaunchModule01={() => setCurrentView('module-01')}
           onLaunchModule02={() => setCurrentView('module-02')}
           onLaunchModule03={() => setCurrentView('module-03')}
+          completedModules={completedModules}
         />
       ) : currentView === 'foundational-onboarding' ? (
         <EnrollmentOnboardingPage
@@ -480,7 +486,10 @@ function App() {
       ) : currentView === 'mentorship' ? (
         <MentorshipSupervisionPage onBack={() => setCurrentView('foundational')} onLogout={handleLogout} />
       ) : currentView === 'module-01' ? (
-        <PilotGapModulePage onBack={() => setCurrentView('foundational')} />
+        <PilotGapModulePage
+          onBack={() => setCurrentView('foundational')}
+          onComplete={() => handleModuleComplete('stage-1')}
+        />
       ) : currentView === 'module-02' ? (
         <MentorshipProtocolsModulePage onBack={() => setCurrentView('foundational')} onLogout={handleLogout} />
       ) : currentView === 'module-03' ? (
