@@ -4571,45 +4571,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                         </section>
                     </div>
                 );
-
-            case 5:
-                return (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', animation: 'fadeIn 0.5s ease-in-out' }}>
-                        {/* Chapter 6: The Result */}
-                        <section>
-                            <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
-                                <div style={{ paddingTop: '0.6rem' }}>
-                                    <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
-                                </div>
-                                <div>
-                                    <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                                        Chapter 06
-                                    </div>
-                                    <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                        The Result Factor: What will you achieve?
-                                    </h2>
-                                </div>
-                            </div>
-                            <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                <p>
-                                    Experience is the true foundation of knowledge. The ultimate result of this rigorous module is unquestionable <strong>Industry Credibility</strong>.
-                                </p>
-                                <p>
-                                    This program isn't designed to get you a job at one specific airline; it is designed to make you undeniably hirable across the entire commercial aviation spectrum—whether you're flying cargo at 3 AM, navigating complex corporate charter operations, or flying for a legacy carrier. By focusing intensely on the core fundamentals that all operators actually evaluate during simulator checks and technical interviews, we take your "Low-Timer" risk and forge it into verifiable "High-Competency" value.
-                                </p>
-                                <p>
-                                    As you complete this module and generate irrefutable Pilot Quality Assurance (PQA) metrics, you build a data-driven portfolio. This portfolio proves that you have the psychological maturity, the standardized behavior, and the advanced CRM capabilities that the industry desperately seeks. You will have transitioned from a student pilot into a professional airman.
-                                </p>
-                                <div style={{ padding: '1.5rem', borderLeft: '4px solid #2563eb', backgroundColor: '#f8fafc', borderRadius: '0 8px 8px 0', marginTop: '0.5rem' }}>
-                                    <p style={{ margin: 0, fontSize: '1.05rem', fontStyle: 'italic', fontWeight: 500, color: '#1e293b' }}>
-                                        "We don't just teach you to fly a plane; we prepare you to lead a career across the entire industry. This is the foundation of turning flight hours into true operational knowledge."
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                );
-
             case 5:
                 return (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', animation: 'fadeIn 0.5s ease-in-out' }}>
