@@ -130,19 +130,6 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             onLaunch: onLaunchW1000
         },
         {
-            id: 'stage-7',
-            number: '07',
-            title: 'Accreditation & Professional Prescription',
-            bullets: [
-                'Mentorship Evaluation',
-                'Industry Credentials',
-                'Advanced Ecosystem Placement'
-            ],
-            description: 'Upon meeting criteria, your experience is accredited against industry standards recognized by major partners, authorizing you for advanced placement within the ecosystem.',
-            icon: 'Briefcase',
-            onLaunch: onLaunchMentorship
-        },
-        {
             id: 'stage-8',
             number: '08',
             title: 'Advanced Mentorship & Leadership Milestone',
@@ -172,6 +159,21 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             badgeColor: '#f0f9ff',
             icon: 'Activity',
             onLaunch: () => console.log('Launch Stage 9')
+        },
+        {
+            id: 'stage-7',
+            number: '07',
+            title: 'Accreditation & Professional Prescription',
+            bullets: [
+                'Mentorship Evaluation',
+                'Industry Credentials',
+                'Advanced Ecosystem Placement'
+            ],
+            description: 'Upon meeting criteria, your experience is accredited against industry standards recognized by major partners, authorizing you for advanced placement within the ecosystem.',
+            badge: 'Accreditation',
+            badgeColor: '#ecfdf5',
+            icon: 'Briefcase',
+            onLaunch: onLaunchMentorship
         },
         {
             id: 'stage-10',
