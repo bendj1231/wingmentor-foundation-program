@@ -856,7 +856,9 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                     boxShadow: isExam ? '0 4px 12px rgba(234, 179, 8, 0.4)' : '0 2px 6px rgba(0,0,0,0.04)',
                                                     zIndex: 2 // sit above connecting line
                                                 }}>
-                                                    {module.number}
+                                                    {module.number === '03' ? <Icons.BookOpen style={{ width: 22, height: 22 }} /> :
+                                                        module.number === '07' ? <Icons.Briefcase style={{ width: 22, height: 22 }} /> :
+                                                            module.number}
                                                 </div>
                                                 <div style={{ flex: 1, minWidth: 0 }}>
                                                     <div style={{
@@ -875,6 +877,10 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                                 <Icons.Activity style={{ width: 12, height: 12 }} />
                                                                 {module.number === '02' ? 'INITIAL EXAMINATION' : 'MENTORSHIP EXAMINATION & EVALUATION'}
                                                             </>
+                                                        ) : module.number === '03' ? (
+                                                            'INDUSTRY REPOSITORY'
+                                                        ) : module.number === '07' ? (
+                                                            'INDUSTRY ACCREDITATION'
                                                         ) : (
                                                             `STAGE ${module.number}`
                                                         )}
