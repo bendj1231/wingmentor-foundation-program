@@ -3,15 +3,16 @@ import { Icons } from '../App';
 
 interface Module {
     id: string;
-    number: string;
+    number?: string; // Changed to optional
     title: string;
     bullets: string[];
     description: string;
-    status?: string;
+    status?: 'In Progress' | 'Completed' | 'Examination' | 'Locked';
     badge?: string;
     badgeColor?: string;
     icon: keyof typeof Icons;
     onLaunch?: () => void;
+    successTheme?: boolean;
 }
 
 interface FoundationalProgramPageProps {
@@ -85,6 +86,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             ],
             description: 'All examination outcomes are safely archived within the Global Industry Registry. This serves as your verifiable professional record, ensuring transparency and credibility for airline recruitment partners.',
             icon: 'Book',
+            successTheme: true,
             onLaunch: () => console.log('Launch Stage 3')
         },
         {
@@ -127,6 +129,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             badge: '20h Milestone',
             badgeColor: '#fff7ed',
             icon: 'Award',
+            successTheme: true,
             onLaunch: onLaunchW1000
         },
         {
@@ -140,6 +143,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             ],
             description: 'Upon meeting criteria, your experience is accredited against industry standards recognized by major partners, authorizing you for advanced placement within the ecosystem.',
             icon: 'Briefcase',
+            successTheme: true,
             onLaunch: onLaunchMentorship
         },
         {
@@ -155,6 +159,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             badge: '50h Milestone',
             badgeColor: '#ecfdf5',
             icon: 'Award',
+            successTheme: true,
             onLaunch: () => console.log('Launch Stage 8')
         },
         {
@@ -171,6 +176,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             badge: 'Final Evaluation',
             badgeColor: '#ecfdf5',
             icon: 'Activity',
+            successTheme: true,
             onLaunch: () => console.log('Launch Stage 9')
         },
         {
@@ -186,6 +192,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             badge: 'Certified',
             badgeColor: '#ecfdf5',
             icon: 'CheckCircle',
+            successTheme: true,
             onLaunch: () => console.log('Launch Stage 10')
         }
     ];
@@ -791,8 +798,9 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                 {modules.map((module) => {
                                     const isHovered = hoveredModule === module.id;
                                     const isExam = module.status === 'Examination';
-                                    const isSuccessStage = ['03', '07', '08', '09', '10'].includes(module.number);
-                                    const isResultFactor = module.number === '03';
+                                    const isSuccessStage = module.successTheme;
+                                    const isResultFactor = module.id === 'stage-3';
+                                    const IconComponent = Icons[module.icon];
 
                                     return (
                                         <div
@@ -856,12 +864,10 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                     boxShadow: isExam ? '0 4px 12px rgba(234, 179, 8, 0.4)' : '0 2px 6px rgba(0,0,0,0.04)',
                                                     zIndex: 2 // sit above connecting line
                                                 }}>
-                                                    {module.number === '03' ? <Icons.BookOpen style={{ width: 22, height: 22 }} /> :
-                                                        module.number === '07' ? <Icons.Briefcase style={{ width: 22, height: 22 }} /> :
-                                                            module.number === '08' ? <Icons.Award style={{ width: 22, height: 22 }} /> :
-                                                                module.number === '09' ? <Icons.Activity style={{ width: 22, height: 22 }} /> :
-                                                                    module.number === '10' ? <Icons.CheckCircle style={{ width: 22, height: 22 }} /> :
-                                                                        module.number}
+                                                    {module.number ?
+                                                        module.number :
+                                                        <IconComponent style={{ width: 22, height: 22, color: isExam ? '#ffffff' : (isSuccessStage ? '#ffffff' : (isHovered ? '#ffffff' : '#1e293b')) }} />
+                                                    }
                                                 </div>
                                                 <div style={{ flex: 1, minWidth: 0 }}>
                                                     <div style={{
@@ -878,20 +884,24 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                         {isExam ? (
                                                             <>
                                                                 <Icons.Activity style={{ width: 12, height: 12 }} />
-                                                                {module.number === '02' ? 'INITIAL EXAMINATION' : 'MENTORSHIP EXAMINATION & EVALUATION'}
+                                                                {module.id === 'stage-2' ? 'INITIAL EXAMINATION' : 'MENTORSHIP EXAMINATION & EVALUATION'}
                                                             </>
-                                                        ) : module.number === '03' ? (
+                                                        ) : module.id === 'stage-3' ? (
                                                             'INDUSTRY REPOSITORY'
-                                                        ) : module.number === '07' ? (
+                                                        ) : module.id === 'stage-7' ? (
                                                             'INDUSTRY ACCREDITATION'
-                                                        ) : module.number === '08' ? (
+                                                        ) : module.id === 'stage-8' ? (
                                                             'LEADERSHIP MILESTONE'
-                                                        ) : module.number === '09' ? (
+                                                        ) : module.id === 'stage-9' ? (
                                                             'FINAL EVALUATION'
-                                                        ) : module.number === '10' ? (
+                                                        ) : module.id === 'stage-10' ? (
                                                             'OFFICIAL CERTIFICATION'
-                                                        ) : (
+                                                        ) : module.status === 'Examination' ? (
+                                                            'EXAMINATION MODULE'
+                                                        ) : module.number ? (
                                                             `STAGE ${module.number}`
+                                                        ) : (
+                                                            'MILESTONE'
                                                         )}
                                                     </div>
                                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 400, fontFamily: 'Georgia, serif', color: '#0f172a', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{module.title}</h3>
