@@ -3,16 +3,15 @@ import { Icons } from '../App';
 
 interface Module {
     id: string;
-    number?: string; // Changed to optional
+    number: string;
     title: string;
     bullets: string[];
     description: string;
-    status?: 'In Progress' | 'Completed' | 'Examination' | 'Locked';
+    status?: string;
     badge?: string;
     badgeColor?: string;
     icon: keyof typeof Icons;
     onLaunch?: () => void;
-    successTheme?: boolean;
 }
 
 interface FoundationalProgramPageProps {
@@ -86,7 +85,6 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             ],
             description: 'All examination outcomes are safely archived within the Global Industry Registry. This serves as your verifiable professional record, ensuring transparency and credibility for airline recruitment partners.',
             icon: 'Book',
-            successTheme: true,
             onLaunch: () => console.log('Launch Stage 3')
         },
         {
@@ -129,7 +127,6 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             badge: '20h Milestone',
             badgeColor: '#fff7ed',
             icon: 'Award',
-            successTheme: true,
             onLaunch: onLaunchW1000
         },
         {
@@ -143,7 +140,6 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             ],
             description: 'Upon meeting criteria, your experience is accredited against industry standards recognized by major partners, authorizing you for advanced placement within the ecosystem.',
             icon: 'Briefcase',
-            successTheme: true,
             onLaunch: onLaunchMentorship
         },
         {
@@ -157,9 +153,8 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             ],
             description: 'Continue your mentorship to the 50-hour milestone to demonstrate sustained leadership and advanced instructional readiness within the WingMentor ecosystem.',
             badge: '50h Milestone',
-            badgeColor: '#ecfdf5',
+            badgeColor: '#f0f9ff',
             icon: 'Award',
-            successTheme: true,
             onLaunch: () => console.log('Launch Stage 8')
         },
         {
@@ -174,9 +169,8 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             description: 'The final culmination of the program: the AIRBUS Recognition Interview. This rigorous assessment verifies your readiness for direct airline placement and official industry recognition.',
             status: 'Examination',
             badge: 'Final Evaluation',
-            badgeColor: '#ecfdf5',
+            badgeColor: '#f0f9ff',
             icon: 'Activity',
-            successTheme: true,
             onLaunch: () => console.log('Launch Stage 9')
         },
         {
@@ -190,9 +184,8 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             ],
             description: 'Official certification of all mentorship hours and industry recognition. Your profile is now verified for our global airline partners and the industry registry.',
             badge: 'Certified',
-            badgeColor: '#ecfdf5',
+            badgeColor: '#f0f9ff',
             icon: 'CheckCircle',
-            successTheme: true,
             onLaunch: () => console.log('Launch Stage 10')
         }
     ];
@@ -798,9 +791,8 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                 {modules.map((module) => {
                                     const isHovered = hoveredModule === module.id;
                                     const isExam = module.status === 'Examination';
-                                    const isSuccessStage = module.successTheme;
-                                    const isResultFactor = module.id === 'stage-3';
-                                    const IconComponent = Icons[module.icon];
+                                    const isSuccessStage = ['03'].includes(module.number);
+                                    const isResultFactor = module.number === '03';
 
                                     return (
                                         <div
@@ -864,10 +856,12 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                     boxShadow: isExam ? '0 4px 12px rgba(234, 179, 8, 0.4)' : '0 2px 6px rgba(0,0,0,0.04)',
                                                     zIndex: 2 // sit above connecting line
                                                 }}>
-                                                    {module.number ?
-                                                        module.number :
-                                                        <IconComponent style={{ width: 22, height: 22, color: isExam ? '#ffffff' : (isSuccessStage ? '#ffffff' : (isHovered ? '#ffffff' : '#1e293b')) }} />
-                                                    }
+                                                    {module.number === '03' ? <Icons.BookOpen style={{ width: 22, height: 22 }} /> :
+                                                        module.number === '07' ? <Icons.Briefcase style={{ width: 22, height: 22 }} /> :
+                                                            module.number === '08' ? <Icons.Award style={{ width: 22, height: 22 }} /> :
+                                                                module.number === '09' ? <Icons.Activity style={{ width: 22, height: 22 }} /> :
+                                                                    module.number === '10' ? <Icons.CheckCircle style={{ width: 22, height: 22 }} /> :
+                                                                        module.number}
                                                 </div>
                                                 <div style={{ flex: 1, minWidth: 0 }}>
                                                     <div style={{
@@ -884,24 +878,20 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                         {isExam ? (
                                                             <>
                                                                 <Icons.Activity style={{ width: 12, height: 12 }} />
-                                                                {module.id === 'stage-2' ? 'INITIAL EXAMINATION' : 'MENTORSHIP EXAMINATION & EVALUATION'}
+                                                                {module.number === '02' ? 'INITIAL EXAMINATION' : 'MENTORSHIP EXAMINATION & EVALUATION'}
                                                             </>
-                                                        ) : module.id === 'stage-3' ? (
+                                                        ) : module.number === '03' ? (
                                                             'INDUSTRY REPOSITORY'
-                                                        ) : module.id === 'stage-7' ? (
+                                                        ) : module.number === '07' ? (
                                                             'INDUSTRY ACCREDITATION'
-                                                        ) : module.id === 'stage-8' ? (
+                                                        ) : module.number === '08' ? (
                                                             'LEADERSHIP MILESTONE'
-                                                        ) : module.id === 'stage-9' ? (
+                                                        ) : module.number === '09' ? (
                                                             'FINAL EVALUATION'
-                                                        ) : module.id === 'stage-10' ? (
+                                                        ) : module.number === '10' ? (
                                                             'OFFICIAL CERTIFICATION'
-                                                        ) : module.status === 'Examination' ? (
-                                                            'EXAMINATION MODULE'
-                                                        ) : module.number ? (
-                                                            `STAGE ${module.number}`
                                                         ) : (
-                                                            'MILESTONE'
+                                                            `STAGE ${module.number}`
                                                         )}
                                                     </div>
                                                     <h3 style={{ fontSize: '1.4rem', fontWeight: 400, fontFamily: 'Georgia, serif', color: '#0f172a', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{module.title}</h3>
