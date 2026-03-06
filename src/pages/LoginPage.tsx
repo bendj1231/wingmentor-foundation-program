@@ -77,7 +77,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
                         maxWidth: '420px',
                         padding: '0 1rem'
                     }}>
-                        This portal is your command center. Seamlessly connect to the WingMentor Network and unlock the full suite of pilot-engineered applications. From here, you manage your flight profile, access the Black Box intelligence vault, and engage with the community in the Gap Forum. It is the centralized gateway where your career acceleration begins.
+                        This portal gives you direct access to the program's various pathways and your Pilot Recognition Profile — a comprehensive view of where you stand and what lies ahead. Explore in-depth insight into the aviation industry to understand the expectations, requirements, and benchmarks that define a competitive candidate. It is your launchpad for informed career decisions and strategic preparation.
                     </p>
 
                     <div className="system-status" style={{

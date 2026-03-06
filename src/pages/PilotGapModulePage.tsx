@@ -87,11 +87,13 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
     };
     // ────────────────────────────────────────────────────────────────────────
 
-    const totalChapters = 7;
+    const totalChapters = 6;
     const progress = (currentChapter / (totalChapters - 1)) * 100;
 
     const navigationFlow = [
         { chapter: 0, topic: 'welcome' }, // New Prior Welcome Page
+        { chapter: 0, topic: 'mission' }, // Our Mission Page
+        { chapter: 0, topic: 'program-syllabus' }, // Program Syllabus Page
         { chapter: 0, topic: null },      // Industry Familiarization Hub
         { chapter: 1, topic: null },      // The What
         { chapter: 1, topic: 'what-low-timer' },
@@ -99,14 +101,16 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
         { chapter: 1, topic: 'what-pilot-gap' },
         { chapter: 1, topic: 'what-type-rating' },
         { chapter: 1, topic: 'what-pilot-recognition' },
+        { chapter: 1, topic: 'what-now' },
+
         { chapter: 1, topic: 'type-rating-psychology' },
-        { chapter: 2, topic: null }, // The Why
+        { chapter: 2, topic: null }, // The Solution
         { chapter: 2, topic: 'why-statistics' },
-        { chapter: 2, topic: 'why-trap' },
+        { chapter: 2, topic: 'w1000-poh' },
+        { chapter: 2, topic: 'initial-exam-access' },
         { chapter: 3, topic: null }, // The How
         { chapter: 4, topic: null }, // The Result
-        { chapter: 5, topic: null }, // Calculator
-        { chapter: 6, topic: null }, // Reality Check
+        { chapter: 5, topic: null }, // Reality Check
     ];
 
     const getCurrentStepIndex = () => {
@@ -189,16 +193,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                 position: 'relative'
                             }}>
                                 <img src="/hourglass-pilot-gap.png" alt="Hourglass showing pilots filtering down" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                                {/* Gradient Overlay to fix white bar cutoff */}
-                                <div style={{
-                                    position: 'absolute',
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    height: '80px',
-                                    background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',
-                                    pointerEvents: 'none'
-                                }} />
                             </div>
 
                             <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
@@ -214,16 +208,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                             {/* Candidates Image */}
                             <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', border: '1px solid rgba(0,0,0,0.05)', backgroundColor: '#f8fafc', marginBottom: '3rem', position: 'relative' }}>
                                 <img src="/candidates-pilot-gap.png" alt="Different pilot candidates at an interview" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
-                                {/* Gradient Overlay to fix white bar cutoff */}
-                                <div style={{
-                                    position: 'absolute',
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    height: '60px',
-                                    background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',
-                                    pointerEvents: 'none'
-                                }} />
                             </div>
 
                             <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
@@ -424,16 +408,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                         <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
                             <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', border: '1px solid rgba(0,0,0,0.05)', backgroundColor: '#f8fafc', marginBottom: '3rem' }}>
                                 <img src="/insurance-reality.png" alt="Insurance Reality for Low Timers" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
-                                {/* Gradient Overlay to add premium fade if needed */}
-                                <div style={{
-                                    position: 'absolute',
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    height: '60px',
-                                    background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',
-                                    pointerEvents: 'none'
-                                }} />
                             </div>
                             <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
                                 THE INSURANCE FACTOR
@@ -507,7 +481,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                     </div>
                 </div>
             );
-        } else if (currentTopic === 'what-type-rating') {
+        } else if (currentTopic === 'pilot-risk-management') {
             return (
                 <div style={{ display: 'flex', flexDirection: 'column', animation: 'fadeIn 0.5s ease-in-out' }}>
                     {/* ── Page Header ── */}
@@ -517,7 +491,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                             CHAPTER 01 — UNDERSTANDING THE WHAT'S
                         </div>
                         <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-                            What is a Type Rating?
+                            What is Pilot Risk Management?
                         </h1>
 
                         {/* ── New Header Image ── */}
@@ -531,67 +505,630 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                             border: '1px solid rgba(0,0,0,0.04)',
                             backgroundColor: '#fff'
                         }}>
-                            <img src="/type-rating-header.png" alt="Type Rating Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            <img src="/Gemini_Generated_Image_pl6llkpl6llkpl6l.png" alt="Pilot Risk Management Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
                         </div>
 
-                        <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '42rem', margin: '0 auto', fontWeight: 400 }}>
-                            In this section, we demystify the multi-crew certification process. You will learn about the intense training required for advanced transport-category aircraft like the Airbus A320 or Boeing 737, and why the Type Rating is considered the 'Ultimate Equalizer' in the eyes of airline recruiters.
+                        {/* ── Visual Breakdown: The 3 Pillars ── */}
+                        <div style={{ maxWidth: '52rem', margin: '0 auto 4rem auto', textAlign: 'left' }}>
+                            <p style={{ color: '#475569', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+                                Pilot Risk Management is not just a safety protocol—it's a comprehensive framework for navigating the "game" of aviation. The illustration above encapsulates the three critical cards every pilot must play carefully to survive and thrive in this high-stakes industry:
+                            </p>
+
+                            <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
+                                <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
+                                    <span style={{ color: '#2563eb', marginRight: '1rem', marginTop: '0.2rem', fontSize: '1.2rem' }}>•</span>
+                                    <div>
+                                        <strong style={{ color: '#0f172a', fontSize: '1.1rem', fontFamily: 'Georgia, serif' }}>Health Risk:</strong>
+                                        <span style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.6, display: 'block', marginTop: '0.25rem' }}>
+                                            Focuses on internal stressors—Sleep Loss, Heavy Workloads, and Relationship Strain. It maps the human factors that determine a pilot's career longevity and future certainty.
+                                        </span>
+                                    </div>
+                                </li>
+                                <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
+                                    <span style={{ color: '#2563eb', marginRight: '1rem', marginTop: '0.2rem', fontSize: '1.2rem' }}>•</span>
+                                    <div>
+                                        <strong style={{ color: '#0f172a', fontSize: '1.1rem', fontFamily: 'Georgia, serif' }}>Decision Making:</strong>
+                                        <span style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.6, display: 'block', marginTop: '0.25rem' }}>
+                                            Addresses the career gamble—Seniority lists, Debt Management, and the Industry Blindspots. It encourages pilots to make autonomous decisions rather than blindly following traditional paths.
+                                        </span>
+                                    </div>
+                                </li>
+                                <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                                    <span style={{ color: '#2563eb', marginRight: '1rem', marginTop: '0.2rem', fontSize: '1.2rem' }}>•</span>
+                                    <div>
+                                        <strong style={{ color: '#0f172a', fontSize: '1.1rem', fontFamily: 'Georgia, serif' }}>Financial Risk:</strong>
+                                        <span style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.6, display: 'block', marginTop: '0.25rem' }}>
+                                            The high-stakes investment landscape—Type Rating costs (A320/B737), the "Golden Handcuffs" of airline benefits, and the divide between safe vs. high-risk financial decisions in a volatile market.
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '48rem', margin: '0 auto', fontWeight: 400 }}>
+                            In this section, we explore this critical framework in detail. We will analyze aviation investments from the distinct perspectives of bankers, casino managers, airline managers, and seasoned airline pilots to help you navigate the industry chasm safely and efficiently.
                         </p>
+
+                        {/* Wingmentor Insight Card — PRM Core Definition */}
+                        <div style={{ maxWidth: '52rem', margin: '3rem auto 0 auto', textAlign: 'center' }}>
+                            <div style={{
+                                backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                backdropFilter: 'blur(16px)',
+                                WebkitBackdropFilter: 'blur(16px)',
+                                borderRadius: '24px',
+                                padding: '3rem 2.5rem',
+                                boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                border: '1px solid rgba(255, 255, 255, 0.8)',
+                                textAlign: 'left',
+                                width: '100%',
+                                boxSizing: 'border-box'
+                            }}>
+                                <img src="/logo.png" alt="WingMentor Logo" style={{ height: '72px', width: 'auto', objectFit: 'contain', display: 'block', margin: '0 auto 1.5rem auto' }} />
+                                <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>
+                                    WINGMENTOR INSIGHT
+                                </div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    The Three Pillars of Risk
+                                </h3>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: '0 auto', maxWidth: '40rem', textAlign: 'left' }}>
+                                    <strong>Pilot Risk Management (PRM)</strong> is the proactive framework every pilot—from student pilots and flight instructors to seasoned airline pilots—must master.
+                                    It is built on three core pillars: <strong>Financial Risk</strong>—understanding the true cost of training, debt, and return on investment before committing capital;
+                                    <strong> Pilot Health</strong>—maintaining physical, mental, and situational airworthiness throughout your career; and
+                                    <strong> Pilot Decision Making</strong>—developing the discipline to make sound, strategic career decisions under pressure, uncertainty, and industry volatility.
+                                    <br /><br />
+                                    Most pilots learn these lessons the hard way. Wingmentor exists to ensure you learn them before the cost becomes irreversible.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem', alignItems: 'center' }}>
-                        {/* Summary section container */}
-                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '1rem' }}>
+                        {/* Pilot Health Risk Management Section Header */}
+                        <section style={{ textAlign: 'center', maxWidth: '56rem', marginTop: '2rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                                THE HUMAN ELEMENT
+                            </div>
+                            <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                                Pilot Health
+                            </h1>
+                            <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '48rem', margin: '0 auto', fontWeight: 400, textAlign: 'center' }}>
+                                Navigating the Pilot Gap is as much a mental challenge as it is a professional one. In this section, we examine how to manage stress through this turbulent period. Many of us—our own founders included—have reached points of denial, feeling stressed that our dreams were shattered or blocked by an immovable wall. Compounded by investment risks, it is critical to focus on managing what you can. Do not overwork yourself into the ground. The constant grind often leads to mental fatigue or overexhaustion, leaving many pilots medically or mentally unfit for the flight deck when the opportunity finally arises.
+                            </p>
+                        </section>
+
+                        {/* Pilot Fitness Section */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '1rem' }}>
                             <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
-                                <p style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
-                                    Before diving into the Pilot Gap, it's crucial to understand a key concept in aviation: the <strong>Type Rating</strong>. While a Commercial Pilot License allows you to fly smaller, piston-engine aircraft for hire, it does <em>not</em> qualify you to fly large, complex jets.
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>PHYSICAL READINESS</div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    Pilot Fitness: Being Airworthy
+                                </h3>
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                    <img src="/Gemini_Generated_Image_lkiqzllkiqzllkiq.png" alt="Pilot Fitness Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Being an airline pilot is not simply a career choice; it is a lifestyle. Just as an aircraft requires routine maintenance and rigorous checks to remain airworthy, you must maintain your own physical and mental airworthiness. This means learning how to live like a pilot long before you sit in the right seat.
+                                </p>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Sleeping right, eating healthy, and exercising regularly are crucial factors. Building a habit of hitting the gym or maintaining physical activity ensures you are resilient against the physical demands of flying. But fitness must be balanced.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '2.5rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>THE SCIENCE OF SLEEP</h4>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>
+                                        Studies universally show that exactly <strong>7 hours of high-quality sleep</strong> is optimal for human performance. Sleeping significantly more than this can leave you feeling laggy and slow (sleep inertia), while sleeping less critically reduces your cognitive ability, reaction time, and decision-making skills. When fatigue arises, you are no longer safe to fly.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Mental Health Industry Culture Section */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '3rem' }}>
+                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>MENTAL WELL-BEING</div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    The Archaic Reality
+                                </h3>
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                    <img src="/Gemini_Generated_Image_4fglej4fglej4fgl.png" alt="Mental Fatigue Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ marginBottom: '1.5rem', color: '#334155' }}>
+                                    However, there are several downsides as well, where the industry's archaic mental health culture truly strikes. This reality hits early—even during your initial training as a student. You will encounter the fatigue or "drained" factor. You may not feel physically tired, but performing repetitive, high-stakes maneuvers is intensely mentally draining. Your mindset becomes fixated; it shifts from "I want to do this" to "I <em>have</em> to do this."
+                                </p>
+                                <p style={{ marginBottom: '1.5rem', color: '#334155' }}>
+                                    Yes, flying may be your passion. You may dream of flying long hauls or commanding jumbo jets. But to achieve that, you must sacrifice extensively—especially your time. Your life becomes concentrated purely on aviation. You must study endlessly for written exams, prepare for simulator sessions, execute cross-country flights, and pass grueling checkrides. Moreover, you must remain physically fit simply to obtain and retain your medical certificates, which are absolute requirements to fly.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '2.5rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>THE ULTIMATE TABOO</h4>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>
+                                        Navigating mental fatigue is possibly one of the biggest taboos in aviation, as many international regulators have historically maintained an inflexible, outdated approach to pilot mental health and medical certification.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Stress Management Section */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '1rem' }}>
+                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>THE COGNITIVE CHALLENGE</div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    Stress Management & Workload
+                                </h3>
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                    <img src="/Gemini_Generated_Image_nbhb1gnbhb1gnbhb.png" alt="Stress Management Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    When navigating the Pilot Gap, studying under immense pressure can actually degrade your ability to focus. Aviation psychology demonstrates that pilots operating under high stress are significantly less cognitively aware of their surroundings. This degradation in situational awareness is a primary catalyst for poor decision-making.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '2.5rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                        THE SWISS CHEESE MODEL
+                                    </h4>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>
+                                        Accidents rarely happen from a single failure. The <strong>Swiss Cheese Model</strong> illustrates how danger arises when a series of small, seemingly insignificant errors align—like the holes in slices of Swiss cheese. A poor decision fueled by stress creates the first hole. Fatigue creates the next. If you do not manage your mental load, those holes align, and you slip straight through to an unrecoverable failure. This underscores the danger of letting stress dictate your thoughts or actions.
+                                    </p>
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Recognizing and stopping this chain reaction is a foundational element of modern pilot training. In fact, <strong>Stress and Workload Management</strong> is strictly evaluated as a core competency within the Evidence-Based Training (EBT) and Competency-Based Training and Assessment (CBTA) frameworks utilized by airlines worldwide. Managing your mental capacity—especially when you are stretching your abilities—is not just good advice; it is a mandatory professional skill.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Situational Awareness Section */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '1rem' }}>
+                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>KNOWING YOUR LIMITS</div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    Situational Awareness In Health
+                                </h3>
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                    <img src="/Gemini_Generated_Image_trogq9trogq9trog.png" alt="Situational Awareness Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    One of the most disregarded aspects of overall well-being is situational awareness of your own body and mind. If you ever feel that something is wrong, or you are reluctant to fly due to an underlying health concern—even if it means being grounded for a month—it is always best to consult a private doctor or clinic for evaluation.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '2.5rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>THE SILENCE EPIDEMIC</h4>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>
+                                        First and foremost is the fear within the industry: pilots are often afraid to seek therapy, or afraid to voice out that they are burnt out, drained, or stressed. Why? Because it can result in an immediate grounding and a thorough investigation of their medical certificates. In reality, this creates a deeply flawed system where pilots suffer in silence instead of seeking medical attention. This is the exact opposite of the "safety-first" culture the industry claims to want.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Relationships & Personal Life Section */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '1rem' }}>
+                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>THE PERSONAL COST</div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    Relationships & Personal Life
+                                </h3>
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                    <img src="/Gemini_Generated_Image_nspqu6nspqu6nspq.png" alt="Relationships & Personal Life Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Your mental well-being is deeply intertwined with your personal life. Whether you are married, have a girlfriend, or are navigating a recent breakup, the state of your relationships will directly affect your performance and cognitive abilities on the flight deck. It is a harsh reality that many pilots experience firsthand.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '2.5rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>AVIATION INDUCED DIVORCE SYNDROME (AIDS)</h4>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>
+                                        It is a macabre industry joke with a deeply serious undertone: the divorce rates among airline pilots are statistically high. You are continuously working, often missing special holidays, birthdays, and major life events. Being miles away from home for days or months at a time frequently leads to family conflict, particularly because you are absent exactly when your loved ones need you most.
+                                    </p>
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    The paradox of the job is striking. The career is fantastic—you are earning far more than the average earner, capable of providing incredible financial support and deluxe items for your family. However, <strong>your physical presence is missing</strong>. Ultimately, no amount of financial compensation can replace what your partner or children will find lacking, which is quite simply, <em>you</em>.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Unforeseen Health Indications Section */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '1rem' }}>
+                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>HIDDEN LONG-TERM RISKS</div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    Unforeseen Health Indications
+                                </h3>
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                    <img src="/Gemini_Generated_Image_2xu5h52xu5h52xu5.png" alt="Unforeseen Health Indications Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Flight schools rigorously teach you about immediate physiological threats like hypoxia and spatial disorientation. However, they rarely teach you about the <strong>long-term health effects</strong> that an airline career inflicts upon the human body.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '2.5rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>INVISIBLE HAZARDS: RADIATION & THE ATMOSPHERE</h4>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>
+                                        Commercial jets routinely fly at extremely high altitudes where the protective atmosphere is much thinner. This exposes pilots to substantially higher levels of cosmic radiation compared to the general public. While the aircraft fuselage and cockpit sunvisors can help lessen direct sunlight, they do not fully protect you. Radiation is invisible and omnidirectional, meaning standard shielding cannot block all of the airborne exposure you will accumulate over a 30-year flying career.
+                                    </p>
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Beyond the atmosphere, there is the circadian burden. Constantly working across different time zones entirely disrupts your body's natural clock. Long-term studies have strongly associated this continuous disruption with severe metabolic and cardiovascular issues, which, in extreme cases of unmanaged health, can even lead to cardiac rupture.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Pilot Health Summary */}
+                        <section style={{ textAlign: 'center', maxWidth: '56rem', marginTop: '2rem', paddingTop: '3rem', borderTop: '1px solid #e2e8f0' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                CHAPTER SUMMARY
+                            </div>
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2rem' }}>
+                                What You Have Learned: Pilot Health
+                            </h2>
+                            <div style={{
+                                backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                backdropFilter: 'blur(16px)',
+                                WebkitBackdropFilter: 'blur(16px)',
+                                borderRadius: '24px',
+                                padding: '3rem 2.5rem',
+                                boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                border: '1px solid rgba(255, 255, 255, 0.8)',
+                                textAlign: 'left',
+                            }}>
+                                <img src="/logo.png" alt="WingMentor Logo" style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem', display: 'block', margin: '0 auto 1.5rem auto' }} />
+                                <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>
+                                    WINGMENTOR INSIGHT
+                                </div>
+                                <h3 style={{ fontSize: '1.4rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    Your Most Important Asset is You
+                                </h3>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: '0 auto', maxWidth: '40rem', textAlign: 'left' }}>
+                                    Across this chapter, you have learned that a pilot's health is multi-dimensional. <strong>Physical fitness</strong> and the discipline of 7 hours of sleep keep you airworthy. <strong>Stress and workload management</strong> prevent the Swiss Cheese holes from aligning into disaster. <strong>Situational awareness of your own mind</strong> means breaking the silence epidemic before it grounds you permanently. <strong>Your relationships</strong> require active management alongside your career—the Aviation Induced Divorce Syndrome is real and preventable. And crucially, the <strong>unforeseen physical risks</strong> of radiation and circadian disruption must be monitored proactively throughout your entire career.
+                                    <br /><br />
+                                    The industry's greatest taboo is the pilot who suffers in silence. <strong>Wingmentor's foundation is built on the opposite — awareness, honesty, and sustainable performance.</strong>
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Pilot Decision Making Section Header */}
+                        <section style={{ textAlign: 'center', maxWidth: '56rem', marginTop: '2rem', paddingTop: '4rem', borderTop: '1px solid #e2e8f0' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                                THE COMMAND MINDSET
+                            </div>
+                            <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                                Pilot Decision Making
+                            </h1>
+                            <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '48rem', margin: '0 auto', fontWeight: 400, textAlign: 'center' }}>
+                                Every action inside the cockpit is a decision, and every decision carries weight. The same principle applies to your career. In this section, we explore how pilots think, how they assess risk in real-time, and how the habits you build today—whether in the sim, at your desk, or in your personal life—directly shape the quality of every command decision you will ever make.
+                            </p>
+                        </section>
+
+                        {/* Pilot Decision Making - Perfectionism Trap */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '1rem' }}>
+                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>MINDSET & IDENTITY</div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    The Perfectionism Trap
+                                </h3>
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                    <img src="/Gemini_Generated_Image_cw7bdkcw7bdkcw7b.png" alt="Perfectionism Trap Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Flight training is a series of highly consequential tests and checkrides. This fosters a climate of perfectionism where numerous pilots—even high-timers and well-experienced aviators—secretly feel as though their skills are still not good enough. This is widely known as <strong>Impostor Syndrome</strong>, and it is far more prevalent in aviation than the industry openly admits.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '2.5rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>SCHOOL VS. THE REAL WORLD</h4>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>
+                                        Most flight schools teach you how to <em>pass</em> checkrides and written exams—not necessarily how to <em>be</em> a pilot in the real world. Many new pilots feel genuinely lost the first time they must navigate a complex international airport without an instructor beside them. The gap between training and reality is real, and it catches most pilots off guard.
+                                    </p>
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Despite all of these challenges, the vast majority of pilots will still tell you it remains the best office in the world. The point, however, is that your eyes must open to the true lifestyle and reality of flying—<strong>prepared, not blindsided.</strong>
+                                </p>
+                            </div>
+                        </section>
+                        {/* Pilot Decision Making - The Seniority Gamble */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '1rem' }}>
+                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>CAREER STRUCTURE</div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    The Seniority Gamble
+                                </h3>
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                    <img src="/Gemini_Generated_Image_a0rjm7a0rjm7a0rj.png" alt="Seniority Gamble Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Unlike almost any other profession, an airline pilot's entire career trajectory is governed by a single, ruthless mechanism: the <strong>seniority list</strong>. Your salary, your routes, your aircraft type, your roster quality—all of it is determined by your position on that list. And that list is extraordinarily fragile.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '2.5rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>START FROM ZERO — EVERY TIME</h4>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>
+                                        If your airline goes bankrupt or another pandemic grounds the industry, you do not simply "get another job." You go straight to the <strong>bottom of the list</strong> at the next airline—regardless of your total experience, years, or ratings. Different airlines have different training standards and procedures. You must undergo costly conversion training all over again, and the bill lands on you.
+                                    </p>
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    The waiting is its own trap. After applying to a new airline, you sit at home with no clear timeline—no idea when the call will come. Days turn into weeks, weeks into months. During this limbo, pilots risk losing momentum, letting their currency lapse, and watching their skills and knowledge quietly erode. In aviation, standing still is moving backward.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '16px',
+                                    padding: '1.5rem 2rem',
+                                    boxShadow: '0 4px 16px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255,255,255,0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, fontStyle: 'italic' }}>
+                                        "The seniority system creates a career that is fundamentally non-transferable. Understanding this from day one is not pessimism—it is the most important strategic decision you will ever make as a pilot."
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Pilot Decision Making - The Lost Decade */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '1rem' }}>
+                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>FINANCIAL REALITY</div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    The Lost Decade: Debt vs. Pay
+                                </h3>
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                    <img src="/Gemini_Generated_Image_adg4jbadg4jbadg4.png" alt="Lost Decade Financials" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Flight schools sell the dream of a $300,000 captain's salary. What they rarely mention is what comes before it — the <strong>lost decade</strong>. The gap between the promise and the reality of early-career pay is one of the most financially dangerous decisions a young pilot can be underprepared for.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '2.5rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>THE NUMBERS NOBODY PUTS ON THE BROCHURE</h4>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>
+                                        You may graduate with upwards of <strong>$100,000 in training debt</strong>, only to earn between <strong>$30,000–$60,000 per year</strong> as a flight instructor or junior first officer for several years. Meanwhile, life doesn't pause: rent, utilities, groceries, insurance, taxes, and potentially a family to support all continue demanding payment — every single month.
+                                    </p>
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Many schools offer a "study now, pay later" programme that sounds appealing on paper. But the reality is that once you graduate, accumulate hours, and finally land that airline position, the debt follows you in. Your early airline salary is simply not enough to service that loan comfortably while also covering living expenses. Your earnings lag behind your obligations for years.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '16px',
+                                    padding: '1.5rem 2rem',
+                                    boxShadow: '0 4px 16px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255,255,255,0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, fontStyle: 'italic' }}>
+                                        "The captain's salary is real. But the decade of financial sacrifice required to reach it is rarely advertised. A pilot who enters their career without a financial plan is not just broke — they are a decision-making risk waiting to happen inside the cockpit."
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Pilot Decision Making - The Industry Blind Spot */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '1rem' }}>
+                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center' }}>INDUSTRY AWARENESS</div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                    The Industry Blind Spot
+                                </h3>
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                    <img src="/Gemini_Generated_Image_tiw3pqtiw3pqtiw3.png" alt="Industry Blind Spot Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    From the outside, being a pilot looks everything a dream career should be—high paychecks, globe-trotting, and enviable airline perks. But these are only the external attractions. The internal reality of the industry is something the majority of student pilots never see coming.
+                                </p>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    Most student pilots are exclusively focused on the traditional pathway: enrol in flight school, build hours, obtain a type rating, get hired. What they have no visibility on is what happens next—or more critically, <strong>why so many never make it past that final step</strong>. After spending approximately $100,000 on training licenses and then another $50,000 on a type rating, a significant number of pilots still cannot get hired. The primary reason is the <strong>1,500-hour rule</strong>, a regulatory barrier that simply takes time and additional cost to clear.
+                                </p>
+                                <div style={{
+                                    backgroundColor: '#f8fafc',
+                                    borderLeft: '4px solid #475569',
+                                    padding: '1.5rem',
+                                    borderRadius: '0 8px 8px 0',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ margin: '0 0 0.5rem 0', color: '#1e293b', fontSize: '1.1rem', fontWeight: 600 }}>The Retirement Wave</h4>
+                                    <p style={{ margin: 0, color: '#334155', fontSize: '1rem' }}>
+                                        The industry simultaneously faces an accelerating retirement wave, most acutely felt across Europe and the United States. A large segment of the workforce belongs to the "baby boomer" generation, with pilots rapidly approaching the mandatory retirement age of 65. Every year, thousands of experienced captains leave their seats—creating massive vacancies that the training pipeline simply cannot fill quickly enough due to that same hour-barrier.
+                                    </p>
+                                </div>
+                                <div style={{
+                                    backgroundColor: '#fef2f2',
+                                    borderLeft: '4px solid #ef4444',
+                                    padding: '1.5rem',
+                                    borderRadius: '0 8px 8px 0',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <h4 style={{ margin: '0 0 0.5rem 0', color: '#991b1b', fontSize: '1.1rem', fontWeight: 600 }}>The COVID Fault Line</h4>
+                                    <p style={{ margin: 0, color: '#7f1d1d', fontSize: '1rem' }}>
+                                        COVID-19 did not just pause aviation — it broke parts of it permanently. Entire fleets were grounded, regional airlines filed for bankruptcy, and a large number of pilots took early retirement. Flight training stalled. When travel demand rebounded, the industry discovered it had nowhere near enough trained crew to meet it. The training system could not recover fast enough to replace those who had left.
+                                    </p>
+                                </div>
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    The downstream effects continue today. Flight cancellations, route reductions, and understaffed regional carriers are all symptoms of this structural gap. Worse, major airlines routinely raid regional fleets to poach their most experienced pilots — leaving smaller carriers further depleted and forcing reductions in service to smaller and underserved communities.
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '16px',
+                                    padding: '1.5rem 2rem',
+                                    boxShadow: '0 4px 16px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255,255,255,0.8)',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, fontStyle: 'italic' }}>
+                                        "The pilot shortage is real. But so is the blind spot. Most pilots only discover the gap after they've already invested everything. Wingmentor exists to illuminate this before it's too late to navigate."
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        {/* Hidden Costs Section */}
+                        <section style={{ textAlign: 'center', maxWidth: '56rem', marginTop: '4rem', paddingTop: '4rem', borderTop: '1px solid #e2e8f0' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                                THE FINANCIAL BARRIER
+                            </div>
+                            <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                                Financial Risk
+                            </h1>
+                            <div style={{ textAlign: 'left', maxWidth: '52rem', margin: '0 auto' }}>
+                                <p style={{ color: '#475569', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                                    Before exploring the financial risks of aviation, it is crucial to first understand what a <strong>Type Rating</strong> is. While a Commercial Pilot License allows a pilot to fly for hire, a type rating is an advanced, aircraft-specific certification (such as an Airbus A320 or Boeing 737) required by aviation authorities. Historically, airlines paid for this training upon hiring a pilot. Today, the sheer volume of low-timer graduates has shifted this dynamic: many airlines now require pilots to securely hold a type rating <em>before</em> they even apply, completely shifting the financial burden onto the applicant's shoulders.
+                                </p>
+                                <p style={{ color: '#475569', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                                    This shift has exposed a massive vulnerability in <strong>investment knowledge</strong> among young aviators. The psychology of this financial commitment can be viewed through two contrasting perspectives: the <strong>Banker</strong> versus the <strong>Casino Manager</strong>.
                                 </p>
 
-                                {/* Definition Blended Card */}
-                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '2.5rem', textAlign: 'left' }}>
-                                    <div style={{
-                                        backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                                        backdropFilter: 'blur(16px)',
-                                        WebkitBackdropFilter: 'blur(16px)',
-                                        borderRadius: '24px',
-                                        padding: '3rem 2.5rem',
-                                        boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
-                                        border: '1px solid rgba(255, 255, 255, 0.8)',
-                                        textAlign: 'left',
-                                        width: '100%',
-                                        boxSizing: 'border-box'
-                                    }}>
-                                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                            CORE DEFINITION
-                                        </div>
-                                        <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
-                                            The Multi-Crew Endorsement
-                                        </h3>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
-                                            A <strong>Type Rating</strong> is an additional, specialized certification issued by an aviation authority that explicitly authorizes a pilot to act as a crew member on a specific "type" of large or complex aircraft (e.g., an Airbus A320, Boeing 737, or ATR 72).
-                                        </p>
+                                {/* Embedded Banker vs Casino Section */}
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', alignItems: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+                                    <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.1)', border: '1px solid #e2e8f0', backgroundColor: 'white', padding: '1rem' }}>
+                                        <img src="/banker-vs-casino.png" alt="Banker vs Casino Manager Psychology" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
+                                    </div>
+
+                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', width: '100%', marginTop: '1rem' }}>
+                                        <section>
+                                            <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.75rem', color: '#0f172a', marginBottom: '1.5rem' }}>The Banker's Perspective</h3>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', color: '#475569', fontSize: '1.05rem', lineHeight: 1.7 }}>
+                                                <p>A banker looks for <strong>collateral</strong>, <strong>liquidity</strong>, and <strong>predictable growth</strong>. From this lens, a self-funded Type Rating is a "Toxic Asset":</p>
+                                                <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                                                    <li><strong>Non-Refundable:</strong> Once paid, the capital is gone forever. There is no "sell-back" option.</li>
+                                                    <li><strong>Intangible:</strong> You aren't buying a house or a car; you're buying a piece of paper that only has value if an airline says it does.</li>
+                                                    <li><strong>The Subscription Model:</strong> You don't keep it forever. If you leave the industry or fail to fly the aircraft type regularly, the rating expires. It's a lease on a skill, not ownership of an asset.</li>
+                                                    <li><strong>No Appreciation:</strong> The rating doesn't grow in value. In fact, it only costs more to "renew" it every year if you aren't employed.</li>
+                                                </ul>
+                                            </div>
+                                        </section>
+
+                                        <section>
+                                            <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.75rem', color: '#0f172a', marginBottom: '1.5rem' }}>The Casino Manager's View</h3>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', color: '#475569', fontSize: '1.05rem', lineHeight: 1.7 }}>
+                                                <p>The Casino Manager sees the Pilot Training industry as a high-stakes table. They love the "Side Bet" of a self-funded rating because:</p>
+                                                <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                                                    <li><strong>Asymmetric Risk:</strong> The pilot takes 100% of the financial risk. The "Casino" (the airline or agency) takes 0%.</li>
+                                                    <li><strong>The "Near Miss" Effect:</strong> Pilots see others getting hired and think they are "due" for a win, leading them to stay in the game longer than they should.</li>
+                                                    <li><strong>House Edge:</strong> The house always wins because even if the pilot isn't hired, the training center still gets paid for the rating.</li>
+                                                </ul>
+                                                <div style={{ padding: '1.5rem', backgroundColor: '#fff7ed', borderRadius: '16px', border: '1px solid #ffedd5', marginTop: '1rem' }}>
+                                                    <p style={{ margin: 0, fontSize: '0.95rem', color: '#9a3412', fontWeight: 600 }}>
+                                                        ⚠️ Are you investing or gambling? Without a job offer, a self-funded Type Rating is almost always a gamble.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </section>
                                     </div>
                                 </div>
 
-                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2.5rem', textAlign: 'left' }}>
-                                    Think of your commercial license as a standard driver's license. It proves you know the rules of the road and how to operate a standard car. A type rating, however, is like getting a specialized commercial endorsement to drive a massive 18-wheeler semi-truck—they are entirely different beasts requiring specific handling, systems knowledge, and training.
+                                <p style={{ color: '#475569', fontSize: '1.1rem', lineHeight: 1.8, margin: 0 }}>
+                                    Without a fundamental understanding of market demand, financial liquidity, and risk management, pilots often trap themselves in insurmountable debt with a rating they cannot legally use—a hand where the casino always wins.
                                 </p>
                             </div>
-                        </section>
 
-                        {/* Hidden Costs Section */}
-                        <section style={{ textAlign: 'center', maxWidth: '48rem', marginTop: '1rem' }}>
-                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                THE FINANCIAL BARRIER
+                            {/* Financial Risk - The Instructor's Dilemma */}
+                            <div style={{ textAlign: 'left', maxWidth: '52rem', margin: '3rem auto 0 auto' }}>
+                                <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center', marginTop: '3rem' }}>THE INSTRUCTOR TRAP</div>
+                                    <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                        The Instructor's Dilemma
+                                    </h3>
+                                    <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2rem', position: 'relative' }}>
+                                        <img src="/instructor-wrong-investment-pilot-gap.png" alt="Flight instructor stuck paying for Airbus rating" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                    </div>
+                                    <p style={{ marginBottom: '1.5rem' }}>
+                                        Even pilots who chose the <strong>traditional flight instructor route</strong> are not immune. Trapped in a holding pattern, some will burn their hard-earned cash on a Category 3 type rating (like an A320) out of pure frustration, hoping it will force an airline to notice them. Sadly, they remain stuck as instructors, now burdened with a heavy training loan and recurrent costs they can't afford.
+                                    </p>
+                                </div>
                             </div>
-                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
-                                The Hidden Costs
-                            </h2>
-                            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, textAlign: 'left' }}>
-                                However, as we will explore in the Pilot Gap, the sheer volume of low-timer graduates has shifted this dynamic. Many airlines now require pilots to already hold a type rating <em>before</em> they even apply, completely shifting the financial burden onto the applicant's shoulders.
-                            </p>
+
+                            {/* Financial Risk - "Shiny Type Rating" Syndrome */}
+                            <div style={{ textAlign: 'left', maxWidth: '52rem', margin: '3rem auto 0 auto' }}>
+                                <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'center', marginTop: '3rem' }}>THE SYNDROME</div>
+                                    <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                        "Shiny Type Rating" Syndrome
+                                    </h3>
+                                    <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2rem', position: 'relative' }}>
+                                        <img src="/financial-drain-pilot-gap.jpg" alt="Cartoon showing the financial drain of type ratings" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                    </div>
+                                    <p style={{ marginBottom: '1.5rem' }}>
+                                        Trapped with no clear direction, many succumb to <strong>"Shiny Type Rating Syndrome."</strong> Out of frustration, they spend tens of thousands on complex ratings (A320 or ATR) <em>before</em> securing a job offer. Without line experience, this is often a catastrophic mistake—bleeding their remaining funds dry just as an airline might finally call.
+                                    </p>
+                                </div>
+                            </div>
                         </section>
-                    </div>
+                    </div >
 
                     {/* The Aftermath Section */}
                     {/* Expectations vs Reality Section */}
@@ -605,7 +1142,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
 
                         <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
                             <img src="/low-timer-expectation.png" alt="Pilot holding commercial license dreaming of a jet" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
                         </div>
 
                         <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2.5rem', textAlign: 'left' }}>
@@ -614,7 +1150,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
 
                         <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
                             <img src="/low-timer-reality.jpg" alt="Bankrupt pilot regretting buying a type rating" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
                         </div>
 
                         <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2.5rem', textAlign: 'left' }}>
@@ -622,41 +1157,8 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                         </p>
                     </section>
 
-                    {/* The Instructor Route Section */}
-                    <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '1rem' }}>
-                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                            THE INSTRUCTOR TRAP
-                        </div>
-                        <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
-                            The Instructor's Dilemma
-                        </h2>
 
-                        <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
-                            <img src="/instructor-wrong-investment-pilot-gap.png" alt="Flight instructor stuck paying for Airbus rating" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
-                        </div>
 
-                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, textAlign: 'left' }}>
-                            Even pilots who chose the <strong>traditional flight instructor route</strong> are not immune. Trapped in a holding pattern, some will burn their hard-earned cash on a Category 3 type rating (like an A320) out of pure frustration, hoping it will force an airline to notice them. Sadly, they remain stuck as instructors, now burdened with a heavy training loan and recurrent costs they can't afford.
-                        </p>
-                    </section>
-                    <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
-                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                            THE SYNDROME
-                        </div>
-                        <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
-                            "Shiny Type Rating" Syndrome
-                        </h2>
-
-                        <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
-                            <img src="/financial-drain-pilot-gap.jpg" alt="Cartoon showing the financial drain of type ratings" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
-                        </div>
-
-                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2.5rem', textAlign: 'left' }}>
-                            Trapped with no clear direction, many succumb to <strong>"Shiny Type Rating Syndrome."</strong> Out of frustration, they spend tens of thousands on complex ratings (A320 or ATR) <em>before</em> securing a job offer. Without line experience, this is often a catastrophic mistake—bleeding their remaining funds dry just as an airline might finally call.
-                        </p>
-                    </section>
 
                     {/* PRM Section */}
                     <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '1rem' }}>
@@ -669,7 +1171,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
 
                         <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
                             <img src="/what-is-a-type-rating.png" alt="Be smart with your investments. You can cash out and sell a plane, but not a type rating." style={{ width: '100%', height: 'auto', display: 'block' }} />
-                            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
                         </div>
 
                         <div style={{ textAlign: 'left', color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
@@ -703,7 +1204,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                             Beyond the rating, one must bypass the "insurmountable wall" of recruitment. Learn about the <strong>Pilot Recognition System</strong> on the next page.
                         </p>
                     </div>
-                </div>
+                </div >
             );
         }
 
@@ -720,8 +1221,42 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                         <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
                             What is the Pilot Gap?
                         </h1>
-                        <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '42rem', margin: '0 auto', fontWeight: 400 }}>
-                            You've earned your Commercial Pilot License. You are qualified, skilled, and ready. Yet, you face an invisible wall—an experience vacuum that separates the classroom from the cockpit.
+                        <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '48rem', margin: '0 auto', fontWeight: 400 }}>
+                            An industry-wide crisis affecting pilots at every stage of their career—from students seeking direction and instructors looking to evolve, to airline pilots constrained by time. It is the invisible gap where talent and potential are lost, threatening the very foundation of the aviation industry.
+                        </p>
+                    </div>
+
+                    {/* ── Main Hero Image ── */}
+                    <div style={{ textAlign: 'center', width: '100%', maxWidth: '900px', margin: '0 auto' }}>
+                        {/* Title above image */}
+                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                            THE PILOT GAP
+                        </div>
+                        <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0' }}>
+                            A System Failing at Every Level
+                        </h2>
+
+                        {/* Image */}
+                        <div style={{
+                            width: '100%',
+                            borderRadius: '24px',
+                            overflow: 'hidden',
+                            boxShadow: '0 20px 50px rgba(0,0,0,0.10)',
+                            border: '1px solid rgba(0,0,0,0.04)',
+                            backgroundColor: '#fff',
+                            position: 'relative',
+                            marginBottom: '1.25rem'
+                        }}>
+                            <img
+                                src="/the-pilot-gap.png"
+                                alt="The Pilot Gap — A Massive Loss of Talent and Potential"
+                                style={{ width: '100%', height: 'auto', display: 'block' }}
+                            />
+                        </div>
+
+                        {/* Caption below image */}
+                        <p style={{ color: '#94a3b8', fontSize: '0.9rem', fontWeight: 300, lineHeight: 1.6, margin: '0 auto 2rem auto', maxWidth: '680px', fontStyle: 'italic' }}>
+                            The Pilot Gap is no longer just a "low-timer" issue — it affects all levels. Instructors looking to evolve, airline pilots constrained by schedules, and graduates desperate for direction all fall into this gap, resulting in a massive loss of talent and potential.
                         </p>
                     </div>
 
@@ -730,7 +1265,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                         <section style={{ textAlign: 'center', maxWidth: '52rem' }}>
                             <div style={{ padding: '2rem 0', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0', marginBottom: '3rem' }}>
                                 <p style={{ fontFamily: 'Georgia, serif', fontSize: '1.25rem', lineHeight: 1.6, color: '#334155', margin: 0, textAlign: 'justify', marginBottom: '1.5rem' }}>
-                                    You've earned your Commercial Pilot License. You are qualified, skilled, and ready. Yet, you face an invisible wall. This is the <strong>'Low Timer Pilot Gap'</strong>—the critical period where newly-licensed pilots possess the qualifications but lack the flight hours required for airline consideration.
+                                    This is <strong>'The Pilot Gap'</strong>. It is no longer just a "low-timer" issue—it affects all levels of the industry. <strong>Instructors</strong> looking to evolve and progress rather than remaining stagnant; <strong>airline pilots</strong> seeking recognition but constrained by flight schedules and lack of time to find opportunities; and <strong>student pilots/graduates</strong> desperate for direction and navigation through blocked entries, often mislabeled as inexperienced. Many fall into this gap, resulting in a massive loss of talent and potential. The industry is essentially collapsing at its base, right where the new generation is supposed to carry it forward.
                                 </p>
                                 <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.1rem', lineHeight: 1.7, color: '#475569', margin: 0, textAlign: 'justify' }}>
                                     Ultimately, the Pilot Gap is not a singular issue, but a complex combination of several factors we've discussed: The stigma of being a <strong>Low-Timer</strong>, the illusion of an immediate <strong>Pilot Shortage</strong> at all experience levels, and the brutal <strong>cause-and-effect of the current industry paradoxes</strong>. It is the friction point where massive pilot supply meets an insurmountable bottleneck of operational and insurance requirements.
@@ -740,6 +1275,13 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
 
                         {/* The Connection Bridge Section */}
                         <section style={{ textAlign: 'center', maxWidth: '56rem', marginTop: '1rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE LANDSCAPE
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The Connection of Pilots to the Industry
+                            </h2>
+
                             <div style={{
                                 width: '100%',
                                 maxWidth: '850px',
@@ -751,187 +1293,276 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                 backgroundColor: '#fff',
                                 position: 'relative'
                             }}>
-                                <img src="/pilot-gap-bridge.png" alt="The Connection of Pilots to the Industry" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                <img src="/universal-pilot-gap.jpg" alt="The Universal Pilot Gap: A Systemic Failure" style={{ width: '100%', height: 'auto', display: 'block' }} />
                             </div>
 
-                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                THE LANDSCAPE
-                            </div>
-                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
-                                The Connection of Pilots to the Industry
-                            </h2>
                             <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: '0 0 1.5rem 0', textAlign: 'left' }}>
-                                To understand the Pilot Gap, you must first look at the broken bridge connecting eager candidates to the aviation industry:
+                                The relationship between pilots and the aviation industry has always been one of mutual dependency — yet today, it is fundamentally broken. Airlines require experience to hire, but offer no pathway to gain it. Pilots invest years and significant capital into their licences, only to arrive at an industry door that remains firmly shut. This is not a supply problem. It is a <strong>connection problem</strong>.
                             </p>
                             <ul style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: 0, textAlign: 'left', paddingLeft: '1.5rem', listStyleType: 'disc' }}>
-                                <li style={{ marginBottom: '0.75rem' }}><strong>The Left Side (The Waiting Line):</strong> Thousands of low-time pilots are stuck waiting for a chance, burdened by financial bankruptcy. Some have been in line for years, wondering what the requirements are on the other side.</li>
-                                <li style={{ marginBottom: '0.75rem' }}><strong>The Right Side (The Goal):</strong> Aviation industry pathways—airlines, corporate jets, and emerging air taxis. Yet, recruiters stand at the gate turning applicants away: <em>"Sorry, you know the requirements."</em></li>
-                                <li style={{ marginBottom: '0.75rem' }}><strong>The Broken Bridge:</strong> A precarious path where pilots attempt to cross but fall into the chasm constructed from a deficit of knowledge, guidance, and required experience.</li>
-                                <li><strong>The Gap Itself:</strong> Pilots who try to take the leap without the right preparation find themselves falling. Investing in random ratings is a gamble without guidance, leaving many stranded or out of the industry entirely.</li>
+                                <li style={{ marginBottom: '0.75rem' }}><strong>No Structured Pipeline:</strong> Unlike medicine or law, aviation has no formal cadet-to-career pipeline that guarantees progression. Each pilot must individually navigate a fragmented, often contradictory set of requirements with no authoritative guide.</li>
+                                <li style={{ marginBottom: '0.75rem' }}><strong>Communication Silence:</strong> Airlines rarely communicate what they truly need beyond hour thresholds. Pilots are left interpreting vague recruitment criteria, leading to misaligned investments in ratings, courses, and training that carry no guaranteed return.</li>
+                                <li style={{ marginBottom: '0.75rem' }}><strong>No Advocacy Layer:</strong> There is no industry body that actively represents the low-timer pilot to the airline or the insurer. Pilots enter the system as individuals, competing against institutional bias with no collective voice.</li>
+                                <li><strong>The Wingmentor Bridge:</strong> This is precisely the gap Wingmentor was built to fill — acting as the structured layer of communication, advocacy, and preparation between pilots and the industry, ensuring no qualified pilot is left uninformed or unrepresented.</li>
                             </ul>
                         </section>
                     </div>
 
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.8, marginBottom: '4rem' }}>
-                        {/* Summary Quote */}
-                        <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-                            <p style={{ fontSize: '1.25rem', fontFamily: 'Georgia, serif', color: '#1e293b', fontStyle: 'italic', margin: 0 }}>
-                                "The void between ability and opportunity."
-                            </p>
-                            <p style={{ fontSize: '1rem', color: '#64748b', marginTop: '0.5rem' }}>
-                                The "Low Timer Gap" is the aviation industry's most perilous unspoken reality. It is the operational chasm that exists between graduating flight school with a Commercial Pilot License (~200 hours) and meeting the rigorous entry requirements of a major airline (often 1500 hours or significant Turbine experience).
-                            </p>
-                        </div>
+
 
                         {/* The Experience Void Section */}
-                        <div>
-                            <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1rem' }}>
+                        <div style={{
+                            backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                            backdropFilter: 'blur(16px)',
+                            WebkitBackdropFilter: 'blur(16px)',
+                            borderRadius: '24px',
+                            padding: '3.5rem 2.5rem',
+                            boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                            border: '1px solid rgba(255, 255, 255, 0.8)',
+                            textAlign: 'center',
+                            margin: '2rem 0 3rem 0',
+                            boxSizing: 'border-box' as const
+                        }}>
+                            <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                RECAP: THE BROKEN BRIDGE
+                            </div>
+                            <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '2rem' }}>
                                 The Experience Void
                             </h3>
-                            <p style={{ marginBottom: '1.25rem' }}>
-                                The Pilot Gap—often referred to as the Experience Void—is the massive developmental chasm you are standing in right now. It is the brutal, multi-year waiting period between holding a fresh 250-hour CPL and possessing the operational maturity that airlines actually demand.
+                            <p style={{ fontSize: '1.2rem', fontFamily: 'Georgia, serif', color: '#2563eb', fontStyle: 'italic', margin: '0 auto 1rem auto', maxWidth: '40rem', textAlign: 'center' }}>
+                                "The void between ability and opportunity."
                             </p>
-                            <p style={{ marginBottom: '1.25rem' }}>
-                                This gap affects everyone: from fresh <strong>students</strong> just starting their journey, to <strong>flight instructors</strong> trapped in the loop, and even <strong>airline pilots</strong> who are time-constrained and lack the resources to actively search for new opportunities.
+                            <p style={{ fontSize: '1.05rem', color: '#2563eb', margin: '0 auto 1.5rem auto', maxWidth: '38rem', textAlign: 'center', lineHeight: 1.7 }}>
+                                The Pilot Gap is the brutal, multi-year waiting period between earning a ~200-hour Commercial Pilot License and possessing the operational maturity that airlines demand.
                             </p>
-                            <p>
-                                You are trapped in an industry Catch-22: you need a job to gain commercial experience, but operators demand commercial experience before giving you a job. Because governing bodies and insurers rely on blunt metrics—like sheer time in the air—to measure safety, you are commercially unemployable for the right seat of a multi-million-dollar jet.
-                            </p>
-                        </div>
-
-                        {/* Pilot Database Callout */}
-                        <div style={{ padding: '2rem', backgroundColor: '#f0f9ff', borderRadius: '16px', border: '1px solid #bae6fd', margin: '1rem 0' }}>
-                            <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0369a1', marginBottom: '0.75rem' }}>The Wingmentor Pilot Database</h4>
-                            <p style={{ color: '#0c4a6e', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
-                                We handle and maintain a comprehensive <strong>database of pilots</strong>. Your profile in our database is not just a resume; it is a quantified record recognized through our <strong>Pilot Recognition System</strong>, making you visible to our network of industry partners who are looking for standardized excellence.
+                            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: '0 auto', textAlign: 'center', maxWidth: '38rem' }}>
+                                You are trapped in an industry Catch-22: you need a job to gain experience, but operators demand experience before giving you a job. This leaves newly licensed pilots fully qualified, yet commercially unemployable.
                             </p>
                         </div>
 
-                        {/* Hourglass Image with Description */}
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', margin: '1rem 0 2rem 0' }}>
-                            <div style={{ width: '100%', maxWidth: '500px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', border: '1px solid rgba(0,0,0,0.05)', backgroundColor: '#fff' }}>
-                                <img src="/hourglass-pilot-gap.png" alt="Hourglass showing pilots filtering down" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+                        {/* Transition Header */}
+                        <div style={{ textAlign: 'center', margin: '6rem 0 4rem 0', padding: '0 1rem' }}>
+                            <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '320px', height: 'auto', objectFit: 'contain', marginBottom: '2rem' }} />
+                            <div style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem' }}>
+                                THE BRIDGING THE GAP APPROACH
                             </div>
-                            <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', maxWidth: '480px', textAlign: 'center', margin: 0 }}>
-                                <strong>The Industry Hourglass:</strong> The Pilot Gap acts as an unrelenting hourglass. Thousands of low-timers fall in at the top, but only the few who manage to navigate the void emerge out the bottom as the operationally-mature high-timers that airlines demand.
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                                Wingmentor's Approach Towards the Gap
+                            </h2>
+                            <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '48rem', margin: '0 auto', fontWeight: 400 }}>
+                                Wingmentor acts as the structured bridge connecting pilots at every level to the aviation industry — stripping away the ambiguity and explicitly showing you the exact, targeted frameworks you need to cross the gap efficiently.
                             </p>
                         </div>
 
-                        {/* The Regulatory Trap Section */}
-                        <div>
-                            <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1rem' }}>
-                                The 1500-Hour Regulatory Trap
-                            </h3>
-                            <p style={{ marginBottom: '1.5rem' }}>
-                                Continuing the perspective from <strong>Airbus</strong>, this gap is not caused by a lack of fundamental flying capabilities. Instead, the dramatic shift in governing body requirements—most notably the newly stated <strong>1500-hour</strong> requirement for an ATPL—and the rigid views of airline insurance policies regarding low-timers have completely altered the industry. These stringent regulations inadvertently created the Pilot Gap.
-                            </p>
-
-                            {/* Highlighted Insight Callout */}
-                            <div style={{ padding: '1.75rem', backgroundColor: '#fef3c7', borderRadius: '12px', borderLeft: '4px solid #f59e0b', marginBottom: '1.5rem' }}>
-                                <p style={{ margin: 0, fontSize: '0.95rem', color: '#92400e', fontWeight: 500 }}>
-                                    <strong>The Vulnerability of Vagueness:</strong> Perhaps the most frustrating reality of the <strong>1500-hour</strong> rule is its sheer vagueness. Graduates with 200 hours are left entirely to their own devices to source the remaining 1300 hours, with a complete lack of any structured pathway. The regulations rarely specify the exact quality of hours needed—how many of those should be multi-engine, cross-country, or turbine?
-                                </p>
+                        {/* Moved Program Context */}
+                        <div style={{ maxWidth: '56rem', margin: '0 auto 3rem auto' }}>
+                            {/* Section Image */}
+                            <div style={{
+                                width: '100%',
+                                borderRadius: '24px',
+                                overflow: 'hidden',
+                                boxShadow: '0 15px 35px rgba(0,0,0,0.06)',
+                                border: '1px solid rgba(0,0,0,0.04)',
+                                backgroundColor: '#fff',
+                                marginBottom: '2.5rem'
+                            }}>
+                                <img src="/wingmentor-approach-gap.png" alt="Bridging the Pilot Gap" style={{ width: '100%', height: 'auto', display: 'block' }} />
                             </div>
 
-
-
-                        </div>
-
-                        {/* The Wingmentor Foundation Program Section */}
-                        <div>
-                            <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1rem' }}>
-                                Unclogging the Pipeline
-                            </h3>
-                            <p style={{ marginBottom: '1.25rem' }}>
-                                There is <strong>no such thing as "on-the-job training" for a commercial pilot</strong>—because the job <em>is</em> the training. You are expected to arrive ready. This is exactly where the <strong>Wingmentor Foundation Program</strong> steps in.
-                            </p>
-                            <p style={{ marginBottom: '1.25rem' }}>
-                                We build the critical, viable "pre-experience" skills that airlines require. This program isn't just theory; it is industry-recognized and accredited, with affirmation from <strong>Airbus</strong> and other major manufacturers to actively advise on current industry pathways. Here at Wingmentor, we will strip away the ambiguity and explicitly show you the exact, targeted operational hours and frameworks you need to cross the gap efficiently.
-                            </p>
-                            <div style={{ padding: '1.5rem', backgroundColor: '#f0fdf4', borderRadius: '12px', borderLeft: '4px solid #16a34a', marginBottom: '3rem' }}>
-                                <p style={{ margin: 0, fontSize: '0.95rem', color: '#166534', fontWeight: 500 }}>
-                                    By establishing a formalized pilot recognition system and strategic networking, we are solving the pilot gap at its core. Our mission is to fundamentally unclog the pilot pipeline—meaning current flight instructors will no longer be trapped at flight schools for five years, but instead will be recognized through our system, moving on to airlines and freeing up space for new instructors to enter the industry.
+                            <div style={{ maxWidth: '48rem', margin: '0 auto' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.25rem', textAlign: 'left' }}>
+                                    There is <strong>no such thing as "on-the-job training" for a commercial pilot</strong>—because the job <em>is</em> the training. You are expected to arrive ready. This is exactly where the <strong>Wingmentor Foundation Program</strong> steps in.
                                 </p>
-                            </div>
-
-                            {/* Operational Briefing: Program Framework (Cont.) */}
-                            <div style={{ backgroundColor: '#f8fafc', padding: '2.5rem', borderRadius: '16px', border: '1px solid #e2e8f0', marginBottom: '3rem' }}>
-                                <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase', letterSpacing: '-0.02em', borderBottom: '3px solid #eab308', paddingBottom: '0.5rem', display: 'inline-block' }}>
-                                    Operational Briefing: Program Framework (Cont.)
-                                </h2>
-                                <p style={{ color: '#334155', fontSize: '16px', lineHeight: 1.7, marginBottom: '2rem' }}>
-                                    Building on our mission to bridge the Low Timer Gap, the Wingmentor Foundation Program is structured around core principles designed to foster genuine growth and verifiable expertise. We emphasize a proactive approach to career development, moving beyond passive hour-building to active skill refinement and strategic networking.
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem', textAlign: 'left' }}>
+                                    We build the critical, viable "pre-experience" skills that airlines require. This program isn't just theory; it is industry-recognized and accredited, with affirmation from <strong>Airbus</strong> and other major manufacturers to actively advise on current industry pathways. Here at Wingmentor, we will strip away the ambiguity and explicitly show you the exact, targeted operational hours and frameworks you need to cross the gap efficiently.
                                 </p>
-
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '1.25rem', textTransform: 'uppercase' }}>
-                                    Core Principles of Engagement
-                                </h3>
-                                <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', listStyle: 'none', padding: 0, margin: '0 0 2rem 0' }}>
-                                    {[
-                                        { title: 'Targeted Consultation', text: 'Focus on specific challenges identified in mentee debriefs.' },
-                                        { title: 'Verifiable Progress', text: 'All mentorship interactions are meticulously logged and validated.' },
-                                        { title: 'Skill Amplification', text: 'Transform theoretical knowledge into practical, command-ready experience.' },
-                                        { title: 'Community & Ethics', text: 'Cultivate a supportive, professional, and compliant aviation network.' }
-                                    ].map((item, idx) => (
-                                        <li key={idx} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#0284c7', marginTop: '0.6rem', flexShrink: 0 }} />
-                                            <p style={{ margin: 0, fontSize: '16px', color: '#334155' }}>
-                                                <strong>{item.title}:</strong> {item.text}
-                                            </p>
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <div style={{ paddingTop: '2rem', borderTop: '1px solid #e2e8f0' }}>
-                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '1rem', textTransform: 'uppercase' }}>
-                                        Mentor-Mentee Dynamics: A Synergistic Partnership
-                                    </h3>
-                                    <p style={{ color: '#334155', fontSize: '16px', lineHeight: 1.7, margin: 0, fontStyle: 'italic' }}>
-                                        The relationship between mentor and mentee is a cornerstone of our program. Mentors gain invaluable leadership and communication skills through structured guidance, while mentees receive precise, peer-level support to navigate their training. This creates a powerful feedback loop where both parties accelerate their development, ensuring mutual benefit and contributing to a stronger, more resilient aviation community.
+                                <div style={{ padding: '1.5rem', backgroundColor: '#f0fdf4', borderRadius: '12px', borderLeft: '4px solid #16a34a', textAlign: 'left' }}>
+                                    <p style={{ margin: 0, fontSize: '0.95rem', color: '#166534', fontWeight: 500, lineHeight: 1.6 }}>
+                                        By establishing a formalized pilot recognition system and strategic networking, we are solving the pilot gap at its core. Our mission is to fundamentally unclog the pilot pipeline—meaning current flight instructors will no longer be trapped at flight schools for five years, but instead will be recognized through our system, moving on to airlines and freeing up space for new instructors to enter the industry.
                                     </p>
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Our Approach to Bridging the Gap */}
-                            <div style={{ textAlign: 'center', maxWidth: '42rem', margin: '0 auto' }}>
-                                <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                                    Our Approach to Bridging the Gap
-                                </h3>
-                                <p style={{ color: '#334155', fontSize: '16px', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-                                    Within the Wingmentor Foundation Program, you will experience real aviation industry expectations. We transform your thinking from a fresh graduate to a seasoned pilot, instilling real pilot ethics, mentor standards, and the foundational information to assess any situation.
+                        {/* The Wingmentor Foundation Program Section */}
+                        <section style={{ textAlign: 'center', maxWidth: '56rem', marginTop: '1rem' }}>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The 3 Core Segments of Industry Recognition
+                            </h2>
+
+                            {/* Section Image */}
+                            <div style={{
+                                width: '100%',
+                                borderRadius: '24px',
+                                overflow: 'hidden',
+                                boxShadow: '0 15px 35px rgba(0,0,0,0.06)',
+                                border: '1px solid rgba(0,0,0,0.04)',
+                                backgroundColor: '#fff',
+                                marginBottom: '2.5rem'
+                            }}>
+                                <img src="/wingmentor-3-segments.png" alt="Wingmentor 3 core segments approach" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: '0 0 1.5rem 0', textAlign: 'left' }}>
+                                To bridge the Pilot Gap, Wingmentor breaks its approach into <strong>3 core segments</strong> — each designed to build a verifiable, industry-recognized pilot profile that airlines and operators can act on:
+                            </p>
+                            <ul style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: '0 0 2rem 0', textAlign: 'left', paddingLeft: '1.5rem', listStyleType: 'disc' }}>
+                                <li style={{ marginBottom: '0.75rem' }}>
+                                    <strong>Pilot Recognition —</strong> A structured credentialing process that documents your Foundation Program attendance, mentoring hours, EBT &amp; CBTA core familiarity, knowledge exam results, and licensure outcomes. This recognition is submitted through an assessment pipeline and formally acknowledged by our airline partner network — including Air Asia, Singapore Airlines, and Cathay Pacific.
+                                </li>
+                                <li style={{ marginBottom: '0.75rem' }}>
+                                    <strong>Pilot Cognitive &amp; Workflow Assessment —</strong> A data-driven evaluation of your situational awareness, decision-making flow, and skills acquired during training. Presented as performance metrics — microaviation competency, workflow score, and skills gained — this gives airlines a quantified, standardized view of your readiness that goes far beyond a logbook hour count.
+                                </li>
+                                <li>
+                                    <strong>Pilot Profile Examination —</strong> A consolidated digital profile that aggregates your certifications, flight data, and performance trends into a single, shareable record. This is the document that represents you to the industry — turning your raw experience into a professional, structured case for recognition.
+                                </li>
+                            </ul>
+
+                            {/* Pilot Database Callout */}
+                            <div style={{ padding: '2rem', backgroundColor: '#f0f9ff', borderRadius: '16px', border: '1px solid #bae6fd', margin: '2rem 0', textAlign: 'left' }}>
+                                <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0369a1', marginBottom: '1.5rem' }}>The Wingmentor Pilot Database</h4>
+                                <div style={{
+                                    width: '100%',
+                                    borderRadius: '12px',
+                                    overflow: 'hidden',
+                                    boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+                                    border: '1px solid rgba(0,0,0,0.05)',
+                                    backgroundColor: '#fff',
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <img src="/wingmentor-pilot-database.png" alt="Wingmentor Pilot Database Visualization" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                                <p style={{ color: '#0c4a6e', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+                                    We handle and maintain a comprehensive <strong>database of pilots</strong>. Your profile in our database is not just a resume; it is a quantified record recognized through our <strong>Pilot Recognition System</strong>, making you visible to our network of industry partners who are looking for standardized excellence.
                                 </p>
-                                <p style={{ color: '#334155', fontSize: '16px', lineHeight: 1.7, margin: 0 }}>
+                            </div>
+                        </section>
+
+                        {/* Operational Briefing: Program Framework (Cont.) */}
+                        <div style={{
+                            backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                            backdropFilter: 'blur(16px)',
+                            WebkitBackdropFilter: 'blur(16px)',
+                            borderRadius: '24px',
+                            padding: '4rem 3rem',
+                            boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                            border: '1px solid rgba(255, 255, 255, 0.8)',
+                            textAlign: 'center',
+                            width: '100%',
+                            boxSizing: 'border-box',
+                            marginBottom: '3rem'
+                        }}>
+                            <img src="/logo.png" alt="WingMentor Logo" style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
+                            <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                WINGMENTOR INSIGHT
+                            </div>
+                            <h3 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase', letterSpacing: '-0.02em', borderBottom: '3px solid #eab308', paddingBottom: '0.5rem', display: 'inline-block' }}>
+                                Operational Briefing: Program Framework (Cont.)
+                            </h3>
+
+                            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '2rem', textAlign: 'left' }}>
+                                Building on our mission to bridge the Low Timer Gap, the Wingmentor Foundation Program is structured around core principles designed to foster genuine growth and verifiable expertise. We emphasize a proactive approach to career development, moving beyond passive hour-building to active skill refinement and strategic networking.
+                            </p>
+
+                            <h4 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.1em', textAlign: 'left' }}>
+                                Core Principles of Engagement
+                            </h4>
+                            <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', listStyle: 'none', padding: 0, margin: '0 0 2rem 0' }}>
+                                {[
+                                    { title: 'Targeted Consultation', text: 'Focus on specific challenges identified in mentee debriefs.' },
+                                    { title: 'Verifiable Progress', text: 'All mentorship interactions are meticulously logged and validated.' },
+                                    { title: 'Skill Amplification', text: 'Transform theoretical knowledge into practical, command-ready experience.' },
+                                    { title: 'Community & Ethics', text: 'Cultivate a supportive, professional, and compliant aviation network.' }
+                                ].map((item, idx) => (
+                                    <li key={idx} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#0284c7', marginTop: '0.6rem', flexShrink: 0 }} />
+                                        <p style={{ margin: 0, fontSize: '16px', color: '#475569', textAlign: 'left' }}>
+                                            <strong style={{ color: '#0f172a' }}>{item.title}:</strong> {item.text}
+                                        </p>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <div style={{ paddingTop: '2rem', borderTop: '1px solid rgba(15, 23, 42, 0.1)', textAlign: 'left' }}>
+                                <h4 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                                    Mentor-Mentee Dynamics: A Synergistic Partnership
+                                </h4>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: 0, fontStyle: 'italic' }}>
+                                    The relationship between mentor and mentee is a cornerstone of our program. Mentors gain invaluable leadership and communication skills through structured guidance, while mentees receive precise, peer-level support to navigate their training. This creates a powerful feedback loop where both parties accelerate their development, ensuring mutual benefit and contributing to a stronger, more resilient aviation community.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Our Approach to Bridging the Gap */}
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '3.5rem', textAlign: 'left', maxWidth: '48rem', margin: '3.5rem auto 0 auto' }}>
+                            <div style={{
+                                backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                backdropFilter: 'blur(16px)',
+                                WebkitBackdropFilter: 'blur(16px)',
+                                borderRadius: '24px',
+                                padding: '4rem 3rem',
+                                boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                border: '1px solid rgba(255, 255, 255, 0.8)',
+                                textAlign: 'center',
+                                width: '100%',
+                                boxSizing: 'border-box'
+                            }}>
+                                <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
+                                <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                    WINGMENTOR INSIGHT
+                                </div>
+                                <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
+                                    Our Approach to Bridging the Gap
+                                </h2>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: '0 auto', maxWidth: '40rem', textAlign: 'left' }}>
+                                    Within the Wingmentor Foundation Program, you will experience real aviation industry expectations. We transform your thinking from a fresh graduate to a seasoned pilot, instilling real pilot ethics, mentor standards, and the foundational information to assess any situation.
+                                    <br /><br />
                                     We guide you to be aware of aviation investments regarding your status as a pilot. We provide hands-on experience and one-to-one consultation, getting you ready for your next interview so you can say, "I've helped X amount of pilots with their IR, PPL, etc.," backed by documented and verified practical Crew Resource Management and mentor skills.
                                 </p>
                             </div>
                         </div>
 
-                        <div style={{ height: '1px', background: '#e2e8f0', marginBottom: '2rem', marginTop: '4rem', width: '100%', maxWidth: '52rem', margin: '0 auto' }} />
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '6rem', paddingLeft: '1.5rem', paddingRight: '1.5rem', maxWidth: '48rem', margin: '0 auto', width: '100%' }}>
-                            <button onClick={handlePrev} style={{ color: '#94a3b8', fontSize: '14px', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-                                ← Back
-                            </button>
-                            <button
-                                onClick={handleNext}
-                                style={{ background: '#0284c7', color: 'white', fontWeight: 600, fontSize: '14px', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: 'none', cursor: 'pointer', transition: 'background 0.2s' }}
-                                onMouseEnter={e => (e.currentTarget.style.background = '#0369a1')}
-                                onMouseLeave={e => (e.currentTarget.style.background = '#0284c7')}
-                            >
-                                Next →
-                            </button>
-                        </div>
-                        <div style={{ textAlign: 'center', marginTop: '1rem' }}>
-                            <p style={{ color: '#0284c7', fontSize: '1.05rem', lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
-                                To cross this gap, one must understand the "Ultimate Equalizer": the <strong>Type Rating</strong>. Learn about the multi-crew certification process on the next page.
+                        {/* Page Conclusion */}
+                        <section style={{ textAlign: 'center', maxWidth: '48rem', margin: '4rem auto 0 auto' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE FINAL STEP
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Bridging the Knowledge Chasm
+                            </h2>
+                            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, textAlign: 'left' }}>
+                                You have learned the hard truth about the Pilot Gap and how Wingmentor is going to guide you through this gap. You will need to learn about <strong>Pilot Risk Management</strong> as the last core part of the "whats".
                             </p>
-                        </div>
+                        </section>
                     </div>
-                </div>
+
+                    <div style={{ height: '1px', background: '#e2e8f0', marginBottom: '2rem', marginTop: '4rem', width: '100%', maxWidth: '52rem', margin: '0 auto' }} />
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '6rem', paddingLeft: '1.5rem', paddingRight: '1.5rem', maxWidth: '48rem', margin: '0 auto', width: '100%' }}>
+                        <button onClick={handlePrev} style={{ color: '#94a3b8', fontSize: '14px', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+                            ← Back
+                        </button>
+                        <button
+                            onClick={handleNext}
+                            style={{ background: '#0284c7', color: 'white', fontWeight: 600, fontSize: '14px', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: 'none', cursor: 'pointer', transition: 'background 0.2s' }}
+                            onMouseEnter={e => (e.currentTarget.style.background = '#0369a1')}
+                            onMouseLeave={e => (e.currentTarget.style.background = '#0284c7')}
+                        >
+                            Next →
+                        </button>
+                    </div>
+                    <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+                        <p style={{ color: '#0284c7', fontSize: '1.05rem', lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
+                            Next, we explore <strong>Pilot Risk Management</strong>—the final pillar of understanding the industry landscape.
+                        </p>
+                    </div>
+                </div >
             );
         }
 
-        // ── Page 3: The Pilot Paradox & Shortage ─────────────────────────────
+        // ── Page 3: The Pilot Shortage & Paradox ─────────────────────────────
         if (currentTopic === 'what-pilot-shortage') {
             return (
                 <div style={{ display: 'flex', flexDirection: 'column', animation: 'fadeIn 0.5s ease-in-out' }}>
@@ -942,7 +1573,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                             CHAPTER 01 — UNDERSTANDING THE WHAT'S
                         </div>
                         <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-                            The Pilot Paradox & Shortage
+                            The Pilot Shortage & Paradox
                         </h1>
                         <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '42rem', margin: '0 auto', fontWeight: 400 }}>
                             Building on our profile of the 'Low Timer,' we must now confront the paradox that defines this stage of the journey. While global media headlines scream about a "Global Pilot Shortage," the reality for a 200-hour pilot is often one of silence and rejection. This gap between the industry's desperate need for crew and the individual pilot's struggle for a first job is the defining bottleneck of modern commercial aviation.
@@ -951,17 +1582,19 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem', alignItems: 'center' }}>
                         {/* 1. The Pilot Shortage in a Nutshell */}
-                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '1rem' }}>
-                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                        <section style={{ textAlign: 'center', maxWidth: '56rem', marginTop: '1rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
                                 THE PILOT SHORTAGE
                             </div>
-                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
+                            <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                                Understanding the Shortage
+                            </h1>
+                            <h2 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#475569', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
                                 In a Nutshell
                             </h2>
 
                             <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
                                 <img src="/hopeful-news-paradox.png" alt="Comic showing the pilot shortage in a nutshell" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
                             </div>
 
                             <div style={{ textAlign: 'left', color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
@@ -983,14 +1616,255 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                 </ul>
                             </div>
 
-                            {/* Wingmentor Insight Blended Card */}
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '3.5rem', textAlign: 'left' }}>
+
+                        </section>
+
+                        {/* The Illusion of the Shortage */}
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '1rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE ILLUSION
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The Illusion of the Shortage
+                            </h2>
+                            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: 0, textAlign: 'left' }}>
+                                The shortage is real, but the narrative you were sold is an illusion. There is absolutely no shortage of 250-hour commercial license holders. Operators are starving for crew, but they are desperate for qualified, operationally mature pilots—Captains and seasoned First Officers who can manage complex, unscripted scenarios.
+                            </p>
+
+                        </section>
+
+                        {/* Experience Void & Pathways */}
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE RECRUITMENT REALITY
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The Experience Void
+                            </h2>
+
+                            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                <img src="/pilot-gap-pathways.png" alt="Aviation Career Pathways Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            <div style={{ textAlign: 'left', padding: '0 1.5rem', marginBottom: '3.5rem' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '1.5rem' }}>
+                                    This illustration captures the <strong>"Experience Void"</strong>—the structural gap where both the supply and demand ends of the industry reach a point of operational saturation:
+                                </p>
+                                <ul style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, paddingLeft: '1.5rem', listStyleType: 'disc' }}>
+                                    <li style={{ marginBottom: '1rem' }}>
+                                        <strong>The Dual-Ended Rejection —</strong> It is a phase where both the airlines (the goal) and the flight schools (the plan B) are effectively saying "No." This leaves the pilot in a career holding pattern, holding a license that the industry currently lacks the capacity to utilize.
+                                    </li>
+                                    <li style={{ marginBottom: '1rem' }}>
+                                        <strong>Industry Fatigue —</strong> Recruiters and managers have grown tired of advising a "herd" of thousands who share the exact same profile. At this point, they are often no longer bothered with explaining the nuances of the industry to pilots or providing individual career guidance.
+                                    </li>
+                                    <li>
+                                        <strong>The Automated Routine —</strong> Professional communication has been replaced by deferral systems. Instead of mentorship, you are met with standardized responses: <em>"Scan the QR code and please move on,"</em> or are placed on an indefinite administrative hold that offers no actionable path forward.
+                                    </li>
+                                </ul>
+
+                                {/* Wingmentor Insight Blended Card */}
+                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '3.5rem', textAlign: 'left' }}>
+                                    <div style={{
+                                        backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                        backdropFilter: 'blur(16px)',
+                                        WebkitBackdropFilter: 'blur(16px)',
+                                        borderRadius: '24px',
+                                        padding: '3.5rem 2.5rem',
+                                        boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                        border: '1px solid rgba(255, 255, 255, 0.8)',
+                                        textAlign: 'center',
+                                        width: '100%',
+                                        boxSizing: 'border-box'
+                                    }}>
+                                        <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
+                                        <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                            INDUSTRY INSIGHT
+                                        </div>
+                                        <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '2rem', fontFamily: 'Georgia, serif' }}>
+                                            A Perspective from the Frontlines
+                                        </h3>
+                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: '0 auto', maxWidth: '40rem', textAlign: 'left' }}>
+                                            Wingmentor has experienced this exact reality firsthand. Our presence at the <strong>First Aviation Career Fair at Etihad Museum (January 21st)</strong> marked a pivotal moment in our journey—where Wingmentor evolved from a simple mentoring idea into a dedicated industry-gap solving movement.
+                                            <br /><br />
+                                            During this landmark event, we gained massive upfront reputation and received direct assurance and affirmation from industry giants, including <strong>Archer, AIRBUS, Etihad, Air Arabia, Fly Dubai, GCAA, Emirates Academy, and Fujairah Flight Academy</strong>.
+                                            <br /><br />
+                                            Through these high-level discussions—which included insights from the private jet industry, brokerage operators, and even influencers like <strong>@theAirportGuy</strong>—we secured a deep understanding of the industry's future. It confirmed that our mission to provide clear pathways, specialized programs, and professional recognition is exactly what the modern aviation landscape is starving for.
+                                            <br /><br />
+                                            What a pilot faces immediately after getting their commercial license is no longer a giant question mark. With Wingmentor, the 1,500-hour boundary—a hurdle set in 2013 that has caused massive structural backlash—is a challenge we are actively helping pilots navigate and overcome.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        {/* Shifting the Bottleneck */}
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE SATURATION SHIFT
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Shifting the Bottleneck
+                            </h2>
+
+                            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
+                                <img src="/saturation-shift-pilot-gap.jpg" alt="Aviation Career Fair showing pilots rejected from airlines and joining a massive backlog line for Flight Instructor Plan B" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            <div style={{ textAlign: 'left' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                    The visual above illustrates the <strong>Industry Backlog</strong>. When "Plan A" (Airline Recruitment) turns away graduates for lacking 1,500 hours, the "herd" mass-pivots to "Plan B" (Flight Instruction). This doesn't solve the bottleneck—it simply moves it downstream, creating a saturated queue where pilots face waits of over two years instead of progressing their careers.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* The Pivot to Instruction */}
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE PIVOT
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The Pivot to Instruction
+                            </h2>
+                            <div style={{ textAlign: 'left' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                    When the realization hits—that Plan A (Airlines) is currently impossible without hours—the mass of pilots executes a collective pivot to Plan B: Flight Instruction. They return to their own flight schools, not out of a passion for teaching, but out of necessity for flight hours.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Saturation of Plan B */}
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE PARADOX
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Saturation of Plan B
+                            </h2>
+                            <div style={{ textAlign: 'left' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                    Consequently, flight schools become flooded with their own graduates clamoring for instructor positions. The competition for Plan B becomes just as fierce as Plan A. We now have a "Pilot Paradox": A massive supply of pilots, a massive demand for flight hours, but a bottleneck that prevents the flow of careers.
+                                </p>
+                            </div>
+
+
+                        </section>
+
+
+
+                        {/* The Instructor Bottleneck */}
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE FLIGHT SCHOOL QUEUE
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The Instructor Bottleneck: Plan B Saturation
+                            </h2>
+                            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
+                                <img src="/instructor-bottleneck.png" alt="Illustration of the Instructor Bottleneck" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            <div style={{ textAlign: 'left' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2.5rem' }}>
+                                    The dilemma extends beyond the airlines. The universally accepted 'Plan B' for low-timer pilots—becoming a Flight or Ground Instructor to build hours—has become as saturated as the airline market itself. This creates a secondary bottleneck, trapping pilots in a prolonged holding pattern.
+                                </p>
+                            </div>
+
+                            <div style={{ textAlign: 'left' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2rem' }}>
+                                    This illustration vividly captures the <strong>"Saturation Event"</strong> at flight academies. While the front door (left) continues to welcome new students with the promise of a dream, the back door (right) reveals a staggering reality: a massive queue of graduates—some waiting since 2015—competing for a single instructor position. With selection rates as low as <strong>1 out of 400</strong>, the 'Plan B' is no longer a guaranteed safety net, but a highly competitive bottleneck that leaves thousands stranded in an experience vacuum.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Saturation Event */}
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE SATURATION EVENT: DATA ANALYSIS
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The 94% Consensus
+                            </h2>
+
+                            <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '1.5rem' }}>
+                                    Survey data reveals a staggering consensus: <strong>94%</strong> of students entering flight school list <strong>"Major Airline Pilot"</strong> as their primary career goal. This singularity of purpose creates a funnel effect. Thousands of individuals enter the pipeline with diverse backgrounds, yet they all emerge aiming for the exact same narrow exit.
+                                </p>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2rem' }}>
+                                    Critically, <strong>74%</strong> of these students are completely unaware of the challenges awaiting them post-graduation. They do not know about the <strong>1500-hour hurdle</strong>, the <strong>insurance minimums</strong>, or the <strong>lack of entry-level turbine jobs</strong> until they have already spent their tuition.
+                                </p>
+
+                                <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '2rem' }}>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: 0, fontStyle: 'italic' }}>
+                                        We must be clear: This is not a failure of the education system or flight schools. These institutions excel at their mandate: producing licensed, safe aviators. Rather, this <strong>"Blind Spot"</strong> is a lack of shared knowledge regarding market realities.
+                                    </p>
+                                </div>
+
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                    We are not pointing fingers at flight schools or anyone; we are providing vital information that should not be disregarded or turned away with blindness.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '2rem' }}>
+                            <div style={{ textAlign: 'left', marginBottom: '2rem', padding: '2rem', backgroundColor: '#fafafa', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                    THE BLIND INVESTMENT
+                                </div>
+                                <h3 style={{ fontSize: '1.4rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                    Pilots Without Family History in Aviation
+                                </h3>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '1.5rem' }}>
+                                    Furthermore, over <strong>80%</strong> of new pilots come from <strong>non-aviation backgrounds</strong>. They do not have family members in the industry to warn them of the cyclical nature of hiring or the "Gap". They invest blindly, trusting that their license will lead directly to a job. Without mentorship or industry foresight, they are walking into a <strong>saturation event</strong> completely unprotected.
+                                </p>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                    For those without aviation lineage, the path is often navigated blind. You are sold a dream by flight schools that rely on your tuition, but the post-graduation reality is omitted. This leads to the <strong>Saturation Loop</strong>: where unhired graduates return to schools as instructors, saturating the only entry-level job market available.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
+                            <div style={{ textAlign: 'left', marginBottom: '2rem', backgroundColor: '#fafafa', padding: '1.5rem', borderRadius: '8px', borderLeft: '4px solid #b91c1c' }}>
+                                <div style={{ color: '#b91c1c', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                    DATA INSIGHT
+                                </div>
+                                <h3 style={{ color: '#b91c1c', fontSize: '1.4rem', fontWeight: 400, marginBottom: '1rem', fontFamily: 'Georgia, serif' }}>
+                                    A Decade-Long Queue: Real-World Data
+                                </h3>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, fontStyle: 'italic' }}>
+                                    Data from a credible administrative source within a major flight school reveals a startling reality (identities withheld for legal protection): a prospective instructor faces a minimum two-year waiting list. The backlog contains over 2,000 applicants. More shockingly, pilots from batches as far back as 2015 are still returning to apply, creating a queue that is nearly a decade long.
+                                </p>
+                            </div>
+
+                            <div style={{ textAlign: 'left' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                    THE CRISIS
+                                </div>
+                                <h3 style={{ color: '#0f172a', fontSize: '1.4rem', fontWeight: 400, marginBottom: '1rem', fontFamily: 'Georgia, serif' }}>
+                                    The Implication: A Career Holding Pattern
+                                </h3>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        This is not a temporary delay; it is a systemic crisis. The 'safe' fallback option is no longer viable for the vast majority. Without a strategic alternative, pilots are left with expired ratings, diminished skills, and a dream that fades on an endless waiting list. The system forces you into a holding pattern with no clearance in sight.
+                                    </p>
+                                    <p style={{ color: '#0284c7', fontSize: '1.05rem', lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
+                                        To navigate these systemic obstacles, you will learn more about PRM (What is Pilot Risk Management) within this chapter of The What's.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* WingMentor Insight Card: Untying the Knot */}
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
+
+                            {/* WingMentor Insight Card */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '1rem', textAlign: 'left' }}>
                                 <div style={{
                                     backgroundColor: 'rgba(255, 255, 255, 0.7)',
                                     backdropFilter: 'blur(16px)',
                                     WebkitBackdropFilter: 'blur(16px)',
                                     borderRadius: '24px',
-                                    padding: '3.5rem 2.5rem',
+                                    padding: '4rem 3rem',
                                     boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
                                     border: '1px solid rgba(255, 255, 255, 0.8)',
                                     textAlign: 'center',
@@ -999,339 +1873,188 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                 }}>
                                     <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
                                     <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                        INDUSTRY INSIGHT
+                                        WINGMENTOR INSIGHT
                                     </div>
                                     <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '2rem', fontFamily: 'Georgia, serif' }}>
-                                        A Perspective from the Frontlines
+                                        Untying the Knot
                                     </h3>
                                     <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: '0 auto', maxWidth: '40rem', textAlign: 'left' }}>
-                                        Wingmentor has experienced this exact reality firsthand. Our presence at the <strong>First Aviation Career Fair at Etihad Museum (January 21st)</strong> marked a pivotal moment in our journey—where Wingmentor evolved from a simple mentoring idea into a dedicated industry-gap solving movement.
+                                        The aviation industry is moving at a pace where it simply doesn't have the time or resources to focus on individual low-timer navigation. This creates the "knot" of confusion you see today.
                                         <br /><br />
-                                        During this landmark event, we gained massive upfront reputation and received direct assurance and affirmation from industry giants, including <strong>Archer, AIRBUS, Etihad, Air Arabia, Fly Dubai, GCAA, Emirates Academy, and Fujairah Flight Academy</strong>.
-                                        <br /><br />
-                                        Through these high-level discussions—which included insights from the private jet industry, brokerage operators, and even influencers like <strong>@theAirportGuy</strong>—we secured a deep understanding of the industry's future. It confirmed that our mission to provide clear pathways, specialized programs, and professional recognition is exactly what the modern aviation landscape is starving for.
-                                        <br /><br />
-                                        What a pilot faces immediately after getting their commercial license is no longer a giant question mark. With Wingmentor, the 1,500-hour boundary—a hurdle set in 2013 that has caused massive structural backlash—is a challenge we are actively helping pilots navigate and overcome.
+                                        <strong>Our solution is to provide the missing infrastructure:</strong> clear pathways, structured programs, coordinated applications, and robust pilot recognition systems. We untie this mess by providing the industry with pre-vetted, high-quality candidates, while providing you with the roadmap to bypass the chasm.
                                     </p>
                                 </div>
                             </div>
                         </section>
+                        {/* The Economic Trap */}
+                        <section style={{ textAlign: 'center', maxWidth: '56rem', marginTop: '4rem', paddingTop: '4rem', borderTop: '1px solid #e2e8f0' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                                THE ECONOMIC TRAP: PILOT DEBT SPIRAL
+                            </div>
+                            <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                                Understanding the Paradox
+                            </h1>
+                            <h2 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#475569', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Promising the Aviation Dream
+                            </h2>
 
-                        {/* Summary section container */}
-                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '1rem' }}>
-                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
-                                <h4 style={{ color: '#0f172a', fontSize: '1.2rem', fontWeight: 600, marginBottom: '0.5rem', textAlign: 'left', fontFamily: 'Georgia, serif', marginTop: 0 }}>
-                                    The Illusion of the Shortage
-                                </h4>
-                                <p style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
-                                    The shortage is real, but the narrative you were sold is an illusion. There is absolutely no shortage of 250-hour commercial license holders. Operators are starving for crew, but they are desperate for qualified, operationally mature pilots—Captains and seasoned First Officers who can manage complex, unscripted scenarios.
+                            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
+                                <img src="/pilot-economic-cycle.png" alt="Drawing showing the Pilot Economic Cycle" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                    WAITING FOR CLEARANCE
+                                </div>
+                                <h3 style={{ fontSize: '1.4rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                    The Endless Hold
+                                </h3>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '3rem' }}>
+                                    The system operates as a closed loop. Pilots graduate into a saturated market and become instructors, relying on teaching new students to build their own required flight hours. This structural paradox forces pilots into a prolonged career holding pattern, dependent on new entrants just to survive the wait for an airline placement.
                                 </p>
-                                <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+
+                                <div style={{ textAlign: 'left', marginBottom: '3rem' }}>
                                     <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                        THE SATURATION SHIFT
+                                        THE ILLUSION OF INVESTMENT
                                     </div>
-                                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
-                                        Shifting the Bottleneck
-                                    </h2>
-
-                                    <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
-                                        <img src="/saturation-shift-pilot-gap.jpg" alt="Aviation Career Fair showing pilots rejected from airlines and joining a massive backlog line for Flight Instructor Plan B" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                                        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
-                                    </div>
-
-                                    <div style={{ textAlign: 'left', marginBottom: '3rem' }}>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
-                                            The visual above illustrates the <strong>Industry Backlog</strong>. When "Plan A" (Airline Recruitment) turns away graduates for lacking 1,500 hours, the "herd" mass-pivots to "Plan B" (Flight Instruction). This doesn't solve the bottleneck—it simply moves it downstream, creating a saturated queue where pilots face waits of over two years instead of progressing their careers.
-                                        </p>
-                                    </div>
-
-                                    <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
-                                        <h4 style={{ color: '#0f172a', fontSize: '1.2rem', fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'Georgia, serif' }}>
-                                            The Pivot to Instruction
-                                        </h4>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
-                                            When the realization hits—that Plan A (Airlines) is currently impossible without hours—the mass of pilots executes a collective pivot to Plan B: Flight Instruction. They return to their own flight schools, not out of a passion for teaching, but out of necessity for flight hours.
-                                        </p>
-                                    </div>
-
-                                    <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
-                                        <h4 style={{ color: '#0f172a', fontSize: '1.2rem', fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'Georgia, serif' }}>
-                                            Saturation of Plan B
-                                        </h4>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
-                                            Consequently, flight schools become flooded with their own graduates clamoring for instructor positions. The competition for Plan B becomes just as fierce as Plan A. We now have a "Pilot Paradox": A massive supply of pilots, a massive demand for flight hours, but a bottleneck that prevents the flow of careers.
-                                        </p>
-                                    </div>
-
-                                    <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', margin: '3rem 0' }} />
-
-                                    <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
-                                        <h4 style={{ color: '#0f172a', fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textTransform: 'uppercase' }}>
-                                            The Instructor Bottleneck: Plan B Saturation
-                                        </h4>
-                                        <div style={{ width: '60px', height: '4px', backgroundColor: '#f59e0b', marginBottom: '1.5rem' }}></div>
-                                        <h5 style={{ color: '#0f172a', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05px' }}>
-                                            The Flight School Waiting List
-                                        </h5>
-                                        <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', marginBottom: '1rem' }} />
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2.5rem' }}>
-                                            The dilemma extends beyond the airlines. The universally accepted 'Plan B' for low-timer pilots—becoming a Flight or Ground Instructor to build hours—has become as saturated as the airline market itself. This creates a secondary bottleneck, trapping pilots in a prolonged holding pattern.
-                                        </p>
-
-                                        {/* Instructor Bottleneck Illustration */}
-                                        <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
-                                            <img src="/instructor-bottleneck.png" alt="Illustration of the Instructor Bottleneck" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                                            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
-                                        </div>
-
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2rem' }}>
-                                            This illustration vividly captures the <strong>"Saturation Event"</strong> at flight academies. While the front door (left) continues to welcome new students with the promise of a dream, the back door (right) reveals a staggering reality: a massive queue of graduates—some waiting since 2015—competing for a single instructor position. With selection rates as low as <strong>1 out of 400</strong>, the 'Plan B' is no longer a guaranteed safety net, but a highly competitive bottleneck that leaves thousands stranded in an experience vacuum.
-                                        </p>
-
-                                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '1rem' }}>
-                                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                                THE RECRUITMENT CHASM
-                                            </div>
-                                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
-                                                Navigating the Experience Void
-                                            </h2>
-                                        </section>
-
-                                        {/* Aviation Career Pathways Illustration */}
-                                        <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem', position: 'relative' }}>
-                                            <img src="/pilot-gap-pathways.png" alt="Aviation Career Pathways Illustration" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                                            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
-                                        </div>
-
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2.5rem' }}>
-                                            The <strong>"Experience Void"</strong> represents a structural imbalance where both commercial airlines and flight academies reach an operational saturation point, resulting in a dual-ended rejection of low-timer applicants. This terminal phase of career navigation is defined by <strong>Institutional Fatigue</strong>.
-                                            <br /><br />
-                                            Recruiters and administrators encounter a standardized "herd" of applicants so frequently that personalized mentorship and feedback are no longer feasible. Consequently, the industry has transitioned from providing nuanced professional guidance to implementing automated deferral routines. In practice, this manifests as high-volume, low-engagement interactions where applicants are redirected to automated systems (e.g., <em>"Scan the QR code and please move on"</em>) or placed on indefinite administrative hold, reflecting a system that lacks the bandwidth to manage individual career progression.
-                                        </p>
-
-                                        {/* WingMentor Insight Card */}
-                                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '1rem', textAlign: 'left' }}>
-                                            <div style={{
-                                                backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                                                backdropFilter: 'blur(16px)',
-                                                WebkitBackdropFilter: 'blur(16px)',
-                                                borderRadius: '24px',
-                                                padding: '4rem 3rem',
-                                                boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
-                                                border: '1px solid rgba(255, 255, 255, 0.8)',
-                                                textAlign: 'center',
-                                                width: '100%',
-                                                boxSizing: 'border-box'
-                                            }}>
-                                                <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
-                                                <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                                    WINGMENTOR INSIGHT
-                                                </div>
-                                                <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
-                                                    Untying the Knot
-                                                </h2>
-                                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: '0 auto', maxWidth: '40rem', textAlign: 'left' }}>
-                                                    The aviation industry is moving at a pace where it simply doesn't have the time or resources to focus on individual low-timer navigation. This creates the "knot" of confusion you see today.
-                                                    <br /><br />
-                                                    <strong>Our solution is to provide the missing infrastructure:</strong> clear pathways, structured programs, coordinated applications, and robust pilot recognition systems. We untie this mess by providing the industry with pre-vetted, high-quality candidates, while providing you with the roadmap to bypass the chasm.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div style={{ textAlign: 'left', marginBottom: '2rem', backgroundColor: '#fafafa', padding: '1.5rem', borderRadius: '8px', borderLeft: '4px solid #b91c1c' }}>
-                                        <h4 style={{ color: '#b91c1c', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', fontFamily: 'Georgia, serif', textTransform: 'uppercase' }}>
-                                            A Decade-Long Queue: Real-World Data
-                                        </h4>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, fontStyle: 'italic' }}>
-                                            Data from a credible administrative source within a major flight school reveals a startling reality (identities withheld for legal protection): a prospective instructor faces a minimum two-year waiting list. The backlog contains over 2,000 applicants. More shockingly, pilots from batches as far back as 2015 are still returning to apply, creating a queue that is nearly a decade long.
-                                        </p>
-                                    </div>
-
-                                    <div style={{ textAlign: 'left' }}>
-                                        <h4 style={{ color: '#0f172a', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', fontFamily: 'Georgia, serif', textTransform: 'uppercase' }}>
-                                            The Implication: A Career Holding Pattern
-                                        </h4>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
-                                            This is not a temporary delay; it is a systemic crisis. The 'safe' fallback option is no longer viable for the vast majority. Without a strategic alternative, pilots are left with expired ratings, diminished skills, and a dream that fades on an endless waiting list. The system forces you into a holding pattern with no clearance in sight.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div style={{ textAlign: 'center', marginTop: '4rem', marginBottom: '4rem' }}>
-                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                        THE ECONOMIC TRAP: PILOT DEBT SPIRAL
-                                    </div>
-                                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
-                                        Promising the Aviation Dream
-                                    </h2>
-
-                                    <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
-                                        <img src="/pilot-economic-cycle.png" alt="Drawing showing the Pilot Economic Cycle" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                                        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
-                                    </div>
-
-                                    <div style={{ textAlign: 'left', marginBottom: '3rem' }}>
-                                        <h4 style={{ color: '#0f172a', fontSize: '1.2rem', fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'Georgia, serif', textTransform: 'uppercase' }}>
-                                            The Illusion of Investment vs. True Return
-                                        </h4>
-                                        <div style={{ width: '60px', height: '3px', backgroundColor: '#e2e8f0', marginBottom: '1.5rem' }}></div>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '1.5rem' }}>
-                                            For many aspiring pilots, the journey is not just about mastering skills but also navigating a treacherous financial landscape. The promise of an airline career often leads to significant investment in licenses, ratings, and even speculative type ratings, sometimes without a guaranteed return. This section dissects the financial pitfalls and how they can lead to an 'Economic Trap' – a cycle of debt and diminished opportunity.
-                                        </p>
-                                    </div>
-
-                                    <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
-                                        <h4 style={{ color: '#0f172a', fontSize: '1.2rem', fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'Georgia, serif', textTransform: 'uppercase' }}>
-                                            The Endless Hold: Waiting for Clearance
-                                        </h4>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '1.5rem' }}>
-                                            Let's look at the structure: It is a closed loop. 1. Pilots invest capital to learn to fly. 2. They graduate and cannot find airline jobs (The Gap). 3. They reinvest to become Instructors (CFI). 4. Their primary job is to teach "new" students who are aiming for the same airline dream.
-                                        </p>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '1.5rem' }}>
-                                            This creates a cycle where the instructor relies on new students to build the hours needed to leave. It is important to note that this is a structural reality of the industry, not a malicious design by flight schools. Schools provide the necessary training and facilities, but the airline industry's entry barriers create this loop. It is a paradox where the system unintentionally necessitates a constant influx of new students to propel the careers of the previous class.
-                                        </p>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '3rem' }}>
-                                            This continuous cycle highlights one of the major economic realities in current training. An aspiring pilot desires an airline career and joins a flight school as a student. To achieve the requisite flying hours, they transition into becoming a flight instructor. Even after acquiring their hours, they often find themselves waiting years for that elusive airline application to clear. At this point, the cycle reinforces itself—they continue to promise the aviation dream to the next generation of incoming students simply to economically survive the wait.
-                                        </p>
-                                    </div>
-
-                                    <div style={{ textAlign: 'left', marginBottom: '2rem', padding: '2rem', backgroundColor: '#fafafa', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-                                        <h4 style={{ color: '#0f172a', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', fontFamily: 'Georgia, serif', textTransform: 'uppercase' }}>
-                                            Pilots Without Family History in Aviation - The Blind Investment
-                                        </h4>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '1.5rem' }}>
-                                            Furthermore, over <strong>80%</strong> of new pilots come from <strong>non-aviation backgrounds</strong>. They do not have family members in the industry to warn them of the cyclical nature of hiring or the "Gap". They invest blindly, trusting that their license will lead directly to a job. Without mentorship or industry foresight, they are walking into a <strong>saturation event</strong> completely unprotected.
-                                        </p>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
-                                            For those without aviation lineage, the path is often navigated blind. You are sold a dream by flight schools that rely on your tuition, but the post-graduation reality is omitted. This leads to the <strong>Saturation Loop</strong>: where unhired graduates return to schools as instructors, saturating the only entry-level job market available.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div style={{ textAlign: 'center', marginTop: '4rem', marginBottom: '4rem' }}>
-                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                        THE SATURATION EVENT: DATA ANALYSIS
-                                    </div>
-                                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
-                                        The 94% Consensus
-                                    </h2>
-
-                                    <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '1.5rem' }}>
-                                            Survey data reveals a staggering consensus: <strong>94%</strong> of students entering flight school list <strong>"Major Airline Pilot"</strong> as their primary career goal. This singularity of purpose creates a funnel effect. Thousands of individuals enter the pipeline with diverse backgrounds, yet they all emerge aiming for the exact same narrow exit.
-                                        </p>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '2rem' }}>
-                                            Critically, <strong>74%</strong> of these students are completely unaware of the challenges awaiting them post-graduation. They do not know about the <strong>1500-hour hurdle</strong>, the <strong>insurance minimums</strong>, or the <strong>lack of entry-level turbine jobs</strong> until they have already spent their tuition.
-                                        </p>
-
-                                        <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '2rem' }}>
-                                            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: 0, fontStyle: 'italic' }}>
-                                                We must be clear: This is not a failure of the education system or flight schools. These institutions excel at their mandate: producing licensed, safe aviators. Rather, this <strong>"Blind Spot"</strong> is a lack of shared knowledge regarding market realities.
-                                            </p>
-                                        </div>
-
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
-                                            We are not pointing fingers at flight schools or anyone; we are providing vital information that should not be disregarded or turned away with blindness.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
-                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                        THE INSTRUCTOR LOOP
-                                    </div>
-                                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
-                                        A Stalled Pathway
-                                    </h2>
-
-                                    <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
-                                        <img src="/instructor-trap-pilot-gap.jpg" alt="Cartoon showing the flight instructor trap" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                                        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
-                                    </div>
-
-                                    <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
-                                        <h4 style={{ color: '#0f172a', fontSize: '1.2rem', fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'Georgia, serif' }}>
-                                            The Ponzi Scheme Effect
-                                        </h4>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
-                                            This misalignment creates what we call the <strong>Instructor Loop</strong>. Current instructors will blindly point you toward their own path: the "traditional" instructor route. But many of those same instructors are now realizing they are trapped, facing upwards of five years instructing before airlines even glance at their CVs. In reality, some argue the flight instructor route has structurally become akin to a <strong>ponzi scheme</strong>—constantly promising returns to new investors (low-timers needing hours) funded by the time and money of older investors who also had the exact same dream of reaching the airlines. This is no longer a viable modern pathway.
-                                        </p>
-                                    </div>
-
-                                </div>
-
-
-
-                                <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
-                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                        THE DREAM PARADOX
-                                    </div>
-                                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
-                                        Perpetuating the Cycle
-                                    </h2>
-
-                                    <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
-                                        <img src="/dream-paradox-pilot-gap.png" alt="Comic showing the pilot dream paradox" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                                        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))', pointerEvents: 'none' }} />
-                                    </div>
-
-                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1rem', textAlign: 'left' }}>
-                                        The <strong>Pilot Dream Paradox</strong> illustrates the harsh reality of the current training ecosystem. Most flight instructors never set out to teach; they became instructors simply because it was the only readily available way to build the flight hours required by airlines. They entered the system with the exact same dream of flying jets that their new students currently hold.
-                                    </p>
-                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, textAlign: 'left' }}>
-                                        To keep the flight schools running and to continue building their own necessary hours, these instructors must sell the same "airline pilot dream" to the next wave of incoming students. This creates a self-sustaining cycle where students become instructors to teach new students, while the queue for actual airline placements grows longer and wait times continually extend. The paradox is that the very system designed to train airline pilots often ends up just training more flight instructors.
+                                    <h3 style={{ fontSize: '1.4rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                        The Illusion of Investment vs. True Return
+                                    </h3>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, marginBottom: '1.5rem' }}>
+                                        For many aspiring pilots, the journey is not just about mastering skills but also navigating a treacherous financial landscape. The promise of an airline career often leads to significant investment in licenses, ratings, and even speculative type ratings, sometimes without a guaranteed return. This section dissects the financial pitfalls and how they can lead to an 'Economic Trap' – a cycle of debt and diminished opportunity.
                                     </p>
                                 </div>
 
-                                <h4 style={{ color: '#0f172a', fontSize: '1.2rem', fontWeight: 600, marginBottom: '0.5rem', textAlign: 'left', fontFamily: 'Georgia, serif', marginTop: '2rem' }}>
-                                    The "Quality Void" Reality
-                                </h4>
-                                <p style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
-                                    Airlines simply cannot absorb the financial and operational risk of placing un-standardized graduates into those empty seats. The jobs exist, and the demand is historic, but until you can prove your multi-crew proficiency and Non-Technical Skills (NOTECHS), that global shortage does not apply to you.
-                                </p>
+                                <div style={{ textAlign: 'left', marginBottom: '3rem' }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                        THE PONZI EFFECT
+                                    </div>
+                                    <h3 style={{ fontSize: '1.4rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                        The Ponzi Scheme Effect
+                                    </h3>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        This misalignment creates what we call the <strong>Instructor Loop</strong>. Current instructors will blindly point you toward their own path: the "traditional" instructor route. But many of those same instructors are now realizing they are trapped, facing upwards of five years instructing before airlines even glance at their CVs. In reality, some argue the flight instructor route has structurally become akin to a <strong>ponzi scheme</strong>—constantly promising returns to new investors (low-timers needing hours) funded by the time and money of older investors who also had the exact same dream of reaching the airlines. This is no longer a viable modern pathway.
+                                    </p>
+                                </div>
 
-                                {/* Definition Blended Card */}
-                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '2.5rem', textAlign: 'left' }}>
-                                    <div style={{
-                                        backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                                        backdropFilter: 'blur(16px)',
-                                        WebkitBackdropFilter: 'blur(16px)',
-                                        borderRadius: '24px',
-                                        padding: '3rem 2.5rem',
-                                        boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
-                                        border: '1px solid rgba(255, 255, 255, 0.8)',
-                                        textAlign: 'left',
-                                        width: '100%',
-                                        boxSizing: 'border-box'
-                                    }}>
-                                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                            THE OPERATIONAL BOTTLENECK
-                                        </div>
-                                        <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
-                                            Fueling the Paradox
-                                        </h3>
-                                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
-                                            This misalignment inadvertently fuels the <strong>Pilot Dream Paradox</strong>—and is fueling the very Pilot Shortage itself. Because airlines aren't hiring from the bottom, veteran instructors stay trapped at flight schools for years. This inadvertently clogs the pipeline for the next generation of pilots who are sitting at home, waiting for their chance to even begin instructing to build their own hours. It is this exact systemic gridlock—a perpetual holding pattern of highly regulated hours—that coined the definitive term: the <strong>Low-Timer Pilot</strong>.
+                                <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '3rem', position: 'relative' }}>
+                                    <img src="/dream-paradox-pilot-gap.png" alt="Comic showing the pilot dream paradox" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem', textAlign: 'left' }}>
+                                    THE DREAM PARADOX
+                                </div>
+                                <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'left' }}>
+                                    Perpetuating the Cycle
+                                </h2>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1rem', textAlign: 'left' }}>
+                                    The <strong>Pilot Dream Paradox</strong> illustrates the harsh reality of the current training ecosystem. Most flight instructors never set out to teach; they became instructors simply because it was the only readily available way to build the flight hours required by airlines. They entered the system with the exact same dream of flying jets that their new students currently hold.
+                                </p>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, textAlign: 'left', marginBottom: '3rem' }}>
+                                    To keep the flight schools running and to continue building their own necessary hours, these instructors must sell the same "airline pilot dream" to the next wave of incoming students. This creates a self-sustaining cycle where students become instructors to teach new students, while the queue for actual airline placements grows longer and wait times continually extend. The paradox is that the very system designed to train airline pilots often ends up just training more flight instructors.
+                                </p>
+                            </div>
+
+
+
+
+
+                        </section>
+
+
+                        {/* Conclusion */}
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '5rem', marginBottom: '3rem' }}>
+                            <div style={{
+                                backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                backdropFilter: 'blur(16px)',
+                                WebkitBackdropFilter: 'blur(16px)',
+                                borderRadius: '24px',
+                                padding: '4rem 3rem',
+                                boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                border: '1px solid rgba(255, 255, 255, 0.8)',
+                                textAlign: 'center',
+                                width: '100%',
+                                boxSizing: 'border-box'
+                            }}>
+                                <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                    CONCLUSION
+                                </div>
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '2rem', fontFamily: 'Georgia, serif' }}>
+                                    Now You See the Bigger Picture
+                                </h3>
+
+                                <div style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                                    <h2 style={{ fontSize: '1.15rem', fontWeight: 400, color: '#475569', marginBottom: '0.5rem', fontFamily: 'Georgia, serif', fontStyle: 'italic', textAlign: 'center' }}>
+                                        The industry is not broken. It is simply operating in a way no one bothered to explain to you — until now.
+                                    </h2>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        What you have just navigated through is not a collection of isolated problems. It is a single, interconnected system — one that Wingmentor has experienced and studied first-hand. The shortage is real, but its causes are layered. On one side, the structural factors: a lack of guidance, the absence of credible mentorship, and a market so saturated by Plan B that the fallback has itself become the bottleneck.
+                                    </p>
+
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        On the other side lie the paradoxes — the silent forces that quietly sustain the crisis. The <strong>Pilot Dream Paradox</strong> reveals how the very instructors you turn to for guidance are navigating the same holding pattern you are. They are not withholding the truth to deceive you; they are constrained by their own circumstances. An instructor trapped in a five-year queue cannot afford to tell you the system has failed him too. All he can do is tell you to keep your licences current, start somewhere, and whatever you do — do not walk away. Not because that is bad advice, but because it is the only honest advice he has left.
+                                    </p>
+
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        Then there is the culture of silence within the pilot community itself. When a first-year student walks up to a third-year commercial flying student, what he often receives is not guidance — it is ego. It is deflection. It is the industry’s unspoken rule that you figure it out yourself or you do not belong. No transparency. No honest conversation about what this career actually looks like beyond the uniform.
+                                    </p>
+
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        <strong>This is where we break the silence.</strong> Wingmentor was built to throw the ego away and speak to you with brutal, unfiltered honesty about what is really happening inside this industry. Because here is the hard truth: if a pilot does not understand the industry he is entering — its economic cycles, its structural realities, its paradoxes — he will not be equipped to navigate a job application, a flight operator conversation, or the demands of the flight deck itself. Understanding your industry is not optional. It is foundational.
+                                    </p>
+
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        You now understand the shortage. You understand the paradoxes that drive it. You understand why guidance has been so hard to find, and why the silence has gone on for so long. That knowledge is your first real instrument. Use it.
+                                    </p>
+
+                                    <div style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid rgba(15, 23, 42, 0.1)', textAlign: 'center' }}>
+                                        <p style={{ color: '#0f172a', fontSize: '1.1rem', fontWeight: 600, margin: 0, fontFamily: 'Georgia, serif' }}>
+                                            Benjamin Tiger Bowler & Karl Brian Vogt
+                                        </p>
+                                        <p style={{ color: '#64748b', fontSize: '0.9rem', margin: '0.25rem 0 0 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                            Founders, Wingmentor
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </section>
 
-                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '1rem' }}>
+                        <section style={{ textAlign: 'center', maxWidth: '52rem', marginTop: '3rem' }}>
                             <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
                                 OUR MISSION
                             </div>
                             <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
                                 Unclogging the Pipes
                             </h2>
+
+                            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2rem', position: 'relative' }}>
+                                <img src="/unclogging-pipes-pilot-gap.png" alt="Cartoon illustrating the clogged pipeline of flight instructors" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            <div style={{ textAlign: 'left', marginBottom: '3rem' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                    The reality of the current flight instruction pipeline: thousands of highly qualified pilots are stuck waiting for the airline hiring gates to open, creating a massive holding pattern that obstructs the entire flow of new entrants.
+                                </p>
+                            </div>
+
+                            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2rem', position: 'relative' }}>
+                                <img src="/unclogging-pipes-pilot-gap-2.png" alt="Cartoon illustrating the unclogged pipeline of flight instructors through Wingmentor Pilot Recognition" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                    Through the Wingmentor Pilot Recognition program, these highly qualified instructors are recognized, validated, and ushered through the correct channels to Airline Flight Decks, opening up the gates and clearing the backlog—allowing new pilots to access these entry-level instructional positions.
+                                </p>
+                            </div>
+
                             <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0, textAlign: 'left' }}>
                                 At <strong>Wingmentor</strong>, we are dedicated to <strong>unclogging these pipes</strong>. Our mission is to provide the standardization and recognition required to move these veteran instructors into airline flight decks where they belong. By facilitating this transition, we free up critical instructor positions, allowing the new generation to enter the industry and start their journey, rather than being stalled at the starting line.
                             </p>
                         </section>
 
 
-                    </div>
+                    </div >
 
                     <div style={{ height: '1px', background: '#e2e8f0', marginBottom: '2rem', marginTop: '4rem', width: '100%', maxWidth: '52rem', margin: '0 auto' }} />
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '6rem' }}>
@@ -1352,7 +2075,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                             Next, we will define <strong>What is a Low-Timer Pilot</strong>—and explore how this paradox directly creates the low-timer label.
                         </p>
                     </div>
-                </div>
+                </div >
             );
         }
 
@@ -1360,89 +2083,585 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
         if (currentTopic === 'what-pilot-recognition') {
             return (
                 <div style={{ maxWidth: '56rem', margin: '0 auto', paddingTop: '3rem', paddingLeft: '1.5rem', paddingRight: '1.5rem', animation: 'fadeIn 0.4s ease-in-out' }}>
-                    <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1.5rem' }}>
-                        Chapter 01 — Understanding the What's
-                    </div>
-                    <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 400, color: '#0f172a', marginBottom: '3rem', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
-                        What is Pilot Recognition?
-                    </h1>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.75, marginBottom: '4rem' }}>
-                        <p>
-                            Pilot Recognition is the missing link in the modern aviation hiring pipeline. When an airline recruiter looks at a massive stack of low-timer resumes, they see identical candidates: same hours, same licenses, same lack of real-world multi-crew operational experience.
-                        </p>
-
-                        <div style={{ padding: '1.5rem', backgroundColor: '#eff6ff', borderRadius: '12px', borderLeft: '4px solid #3b82f6', margin: '1rem 0' }}>
-                            <p style={{ margin: 0, fontSize: '0.95rem', color: '#1e3a8a', fontWeight: 500 }}>
-                                <strong>The Definition:</strong> Pilot Recognition is fundamentally about proving standardized multi-crew proficiency and advanced behavioral competencies (NOTECHS) in a way that is immediately verifiable and trusted by airlines, bypassing the experience void.
-                            </p>
+                    {/* Centered logo + header block */}
+                    <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                        <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '260px', height: 'auto', objectFit: 'contain', marginBottom: '2rem' }} />
+                        <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1rem' }}>
+                            Chapter 01 — Understanding the What's
                         </div>
+                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 400, color: '#0f172a', marginBottom: '0', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+                            What is Pilot Recognition?
+                        </h1>
+                    </div>
 
-                        <p>
-                            Without industry recognition, you are merely a pilot with a license. With recognition—like the standards upheld and verified by the Wingmentor Foundation Program—you transform from a high-risk unknown into a quantified, standardized asset ready for type rating induction and airline line training.
+                    <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.08)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '1rem' }}>
+                        <img src="/recogntion.png" alt="Pilot Recognition — Wingmentor Foundation Program" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    </div>
+                    <p style={{ fontSize: '0.8rem', color: '#94a3b8', fontStyle: 'italic', textAlign: 'center', margin: '0 0 3rem 0', lineHeight: 1.5 }}>
+                        A recognized pilot completing a standardized multi-crew assessment — the foundation of airline-level readiness.
+                    </p>
+
+                    <div style={{ color: '#475569', fontSize: '17px', lineHeight: 1.85, marginBottom: '4rem' }}>
+                        <p style={{ margin: '0 0 1.5rem 0' }}>
+                            Every year, thousands of newly licensed pilots enter the job market with near-identical profiles — same flight hours, same certificates, same lack of verifiable multi-crew experience. To an airline recruiter sifting through this wall of applications, one 200-hour resume looks exactly like the next. <strong>Pilot Recognition</strong> exists to break that cycle. It is the mechanism that separates a pilot who simply holds a license from a pilot whose operational competency has been independently measured, standardized, and verified.
+                        </p>
+                        <p style={{ margin: 0 }}>
+                            At its core, Pilot Recognition is about proving two things airlines care about most: <strong>standardized multi-crew proficiency</strong> and <strong>advanced behavioral competencies (NOTECHS)</strong> — not through self-reported logbook entries, but through a structured evaluation that airlines can immediately trust. Without it, you remain a high-risk unknown in a crowded field. With recognition — upheld and verified through the Wingmentor Foundation Program — you transform into a quantified, credible candidate already aligned with the standards required for type rating induction and airline line training.
                         </p>
                     </div>
 
 
-                    {/* The Recruiter's Dilemma Section */}
+                    {/* Beyond the Blind Submit Section */}
                     <div style={{ marginTop: '1rem', marginBottom: '2rem', color: '#475569', fontSize: '17px', lineHeight: 1.75 }}>
-                        <h4 style={{ fontSize: '1.4rem', fontWeight: 600, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1rem' }}>
-                            The Recruiter's Dilemma & Outsourcing
-                        </h4>
-                        <p style={{ marginBottom: '1.5rem' }}>
-                            Look at this from the airline's perspective: every year, thousands of newly-minted low-timer pilots graduate globally and immediately begin sending their 200-hour resumes blindly to every carrier they can find. The sheer volume of applications creates an insurmountable administrative wall for internal HR departments.
-                        </p>
-                        <p style={{ marginBottom: '2rem' }}>
-                            Airlines simply do not have the manpower to sift through thousands of identical 200-hour resumes to find the diamond in the rough. Because of this overwhelming influx, the vast majority of airlines completely ignore direct applications and instead fully outsource their low-timer recruitment to specialized airline staffing and recruitment companies to act as aggressive filters. If you aren't going through these specific agencies, your resume is likely going straight into the bin.
-                        </p>
 
-                        {/* Recruiter Image with Description */}
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', margin: '1rem 0 2rem 0' }}>
-                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', border: '1px solid rgba(0,0,0,0.05)', backgroundColor: '#f8fafc' }}>
-                                <img src="/recruiter-overwhelm-pilot-gap.png" alt="Cartoon showing an overwhelmed airline recruiter" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+                        <div style={{ marginTop: '2rem', marginBottom: '2rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE BLIND APPLICATION TRAP
                             </div>
-                            <p style={{ fontSize: '0.9rem', color: '#64748b', fontStyle: 'italic', maxWidth: '550px', textAlign: 'center', margin: 0 }}>
-                                <strong>The Outsourcing Filter:</strong> The insurmountable stack of identical resumes is exactly why airlines rely entirely on third-party recruitment agencies to do the filtering for them.
-                            </p>
-                        </div>
-
-                        <div style={{ padding: '1.25rem', backgroundColor: '#eff6ff', borderRadius: '12px', border: '1px solid #bfdbfe', marginBottom: '2rem' }}>
-                            <p style={{ margin: 0, fontSize: '0.9rem', color: '#2563eb', fontWeight: 500, textAlign: 'center' }}>
-                                ℹ️ <em>You will learn more about the Pilot Recognition System and ATLAS CV Format throughout the program.</em>
-                            </p>
-                        </div>
-
-                        <div style={{ marginTop: '2rem' }}>
-                            <h4 style={{ fontSize: '1.4rem', fontWeight: 600, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1rem' }}>
-                                Beyond the "Blind Submit"
+                            <h4 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1.5rem' }}>
+                                The Blind Application Trap
                             </h4>
+                            <img
+                                src="/pilotcenter.png"
+                                alt="Pilot Center — blind resume submission"
+                                style={{ width: '100%', height: 'auto', borderRadius: '20px', boxShadow: '0 8px 32px rgba(0,0,0,0.08)', marginBottom: '1.75rem', display: 'block' }}
+                            />
                             <p style={{ marginBottom: '1.5rem' }}>
                                 Majority of pilots send resumes blindly to airlines or upload them to sites like <em>pilotcenter.com</em>. While you may technically meet the basic requirements, the "Next Step"—the follow-up response—is where most careers stall.
                             </p>
+                        </div>
+
+                        <div style={{ marginTop: '2.5rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                BEYOND THE BLIND SUBMIT
+                            </div>
+                            <h4 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1.5rem' }}>
+                                Beyond the "Blind Submit"
+                            </h4>
+                            <img
+                                src="/staffingimg.png"
+                                alt="Pilot Staffing & Recruitment"
+                                style={{ width: '100%', height: 'auto', borderRadius: '20px', boxShadow: '0 8px 32px rgba(0,0,0,0.08)', marginBottom: '2rem', display: 'block' }}
+                            />
                             <p style={{ marginBottom: '1.5rem' }}>
-                                Wingmentor provides a <strong>direct network</strong> of pilots who already know the specific expectations of major carriers like <strong>Etihad</strong>, <strong>Air Asia</strong>, or <strong>Eurowings</strong>, as well as the private sector, including <strong>private jets</strong>. We give you the opportunity to choose a pathway and familiarize yourself with the industry before you even step into the interview room.
+                                Look at this from the airline's perspective: every year, thousands of newly-minted low-timer pilots graduate globally and immediately begin sending their 200-hour resumes blindly to every carrier they can find. The sheer volume of applications creates an insurmountable administrative wall for internal HR departments.
+                            </p>
+                            <p style={{ marginBottom: '1.5rem' }}>
+                                Airlines simply do not have the manpower to sift through thousands of identical 200-hour resumes to find the diamond in the rough. Because of this overwhelming influx, the vast majority of airlines completely ignore direct applications and instead fully outsource their low-timer recruitment to specialized airline staffing and recruitment companies to act as aggressive filters. If you aren't going through these specific agencies, your resume is likely going straight into the bin.
                             </p>
 
-                            <div style={{ backgroundColor: '#f8fafc', padding: '2rem', borderRadius: '16px', border: '1px solid #e2e8f0', marginTop: '2rem' }}>
-                                <h5 style={{ fontSize: '1rem', fontWeight: 700, color: '#1e293b', marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                                    Direct Industry Connections
-                                </h5>
-                                <p style={{ color: '#475569', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+                            <div style={{ backgroundColor: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '24px', padding: '2.5rem 2rem', boxShadow: '0 8px 32px rgba(15,23,42,0.04)', border: '1px solid rgba(255,255,255,0.8)', marginTop: '2rem' }}>
+                                {/* Logo + header */}
+                                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                                    <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '160px', height: 'auto', objectFit: 'contain', marginBottom: '1.25rem' }} />
+                                    <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                                        WINGMENTOR INSIGHT
+                                    </div>
+                                    <h5 style={{ fontFamily: 'Georgia, serif', fontSize: '1.5rem', fontWeight: 400, color: '#0f172a', marginBottom: '0.5rem' }}>
+                                        Direct Industry Connections
+                                    </h5>
+                                    <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.6, maxWidth: '30rem', margin: '0 auto' }}>
+                                        How Wingmentor connects you directly to airline decision-makers and recruitment pipelines.
+                                    </p>
+                                </div>
+
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                                    Wingmentor provides a <strong>direct network</strong> of pilots who already know the specific expectations of major carriers like <strong>Etihad</strong>, <strong>Air Asia</strong>, or <strong>Eurowings</strong>, as well as the private sector, including <strong>private jets</strong>. We give you the opportunity to choose a pathway and familiarize yourself with the industry before you even step into the interview room.
+                                </p>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
                                     Wingmentor maintains direct, active contact with the decision-makers shaping the future of flight:
                                 </p>
                                 <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#0f172a', fontWeight: 500 }}>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#0f172a', fontWeight: 500, fontSize: '1.05rem' }}>
                                         <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#eab308' }}></div>
                                         Etihad Cadet Program
                                     </li>
-                                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#0f172a', fontWeight: 500 }}>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#0f172a', fontWeight: 500, fontSize: '1.05rem' }}>
                                         <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#eab308' }}></div>
                                         Head of Training at Airbus
                                     </li>
-                                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#0f172a', fontWeight: 500 }}>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#0f172a', fontWeight: 500, fontSize: '1.05rem' }}>
                                         <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#eab308' }}></div>
                                         Head of Infrastructure at Archer (Pioneering Pilot Air Taxis)
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* ── Examination & Assessments ── */}
+                    <div style={{ marginTop: '3rem', marginBottom: '2rem', paddingTop: '3rem', borderTop: '1px solid #e2e8f0' }}>
+
+                        {/* Section header */}
+                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                            EXAMINATION &amp; ASSESSMENTS
+                        </div>
+                        <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1rem' }}>
+                            How Recognition Is Formally Validated
+                        </h2>
+                        <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.08)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2rem' }}>
+                            <img src="/theintervew.png" alt="Examination & Assessments — How Recognition Is Formally Validated" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                        </div>
+                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+                            Pilot Recognition is not a self-declared credential. It is earned through a structured assessment pipeline that verifies your competencies against internationally recognised aviation standards. Below are the key examination and assessment pathways that form part of the Wingmentor Recognition framework.
+                        </p>
+
+                        {/* Airbus Recognition Interview Card */}
+                        <div style={{
+                            backgroundColor: '#fff',
+                            borderRadius: '24px',
+                            border: '1px solid #e2e8f0',
+                            boxShadow: '0 8px 28px rgba(0,0,0,0.05)',
+                            overflow: 'hidden',
+                            marginBottom: '2rem',
+                        }}>
+                            {/* Card header bar */}
+                            <div style={{
+                                background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%)',
+                                padding: '1.75rem 2rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '1.25rem',
+                            }}>
+
+                                <div>
+                                    <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.3rem' }}>
+                                        ASSESSMENT TYPE 01
+                                    </div>
+                                    <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.4rem', fontWeight: 400, color: '#fff', margin: 0 }}>
+                                        Airbus Recognition Interview
+                                    </h3>
+                                </div>
+                            </div>
+
+                            {/* Card body */}
+                            <div style={{ padding: '2rem', color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                                <p style={{ margin: 0 }}>
+                                    The <strong>Airbus Recognition Interview</strong> is a structured competency assessment conducted in collaboration with Wingmentor's industry contacts at Airbus — including the <strong>Head of Training at Airbus</strong>. It is designed to evaluate a low-timer pilot's readiness, situational awareness, and behavioral competencies against the operational standards expected by major aircraft manufacturers and their airline partners.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    Unlike a standard job interview, the Airbus Recognition Interview is not a hiring test — it is a <strong>recognition event</strong>. Its outcome is fed directly into your Pilot Recognition profile and reflected in your ATLAS CV, providing a manufacturer-level endorsement of your competency baseline that carries significant weight with airline recruitment pipelines.
+                                </p>
+
+                                {/* What it assesses */}
+                                <div style={{ backgroundColor: '#f8fafc', borderRadius: '16px', padding: '1.5rem', border: '1px solid #e2e8f0', marginTop: '0.5rem' }}>
+                                    <div style={{ fontWeight: 700, color: '#0f172a', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1rem' }}>
+                                        What the Interview Assesses
+                                    </div>
+                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                                        {[
+                                            { icon: '🧠', text: 'NOTECHS Behavioural Competencies' },
+                                            { icon: '🗣️', text: 'Communication & Crew Resource Management' },
+                                            { icon: '📐', text: 'EBT & CBTA Core Familiarity' },
+                                            { icon: '🎯', text: 'Situational Awareness & Decision Making' },
+                                            { icon: '📋', text: 'Industry & Regulatory Knowledge' },
+                                            { icon: '✅', text: 'Professionalism & Readiness Standard' },
+                                        ].map(({ icon, text }) => (
+                                            <div key={text} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#334155', fontSize: '0.95rem' }}>
+                                                <span style={{ fontSize: '1.1rem' }}>{icon}</span>
+                                                <span>{text}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Insight callout */}
+                                <div style={{ padding: '1.25rem 1.5rem', backgroundColor: '#eff6ff', borderRadius: '12px', borderLeft: '4px solid #3b82f6' }}>
+                                    <p style={{ margin: 0, fontSize: '0.95rem', color: '#1e3a8a', fontWeight: 500 }}>
+                                        <strong>Why this matters:</strong> A manufacturer-level recognition signal on your ATLAS CV transforms your profile from an anonymous low-timer into a vetted candidate — one that airline recruitment agencies have a specific reason to escalate rather than filter out.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Foundation Program Alignment */}
+                        <div style={{ marginTop: '2.5rem', marginBottom: '2rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                FOUNDATION PROGRAM ALIGNMENT
+                            </div>
+                            <h4 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1.5rem' }}>
+                                Building Towards the 9 Core Competencies
+                            </h4>
+                            <p style={{ marginBottom: '1.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.85 }}>
+                                Everything you encounter within the Wingmentor Foundation Program — <strong>leadership skills</strong>, <strong>problem-solving</strong>, <strong>assessment and cognitive development</strong>, <strong>behaviorism</strong>, and <strong>constructivism</strong> — is deliberately designed to align with the <strong>9 Core Competencies</strong> recognized by ICAO and adopted by airlines worldwide. These competencies form the universal standard against which every commercial pilot is ultimately measured.
+                            </p>
+                            <p style={{ marginBottom: '1.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.85 }}>
+                                However, it is important to understand the scope of this program: within the <strong>Foundation Program</strong>, you will be limited to the <em>foundational knowledge base</em> of these 9 Core Competencies. You are not expected to master them here — you are expected to <strong>build the groundwork</strong>. The concepts, frameworks, and behavioral awareness introduced at this stage are the building blocks that will prepare you for what comes next.
+                            </p>
+                            <p style={{ marginBottom: '1.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.85 }}>
+                                When you become eligible for the <strong>Transition Program</strong>, that is when you will be formally introduced to the full depth and application of the 9 Core Competencies. The Foundation Program exists to ensure that, by the time you reach that stage, you already possess the foundational understanding and mindset required to exceed — not merely meet — the competency standards expected of you.
+                            </p>
+
+                            {/* Competency alignment visual */}
+                            <div style={{ backgroundColor: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '24px', padding: '2rem', boxShadow: '0 8px 32px rgba(15,23,42,0.04)', border: '1px solid rgba(255,255,255,0.8)', marginTop: '2rem' }}>
+                                <h5 style={{ fontSize: '1rem', fontWeight: 700, color: '#1e293b', marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                    How Foundation Skills Map to the 9 Core Competencies
+                                </h5>
+                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+                                    {[
+                                        { skill: 'Leadership Skills', competency: 'Leadership & Teamwork', icon: '👨‍✈️' },
+                                        { skill: 'Problem Solving', competency: 'Problem Solving & Decision Making', icon: '🧩' },
+                                        { skill: 'Assessment & Cognitive', competency: 'Situational Awareness & Knowledge', icon: '🧠' },
+                                        { skill: 'Behaviorism', competency: 'Communication & Workload Management', icon: '🔄' },
+                                        { skill: 'Constructivism', competency: 'Application of Procedures & Flight Path Management', icon: '🏗️' },
+                                    ].map((item, i) => (
+                                        <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', padding: '1rem', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                                            <span style={{ fontSize: '1.5rem' }}>{item.icon}</span>
+                                            <div>
+                                                <div style={{ fontWeight: 600, color: '#0f172a', fontSize: '0.95rem', marginBottom: '0.25rem' }}>{item.skill}</div>
+                                                <div style={{ fontSize: '0.85rem', color: '#64748b' }}>→ {item.competency}</div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Foundation vs Transition callout */}
+                            <div style={{ padding: '1.25rem 1.5rem', backgroundColor: '#fefce8', borderRadius: '12px', borderLeft: '4px solid #eab308', marginTop: '2rem' }}>
+                                <p style={{ margin: 0, fontSize: '0.95rem', color: '#854d0e', fontWeight: 500 }}>
+                                    <strong>Remember:</strong> The Foundation Program builds the base. The Transition Program introduces the full 9 Core Competencies. What you learn here is not the end — it is the launchpad designed to ensure you exceed the standard, not just meet it.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div style={{ padding: '1.25rem', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '1rem' }}>
+                            <p style={{ margin: 0, fontSize: '0.9rem', color: '#64748b', textAlign: 'center' }}>
+                                ℹ️ <em>Additional examination and assessment pathways will be introduced in later modules of the Foundation Program.</em>
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* ── WingMentor Pilot Recognition ── */}
+                    <div style={{ marginTop: '5rem', paddingTop: '4rem', borderTop: '2px solid #e2e8f0', marginBottom: '2rem' }}>
+
+                        {/* Section header */}
+                        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                            <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '260px', height: 'auto', objectFit: 'contain', marginBottom: '2rem' }} />
+                            <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1rem' }}>
+                                Chapter 01 — Understanding the What's
+                            </div>
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 400, color: '#0f172a', marginBottom: '1rem', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+                                WingMentor Pilot Recognition
+                            </h2>
+                            <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.7, maxWidth: '36rem', margin: '0 auto' }}>
+                                A collaborative database that doesn't just store profiles — it opens doors, builds relationships, and redefines how the aviation industry discovers its next generation of pilots.
+                            </p>
+                        </div>
+
+                        <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.08)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem' }}>
+                            <img src="/dadawdwa.png" alt="WingMentor Pilot Recognition" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                        </div>
+
+                        {/* Intro paragraphs */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.85, marginBottom: '3rem' }}>
+                            <p style={{ margin: 0 }}>
+                                At the heart of Wingmentor lies a simple but powerful idea: <strong>the more pilots we recognise, the stronger every pilot's position becomes</strong>. The Wingmentor Pilot Recognition database is not just a list of names — it is a living, growing ecosystem of vetted, qualified aviation professionals. Every pilot who completes the program and earns recognition strengthens the collective credibility of the entire database, creating a network effect that benefits everyone within it.
+                            </p>
+                            <p style={{ margin: 0 }}>
+                                This is a collaborative model. As the database expands, so does Wingmentor's ability to advocate on behalf of its pilots — approaching airlines, manufacturers, private operators, and aviation organisations with a credible, data-backed proposition that no individual pilot could achieve alone.
+                            </p>
+                        </div>
+
+                        {/* Subtopic: The Power of Scale */}
+                        <div style={{ marginBottom: '3rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE POWER OF SCALE
+                            </div>
+                            <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem' }}>
+                                A Larger Database Opens Larger Doors
+                            </h3>
+
+
+                            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.08)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2rem' }}>
+                                <img src="/databases.png" alt="A Larger Database Opens Larger Doors" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.85 }}>
+                                <p style={{ margin: 0 }}>
+                                    Imagine a scenario where Wingmentor has a database of 500, 1,000, or even 5,000 recognised pilots — each one vetted, each one verified through the Foundation Program. That scale transforms the conversation entirely. Instead of a single pilot cold-emailing <strong>Gulfstream</strong> or <strong>Learjet</strong> asking "What do you look for?", Wingmentor can approach these organisations directly on behalf of the entire pilot community, with the weight and credibility of a structured program behind it.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    The larger the database grows, the more leverage Wingmentor carries. What starts as a recognition program evolves into an <strong>industry-recognised talent pipeline</strong> — one that operators actively want to be connected to, because it solves their recruitment problem at scale.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Subtopic: Asking the Questions Pilots Want Answered */}
+                        <div style={{ marginBottom: '3rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                DIRECT INDUSTRY DIALOGUE
+                            </div>
+                            <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem' }}>
+                                Asking the Questions Pilots Want Answered
+                            </h3>
+
+
+                            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.08)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2rem' }}>
+                                <img src="/inquiry.png" alt="Asking the Questions Pilots Want Answered" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            {/* Image breakdown */}
+                            <div style={{ padding: '1.5rem 1.75rem', backgroundColor: '#f8fafc', borderRadius: '16px', border: '1px solid #e2e8f0', marginBottom: '2rem' }}>
+                                <div style={{ color: '#0f172a', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                                    What's Happening Here
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', color: '#475569', fontSize: '1rem', lineHeight: 1.85 }}>
+                                    <p style={{ margin: 0 }}>
+                                        The scene above captures a reality that thousands of aspiring pilots face every year. A young pilot has approached an airline career booth — in this case, <strong>Skyward Airlines</strong> — and is asking a direct, legitimate question: <em>"So, about the 500-hour multi-engine requirement…"</em> He wants clarity. He wants to understand exactly what the airline expects and how he can meet those standards.
+                                    </p>
+                                    <p style={{ margin: 0 }}>
+                                        But instead of receiving a clear, informative answer, he is <strong>redirected</strong>. The representative behind the desk hands him a generic card and points to a sign: <em>"For specific questions, please email the address on the sign behind me."</em> The information is not being clearly transferred — it is being deferred. The pilot walks away with a business card and a vague instruction to send an email to <strong>careers@skywardair.com</strong>.
+                                    </p>
+                                    <p style={{ margin: 0 }}>
+                                        And here is where the cycle breaks down completely: <strong>that enquiry email almost never gets responded to</strong>. The pilot sends a carefully written email asking about requirements, recommended pathways, or interview expectations — and it disappears into a recruitment inbox that receives hundreds, sometimes thousands, of similar emails every month. No reply. No acknowledgement. No clarity.
+                                    </p>
+                                    <p style={{ margin: 0 }}>
+                                        The pilot is left exactly where he started — uninformed, uncertain, and without a clear path forward. The information gap remains wide open, and the airline moves on without ever knowing they lost a potentially qualified candidate to poor communication.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div style={{ padding: '1.25rem 1.5rem', backgroundColor: '#eff6ff', borderRadius: '12px', borderLeft: '4px solid #3b82f6', marginBottom: '2rem' }}>
+                                <p style={{ margin: 0, fontSize: '0.95rem', color: '#1e3a8a', fontWeight: 500 }}>
+                                    <strong>This is exactly the problem Wingmentor solves.</strong> Instead of individual pilots chasing generic email addresses, Wingmentor approaches these organisations directly — with the weight of a verified pilot database behind it — and asks the questions that actually matter, on behalf of every pilot in the program.
+                                </p>
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.85 }}>
+                                <p style={{ margin: 0 }}>
+                                    The questions that every aspiring pilot wants answered — <em>"What are your requirements? What experience do you recommend? What does the ideal candidate profile look like? How do I get there?"</em> — become questions that Wingmentor can ask directly to companies like Gulfstream, Bombardier, Dassault, or any major operator. And because Wingmentor is presenting a qualified pipeline of candidates, these companies have every reason to engage, share their expectations, and even shape pathway recommendations that feed directly back into the program.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Subtopic: They Come to You */}
+                        <div style={{ marginBottom: '3rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                REVERSING THE APPLICATION MODEL
+                            </div>
+                            <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem' }}>
+                                They Come to You
+                            </h3>
+
+                            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.08)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem' }}>
+                                <img src="/wingmentor terminal.png" alt="Wingmentor Terminal — Reversing the Application Model" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.85 }}>
+                                <p style={{ margin: 0 }}>
+                                    The traditional model in aviation is broken: pilots spend months — sometimes years — blindly applying to airlines, recruitment agencies, and operators, hoping someone notices them in a sea of identical resumes. Wingmentor flips this model entirely.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    As the Wingmentor database gains exposure across the pilot industry, airlines and aviation companies will not need to be convinced — they will be <strong>intrigued</strong>. An application that houses a massive databank of qualified, vetted pilots who have completed a structured recognition program is inherently attractive to any organisation looking to recruit. Instead of you applying to them, they begin exploring <em>you</em>. The database becomes a destination, not a submission.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    Through partnerships, industry events, word of mouth, and direct outreach, the Wingmentor Pilot Database will gain visibility across the aviation sector — from commercial airlines and charter operators to corporate aviation firms and emerging sectors like urban air mobility. The goal is simple: <strong>make the database impossible to ignore</strong>.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Subtopic: The Differentiation Factor */}
+                        <div style={{ marginBottom: '3rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE DIFFERENTIATION FACTOR
+                            </div>
+                            <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem' }}>
+                                Program Pilots vs. Non-Program Pilots
+                            </h3>
+
+                            <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.08)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem' }}>
+                                <img src="/johnsi.png" alt="Program Pilots vs. Non-Program Pilots — The Differentiation Factor" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.85 }}>
+                                <p style={{ margin: 0 }}>
+                                    Not every pilot in the Wingmentor database will carry the same weight — and that is entirely by design. Pilots who have completed the <strong>Wingmentor Foundation Program</strong> will carry a significantly greater edge of recognition than someone who simply registers seeking recognition without having done the work.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    The difference is measurable and visible. Every program you complete, every mentoring session you attend, every assessment you pass, and every competency you demonstrate is recorded and reflected in your profile. The <strong>effort you invest is held accountable</strong> — it shows up in your data, in your ATLAS CV, and in the way your profile is ranked and surfaced to industry partners.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    When an airline or operator searches the database, they will see a clear distinction: pilots who have earned their recognition through demonstrated commitment, structured development, and verified competency — versus those who have not. The programs you take, the experiences you accumulate, and the genuine effort you put in will <strong>all be held accountable</strong> when your profile is being reviewed.
+                                </p>
+                            </div>
+
+                            {/* Insight callout */}
+                            <div style={{ padding: '1.25rem 1.5rem', backgroundColor: '#eff6ff', borderRadius: '12px', borderLeft: '4px solid #3b82f6', marginTop: '2rem' }}>
+                                <p style={{ margin: 0, fontSize: '0.95rem', color: '#1e3a8a', fontWeight: 500 }}>
+                                    <strong>The bottom line:</strong> Recognition is not given — it is earned. Wingmentor tracks everything. The pilots who invest in themselves through the program will always stand apart from those who simply want to be on the list. Your effort is your edge.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* ── ATLAS CV Recognition (merged) ── */}
+                    <div style={{ marginTop: '5rem', paddingTop: '4rem', borderTop: '2px solid #e2e8f0', marginBottom: '2rem' }}>
+
+                        {/* Section header — matches main page title style */}
+                        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                            <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '260px', height: 'auto', objectFit: 'contain', marginBottom: '2rem' }} />
+                            <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1rem' }}>
+                                Chapter 01 — Understanding the What's
+                            </div>
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 400, color: '#0f172a', marginBottom: '1rem', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+                                ATLAS CV Recognition
+                            </h2>
+                            <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.7, maxWidth: '36rem', margin: '0 auto' }}>
+                                Your verified pilot identity, translated into the globally standardised portfolio format trusted by airlines and aviation recruiters worldwide.
+                            </p>
+                        </div>
+
+                        <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.08)', border: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#fff', marginBottom: '2.5rem' }}>
+                            <img src="/atlascv.png" alt="ATLAS CV Recognition — Wingmentor" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                        </div>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: '#475569', fontSize: '17px', lineHeight: 1.75, marginBottom: '2.5rem' }}>
+                            <p style={{ margin: 0 }}>
+                                Once you complete the Wingmentor Foundation Program, your journey doesn't end at a certificate — it begins at a credential. Every piece of data collected across your program is systematically captured by the <strong>Pilot Recognition System</strong>, then translated into the globally standardised <strong>ATLAS CV Format</strong>: the aviation industry's recognised portfolio structure for low-timer pilots seeking airline placement.
+                            </p>
+                            <div style={{ padding: '1.5rem', backgroundColor: '#eff6ff', borderRadius: '12px', borderLeft: '4px solid #3b82f6' }}>
+                                <p style={{ margin: 0, fontSize: '0.95rem', color: '#1e3a8a', fontWeight: 500 }}>
+                                    <strong>What is the ATLAS CV?</strong> The ATLAS CV is not a traditional résumé. It is a structured, standardised aviation portfolio that translates your verified program data — mentoring hours, EBT &amp; CBTA familiarity, knowledge exam results, NOTECHS behavioral scores, and licensure outcomes — into a format immediately readable and trusted by airline recruitment pipelines.
+                                </p>
+                            </div>
+                            <p style={{ margin: 0 }}>
+                                Unlike a generic CV, the ATLAS format is designed around what airlines and their outsourced recruitment agencies actually look for. It removes ambiguity, standardises the candidate profile, and presents your competencies in a verifiable, quantified manner rather than a self-reported list of qualifications.
+                            </p>
+                        </div>
+
+                        {/* 3-step process */}
+                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                            THE PROCESS
+                        </div>
+                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.75rem' }}>
+                            From Program Data to Industry Portfolio
+                        </h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '3rem' }}>
+                            {[
+                                {
+                                    step: '01',
+                                    title: 'Data Collection via the Pilot Recognition System',
+                                    body: `Throughout the Foundation Program, the Pilot Recognition System continuously captures your verified activity: Foundation Program attendance, mentoring hours logged, EBT & CBTA core module completions, knowledge examination results, and your assessed behavioral competencies (NOTECHS framework). Nothing is self-reported — every data point is independently verified by Wingmentor's operational team.`
+                                },
+                                {
+                                    step: '02',
+                                    title: 'Translation to the ATLAS CV Format',
+                                    body: `Your verified data is then structured and formatted into the ATLAS CV — a globally recognised aviation portfolio layout. This translation process standardises your profile to match the specific intake criteria of our airline and industry partner network, removing the guesswork from candidate evaluation and replacing it with measurable, comparable output.`
+                                },
+                                {
+                                    step: '03',
+                                    title: 'Access Granted to the Pilot Database',
+                                    body: `Upon successful ATLAS CV compilation, your profile is formally submitted to Wingmentor's curated Pilot Database — a live, vetted pool of recognised candidates shared directly with our network of airline and aviation industry partners, including Air Asia, Singapore Airlines, and Cathay Pacific. Your ATLAS CV becomes the key that unlocks access to opportunities that are entirely invisible to candidates applying through conventional channels.`
+                                },
+                                {
+                                    step: '04',
+                                    title: 'Industry API Key Access',
+                                    body: `The Wingmentor Pilot Database is not an open directory — it is a secured, API-gated system. Airlines, recruitment agencies, and aviation industry companies are issued unique API keys that grant them controlled access to search, filter, and review pilot profiles and portfolios within the database. Every query is authenticated, logged, and traceable — meaning when an airline wants to verify a candidate or discover new talent, they must go through the Wingmentor API search engine. This architecture adds a critical layer of professionalism and exclusivity: your profile is not passively sitting on a job board — it is being actively retrieved through a secure, enterprise-grade system built for the aviation industry.`
+                                },
+                            ].map(({ step, title, body }) => (
+                                <div key={step} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', padding: '1.5rem', backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 4px 16px rgba(0,0,0,0.04)', border: '1px solid #e2e8f0' }}>
+                                    <div style={{ minWidth: '44px', height: '44px', borderRadius: '50%', backgroundColor: '#eff6ff', border: '2px solid #bfdbfe', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.8rem', color: '#2563eb', flexShrink: 0 }}>
+                                        {step}
+                                    </div>
+                                    <div>
+                                        <h4 style={{ fontFamily: 'Georgia, serif', fontSize: '1.05rem', fontWeight: 400, color: '#0f172a', marginBottom: '0.4rem' }}>{title}</h4>
+                                        <p style={{ color: '#475569', fontSize: '0.975rem', lineHeight: 1.75, margin: 0 }}>{body}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Inside the ATLAS CV */}
+                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                            INSIDE THE ATLAS CV
+                        </div>
+                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1rem' }}>
+                            What Gets Recognised
+                        </h3>
+                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                            The ATLAS CV is a composite of every verified data point from your Foundation Program progress. Below is what constitutes your recognised pilot profile:
+                        </p>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '3rem' }}>
+                            {[
+                                { icon: '📋', label: 'Foundation Program Attendance', detail: 'Verified session logs and participation records' },
+                                { icon: '🤝', label: 'Mentoring Hours', detail: 'Documented one-on-one and group mentoring engagements' },
+                                { icon: '✈️', label: 'EBT & CBTA Familiarity', detail: 'Evidence-based training module competency records' },
+                                { icon: '📝', label: 'Knowledge Exam Results', detail: 'Standardised examination outcomes and pass records' },
+                                { icon: '🧠', label: 'NOTECHS Behavioural Scores', detail: 'Assessed Non-Technical Skills per competency framework' },
+                                { icon: '🎓', label: 'Licensure Outcomes', detail: 'Verified licence and rating holdings on record' },
+                            ].map(({ icon, label, detail }) => (
+                                <div key={label} style={{ padding: '1.25rem', backgroundColor: '#f8fafc', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
+                                    <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{icon}</div>
+                                    <div style={{ fontWeight: 600, color: '#0f172a', fontSize: '0.95rem', marginBottom: '0.25rem' }}>{label}</div>
+                                    <div style={{ color: '#64748b', fontSize: '0.85rem', lineHeight: 1.5 }}>{detail}</div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Mentorship Validation & Certification */}
+                        <div style={{ backgroundColor: '#f0f9ff', padding: '2.5rem', borderRadius: '24px', borderLeft: '4px solid #0284c7', marginBottom: '3.5rem', marginTop: '3.5rem' }}>
+                            <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                                WINGMENTOR INSIGHT
+                            </div>
+                            <h3 style={{ fontSize: '1.8rem', fontWeight: 700, color: '#0c4a6e', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Mentorship Certification
+                            </h3>
+                            <p style={{ color: '#1e293b', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                                Following a series of engagements with an assigned WingMentor official, and upon reaching the <strong>20-hour milestone</strong>, candidates undergo a final <strong>Examined Mentorship Session</strong>. This session serves as a high-level assessment where your ability to synthesize and apply mentor knowledge is rigorously evaluated by an official mentor.
+                            </p>
+                            <p style={{ color: '#1e293b', fontSize: '1.1rem', lineHeight: 1.8, margin: 0 }}>
+                                The objective is to verify that you have not only understood the core methodologies but are also equipped to <strong>mentor others independently</strong>. Successful completion marks your transition into a recognized mentor within the ecosystem, providing a critical validation point in your professional profile.
+                            </p>
+                        </div>
+
+                        {/* WingMentor Insight */}
+                        <div style={{ backgroundColor: '#f0f9ff', padding: '2.5rem', borderRadius: '24px', borderLeft: '4px solid #0284c7', marginBottom: '2rem' }}>
+                            <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                                WINGMENTOR INSIGHT
+                            </div>
+                            <h3 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0c4a6e', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Why Standard CVs Fail the Airline Test
+                            </h3>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', color: '#1e293b', fontSize: '1.1rem', lineHeight: 1.8 }}>
+                                <p style={{ margin: 0 }}>
+                                    A traditional pilot CV is a self-reported history of past actions. The ATLAS CV is a <strong>verified record of future potential</strong>. In a global market saturated with identical 200-hour profiles, the distinction between career stagnation and airline assessment is rarely about flying hours — it is about the documented credibility of your professional character.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    The ATLAS CV provides airline recruitment partners with a standardized, high-trust credential. It bypasses the noise of the open market, speaks directly to the advanced intake criteria defined by major carriers, and positions you as a pre-vetted candidate who has already cleared the industry's most rigorous preparatory hurdle.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div style={{ padding: '1.25rem', backgroundColor: '#eff6ff', borderRadius: '12px', border: '1px solid #bfdbfe', marginBottom: '1rem' }}>
+                            <p style={{ margin: 0, fontSize: '0.9rem', color: '#2563eb', fontWeight: 500, textAlign: 'center' }}>
+                                ℹ️ <em>You will build and review your ATLAS CV in detail during later modules of the Foundation Program.</em>
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Quiz Section */}
+                    <div style={{ marginTop: '5rem', marginBottom: '3rem' }}>
+                        <div style={{ backgroundColor: 'white', borderRadius: '24px', border: '1px solid #e2e8f0', padding: '3rem', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
+                            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '0 0 2rem 0' }}>
+                                <Icons.Zap style={{ width: 24, height: 24, color: '#2563eb' }} />
+                                Quiz: Pilot Recognition
+                            </h3>
+                            <div style={{ padding: '2rem', backgroundColor: '#f8fafc', borderRadius: '20px', border: '1px solid #e2e8f0', cursor: 'pointer', transition: 'all 0.2s ease-in-out' }}
+                                onMouseOver={(e) => {
+                                    e.currentTarget.style.borderColor = '#93c5fd';
+                                    e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                                }}
+                                onMouseOut={(e) => {
+                                    e.currentTarget.style.borderColor = '#e2e8f0';
+                                    e.currentTarget.style.boxShadow = 'none';
+                                }}
+                            >
+                                <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', marginBottom: '0.75rem', letterSpacing: '0.1em' }}>Internal Exam 01.B</div>
+                                <h4 style={{ fontSize: '1.2rem', fontWeight: 600, color: '#1e293b', marginBottom: '0.75rem', margin: '0 0 0.75rem 0' }}>Understanding Operational Readiness</h4>
+                                <p style={{ fontSize: '1rem', color: '#475569', fontStyle: 'italic', marginBottom: '2rem', lineHeight: 1.6 }}>"What is the primary objective of the ATLAS CV in the Wingmentor ecosystem?"</p>
+                                <button style={{ color: '#2563eb', fontSize: '1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.6rem', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
+                                    Start Quiz <Icons.ArrowRight style={{ width: 20, height: 20 }} />
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -1461,129 +2680,355 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                             Next →
                         </button>
                     </div>
-                    <div style={{ textAlign: 'center', marginTop: '1rem' }}>
-                        <p style={{ color: '#0284c7', fontSize: '1.05rem', lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
-                            Finally, we analyze the Psychology of the Gamble. Is a self-funded rating an investment, or a high-stakes bet? Explore <strong>Banker vs Casino</strong> on the next page.
-                        </p>
-                    </div>
                 </div>
             );
         }
 
-        // ── Page: Banker vs Casino ──────────────────────────────────────────
-        if (currentTopic === 'type-rating-psychology') {
+        if (currentTopic === 'what-now') {
             return (
-                <div style={{ maxWidth: '64rem', margin: '0 auto', paddingTop: '3rem', paddingLeft: '1.5rem', paddingRight: '1.5rem', animation: 'fadeIn 0.4s ease-in-out' }}>
-                    <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                        <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1.5rem' }}>
-                            Chapter 01 — Understanding the What's
+                <div style={{ display: 'flex', flexDirection: 'column', animation: 'fadeIn 0.5s ease-in-out' }}>
+                    {/* ── Page Header ── */}
+                    <div style={{ textAlign: 'center', paddingBottom: '3.5rem', paddingTop: '4rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
+                        <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '320px', height: 'auto', objectFit: 'contain', marginBottom: '2rem' }} />
+                        <div style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem' }}>
+                            CHAPTER 01 — UNDERSTANDING THE WHAT'S
                         </div>
-                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 3.5rem)', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-                            Banker vs Casino Manager
+                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                            What Now?
                         </h1>
-                        <p style={{ color: '#64748b', fontSize: '1.25rem', lineHeight: 1.6, maxWidth: '42rem', margin: '0 auto' }}>
-                            Predicting the Return on Investment: A psychological analysis of the Type Rating gamble.
+                        <p style={{ color: '#64748b', fontSize: '1.25rem', lineHeight: 1.6, maxWidth: '48rem', margin: '0 auto', fontWeight: 400 }}>
+                            So you have established the realities of the industry gap, the illusion of the shortage, and the need for recognized behavioural maturity. Now it is time to pivot from analysis to actionable strategy.
                         </p>
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', alignItems: 'center' }}>
-                        <div style={{ width: '100%', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.1)', border: '1px solid #e2e8f0', backgroundColor: 'white', padding: '1rem' }}>
-                            <img src="/banker-vs-casino.png" alt="Banker vs Casino Manager Psychology" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
-                        </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem', alignItems: 'center' }}>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', width: '100%', marginTop: '2rem' }}>
-                            <section>
-                                <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.75rem', color: '#0f172a', marginBottom: '1.5rem' }}>The Banker's Perspective</h3>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', color: '#475569', fontSize: '1.05rem', lineHeight: 1.7 }}>
-                                    <p>A banker looks for <strong>collateral</strong>, <strong>liquidity</strong>, and <strong>predictable growth</strong>. From this lens, a self-funded Type Rating is a "Toxic Asset":</p>
-                                    <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                                        <li><strong>Non-Refundable:</strong> Once paid, the capital is gone forever. There is no "sell-back" option.</li>
-                                        <li><strong>Intangible:</strong> You aren't buying a house or a car; you're buying a piece of paper that only has value if an airline says it does.</li>
-                                        <li><strong>The Subscription Model:</strong> You don't keep it forever. If you leave the industry or fail to fly the aircraft type regularly, the rating expires. It's a lease on a skill, not ownership of an asset.</li>
-                                        <li><strong>No Appreciation:</strong> The rating doesn't grow in value. In fact, it only costs more to "renew" it every year if you aren't employed.</li>
-                                    </ul>
+                        {/* Analysis Section */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem', marginTop: '1rem' }}>
+                            <div style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155' }}>
+                                <p style={{ marginBottom: '1.5rem', color: '#475569', fontSize: '1.05rem' }}>
+                                    The most agonizing question you must ask yourself is: <em>What am I going to do now? What am I actually going to face?</em> Here is the unspoken truth: you are not the only one who knows the reality of the <strong>Industry Gap</strong>. Deep down, the instructors who taught you know it. The head of your flight college knows it. But they are bound by a different directive: keeping the aviation pipeline flowing. Most pilots rely entirely on their flight school, totally trusting the process they laid out. For a school to admit that their CPL doesn't actually make you airline-ready would be like telling a child that Santa Claus isn't real. So, they keep you dreaming your goal. To be fair, if flight schools laid out the brutal truth of these requirements on day one, many aspiring aviators would have never taken the leap, and these schools would go out of business. Ultimately, the fault doesn't lie maliciously with the schools; it lies with the rigid, outdated regulations that created this chasm.
+                                </p>
+                                <p style={{ marginBottom: '1.5rem', color: '#475569', fontSize: '1.05rem' }}>
+                                    So, what now? You are what the industry universally labels a <strong>"Low-Timer,"</strong> a term carrying a heavy stigma. It means you have the legal right to fly, but you lack the "operational miles" to be trusted. While in flight school, the environment dictated your schedule; every scenario was predictable. Now you are faced with a developmental void. The harsh reality for most graduates is sitting at home, holding a fresh license, and desperately waiting for an interview with their own flight school to become an instructor—because everyone knows that is their "best bet" for a job.
+                                </p>
+                                <p style={{ marginBottom: '2.5rem', color: '#475569', fontSize: '1.05rem' }}>
+                                    You are going to face the harsh reality that your previous <strong>Constructivism</strong>—how you built your knowledge base—was flawed. You built knowledge based on passing tests, not on practical, commercial survival. You will realize that the gap isn't just about a lack of flight hours; it is about the immaturity of your non-technical skills (NOTECHS).
+                                </p>
+
+                                <h3 style={{ fontSize: '1.6rem', fontWeight: 600, color: '#0f172a', marginBottom: '1.5rem', fontFamily: '"Inter", sans-serif' }}>
+                                    The Wingmentor Approach
+                                </h3>
+                                <div style={{
+                                    backgroundColor: '#f8fafc',
+                                    borderRadius: '16px',
+                                    padding: '2rem',
+                                    border: '1px solid #e2e8f0',
+                                    borderLeft: '4px solid #3b82f6',
+                                    marginBottom: '1.5rem',
+                                    position: 'relative'
+                                }}>
+                                    <p style={{ margin: 0, color: '#475569', fontSize: '1.05rem', lineHeight: 1.7 }}>
+                                        <strong>Real Talk:</strong> Most pilots think the hard part is over once the CPL is printed. In reality, the true test is the "Experience Void." You can sit at home hoping for an instructor slot to open up, or you can take decisive action. This is exactly where Wingmentor steps in—to actively break the cycle of waiting and forge you into a standardized, ready-to-hire commercial asset.
+                                    </p>
                                 </div>
-                            </section>
+                            </div>
+                        </section>
 
-                            <section>
-                                <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.75rem', color: '#0f172a', marginBottom: '1.5rem' }}>The Casino Manager's View</h3>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', color: '#475569', fontSize: '1.05rem', lineHeight: 1.7 }}>
-                                    <p>The Casino Manager sees the Pilot Training industry as a high-stakes table. They love the "Side Bet" of a self-funded rating because:</p>
-                                    <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                                        <li><strong>Asymmetric Risk:</strong> The pilot takes 100% of the financial risk. The "Casino" (the airline or agency) takes 0%.</li>
-                                        <li><strong>The "Near Miss" Effect:</strong> Pilots see others getting hired and think they are "due" for a win, leading them to stay in the game longer than they should.</li>
-                                        <li><strong>House Edge:</strong> The house always wins because even if the pilot isn't hired, the training center still gets paid for the rating.</li>
-                                    </ul>
-                                    <div style={{ padding: '1.5rem', backgroundColor: '#fff7ed', borderRadius: '16px', border: '1px solid #ffedd5', marginTop: '1rem' }}>
-                                        <p style={{ margin: 0, fontSize: '0.95rem', color: '#9a3412', fontWeight: 600 }}>
-                                            ⚠️ Are you investing or gambling? Without a job offer, a self-funded Type Rating is almost always a gamble.
-                                        </p>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
+                        {/* Charting Your Trajectory Section */}
+                        <section style={{ textAlign: 'center', maxWidth: '52rem' }}>
+                            {/* Conceptual Image */}
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', border: '1px solid rgba(0,0,0,0.05)', backgroundColor: '#f8fafc', marginBottom: '3rem', position: 'relative' }}>
+                                <img src="/the-pilot-gap.png" alt="Evaluating what comes next in the pilot journey" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+                            </div>
 
-                        <div style={{ height: '1px', background: '#e2e8f0', width: '100%', marginTop: '3rem' }} />
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '6rem', width: '100%' }}>
-                            <button onClick={handlePrev} style={{ color: '#94a3b8', fontSize: '14px', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-                                ← Back
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE NEXT STEPS
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Charting Your Trajectory
+                            </h2>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', textAlign: 'left' }}>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: 0 }}>
+                                    The industry isn't going to lower its standards to meet you; you must elevate your competencies to meet the industry. The subsequent chapters of this Foundation platform are designed identically to tackle that reality.
+                                </p>
+                                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: 0 }}>
+                                    This framework shifts the focus entirely toward actionable development. You will engage with advanced problem-solving methodologies, establish rigorous Crew Resource Management protocols, and undergo continuous peer collaboration through our established mentorship networks to ensure you don't stall your career at the 250-hour mark.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Evidence-Based Evolution Section */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem', textAlign: 'center' }}>
+                                THE NEW GLOBAL STANDARD
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                The Evidence-Based Evolution
+                            </h2>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.1rem', lineHeight: 1.7, color: '#475569' }}>
+                                <p>
+                                    We bridge this intimidating gap not by tossing you into the deep end, but through the new global industry standard: structured, psychologically-driven <strong>Evidence-Based Training and Assessment (EBTA)</strong>. It is no longer about <em>how long</em> you've flown, but <em>how well</em> you handle specific behavioural cores under operational stress.
+                                </p>
+                                <p>
+                                    You will take part through rigorous peer-mentorship, deep scenario-based evaluations, and guided indoctrination into professional workflows aimed directly at mitigating that perceived risk. We dissect the pilot into three core psychological pillars. We reconstruct your <strong>Behaviorism</strong> so that adhering to SOPs becomes an ingrained reflex rather than an active choice. We elevate your <strong>Cognitive Thinking</strong> so you learn to anticipate industry-wide multi-crew dynamics, manage immense workloads, and make critical, split-second safety decisions.
+                                </p>
+                                <p>
+                                    Finally, we foster true <strong>Constructivism</strong>: teaching you how to build upon your failures constructively, actively self-critique your performances, and continuously learn in the cockpit, day after day.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Industry Credibility Closing */}
+                        <section style={{ textAlign: 'left', maxWidth: '52rem' }}>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The Result Factor: What will you achieve?
+                            </h2>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.1rem', lineHeight: 1.7, color: '#475569' }}>
+                                <p style={{ margin: 0 }}>
+                                    Experience is the true foundation of knowledge. The ultimate result of this rigorous module is unquestionable <strong>Industry Credibility</strong>.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    This program isn&apos;t designed to get you a job at one specific airline; it is designed to make you undeniably hirable across the entire commercial aviation spectrum—whether you&apos;re flying cargo at 3 AM, navigating complex corporate charter operations, or flying for a legacy carrier. By focusing intensely on the core fundamentals that all operators actually evaluate during simulator checks and technical interviews, we take your &quot;Low-Timer&quot; risk and forge it into verifiable &quot;High-Competency&quot; value.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    As you complete this module and generate irrefutable Pilot Quality Assurance (PQA) metrics, you build a data-driven portfolio. This portfolio proves that you have the psychological maturity, the standardized behavior, and the advanced CRM capabilities that the industry desperately seeks. You will have transitioned from a student pilot into a professional airman.
+                                </p>
+                            </div>
+
+                            {/* Closing blockquote */}
+                            <blockquote style={{
+                                margin: '2.5rem 0 0 0',
+                                paddingLeft: '1.5rem',
+                                borderLeft: '3px solid #2563eb',
+                                color: '#334155',
+                                fontSize: '1.1rem',
+                                lineHeight: 1.75,
+                                fontStyle: 'italic'
+                            }}>
+                                &quot;We don&apos;t just teach you to fly a plane; we prepare you to lead a career across the entire industry. This is the foundation of turning flight hours into true operational knowledge.&quot;
+                            </blockquote>
+                        </section>
+
+                        {/* Navigation Footer */}
+                        <div style={{ marginTop: '4rem', paddingTop: '2.5rem', width: '100%', maxWidth: '42rem', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <button
+                                onClick={handlePrev}
+                                style={{ color: '#64748b', fontSize: '0.95rem', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'color 0.2s' }}
+                                onMouseOver={(e) => e.currentTarget.style.color = '#0f172a'}
+                                onMouseOut={(e) => e.currentTarget.style.color = '#64748b'}
+                            >
+                                <Icons.ArrowLeft style={{ width: 18, height: 18 }} /> Previous
                             </button>
                             <button
                                 onClick={handleNext}
-                                style={{ background: '#0284c7', color: 'white', fontWeight: 600, fontSize: '14px', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: 'none', cursor: 'pointer', transition: 'background 0.2s' }}
-                                onMouseEnter={e => (e.currentTarget.style.background = '#0369a1')}
-                                onMouseLeave={e => (e.currentTarget.style.background = '#0284c7')}
+                                style={{
+                                    backgroundColor: '#2563eb',
+                                    color: 'white',
+                                    fontWeight: 600,
+                                    fontSize: '0.95rem',
+                                    padding: '0.75rem 2rem',
+                                    borderRadius: '50px',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    transition: 'background-color 0.2s',
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    boxShadow: '0 4px 6px -1px rgba(37, 99, 235, 0.2)'
+                                }}
+                                onMouseOver={e => e.currentTarget.style.backgroundColor = '#1d4ed8'}
+                                onMouseOut={e => e.currentTarget.style.backgroundColor = '#2563eb'}
                             >
-                                Next →
+                                Continue to Chapter 2 <Icons.ArrowRight style={{ width: 18, height: 18 }} />
                             </button>
                         </div>
                     </div>
                 </div>
             );
         }
+
+
 
         // ── Page: why-statistics ───────────────────────────────────────────
         if (currentTopic === 'why-statistics') {
             return (
-                <div style={{ display: 'flex', flexDirection: 'column', animation: 'fadeIn 0.5s ease-in-out' }}>
-                    <div style={{ textAlign: 'center', paddingBottom: '3.5rem', paddingTop: '4rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
-                        <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '320px', height: 'auto', objectFit: 'contain', marginBottom: '2rem' }} />
-                        <div style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem' }}>
+                <div style={{ maxWidth: '950px', margin: '0 auto', animation: 'fadeIn 0.5s ease-in-out' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '5rem', paddingTop: '2rem' }}>
+                        <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
+                            <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '320px', height: 'auto', objectFit: 'contain' }} />
+                        </div>
+                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
                             CHAPTER 02 — THE WHY
                         </div>
-                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-                            The Statistical Reality
+                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', marginBottom: '3rem', letterSpacing: '-0.02em' }}>
+                            Initial Examinations for the Foundational Program
                         </h1>
-                        <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '42rem', margin: '0 auto', fontWeight: 400 }}>
-                            Numbers don't lie. In this section, we examine the quantitative data that defines the pilot landscape, revealing the stark contrast between market perception and the actual barriers to entry for low-timers.
-                        </p>
+
+                        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', color: '#334155', fontSize: '1.2rem', lineHeight: '1.8' }}>
+                            <p style={{ marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                We are now focusing on the program requirements. Stage 1 is Examination Preparation — centred on the industry formation covered in Chapter 1. You are required to study each module from <strong>Low Timer</strong> through to <strong>What is Pilot Recognition</strong>, reading through every section thoroughly to gain a clear understanding of the industry landscape and where you stand as a pilot.
+                            </p>
+                        </div>
+
+                        <div style={{ marginTop: '4rem', maxWidth: '800px', margin: '4rem auto 0', textAlign: 'left', color: '#334155' }}>
+
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '2rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem' }}>
+                                Stage 1 — Examination Preparation
+                            </h2>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1rem', fontFamily: 'Georgia, serif' }}>
+                                Stage 1 of the examination is centred on the industry formation covered in <strong>Chapter 1</strong>. You are required to study each module — from the Low Timer perspective through to Pilot Recognition — reading through every section thoroughly to gain a clear understanding of the industry landscape and where you stand as a pilot. You will then be assessed on your foundational knowledge of the industry through structured examination questions.
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '0.75rem', fontFamily: 'Georgia, serif' }}>
+                                The following chapters must be studied in full:
+                            </p>
+                            <ul style={{ fontSize: '1.15rem', lineHeight: '1.9', marginBottom: '1.5rem', paddingLeft: '1.5rem', color: '#334155', fontFamily: 'Georgia, serif' }}>
+                                <li>What is a Low Timer?</li>
+                                <li>What is the Pilot Shortage?</li>
+                                <li>What is the Pilot Gap?</li>
+                                <li>What is Pilot Recognition?</li>
+                            </ul>
+
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '2rem', fontWeight: 400, color: '#0f172a', marginTop: '3rem', marginBottom: '1.5rem' }}>
+                                The W1000 Application
+                            </h2>
+                            <img
+                                src="/W1000 application.jpg"
+                                alt="W1000 WingMentor Application"
+                                style={{ width: '100%', borderRadius: '16px', marginBottom: '1.75rem', display: 'block', objectFit: 'cover' }}
+                            />
+                            <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', color: '#64748b', fontStyle: 'italic' }}>
+                                The W1000 application is currently accessible on <strong style={{ fontStyle: 'normal', color: '#334155' }}>iPad</strong> and <strong style={{ fontStyle: 'normal', color: '#334155' }}>desktop</strong>. The mobile version is still under development.
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Upon enrolment in the Foundational Program, you will be granted access to the <strong>W1000 WingMentor Application</strong>. This platform is your primary resource for examination practice and knowledge access, including articles, PowerPoint slides, and textbook content covering <strong>PPL, CPL, and SPL</strong>.
+                            </p>
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '2rem', fontWeight: 400, color: '#0f172a', marginTop: '3rem', marginBottom: '1.5rem' }}>
+                                Program Modules
+                            </h2>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Within the <strong>Program Modules</strong>, you can access the full content library for each module in the Foundational Program. This comprehensive curriculum provides all the necessary documentation, presentations, and study material to ensure your progression through the program stages.
+                            </p>
+
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '2rem', fontWeight: 400, color: '#0f172a', marginTop: '3rem', marginBottom: '1.5rem' }}>
+                                Examination Terminal
+                            </h2>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The <strong>Examination Terminal</strong> allows for practice examinations with full data tracking. You have two modes selection: <em>Profile Mode</em> (where scores are recorded to your pilot profile as official progress and learning metrics) and <em>Practice Mode</em> (where results are not recorded officially — ideal for casual practice without impacting your profile's progress rate or error rate).
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif', borderLeft: '3px solid #0284c7', paddingLeft: '1.25rem' }}>
+                                <strong>Important:</strong> Within the Examination Terminal, you are able to <strong>select which licensure you are currently on</strong> and choose the specific topics you would like to be examined on — allowing you to tailor your assessment to your current level and focus areas.
+                            </p>
+
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '2rem', fontWeight: 400, color: '#0f172a', marginTop: '3rem', marginBottom: '1.5rem' }}>
+                                The Black Box
+                            </h2>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The <strong>Black Box</strong> is WingMentor's official knowledge archive, providing exclusive access to curated PowerPoint slides and structured study material across a wide range of aviation topics. Content spans <strong>PPL, CPL, Instrument Rating (IR), and Multi-Engine (ME)</strong> knowledge areas, giving you a comprehensive reference library to support your examinations and ongoing development.
+                            </p>
+
+                            {/* Examination Structure Card Section */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '4rem', textAlign: 'left' }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    textAlign: 'center',
+                                    width: '100%',
+                                    boxSizing: 'border-box'
+                                }}>
+                                    <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                        EXAMINATION STRUCTURE
+                                    </div>
+                                    <h2 style={{ fontSize: '2.1rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
+                                        Calibration &amp; Regulatory Standards
+                                    </h2>
+
+                                    <div style={{ textAlign: 'left', maxWidth: '42rem', margin: '0 auto' }}>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            The examination you undertake is calibrated to your <strong>current licence rating</strong>. If you hold a PPL, you will be examined at PPL level. To gain a higher rating or elevated mentor classification, you will need to sit the examination again at the appropriate level — this evaluation process continues throughout your participation in the Foundational Program and beyond.
+                                        </p>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            For Philippines-based pilots, the examination is aligned with <strong>CAAP</strong> regulations. For USA-based pilots, examinations follow <strong>FAA</strong> standards. Note that while the Philippines framework is interrelated with FAA regulations, the <em>Air Law component differs</em> due to distinct national airspace regulations.
+                                        </p>
+                                        <p style={{ fontSize: '1.1rem', color: '#2563eb', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginTop: '2rem', borderLeft: '3px solid #2563eb', paddingLeft: '1.25rem' }}>
+                                            <strong>Important:</strong> The official WingMentor examination is accessed directly through this <strong>portal</strong> — not through the Examination Terminal on the W1000 application. The W1000 is provided solely for <strong>study material and practice</strong>. When you are ready to sit your official examination, you will do so here.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Unlocked Access Card Section */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', marginTop: '4rem', textAlign: 'left' }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    textAlign: 'center',
+                                    width: '100%',
+                                    boxSizing: 'border-box'
+                                }}>
+                                    <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                        UNLOCKED ACCESS &amp; BENEFITS
+                                    </div>
+                                    <h2 style={{ fontSize: '2.1rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
+                                        Beyond the Official Initial Examination
+                                    </h2>
+
+                                    <div style={{ textAlign: 'left', maxWidth: '42rem', margin: '0 auto' }}>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '3rem' }}>
+                                            Once you have completed and passed your official WingMentor examination, the following resources, environments, and community platforms are unlocked within your program access.
+                                        </p>
+
+                                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.25rem' }}>
+                                            Simulator Room
+                                        </h3>
+                                        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '0.75rem', fontFamily: 'Georgia, serif', color: '#475569' }}>
+                                            Gain access to a full range of simulation practice sessions including:
+                                        </p>
+                                        <ul style={{ fontSize: '1.1rem', lineHeight: '1.9', marginBottom: '2.5rem', paddingLeft: '1.5rem', color: '#475569', fontFamily: 'Georgia, serif' }}>
+                                            <li>IFR Planning scenarios</li>
+                                            <li>Multi-Engine (ME) failure simulations</li>
+                                            <li>VFR and IFR practice environments</li>
+                                            <li>EBT (Evidence-Based Training) and CBT (Computer-Based Training) modules</li>
+                                        </ul>
+
+                                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.25rem' }}>
+                                            Pilot Gap Forum
+                                        </h3>
+                                        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.25rem', fontFamily: 'Georgia, serif', color: '#475569' }}>
+                                            A structured discussion board for community sharing, information questioning, and subject-specific topics. This is separate from direct mentor communication.
+                                        </p>
+
+                                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.25rem' }}>
+                                            WingMentor Network Application
+                                        </h3>
+                                        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.25rem', fontFamily: 'Georgia, serif', color: '#475569' }}>
+                                            Your primary platform for <strong>direct chat and real-time communication</strong> with mentors and fellow mentees.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem', alignItems: 'center' }}>
-                        <section style={{ textAlign: 'center', maxWidth: '52rem' }}>
-                            <div style={{ padding: '2.5rem', backgroundColor: '#f8fafc', borderRadius: '24px', border: '1px solid #e2e8f0', marginBottom: '3rem' }}>
-                                <div style={{ fontSize: '3rem', fontWeight: 800, color: '#2563eb', marginBottom: '0.5rem' }}>85%</div>
-                                <div style={{ fontSize: '1.25rem', fontWeight: 600, color: '#0f172a', marginBottom: '1rem' }}>of low-timer resumes are rejected automatically</div>
-                                <p style={{ color: '#64748b', fontSize: '1rem', lineHeight: 1.6, margin: 0 }}>
-                                    Recruitment algorithms and third-party filters eliminate the vast majority of applications that don't meet specific turbine or multi-crew benchmarks, regardless of training quality.
-                                </p>
-                            </div>
 
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '3rem' }}>
-                                <div style={{ padding: '2rem', backgroundColor: 'white', borderRadius: '20px', boxShadow: '0 4px 12px rgba(0,0,0,0.03)', border: '1px solid #f1f5f9' }}>
-                                    <div style={{ fontSize: '2rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>14 Months</div>
-                                    <div style={{ fontSize: '0.875rem', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Average Wait Time</div>
-                                </div>
-                                <div style={{ padding: '2rem', backgroundColor: 'white', borderRadius: '20px', boxShadow: '0 4px 12px rgba(0,0,0,0.03)', border: '1px solid #f1f5f9' }}>
-                                    <div style={{ fontSize: '2rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>€35,000</div>
-                                    <div style={{ fontSize: '0.875rem', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Avg. Extra Investment</div>
-                                </div>
-                            </div>
-
-                            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, textAlign: 'justify' }}>
-                                The "Pilot Shortage" is a top-heavy phenomenon. While the industry needs tens of thousands of pilots over the next decade, the capacity for airlines to train and "onboard" low-timers is limited by simulator availability and instructor bandwidth. This creates a statistical bottleneck where only those with verified standardization move forward.
-                            </p>
-                        </section>
+                        <p style={{ fontSize: '1.15rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', textAlign: 'center', maxWidth: '42rem', marginBottom: '-1rem' }}>
+                            The next page will provide a comprehensive walkthrough and guide on the use of the <strong>W1000 application</strong>, detailing its primary functions and how to utilize its resources for your progression.
+                        </p>
 
                         <div style={{ height: '1px', background: '#e2e8f0', width: '100%', maxWidth: '42rem' }} />
 
@@ -1605,49 +3050,319 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
             );
         }
 
-        // ── Page: why-trap ───────────────────────────────────────────────
-        if (currentTopic === 'why-trap') {
+
+        // ── Page: w1000-poh ────────────────────────────────────────────────
+        if (currentTopic === 'w1000-poh') {
             return (
-                <div style={{ display: 'flex', flexDirection: 'column', animation: 'fadeIn 0.5s ease-in-out' }}>
-                    <div style={{ textAlign: 'center', paddingBottom: '3.5rem', paddingTop: '4rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
-                        <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '320px', height: 'auto', objectFit: 'contain', marginBottom: '2rem' }} />
-                        <div style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem' }}>
-                            CHAPTER 02 — THE WHY
+                <div style={{ maxWidth: '950px', margin: '0 auto', animation: 'fadeIn 0.5s ease-in-out' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '5rem', paddingTop: '2rem' }}>
+                        <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
+                            <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '320px', height: 'auto', objectFit: 'contain' }} />
                         </div>
-                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-                            The Golden Handcuffs
+                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                            W1000 — PILOT OPERATING HANDBOOK
+                        </div>
+                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', marginBottom: '3rem', letterSpacing: '-0.02em' }}>
+                            Application Walkthrough & Guide
                         </h1>
-                        <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '42rem', margin: '0 auto' }}>
-                            A common trap most pilots don't know or invest cluesly in is the Flight Time Bond—a mechanism designed to ensure "loyalty" through financial leverage.
-                        </p>
-                    </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', alignItems: 'center' }}>
-                        <div style={{ width: '100%', maxWidth: '64rem', backgroundColor: 'white', padding: '1rem', borderRadius: '32px', boxShadow: '0 20px 50px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
-                            <img src="/flight-bond.png" alt="Flight Time Bond Illustration" style={{ width: '100%', height: 'auto', borderRadius: '24px', display: 'block' }} />
-                        </div>
-
-                        <div style={{ textAlign: 'center', maxWidth: '42rem', marginBottom: '1.5rem' }}>
-                            <p style={{ color: '#64748b', fontSize: '0.9rem', fontStyle: 'italic', margin: 0 }}>
-                                Understanding the fine print: The moment a Pilot's freedom is traded for a seat.
+                        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', color: '#334155', fontSize: '1.2rem', lineHeight: '1.8' }}>
+                            <p style={{ marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The <strong>W1000 Application</strong> is your primary auxiliary tool for the WingMentor Foundation Program. It serves as your personal study terminal, containing all the technical curriculum, examination practice environments, and national standard modules required for your progression.
                             </p>
                         </div>
 
-                        <section style={{ textAlign: 'center', maxWidth: '52rem' }}>
-                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                THE FLIGHT TIME BOND
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', marginTop: '4rem' }}>
+
+                            {/* Card 1: The Technical Interface */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', textAlign: 'left' }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    width: '100%',
+                                    boxSizing: 'border-box'
+                                }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem', textAlign: 'center' }}>
+                                        SECTION 01
+                                    </div>
+                                    <h2 style={{ fontSize: '2.1rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                        The Technical Interface
+                                    </h2>
+
+                                    <div style={{ textAlign: 'left', maxWidth: '42rem', margin: '0 auto' }}>
+                                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.25rem' }}>
+                                            Primary Navigation (Sidebar)
+                                        </h3>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            The left-hand sidebar is your command centre. From here, you can toggle between the <strong>Program Modules</strong>, the <strong>Examination Terminal</strong>, and the <strong>Black Box Archive</strong>. Each section is colour-coded and grouped by logical progression.
+                                        </p>
+
+                                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.25rem' }}>
+                                            Module Selection
+                                        </h3>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            Clicking a module (e.g., PPL or CPL) will expand its specific sub-topics. You can track your progress as you read through each interactive slide. Each module is designed to be self-paced, allowing you to return to complex subjects as many times as necessary before attempting a practice session.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
-                                A Debt-Driven Career Path
-                            </h2>
-                            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, textAlign: 'justify' }}>
-                                Many airlines offer "sponsored" or "funded" training, but this often comes with a significant catch: the <strong>Flight Time Bond</strong>. This is a legal contract where the pilot agrees to stay with the airline for a fixed period (often 3-5 years) or pay back a massive training fee—up to €40,000 or more—if they leave early. While it looks like an opportunity, it can become a "Golden Handcuff," trapping pilots in suboptimal working conditions or preventing them from pursuing better opportunities because of the financial penalty.
-                            </p>
-                        </section>
 
-                        <div style={{ height: '1px', background: '#e2e8f0', width: '100%', maxWidth: '42rem' }} />
+                            {/* Card 2: Examination Terminal Guide */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', textAlign: 'left' }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    width: '100%',
+                                    boxSizing: 'border-box'
+                                }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem', textAlign: 'center' }}>
+                                        SECTION 02
+                                    </div>
+                                    <h2 style={{ fontSize: '2.1rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                        The Examination Terminal
+                                    </h2>
 
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '6rem', width: '100%', maxWidth: '42rem' }}>
+                                    <div style={{ textAlign: 'left', maxWidth: '42rem', margin: '0 auto' }}>
+                                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.25rem' }}>
+                                            Study Practice Environment
+                                        </h3>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            The W1000's primary purpose is <strong>preparation</strong>. The Examination Terminal provides an infinite-reset practice environment where you can test your knowledge under timed conditions without consequence. Use this to identify weak areas in your Air Law, Navigation, or Technical knowledge.
+                                        </p>
+
+                                        <p style={{ fontSize: '1.1rem', color: '#2563eb', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginTop: '2rem', borderLeft: '3px solid #2563eb', paddingLeft: '1.25rem' }}>
+                                            <strong>Note:</strong> While the W1000 is used for training, your <strong>Official Examination</strong> (the one used for program recognition and milestone progression) must be sat via this Portal interface, as discussed in the previous section.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 3: Regional Standards */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', textAlign: 'left' }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    width: '100%',
+                                    boxSizing: 'border-box'
+                                }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem', textAlign: 'center' }}>
+                                        SECTION 03
+                                    </div>
+                                    <h2 style={{ fontSize: '2.1rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                        Regional Calibration
+                                    </h2>
+
+                                    <div style={{ textAlign: 'left', maxWidth: '42rem', margin: '0 auto' }}>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '2rem' }}>
+                                            Ensure you have selected the correct regional setting within the application settings gear icon (⚙️) on the bottom left.
+                                        </p>
+
+                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                                            <div>
+                                                <h4 style={{ fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>CAAP (Philippines)</h4>
+                                                <p style={{ fontSize: '1rem', color: '#64748b', margin: 0 }}>Specific focus on local Air Law, PCARs, and regional meteorology.</p>
+                                            </div>
+                                            <div>
+                                                <h4 style={{ fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>FAA (International)</h4>
+                                                <p style={{ fontSize: '1rem', color: '#64748b', margin: 0 }}>Aligned with FAR/AIM standards and international ICAO procedures.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 4: Avionics-Inspired Navigation */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', textAlign: 'left' }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    width: '100%',
+                                    boxSizing: 'border-box'
+                                }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem', textAlign: 'center' }}>
+                                        SECTION 04
+                                    </div>
+                                    <h2 style={{ fontSize: '2.1rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                        Avionics-Inspired Navigation
+                                    </h2>
+
+                                    <div style={{ textAlign: 'left', maxWidth: '42rem', margin: '0 auto' }}>
+                                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.25rem' }}>
+                                            The Soft Key System
+                                        </h3>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            The W1000 features a signature <strong>Soft Key navigation bar</strong> at the bottom of the screen, directly inspired by the real-life <strong>Garmin G1000 avionics suite</strong>. These keys provide ease of access to your entire toolkit with a single click.
+                                        </p>
+
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            This design allows you to switch between <strong>Examinations</strong>, <strong>Study Modules</strong>, and the <strong>Simulator Room</strong> all at once, mirroring the workflow of a professional glass cockpit environment. By integrating these familiar pilot aesthetics, the W1000 ensures your transition from study to cockpit is as intuitive as possible.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 5: Dynamic Topic Selection */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', textAlign: 'left' }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    width: '100%',
+                                    boxSizing: 'border-box'
+                                }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem', textAlign: 'center' }}>
+                                        SECTION 05
+                                    </div>
+                                    <h2 style={{ fontSize: '2.1rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                        Dynamic Topic Selection
+                                    </h2>
+
+                                    <div style={{ textAlign: 'left', maxWidth: '42rem', margin: '0 auto' }}>
+                                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.25rem' }}>
+                                            Smart Learning Flow
+                                        </h3>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            The main dashboard utilizes an intelligent carousel to help you manage your curriculum. You can instantly jump back into <strong>Recent Topics</strong> that you were previously practicing, ensuring zero friction in your study sessions.
+                                        </p>
+
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            Additionally, the system provides <strong>Suggested Topics and Modules</strong> based on your progress and upcoming milestones. Whether it's a specific technical module or a new simulator challenge, these suggestions are designed to keep your training path clear and optimized.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 6: Core Application Ecosystem */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', textAlign: 'left' }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    width: '100%',
+                                    boxSizing: 'border-box'
+                                }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem', textAlign: 'center' }}>
+                                        SECTION 06
+                                    </div>
+                                    <h2 style={{ fontSize: '2.1rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                        Core Application Ecosystem
+                                    </h2>
+
+                                    <div style={{ textAlign: 'left', maxWidth: '42rem', margin: '0 auto' }}>
+                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
+                                            <div>
+                                                <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.4rem', fontWeight: 400, color: '#0f172a', marginBottom: '1rem' }}>
+                                                    Program Modules
+                                                </h3>
+                                                <p style={{ fontSize: '1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.7' }}>
+                                                    Access the complete WingMentor curriculum in an interactive digital format. Track which subjects you've mastered and view your real-time reading progress across the foundation stages.
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.4rem', fontWeight: 400, color: '#0f172a', marginBottom: '1rem' }}>
+                                                    Examination Terminal
+                                                </h3>
+                                                <p style={{ fontSize: '1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.7' }}>
+                                                    A high-fidelity testing suite where you can analyze your performance across different air law, meteorology, and navigation subjects with professional-grade scoring metrics.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+                                            <div>
+                                                <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.4rem', fontWeight: 400, color: '#0f172a', marginBottom: '1rem' }}>
+                                                    The Black Box Archive
+                                                </h3>
+                                                <p style={{ fontSize: '1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.7' }}>
+                                                    Every study session and practice exam is logged. The Black Box serves as your immutable data history, recording time spent on specific areas and providing a data-driven view of your learning habits.
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.4rem', fontWeight: 400, color: '#0f172a', marginBottom: '1rem' }}>
+                                                    Pilot Profile Performance
+                                                </h3>
+                                                <p style={{ fontSize: '1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.7' }}>
+                                                    A centralized dashboard to monitor overall statistics, total time spent in each area, and communication logs including recent messages from mentors or program progression team.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 7: Login & Access Control */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', textAlign: 'left' }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    width: '100%',
+                                    boxSizing: 'border-box'
+                                }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem', textAlign: 'center' }}>
+                                        SECTION 07
+                                    </div>
+                                    <h2 style={{ fontSize: '2.1rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
+                                        Login & Access Control
+                                    </h2>
+
+                                    <div style={{ textAlign: 'left', maxWidth: '42rem', margin: '0 auto' }}>
+                                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.25rem' }}>
+                                            Secure Profile Management
+                                        </h3>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            The W1000 implements a <strong>Secure Login System</strong> to ensure your pilot profile, progress data, and performance analytics are always protected and synchronized. This system maintains your digital identity across the WingMentor ecosystem.
+                                        </p>
+
+                                        <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.25rem' }}>
+                                            Access Policy & Digital Rights
+                                        </h3>
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            Please note that access to the W1000 suite is contingent upon fulfillment of the program's terms and agreements. Access may be temporarily <strong>Revoked</strong> or put <strong>On Hold</strong> during scheduled system updates or security reviews.
+                                        </p>
+
+                                        <p style={{ fontSize: '1.1rem', color: '#475569', fontFamily: 'Georgia, serif', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                                            In the event of a breach of terms or unauthorized data access, accounts may be subject to <strong>Termination</strong> to protect the integrity of the WingMentor Foundation Program. We maintain strict compliance standards to ensure a fair and secure learning environment for all cadets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '6rem', width: '100%', maxWidth: '42rem', margin: '6rem auto 0' }}>
                             <button onClick={handlePrev} style={{ color: '#94a3b8', fontSize: '14px', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
                                 ← Back
                             </button>
@@ -1665,71 +3380,385 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
             );
         }
 
-        if (currentTopic === 'why-trap') {
+        // ── Our Mission Page ────────────────────────────────────────────────
+        if (currentTopic === 'mission') {
             return (
-                <div style={{ display: 'flex', flexDirection: 'column', animation: 'fadeIn 0.5s ease-in-out' }}>
-                    <div style={{ textAlign: 'center', paddingBottom: '3.5rem', paddingTop: '4rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
-                        <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '320px', height: 'auto', objectFit: 'contain', marginBottom: '2rem' }} />
-                        <div style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem' }}>
-                            CHAPTER 02 — THE WHY
+                <div style={{ maxWidth: '950px', margin: '0 auto', animation: 'fadeIn 0.5s ease-in-out' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '5rem', paddingTop: '2rem' }}>
+                        <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
+                            <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '320px', height: 'auto', objectFit: 'contain' }} />
                         </div>
-                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1.5rem 0', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-                            The "Easy Way Out" Trap
+                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                            MODULE 01 MISSION
+                        </div>
+                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', marginBottom: '3rem', letterSpacing: '-0.02em' }}>
+                            Our Mission
                         </h1>
-                        <p style={{ color: '#64748b', fontSize: '1.15rem', lineHeight: 1.6, maxWidth: '42rem', margin: '0 auto' }}>
-                            Desperation often leads to expensive mistakes. The most common pitfall for low-timers is seeking a "silver bullet" solution that doesn't exist.
-                        </p>
+
+                        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', color: '#334155', fontSize: '1.2rem', lineHeight: '1.8' }}>
+                            <p style={{ marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                When you emerge from flight school with a freshly printed license, you're stepping out of a highly controlled simulator bubble and into the vast wilderness of the commercial aviation industry. You quickly realize that the industry is facing a massive disconnect: operators across all sectors—from regional airlines to corporate jet charters and cargo haulers—are desperately short on crew, yet they are extremely hesitant to hand the keys of a multi-million dollar aircraft to a pilot with 250 hours.
+                            </p>
+                            <p style={{ marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Why does this paradox exist? Because the structured, repetitive environment of a flight school naturally breeds a very specific type of <strong>Behaviorism</strong>. You learned to fly by rote. You memorized maneuvers for a checkride, learned to navigate controlled airspace under the watchful eye of an instructor, and reacted to standard emergencies with rehearsed, step-by-step <strong>Cognitive Thinking</strong>.
+                            </p>
+                            <p style={{ marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                But the commercial industry does not operate on rote memorization. It requires complex dynamic problem solving. Flight schools teach you how to pass a test; the industry demands that you know how to survive, standardise, and lead in an unpredictable operational environment. This foundational program exists to bridge that massive psychological and operational chasm. It's designed to provide the "Solution": Why aren't you getting hired instantly, and why is your current level of experience insufficient for the harsh realities of the industry?
+                            </p>
+                        </div>
+
+                        <div style={{ marginTop: '4rem', maxWidth: '800px', margin: '4rem auto 0', textAlign: 'left', color: '#334155' }}>
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '2rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem' }}>
+                                The Foundational Knowledge That Every Pilot Should Have
+                            </h2>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Leadership and mentorship are not just buzzwords; they are the bedrock of a professional aviator's career. Through Wingmentor, you don't just receive guidance—you provide it. Gaining <strong>50 hours of guidance, support, and consultation</strong> by helping other pilots under your scale is a valuable accredited experience. This peer-to-peer mentorship is recognized as your <strong>Initial Pilot Recognition</strong>, proving that you have the emotional intelligence and leadership capacity to contribute to a crew environment.
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                At the culmination of your program, you will undergo a rigorous <strong>Examination & Assessment</strong>—an interview with a representative from <strong>Airbus</strong>. This is not a technical quiz; it is an evaluation of your evolution. They will assess how your perspective of the industry has shifted, the soft skills you have acquired, and how effectively you present your "future self."
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                This interview serves as your first professional impression. We focus on how you talk, how you present yourself, and how you curate a comprehensive portfolio that defines your career trajectory and end goals. The results of this assessment are integrated into your profile database and shared across the <strong>Wingmentor network</strong>, making your verified credentials accessible to senior recruitment figures and operators worldwide.
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The Wingmentor Foundation Program is meticulously aligned with the <strong>nine core competencies of Evidence-Based Training (EBT) and Competency-Based Training and Assessment (CBTA)</strong>. This represents a critical shift from traditional flight training records, focusing on how a pilot manages complex situations, stress, and operational decision-making. By mastering these competencies now, we are preparing you for our <strong>flagship program</strong>—the ultimate transition from graduate to the airline environment, where you will be fully familiarized with the standards expected by the world's leading carriers.
+                            </p>
+
+                            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '2rem', fontWeight: 400, color: '#0f172a', marginTop: '3rem', marginBottom: '1.5rem' }}>
+                                The Transition Program (Flagship)
+                            </h2>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                The <strong>Transition Program</strong> is our globally recognised and accredited program, specifically designed to bridge the gap between initial license acquisition and the high-pressure environment of commercial airline operations. Building upon the bedrock of the Foundation Program, we transition graduates and flight instructors into a professional airline setting using industry-leading Airbus applications like <strong>HINFACT</strong>—the primary tool for <strong>Evidence-Based Training (EBT)</strong>. You will receive direct familiarization with these systems, experiencing firsthand how modern airlines evaluate competency.
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                A critical component of this transition is the <strong>ATLAS CV Recognition Factor</strong>. We ensure your data profile is aligned with the <strong>Atlas format</strong>, the global standard used by major <strong>Applicant Tracking Systems (ATS)</strong>. This guarantees that your skills and verified experiences are not overlooked by automated scanners but instead highlighted as professional assets when reviewed by recruitment agencies and airline hiring boards.
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                We bridge the communication gap by sharing direct <strong>Airline Expectations</strong>. We maintain active dialogue with the <strong>Heads of Cadet Programs at Etihad</strong> and various other international carriers. This direct line ensures you are being prepared for the exact requirements of the world's most prestigious airlines.
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                However, our focus extends far beyond the traditional airline cockpit. Through our <strong>Wingmentor Pathways</strong>, we provide strategic, guided approaches to diverse sectors of the industry. If your goal is the <strong>Private Jet Sector</strong>, we leverage our connections with operators, brokers, and manufacturers like <strong>Gulfstream</strong> to give you direct insight into how to break into corporate aviation.
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                We also pave the way for the emerging <strong>Air Taxi and UAM (Urban Air Mobility)</strong> industries. With deep insights into industry leaders like <strong>Archer and Joby</strong>, we provide the roadmap for transitioning into the next generation of flight, whether as a piloted air taxi or a remote drone operator. Our network also expands into <strong>Cargo, Air Rescue</strong>, and specialized operations, ensuring you have multiple career choices upon graduation rather than being limited to a single path.
+                            </p>
+                            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                This is where <strong>Pilot Recognition</strong> is valued the most. We are the first in the industry to directly address the dual crisis of the pilot shortage and the lack of pilot recognition. There are countless pilots with diverse experiences who are currently stuck without guidance, searching for answers from a fragmented industry. Wingmentor is that voice—and that guide. We are paving a clear approach for various industry sectors, providing pilots with the professional choice and the industry voice they have long been denied.
+                            </p>
+                        </div>
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem', alignItems: 'center' }}>
-                        <section style={{ textAlign: 'center', maxWidth: '52rem' }}>
+                        {/* Mission Statement */}
+                        <section style={{ textAlign: 'center', maxWidth: '56rem' }}>
                             <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                                WARNING
+                                CORE PURPOSE
                             </div>
                             <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
-                                Buying Your Way In?
+                                Bridging the Experience Void
                             </h2>
-                            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, textAlign: 'justify', margin: 0 }}>
-                                Many pilots fall into the trap of purchasing a self-funded Type Rating (e.g., on a B737 or A320) without a job offer, or burning thousands on "blind" hour building. Without a structured framework and industry recognition, these investments often yield zero returns. You're simply adding more numbers to a resume that still lacks <strong>operational credibility</strong>.
+                            <p style={{ color: '#475569', fontSize: '1.15rem', lineHeight: 1.8, margin: 0 }}>
+                                Our mission is to eliminate the "Pilot Gap" by transforming high-risk unknown pilots into quantified, credible assets. We believe that every pilot who has earned their license deserves a clear path to employment, provided they are willing to meet the industry's highest operational standards.
                             </p>
                         </section>
 
-                        <section style={{ backgroundColor: 'white', borderRadius: '24px', padding: '3rem', boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)', border: '1px solid #e2e8f0', width: '100%', boxSizing: 'border-box' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                                    <div style={{ color: '#ef4444' }}>
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
+                        {/* Three Pillars of Wingmentor - Bulleted Version */}
+                        <section style={{
+                            width: '100%',
+                            maxWidth: '780px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '2.5rem',
+                            marginTop: '1rem',
+                            padding: '0 1rem'
+                        }}>
+                            {[
+                                {
+                                    title: 'Standardisation',
+                                    body: 'Aligning low-timer training with the exact Evidence-Based Training (EBT) standards that airlines expect from senior crews.',
+                                    icon: <Icons.Shield style={{ width: 24, height: 24, color: '#2563eb' }} />
+                                },
+                                {
+                                    title: 'Mentorship',
+                                    body: 'Connecting the next generation of pilots with seasoned industry veterans to transfer critical operational knowledge.',
+                                    icon: <Icons.Users style={{ width: 24, height: 24, color: '#2563eb' }} />
+                                },
+                                {
+                                    title: 'Recognition',
+                                    body: 'Creating a verifiable data-trail of competency that makes you visible and attractive to airline recruitment pipelines.',
+                                    icon: <Icons.Award style={{ width: 24, height: 24, color: '#2563eb' }} />
+                                }
+                            ].map((pillar, idx) => (
+                                <div key={idx} style={{
+                                    display: 'flex',
+                                    gap: '1.75rem',
+                                    alignItems: 'flex-start',
+                                    transition: 'transform 0.2s ease-in-out'
+                                }}>
+                                    <div style={{
+                                        flexShrink: 0,
+                                        width: '52px',
+                                        height: '52px',
+                                        borderRadius: '14px',
+                                        backgroundColor: '#f1f5f9',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        marginTop: '0.25rem',
+                                        border: '1px solid #e2e8f0'
+                                    }}>
+                                        {pillar.icon}
                                     </div>
                                     <div style={{ textAlign: 'left' }}>
-                                        <h4 style={{ fontWeight: 700, color: '#0f172a', marginBottom: '0.25rem', margin: 0 }}>Unstructured Ratings</h4>
-                                        <p style={{ fontSize: '0.95rem', color: '#64748b', margin: 0 }}>Ratings without a context of standardized mentorship are viewed as "hobbyist" additions by top-tier recruiters.</p>
+                                        <h3 style={{
+                                            fontFamily: 'Georgia, serif',
+                                            fontSize: '1.45rem',
+                                            color: '#0f172a',
+                                            marginBottom: '0.4rem',
+                                            fontWeight: 400
+                                        }}>
+                                            {pillar.title}
+                                        </h3>
+                                        <p style={{
+                                            color: '#475569',
+                                            fontSize: '1.1rem',
+                                            lineHeight: 1.7,
+                                            margin: 0
+                                        }}>
+                                            {pillar.body}
+                                        </p>
                                     </div>
                                 </div>
-                                <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                                    <div style={{ color: '#ef4444' }}>
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
+                            ))}
+                        </section>
+
+                        {/* Commitment Section */}
+                        <section style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '24px', padding: '4rem 3rem', boxShadow: '0 20px 50px rgba(15, 23, 42, 0.08)', border: '1px solid rgba(255, 255, 255, 0.8)', textAlign: 'center', width: '100%', boxSizing: 'border-box' }}>
+                            <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                THE COMMITMENT
+                            </div>
+                            <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                Your Growth is Our Success
+                            </h2>
+                            <p style={{ color: '#475569', fontSize: '1.1rem', lineHeight: 1.8, margin: '0 auto', maxWidth: '44rem' }}>
+                                At Wingmentor, we don't just provide content; we provide a community. A community that values professionalism, integrity, and safety above all else. Our goal is to ensure that while the industry's barriers may stay high, your ability to clear them is never in doubt.
+                            </p>
+                        </section>
+
+                        <div style={{ textAlign: 'center', marginTop: '2rem', paddingBottom: '6rem' }}>
+                            <button
+                                onClick={handleNext}
+                                style={{
+                                    background: '#0f172a',
+                                    color: 'white',
+                                    fontWeight: 700,
+                                    fontSize: '1.1rem',
+                                    padding: '1.25rem 3rem',
+                                    borderRadius: '50px',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 10px 25px rgba(15, 23, 42, 0.2)',
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '1rem'
+                                }}
+                                onMouseEnter={e => {
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                    e.currentTarget.style.boxShadow = '0 15px 30px rgba(15, 23, 42, 0.3)';
+                                }}
+                                onMouseLeave={e => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = '0 10px 25px rgba(15, 23, 42, 0.2)';
+                                }}
+                            >
+                                Continue to Program Syllabus <Icons.ArrowRight style={{ width: 20, height: 20 }} />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // ── Program Syllabus Page ───────────────────────────────────────────
+        if (currentTopic === 'program-syllabus') {
+            return (
+                <div style={{ maxWidth: '950px', margin: '0 auto', animation: 'fadeIn 0.5s ease-in-out' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '4rem', paddingTop: '2rem' }}>
+                        <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
+                            <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '320px', height: 'auto', objectFit: 'contain' }} />
+                        </div>
+                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                            MODULE 01 SYLLABUS
+                        </div>
+                        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+                            Program Syllabus
+                        </h1>
+                        <p style={{ maxWidth: '700px', margin: '0 auto', color: '#475569', fontSize: '1.2rem' }}>
+                            A comprehensive roadmap of your journey from foundational knowledge to verified industry recognition.
+                        </p>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', maxWidth: '850px', margin: '0 auto' }}>
+                        {[
+                            {
+                                stage: 1,
+                                title: 'Examination & Assessment Rigor',
+                                description: 'Therefore, after Chapter 1, there is going to be an assessment. You have to prepare for an assessment based on your knowledge of the industry information we have provided. You have to research on your own and also study the material. Based on the examination that you will be given, you will also be examined on the FAA or CAAP examination with our integrated software under **Gleims** and our own internal questions to verify your knowledge retention. Your score for your skill will also be recorded on the database as your first initial record.',
+                                objectives: [
+                                    'Verify academic bridge knowledge and industry comprehension.',
+                                    'Evaluate baseline retention via integrated FAA/CAAP standards.',
+                                    "Establish the candidate's first verified skills record."
+                                ],
+                                isFinal: false
+                            },
+                            {
+                                stage: 2,
+                                title: 'Global Industry Registry',
+                                description: 'All examination outcomes are archived within our centralized Global Industry Registry. This serves as your primary, verifiable professional record, providing total transparency and high-level credibility for our airline recruitment partners—this is going to be your first footstep within the database and your first initial pilot recognition.',
+                                objectives: [
+                                    'Establish a centralized, verifiable professional record.',
+                                    'Create immediate transparency for airline recruitment partners.',
+                                    'Archive initial pilot recognition metrics.'
+                                ],
+                                isFinal: false
+                            },
+                            {
+                                stage: 3,
+                                title: 'Mentorship Preparation & Psychology Modules',
+                                description: 'After your initial examination and assessment, you will be assigned to the mentorship preparation modules. Here, you will learn the core fundamentals of mentorship and the critical differentiation between an instructor and a mentor. This phase focuses heavily on how you are forming and developing yourself as a person and as a pilot, emphasizing psychological thinking and building your professional profile. You will learn how to speak to a person, how to address an issue, and how to self-assess in situations where you know you are wrong. Crucially, you will study the pre-psychology of assessing and reading a person so that you know how to observe when someone is struggling. This foundational psychology and development training is essential preparation prior to your assigned 20-hour mentorship milestone.',
+                                objectives: [
+                                    'Understand the core fundamentals differentiating mentorship from instructing.',
+                                    'Develop psychological awareness, self-assessment, and issue-resolution techniques.',
+                                    'Master the pre-psychology of peer observation and objective assessment.'
+                                ],
+                                isFinal: false
+                            },
+                            {
+                                stage: 4,
+                                title: 'Pre-Mentorship Examination & Observation',
+                                description: 'Prior to being assigned your official mentor for the 20-hour supervised phase, you must pass a pre-examination on the mentorship knowledge modules. Your understanding of these modules will be evaluated through an interview based on the information and preparation you have completed. Following this, you will undergo a practical assessment which includes 10 hours of dedicated observation time. During this period, you will be actively observing how an experienced mentor guides someone else, ensuring you are fully prepared to enter the active mentorship phase.',
+                                objectives: [
+                                    'Validate comprehension of mentorship preparation modules.',
+                                    'Assess practical readiness via specialized one-on-one interviews.',
+                                    'Complete 10 hours of active peer mentorship observation.'
+                                ],
+                                isFinal: false
+                            },
+                            {
+                                stage: 5,
+                                title: 'Supervised Mentorship (20-Hour Milestone)',
+                                description: 'After the observation and examination process, you will then go through a supervised approach towards mentorship. We will supervise you with one of our own official mentors under the mentorship for 20 hours. It could either be done online or in person. You must log each experience based on the mentor session: the hours, the name, the pilot ID, a highly detailed description of the works done, and the prescription given based on the assessment of problem-solving consultation and one-on-one interview. All logs must be highly detailed and objective.',
+                                objectives: [
+                                    'Execute 20 hours of supervised, strategically tracked peer mentorship.',
+                                    'Maintain highly detailed, objective logs and pilot ID verifications.',
+                                    'Deliver accurate problem-solving consultations and developmental prescriptions.'
+                                ],
+                                isFinal: false
+                            },
+                            {
+                                stage: 6,
+                                title: 'Accreditation & Professional Prescription',
+                                description: 'Upon meeting all criteria—including specialized professional "prescriptions" for advanced problem-solving—your experience is accredited against industry standards recognized by partners such as Airbus and Etihad Airways.',
+                                objectives: [
+                                    "Finalize the evaluation of the candidate's mentorship impact and logs.",
+                                    'Award credentials aligned with Airbus and Etihad Airways standards.',
+                                    'Authorize the candidate for advanced placement within the WingMentor ecosystem.'
+                                ],
+                                isFinal: false
+                            },
+                            {
+                                stage: 7,
+                                title: 'Runway to 50hrs Foundation Certification & AIRBUS Recognition Interview',
+                                description: 'The capstone of your integration within our ecosystem involves extending your professional logging to the 50-hour milestone. This demonstrates sustained commitment and consistent application of advanced mentorship principles. Following this milestone, you will undergo the formal AIRBUS Recognition Interview. This comprehensive evaluation verifies your accumulated knowledge, leadership qualities, and full readiness for prestigious airline placement.',
+                                objectives: [
+                                    'Complete and document 50 verifiable hours of active peer mentorship.',
+                                    'Demonstrate sustained leadership and consistent situational problem-solving.',
+                                    'Pass the comprehensive AIRBUS Recognition Interview to secure top-tier endorsement.'
+                                ],
+                                isFinal: true
+                            }
+                        ].map((stageData, idx) => (
+                            <div key={idx} style={{
+                                backgroundColor: 'rgba(255,255,255,0.85)',
+                                backdropFilter: 'blur(16px)',
+                                WebkitBackdropFilter: 'blur(16px)',
+                                borderRadius: '20px',
+                                padding: '2rem 2.25rem',
+                                boxShadow: stageData.isFinal ? '0 8px 32px rgba(2,132,199,0.12)' : '0 4px 24px rgba(15,23,42,0.07)',
+                                border: stageData.isFinal ? '2px solid rgba(37,99,235,0.15)' : '1px solid rgba(226,232,240,0.8)',
+                                display: 'flex',
+                                gap: '1.5rem',
+                                alignItems: 'flex-start'
+                            }}>
+                                <div style={{
+                                    width: '36px',
+                                    height: '36px',
+                                    borderRadius: '50%',
+                                    background: stageData.isFinal ? 'linear-gradient(135deg, #1d4ed8, #0f172a)' : 'linear-gradient(135deg, #0284c7, #2563eb)',
+                                    color: 'white',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    fontSize: '0.9rem',
+                                    fontWeight: 700,
+                                    boxShadow: stageData.isFinal ? '0 4px 12px rgba(29,78,216,0.35)' : '0 4px 12px rgba(2,132,199,0.3)'
+                                }}>
+                                    {stageData.stage}
+                                </div>
+                                <div style={{ flex: 1 }}>
+                                    <div style={{ color: stageData.isFinal ? '#1d4ed8' : '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
+                                        Stage {stageData.stage}
                                     </div>
-                                    <div style={{ textAlign: 'left' }}>
-                                        <h4 style={{ fontWeight: 700, color: '#0f172a', marginBottom: '0.25rem', margin: 0 }}>The Instructor Loop</h4>
-                                        <p style={{ fontSize: '0.95rem', color: '#64748b', margin: 0 }}>Staying in the flight school bubble without multi-crew exposure keeps your thinking restricted to PPL-level behaviors.</p>
+                                    <strong style={{ color: '#0f172a', fontSize: '1.25rem', display: 'block', marginBottom: '0.75rem', fontFamily: 'Georgia, serif', fontWeight: 400 }}>
+                                        {stageData.title}
+                                    </strong>
+                                    <p style={{ margin: '0 0 1.25rem 0', fontSize: '1.05rem', color: '#475569', lineHeight: 1.75 }}>
+                                        {stageData.description.split('**').map((part, i) => i % 2 === 1 ? <strong key={i} style={{ color: '#0f172a' }}>{part}</strong> : part)}
+                                    </p>
+                                    <div style={{ paddingLeft: '1rem', borderLeft: `3px solid ${stageData.isFinal ? '#93c5fd' : '#bfdbfe'}` }}>
+                                        <strong style={{ fontSize: '0.8rem', color: '#1e40af', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Mission Objectives</strong>
+                                        <ul style={{ margin: '0.4rem 0 0 0', paddingLeft: '1.25rem', fontSize: '0.95rem', color: '#475569', listStyleType: 'disc', lineHeight: 1.7 }}>
+                                            {stageData.objectives.map((obj, oidx) => (
+                                                <li key={oidx}>{obj}</li>
+                                            ))}
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        ))}
+                    </div>,
 
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '6rem', width: '100%', maxWidth: '42rem' }}>
-                            <button onClick={handlePrev} style={{ color: '#94a3b8', fontSize: '14px', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-                                ← Back
-                            </button>
-                            <button
-                                onClick={handleNext}
-                                style={{ background: '#0284c7', color: 'white', fontWeight: 600, fontSize: '14px', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: 'none', cursor: 'pointer', transition: 'background 0.2s' }}
-                                onMouseEnter={e => (e.currentTarget.style.background = '#0369a1')}
-                                onMouseLeave={e => (e.currentTarget.style.background = '#0284c7')}
-                            >
-                                Next →
-                            </button>
-                        </div>
+                    <div style={{ textAlign: 'center', marginTop: '4rem', paddingBottom: '6rem' }}>
+                        <button
+                            onClick={handleNext}
+                            style={{
+                                background: '#0f172a',
+                                color: 'white',
+                                fontWeight: 700,
+                                fontSize: '1.1rem',
+                                padding: '1.25rem 3rem',
+                                borderRadius: '50px',
+                                border: 'none',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                                boxShadow: '0 10px 25px rgba(15, 23, 42, 0.2)',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '1rem'
+                            }}
+                            onMouseEnter={e => {
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = '0 15px 30px rgba(15, 23, 42, 0.3)';
+                            }}
+                            onMouseLeave={e => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 10px 25px rgba(15, 23, 42, 0.2)';
+                            }}
+                        >
+                            Continue to Industry Overview <Icons.ArrowRight style={{ width: 20, height: 20 }} />
+                        </button>
                     </div>
                 </div>
             );
@@ -1850,9 +3879,111 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                     e.currentTarget.style.boxShadow = '0 10px 25px rgba(37, 99, 235, 0.3)';
                                 }}
                             >
-                                Continue to Briefing <Icons.ArrowRight style={{ width: 20, height: 20 }} />
+                                Continue to Our Mission <Icons.ArrowRight style={{ width: 20, height: 20 }} />
                             </button>
                         </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // ── Page: initial-exam-access ─────────────────────────────────────────
+        if (currentTopic === 'initial-exam-access') {
+            return (
+                <div style={{ maxWidth: '800px', margin: '0 auto', animation: 'fadeIn 0.5s ease-in-out' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '3rem', paddingTop: '2rem' }}>
+                        <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                            CHAPTER 2 — THE SOLUTION
+                        </div>
+                        <h1 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1.25rem' }}>
+                            Initial Examination Access
+                        </h1>
+                        <p style={{ color: '#64748b', fontSize: '1.05rem', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
+                            Stage 1 of your WingMentor Foundational Program begins here.
+                        </p>
+                    </div>
+
+                    <div style={{ backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '24px', padding: '3.5rem 3rem', boxShadow: '0 8px 32px rgba(15,23,42,0.06)', border: '1px solid rgba(226,232,240,0.8)', marginBottom: '2rem' }}>
+                        <div style={{ color: '#2563eb', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+                            EXAMINATION PORTAL
+                        </div>
+                        <h2 style={{ fontSize: '1.6rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', marginBottom: '1.5rem' }}>
+                            Access Your WingMentor Foundational Examination
+                        </h2>
+                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+                            You can access your <strong>Initial Examination</strong> for the WingMentor Foundational Program directly through this portal. This is your official examination — the results are recorded in the Global Industry Registry as your first verified skills record. Ensure you have thoroughly studied the Chapter 1 material and completed your W1000 practice sessions before proceeding.
+                        </p>
+                        <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+                            When you are ready, click the button below to begin. The examination will assess your academic bridge knowledge and industry comprehension against integrated <strong>FAA / CAAP</strong> standards.
+                        </p>
+
+                        {/* Callout */}
+                        <div style={{ backgroundColor: '#eff6ff', borderLeft: '4px solid #2563eb', borderRadius: '8px', padding: '1rem 1.25rem', marginBottom: '2.5rem', fontSize: '0.95rem', color: '#1e40af', lineHeight: 1.6 }}>
+                            <strong>Important:</strong> This is your official WingMentor examination — not the W1000 practice terminal. Your score will be formally recorded and will serve as your first milestone within the program.
+                        </div>
+
+                        {/* CTA Button */}
+                        <div style={{ textAlign: 'center' }}>
+                            <a
+                                href="/examination"
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.75rem',
+                                    background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
+                                    color: 'white',
+                                    fontWeight: 700,
+                                    fontSize: '1.1rem',
+                                    padding: '1.1rem 2.75rem',
+                                    borderRadius: '50px',
+                                    textDecoration: 'none',
+                                    boxShadow: '0 10px 28px rgba(37,99,235,0.35)',
+                                    transition: 'all 0.3s ease',
+                                    letterSpacing: '0.02em',
+                                }}
+                                onMouseEnter={e => {
+                                    (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-2px)';
+                                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 16px 36px rgba(37,99,235,0.45)';
+                                }}
+                                onMouseLeave={e => {
+                                    (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)';
+                                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 28px rgba(37,99,235,0.35)';
+                                }}
+                            >
+                                <Icons.FileText style={{ width: 20, height: 20 }} />
+                                Begin Initial Examination
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style={{ textAlign: 'center', marginTop: '2.5rem', paddingBottom: '4rem' }}>
+                        <button
+                            onClick={handleNext}
+                            style={{
+                                background: 'transparent',
+                                color: '#64748b',
+                                fontWeight: 600,
+                                fontSize: '0.95rem',
+                                padding: '0.75rem 2rem',
+                                borderRadius: '50px',
+                                border: '1px solid #e2e8f0',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.5rem'
+                            }}
+                            onMouseEnter={e => {
+                                e.currentTarget.style.backgroundColor = '#f8fafc';
+                                e.currentTarget.style.borderColor = '#cbd5e1';
+                            }}
+                            onMouseLeave={e => {
+                                e.currentTarget.style.backgroundColor = 'transparent';
+                                e.currentTarget.style.borderColor = '#e2e8f0';
+                            }}
+                        >
+                            Continue <Icons.ArrowRight style={{ width: 18, height: 18 }} />
+                        </button>
                     </div>
                 </div>
             );
@@ -1931,24 +4062,32 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                     <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', cursor: 'pointer' }} onClick={() => setCurrentChapter(1)}>
                                         <div style={{ width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: '#0284c7', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', flexShrink: 0, marginTop: '0.125rem', fontSize: '0.875rem' }}>1</div>
                                         <div>
-                                            <h4 style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem' }}>The "What"</h4>
-                                            <p style={{ color: '#475569', fontSize: '16px', lineHeight: 1.625, margin: 0 }}>Discover the reality of the "Experience Void" and exactly what operators view as a 250-hour logbook insurance risk.</p>
+                                            <h4 style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem' }}>Industry Familiarization &amp; Indoctrination</h4>
+                                            <p style={{ color: '#475569', fontSize: '16px', lineHeight: 1.625, margin: 0 }}>Understand the real landscape of commercial aviation — who the gatekeepers are, what they actually evaluate, and why the gap between CPL graduation and airline employment exists.</p>
+                                        </div>
+                                    </div>
+                                    <div style={{ height: '1px', backgroundColor: 'rgba(226, 232, 240, 0.8)', marginLeft: '3.5rem' }}></div>
+                                    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', cursor: 'pointer' }} onClick={() => setCurrentChapter(1)}>
+                                        <div style={{ width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: '#0284c7', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', flexShrink: 0, marginTop: '0.125rem', fontSize: '0.875rem' }}>2</div>
+                                        <div>
+                                            <h4 style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem' }}>Core Segments to Learn — The What&apos;s</h4>
+                                            <p style={{ color: '#475569', fontSize: '16px', lineHeight: 1.625, margin: 0 }}>Discover the reality of the &quot;Experience Void&quot; — what it means to be a Low-Timer, what the Pilot Shortage actually is, what the Pilot Gap costs you, and what Pilot Recognition demands.</p>
                                         </div>
                                     </div>
                                     <div style={{ height: '1px', backgroundColor: 'rgba(226, 232, 240, 0.8)', marginLeft: '3.5rem' }}></div>
                                     <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', cursor: 'pointer' }} onClick={() => setCurrentChapter(2)}>
-                                        <div style={{ width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: '#0284c7', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', flexShrink: 0, marginTop: '0.125rem', fontSize: '0.875rem' }}>2</div>
+                                        <div style={{ width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: '#0284c7', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', flexShrink: 0, marginTop: '0.125rem', fontSize: '0.875rem' }}>3</div>
                                         <div>
-                                            <h4 style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem' }}>The "Why"</h4>
-                                            <p style={{ color: '#475569', fontSize: '16px', lineHeight: 1.625, margin: 0 }}>Analyze the harsh industry metrics behind the hiring gap, and understand why 92% of low-timers face career stagnation.</p>
+                                            <h4 style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem' }}>The Solutions</h4>
+                                            <p style={{ color: '#475569', fontSize: '16px', lineHeight: 1.625, margin: 0 }}>Understand how Wingmentor bridges the industry gap — through Pilot Recognition, the ATLAS CV, and a structured pathway that transforms low-timer risk into verifiable high-competency value.</p>
                                         </div>
                                     </div>
                                     <div style={{ height: '1px', backgroundColor: 'rgba(226, 232, 240, 0.8)', marginLeft: '3.5rem' }}></div>
-                                    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', cursor: 'pointer' }} onClick={() => setCurrentChapter(3)}>
-                                        <div style={{ width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: '#0284c7', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', flexShrink: 0, marginTop: '0.125rem', fontSize: '0.875rem' }}>3</div>
+                                    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', cursor: 'pointer' }} onClick={() => { setCurrentChapter(2); setCurrentTopic('initial-exam-access'); }}>
+                                        <div style={{ width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: '#0284c7', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', flexShrink: 0, marginTop: '0.125rem', fontSize: '0.875rem' }}>4</div>
                                         <div>
-                                            <h4 style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem' }}>The "How"</h4>
-                                            <p style={{ color: '#475569', fontSize: '16px', lineHeight: 1.625, margin: 0 }}>Master our Evidence-Based Training (EBTA) framework to actively build advanced CRM capabilities that recruiters demand.</p>
+                                            <h4 style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem' }}>The Initial Examination Access</h4>
+                                            <p style={{ color: '#475569', fontSize: '16px', lineHeight: 1.625, margin: 0 }}>Access the official WingMentor Foundation Program examination — calibrated to your licence rating and sat directly through this portal as your first formal milestone in the program.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -2103,95 +4242,259 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
             case 2:
                 return (
                     <div style={{ display: 'flex', flexDirection: 'column', animation: 'fadeIn 0.5s ease-in-out' }}>
-                        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                            <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '180px', height: 'auto', objectFit: 'contain', marginBottom: '2rem' }} />
-                            <div style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1rem' }}>
+
+                        {/* ── Section Header ── */}
+                        <div style={{ textAlign: 'center', paddingBottom: '3.5rem', paddingTop: '4rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
+                            <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
+                                <img src="/logo.png" alt="WingMentor Logo" style={{ maxWidth: '280px', height: 'auto', objectFit: 'contain' }} />
+                            </div>
+                            <div style={{ color: '#2563eb', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem' }}>
                                 CHAPTER 02
                             </div>
-                            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: '0 auto 2rem', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
-                                The "Why"
+                            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: '0 auto 1rem', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
+                                The "Solution"
                             </h2>
-                            <div style={{ height: '1px', width: '100%', background: '#e2e8f0', maxWidth: '56rem', margin: '0 auto' }} />
+                            <p style={{ color: '#64748b', fontSize: '1.05rem', maxWidth: '42rem', margin: '0 auto 2.5rem', lineHeight: 1.7 }}>
+                                The WingMentor approach to bridging the recognition gap—a structured, industry-endorsed framework to transform low-time pilots into verified, placement-ready professionals.
+                            </p>
+                            <div style={{ height: '1px', width: '100%', background: 'linear-gradient(to right, transparent, #e2e8f0, transparent)', maxWidth: '56rem', margin: '0 auto' }} />
                         </div>
 
-                        <div style={{ maxWidth: '48rem', margin: '0 auto', marginBottom: '3rem', paddingLeft: '1.5rem', paddingRight: '1.5rem', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1.5rem', color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>
-                            <p style={{ color: '#1e293b', fontSize: '19px', fontFamily: 'Georgia, serif', margin: '2rem 0 0 0' }}>
-                                When you emerge from flight school with a freshly printed license, you're stepping out of a highly controlled simulator bubble and into the vast wilderness of the commercial aviation industry. You quickly realize that the industry is facing a massive disconnect: operators across all sectors—from regional airlines to corporate jet charters and cargo haulers—are desperately short on crew, yet they are extremely hesitant to hand the keys of a multi-million dollar aircraft to a pilot with 250 hours.
-                            </p>
-                            <p>
-                                Why does this paradox exist? Because the structured, repetitive environment of a flight school naturally breeds a very specific type of <strong>Behaviorism</strong>. You learned to fly by rote. You memorized maneuvers for a checkride, learned to navigate controlled airspace under the watchful eye of an instructor, and reacted to standard emergencies with rehearsed, step-by-step <strong>Cognitive Thinking</strong>.
-                            </p>
-                            <p>
-                                But the commercial industry does not operate on rote memorization. It requires complex dynamic problem solving. Flight schools teach you how to pass a test; the industry demands that you know how to survive, standardise, and lead in an unpredictable operational environment. This foundational program exists to bridge that massive psychological and operational chasm. It’s designed to answer the "Why": Why aren't you getting hired instantly, and why is your current level of experience insufficient for the harsh realities of the industry?
-                            </p>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem', marginBottom: '2rem' }}>
-                                <div style={{ backgroundColor: '#f8fafc', padding: '1.5rem', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
-                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>The Insurance Block</h3>
-                                    <p style={{ fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>Insurance providers view the rote-learned 250-hour pilot as a catastrophic risk. Without a proven record of complex, dynamic decision-making, it is financially unviable for any operator across the industry to place you in a complex aircraft.</p>
-                                </div>
-                                <div style={{ backgroundColor: '#f8fafc', padding: '1.5rem', borderRadius: '12px', borderLeft: '4px solid #eab308' }}>
-                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>The Operational Wall</h3>
-                                    <p style={{ fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>Operators don't just want stick-and-rudder skills; they require advanced Crew Resource Management (CRM), standardized behaviors, and the maturity of <strong>Constructivism</strong>—the ability to adapt and learn from new, unscripted scenarios instantly.</p>
-                                </div>
-                            </div>
-                        </div>
+                        {/* ── Body Content ── */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', alignItems: 'center', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
 
-                        {/* ── Core Topics List — matching Intro & Overview ── */}
-                        <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '16px', padding: '2.5rem', boxShadow: '0 8px 32px rgba(15, 23, 42, 0.08)', border: '1px solid rgba(255, 255, 255, 0.5)', maxWidth: '56rem', margin: '0 auto', marginBottom: '4rem', width: '100%', boxSizing: 'border-box' }}>
-                            <h2 style={{ fontSize: '1.75rem', fontWeight: 600, color: '#0f172a', marginBottom: '2rem', fontFamily: 'Georgia, serif' }}>
-                                Core Topics
-                            </h2>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', cursor: 'pointer' }} onClick={() => { setCurrentTopic('why-statistics'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#0284c7', marginTop: '0.5rem', flexShrink: 0, boxShadow: '0 0 12px rgba(2, 132, 199, 0.4)' }}></div>
-                                    <div>
-                                        <h4 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#0f172a', marginBottom: '0.5rem', fontFamily: 'Georgia, serif' }}>The Statistics: The Statistical Reality</h4>
-                                        <p style={{ fontSize: '0.95rem', color: '#475569', margin: 0, lineHeight: 1.6 }}>Analyze the harsh industry metrics behind the hiring gap and understand why 92% of low-timers face career stagnation.</p>
+                            {/* Block 1: What is our Solution */}
+                            <section style={{ textAlign: 'center', maxWidth: '48rem', width: '100%' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                    OVERVIEW
+                                </div>
+                                <h3 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                    What is our Solution for the Industry Situation?
+                                </h3>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', textAlign: 'left' }}>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        From the previous chapter, you have observed and seen the various factors which affect the pilot's path. Now, we are going to talk about the <strong>WingMentor Solution</strong> and how it aligns with the Foundational Program.
+                                    </p>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        The Foundation Program directs its primary focus onto the pilot who is lacking experience and recognition. By analyzing the various factors previously discussed, understanding how all the chapters are interlinked together, and applying our <strong>Constructivism</strong> ideology and methodologies, we have developed a definitive, objective solution to pilot recognition.
+                                    </p>
+                                </div>
+                            </section>
+
+                            {/* Block 2: Strategic Industry Integration */}
+                            <section style={{ textAlign: 'center', maxWidth: '48rem', width: '100%' }}>
+                                <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                    STRATEGIC ALIGNMENT
+                                </div>
+                                <h3 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                    Strategic Industry Integration
+                                </h3>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', textAlign: 'left' }}>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        Our solution to pilot recognition stems from direct talks with the <strong>Head of Training at Airbus</strong> and the <strong>Director of Flight Operations Support</strong>. Our approach is a pre-experiment to the very thing which is causing the shortage: the flight instructor pathway, which is the main pipeline currently blocked.
+                                    </p>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        By unplugging this pathway, we are building a credibility system—a database of pilots who go through a program to gain experience by mentoring a pilot under their skill or under their level. This is logged as verified experience in an accredited program under <strong>Airbus</strong> and <strong>Etihad</strong> with various industry recognition and assurance.
+                                    </p>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: 0 }}>
+                                        The first step for the program is to understand the industry. If you don't understand the industry, how will you navigate through as a pilot? That is what you have learnt in Chapter 1—the "whats" of the industry. Moving onto Chapter 2, we introduce the solutions, which is our mentors' approach towards the industry. The solutions dictate that the pilot gets indoctrinated about the industry and is then thoroughly assessed on his knowledge.
+                                    </p>
+                                </div>
+                            </section>
+
+                            {/* Block 3: The 7 Stages — Header + Cards */}
+                            <section style={{ width: '100%', maxWidth: '56rem' }}>
+                                {/* Section Label + Header */}
+                                <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                        PROGRAM STRUCTURE
                                     </div>
+                                    <h3 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', fontWeight: 400, color: '#0f172a', margin: '0 0 1rem 0' }}>
+                                        Foundational Program 7 Stages to completion
+                                    </h3>
+                                    <div style={{ height: '3px', width: '60px', background: 'linear-gradient(to right, #2563eb, #0284c7)', borderRadius: '99px', margin: '0 auto' }} />
                                 </div>
-                                <div style={{ height: '1px', backgroundColor: 'rgba(226, 232, 240, 0.6)', marginLeft: '1.875rem' }}></div>
-                                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', cursor: 'pointer' }} onClick={() => { setCurrentTopic('why-trap'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#0284c7', marginTop: '0.5rem', flexShrink: 0, boxShadow: '0 0 12px rgba(2, 132, 199, 0.4)' }}></div>
-                                    <div>
-                                        <h4 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#0f172a', marginBottom: '0.5rem', fontFamily: 'Georgia, serif' }}>The Shortcut: The Easy Way Out Trap</h4>
-                                        <p style={{ fontSize: '0.95rem', color: '#475569', margin: 0, lineHeight: 1.6 }}>Why the "shiny type rating" trap exacerbates your financial downfall instead of securing your career.</p>
+
+                                {/* Stage Cards */}
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+
+                                    {/* Stage 1 */}
+                                    <div style={{ backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '20px', padding: '2rem 2.25rem', boxShadow: '0 4px 24px rgba(15,23,42,0.07)', border: '1px solid rgba(226,232,240,0.8)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                        <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, #0284c7, #2563eb)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 4px 12px rgba(2,132,199,0.3)' }}>1</div>
+                                        <div style={{ flex: 1 }}>
+                                            <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Stage 1</div>
+                                            <strong style={{ color: '#0f172a', fontSize: '1.1rem', display: 'block', marginBottom: '0.75rem' }}>Examination &amp; Assessment Rigor</strong>
+                                            <p style={{ margin: '0 0 1.25rem 0', fontSize: '0.975rem', color: '#475569', lineHeight: 1.75 }}>
+                                                Therefore, after Chapter 1, there is going to be an assessment. You have to prepare for an assessment based on your knowledge of the industry information we have provided. You have to research on your own and also study the material. Based on the examination that you will be given, you will also be examined on the FAA or CAAP examination with our integrated software under <strong>Gleims</strong> and our own internal questions to verify your knowledge retention. Your score for your skill will also be recorded on the database as your first initial record.
+                                            </p>
+                                            <div style={{ paddingLeft: '1rem', borderLeft: '3px solid #bfdbfe' }}>
+                                                <strong style={{ fontSize: '0.8rem', color: '#1e40af', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Mission Objectives</strong>
+                                                <ul style={{ margin: '0.4rem 0 0 0', paddingLeft: '1.25rem', fontSize: '0.9rem', color: '#475569', listStyleType: 'disc', lineHeight: 1.7 }}>
+                                                    <li>Verify academic bridge knowledge and industry comprehension.</li>
+                                                    <li>Evaluate baseline retention via integrated FAA/CAAP standards.</li>
+                                                    <li>Establish the candidate's first verified skills record.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    {/* Stage 2 */}
+                                    <div style={{ backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '20px', padding: '2rem 2.25rem', boxShadow: '0 4px 24px rgba(15,23,42,0.07)', border: '1px solid rgba(226,232,240,0.8)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                        <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, #0284c7, #2563eb)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 4px 12px rgba(2,132,199,0.3)' }}>2</div>
+                                        <div style={{ flex: 1 }}>
+                                            <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Stage 2</div>
+                                            <strong style={{ color: '#0f172a', fontSize: '1.1rem', display: 'block', marginBottom: '0.75rem' }}>Global Industry Registry</strong>
+                                            <p style={{ margin: '0 0 1rem 0', fontSize: '0.975rem', color: '#475569', lineHeight: 1.75 }}>
+                                                All examination outcomes are archived within our centralized Global Industry Registry. This serves as your primary, verifiable professional record, providing total transparency and high-level credibility for our airline recruitment partners—this is going to be your first footstep within the database and your first initial pilot recognition.
+                                            </p>
+                                            <div style={{ paddingLeft: '1rem', borderLeft: '3px solid #bfdbfe' }}>
+                                                <strong style={{ fontSize: '0.8rem', color: '#1e40af', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Mission Objectives</strong>
+                                                <ul style={{ margin: '0.4rem 0 0 0', paddingLeft: '1.25rem', fontSize: '0.9rem', color: '#475569', listStyleType: 'disc', lineHeight: 1.7 }}>
+                                                    <li>Establish a centralized, verifiable professional record.</li>
+                                                    <li>Create immediate transparency for airline recruitment partners.</li>
+                                                    <li>Archive initial pilot recognition metrics.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Stage 3 */}
+                                    <div style={{ backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '20px', padding: '2rem 2.25rem', boxShadow: '0 4px 24px rgba(15,23,42,0.07)', border: '1px solid rgba(226,232,240,0.8)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                        <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, #0284c7, #2563eb)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 4px 12px rgba(2,132,199,0.3)' }}>3</div>
+                                        <div style={{ flex: 1 }}>
+                                            <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Stage 3</div>
+                                            <strong style={{ color: '#0f172a', fontSize: '1.1rem', display: 'block', marginBottom: '0.75rem' }}>Mentorship Preparation & Psychology Modules</strong>
+                                            <p style={{ margin: '0 0 1rem 0', fontSize: '0.975rem', color: '#475569', lineHeight: 1.75 }}>
+                                                After your initial examination and assessment, you will be assigned to the mentorship preparation modules. Here, you will learn the core fundamentals of mentorship and the critical differentiation between an instructor and a mentor. This phase focuses heavily on how you are forming and developing yourself as a person and as a pilot, emphasizing psychological thinking and building your professional profile. You will learn how to speak to a person, how to address an issue, and how to self-assess in situations where you know you are wrong. Crucially, you will study the pre-psychology of assessing and reading a person so that you know how to observe when someone is struggling. This foundational psychology and development training is essential preparation prior to your assigned 20-hour mentorship milestone.
+                                            </p>
+                                            <div style={{ paddingLeft: '1rem', borderLeft: '3px solid #bfdbfe' }}>
+                                                <strong style={{ fontSize: '0.8rem', color: '#1e40af', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Mission Objectives</strong>
+                                                <ul style={{ margin: '0.4rem 0 0 0', paddingLeft: '1.25rem', fontSize: '0.9rem', color: '#475569', listStyleType: 'disc', lineHeight: 1.7 }}>
+                                                    <li>Understand the core fundamentals differentiating mentorship from instructing.</li>
+                                                    <li>Develop psychological awareness, self-assessment, and issue-resolution techniques.</li>
+                                                    <li>Master the pre-psychology of peer observation and objective assessment.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Stage 4 */}
+                                    <div style={{ backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '20px', padding: '2rem 2.25rem', boxShadow: '0 4px 24px rgba(15,23,42,0.07)', border: '1px solid rgba(226,232,240,0.8)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                        <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, #0284c7, #2563eb)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 4px 12px rgba(2,132,199,0.3)' }}>4</div>
+                                        <div style={{ flex: 1 }}>
+                                            <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Stage 4</div>
+                                            <strong style={{ color: '#0f172a', fontSize: '1.1rem', display: 'block', marginBottom: '0.75rem' }}>Pre-Mentorship Examination & Observation</strong>
+                                            <p style={{ margin: '0 0 1rem 0', fontSize: '0.975rem', color: '#475569', lineHeight: 1.75 }}>
+                                                Prior to being assigned your official mentor for the 20-hour supervised phase, you must pass a pre-examination on the mentorship knowledge modules. Your understanding of these modules will be evaluated through an interview based on the information and preparation you have completed. Following this, you will undergo a practical assessment which includes 10 hours of dedicated observation time. During this period, you will be actively observing how an experienced mentor guides someone else, ensuring you are fully prepared to enter the active mentorship phase.
+                                            </p>
+                                            <div style={{ paddingLeft: '1rem', borderLeft: '3px solid #bfdbfe' }}>
+                                                <strong style={{ fontSize: '0.8rem', color: '#1e40af', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Mission Objectives</strong>
+                                                <ul style={{ margin: '0.4rem 0 0 0', paddingLeft: '1.25rem', fontSize: '0.9rem', color: '#475569', listStyleType: 'disc', lineHeight: 1.7 }}>
+                                                    <li>Validate comprehension of mentorship preparation modules.</li>
+                                                    <li>Assess practical readiness via specialized one-on-one interviews.</li>
+                                                    <li>Complete 10 hours of active peer mentorship observation.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Stage 5 */}
+                                    <div style={{ backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '20px', padding: '2rem 2.25rem', boxShadow: '0 4px 24px rgba(15,23,42,0.07)', border: '1px solid rgba(226,232,240,0.8)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                        <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, #0284c7, #2563eb)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 4px 12px rgba(2,132,199,0.3)' }}>5</div>
+                                        <div style={{ flex: 1 }}>
+                                            <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Stage 5</div>
+                                            <strong style={{ color: '#0f172a', fontSize: '1.1rem', display: 'block', marginBottom: '0.75rem' }}>Supervised Mentorship (20-Hour Milestone)</strong>
+                                            <p style={{ margin: '0 0 1rem 0', fontSize: '0.975rem', color: '#475569', lineHeight: 1.75 }}>
+                                                After the observation and examination process, you will then go through a supervised approach towards mentorship. We will supervise you with one of our own official mentors under the mentorship for 20 hours. It could either be done online or in person. You must log each experience based on the mentor session: the hours, the name, the pilot ID, a highly detailed description of the works done, and the prescription given based on the assessment of problem-solving consultation and one-on-one interview. All logs must be highly detailed and objective.
+                                            </p>
+                                            <div style={{ paddingLeft: '1rem', borderLeft: '3px solid #bfdbfe' }}>
+                                                <strong style={{ fontSize: '0.8rem', color: '#1e40af', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Mission Objectives</strong>
+                                                <ul style={{ margin: '0.4rem 0 0 0', paddingLeft: '1.25rem', fontSize: '0.9rem', color: '#475569', listStyleType: 'disc', lineHeight: 1.7 }}>
+                                                    <li>Execute 20 hours of supervised, strategically tracked peer mentorship.</li>
+                                                    <li>Maintain highly detailed, objective logs and pilot ID verifications.</li>
+                                                    <li>Deliver accurate problem-solving consultations and developmental prescriptions.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Stage 6 */}
+                                    <div style={{ backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '20px', padding: '2rem 2.25rem', boxShadow: '0 4px 24px rgba(15,23,42,0.07)', border: '1px solid rgba(226,232,240,0.8)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                        <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, #0284c7, #2563eb)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 4px 12px rgba(2,132,199,0.3)' }}>6</div>
+                                        <div style={{ flex: 1 }}>
+                                            <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Stage 6</div>
+                                            <strong style={{ color: '#0f172a', fontSize: '1.1rem', display: 'block', marginBottom: '0.75rem' }}>Accreditation & Professional Prescription</strong>
+                                            <p style={{ margin: '0 0 1rem 0', fontSize: '0.975rem', color: '#475569', lineHeight: 1.75 }}>
+                                                Upon meeting all criteria—including specialized professional "prescriptions" for advanced problem-solving—your experience is accredited against industry standards recognized by partners such as Airbus and Etihad Airways.
+                                            </p>
+                                            <div style={{ paddingLeft: '1rem', borderLeft: '3px solid #bfdbfe' }}>
+                                                <strong style={{ fontSize: '0.8rem', color: '#1e40af', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Mission Objectives</strong>
+                                                <ul style={{ margin: '0.4rem 0 0 0', paddingLeft: '1.25rem', fontSize: '0.9rem', color: '#475569', listStyleType: 'disc', lineHeight: 1.7 }}>
+                                                    <li>Finalize the evaluation of the candidate's mentorship impact and logs.</li>
+                                                    <li>Award credentials aligned with Airbus and Etihad Airways standards.</li>
+                                                    <li>Authorize the candidate for advanced placement within the WingMentor ecosystem.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Stage 7 */}
+                                    <div style={{ backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderRadius: '20px', padding: '2rem 2.25rem', boxShadow: '0 8px 32px rgba(2,132,199,0.12)', border: '2px solid rgba(37,99,235,0.15)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                        <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, #1d4ed8, #0f172a)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 4px 12px rgba(29,78,216,0.35)' }}>7</div>
+                                        <div style={{ flex: 1 }}>
+                                            <div style={{ color: '#1d4ed8', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Stage 7</div>
+                                            <strong style={{ color: '#0f172a', fontSize: '1.1rem', display: 'block', marginBottom: '0.75rem' }}>Runway to 50hrs Foundation Certification & AIRBUS Recognition Interview</strong>
+                                            <p style={{ margin: '0 0 1rem 0', fontSize: '0.975rem', color: '#475569', lineHeight: 1.75 }}>
+                                                The capstone of your integration within our ecosystem involves extending your professional logging to the 50-hour milestone. This demonstrates sustained commitment and consistent application of advanced mentorship principles. Following this milestone, you will undergo the formal AIRBUS Recognition Interview. This comprehensive evaluation verifies your accumulated knowledge, leadership qualities, and full readiness for prestigious airline placement.
+                                            </p>
+                                            <div style={{ paddingLeft: '1rem', borderLeft: '3px solid #93c5fd' }}>
+                                                <strong style={{ fontSize: '0.8rem', color: '#1e40af', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Mission Objectives</strong>
+                                                <ul style={{ margin: '0.4rem 0 0 0', paddingLeft: '1.25rem', fontSize: '0.9rem', color: '#475569', listStyleType: 'disc', lineHeight: 1.7 }}>
+                                                    <li>Complete and document 50 verifiable hours of active peer mentorship.</li>
+                                                    <li>Demonstrate sustained leadership and consistent situational problem-solving.</li>
+                                                    <li>Pass the comprehensive AIRBUS Recognition Interview to secure top-tier endorsement.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                            {/* Closing Quote — Hard Truth card style */}
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', maxWidth: '56rem', marginBottom: '2rem' }}>
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    textAlign: 'center',
+                                    width: '100%',
+                                    boxSizing: 'border-box' as const
+                                }}>
+                                    <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
+                                    <div style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                        OUR MISSION
+                                    </div>
+                                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '2rem', fontFamily: 'Georgia, serif' }}>
+                                        The WingMentor Standard
+                                    </h2>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, margin: '0 auto', maxWidth: '40rem', textAlign: 'left' }}>
+                                        This is where pilot recognition is truly quantified. We are pioneers in resolving the paradox between the pilot shortage and the recognition gap. While many pilots remain stagnant without clear direction, WingMentor provides the voice, the guidance, and the verified pathway that allows the industry to finally see your true potential.
+                                    </p>
                                 </div>
                             </div>
 
-
-                            <div style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'flex-end' }}>
-                                <button
-                                    onClick={() => { setCurrentTopic('why-statistics'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                                    style={{
-                                        padding: '0.75rem 1.5rem',
-                                        backgroundColor: '#0284c7',
-                                        color: 'white',
-                                        border: 'none',
-                                        borderRadius: '8px',
-                                        fontWeight: 600,
-                                        cursor: 'pointer',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '0.5rem',
-                                        transition: 'background 0.2s',
-                                        boxShadow: '0 4px 6px -1px rgba(2, 132, 199, 0.2)'
-                                    }}
-                                    onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#0369a1'; }}
-                                    onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#0284c7'; }}
-                                >
-                                    Continue to The Statistics <Icons.ArrowRight style={{ width: 16, height: 16 }} />
-                                </button>
-                            </div>
                         </div>
-
-                        <div style={{ height: '1px', maxWidth: '56rem', width: '100%', margin: '0 auto', marginBottom: '4rem', background: '#e2e8f0' }} />
                     </div>
                 );
             case 3:
                 return (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', animation: 'fadeIn 0.5s ease-in-out' }}>
-                        {/* Chapter 4: The What */}
+                        {/* Chapter 3: The How */}
                         <section>
                             <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
                                 <div style={{ paddingTop: '0.6rem' }}>
@@ -2199,47 +4502,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                 </div>
                                 <div>
                                     <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                                        Chapter 04
-                                    </div>
-                                    <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                        The "What": What am I going to do now? What am I going to face?
-                                    </h2>
-                                </div>
-                            </div>
-                            <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                <p>
-                                    The most agonizing question you must ask yourself is: <i>What am I going to do now? What am I actually going to face?</i> Here is the unspoken truth: you are not the only one who knows the reality of the <strong>Industry Gap</strong>. Deep down, the instructors who taught you know it. The head of your flight college knows it. But they are bound by a different directive: keeping the aviation pipeline flowing. Most pilots rely entirely on their flight school, totally trusting the process they laid out. For a school to admit that their CPL doesn't actually make you airline-ready would be like telling a child that Santa Claus isn't real. So, they keep you dreaming your goal. To be fair, if flight schools laid out the brutal truth of these requirements on day one, many aspiring aviators would have never taken the leap, and these schools would go out of business. Ultimately, the fault doesn't lie maliciously with the schools; it lies with the rigid, outdated regulations that created this chasm.
-                                </p>
-                                <p>
-                                    So, what now? You are what the industry universally labels a <strong>"Low-Timer,"</strong> a term carrying a heavy stigma. It means you have the legal right to fly, but you lack the "operational miles" to be trusted. While in flight school, the environment dictated your schedule; every scenario was predictable. Now you are faced with a developmental void. The harsh reality for most graduates is sitting at home, holding a fresh license, and desperately waiting for an interview with their own flight school to become an instructor—because everyone knows that is their "best bet" for a job.
-                                </p>
-                                <p>
-                                    You are going to face the harsh reality that your previous <strong>Constructivism</strong>—how you built your knowledge base—was flawed. You built knowledge based on passing tests, not on practical, commercial survival. You will realize that the gap isn't just about a lack of flight hours; it is about the immaturity of your non-technical skills (NOTECHS).
-                                </p>
-
-                                <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#0f172a', marginBottom: '-0.5rem' }}>The Wingmentor Approach</h3>
-                                <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', borderLeft: '4px solid #64748b' }}>
-                                    <p style={{ margin: 0, fontSize: '0.95rem', color: '#334155' }}>
-                                        <strong>Real Talk:</strong> Most pilots think the hard part is over once the CPL is printed. In reality, the true test is the "Experience Void." You can sit at home hoping for an instructor slot to open up, or you can take decisive action. This is exactly where Wingmentor steps in—to actively break the cycle of waiting and forge you into a standardized, ready-to-hire commercial asset.
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                );
-
-            case 4:
-                return (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', animation: 'fadeIn 0.5s ease-in-out' }}>
-                        {/* Chapter 5: The How */}
-                        <section>
-                            <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
-                                <div style={{ paddingTop: '0.6rem' }}>
-                                    <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
-                                </div>
-                                <div>
-                                    <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                                        Chapter 05
+                                        Chapter 03
                                     </div>
                                     <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
                                         The "How": How are you going to take part?
@@ -2265,6 +4528,44 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                         <li><strong>Cognitive Abilities:</strong> Evolving from single-pilot test-taking to processing complex systemic information, managing high-stress workloads, and making mature command decisions.</li>
                                         <li><strong>Constructivism:</strong> Building a framework to continuously learn from operational experiences, self-critique deeply, and adapt to unpredictable environments.</li>
                                     </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                );
+
+            case 4:
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', animation: 'fadeIn 0.5s ease-in-out' }}>
+                        {/* Chapter 4: The Result */}
+                        <section>
+                            <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                                <div style={{ paddingTop: '0.6rem' }}>
+                                    <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
+                                </div>
+                                <div>
+                                    <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                                        Chapter 04
+                                    </div>
+                                    <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
+                                        The Result Factor: What will you achieve?
+                                    </h2>
+                                </div>
+                            </div>
+                            <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                                <p>
+                                    Experience is the true foundation of knowledge. The ultimate result of this rigorous module is unquestionable <strong>Industry Credibility</strong>.
+                                </p>
+                                <p>
+                                    This program isn't designed to get you a job at one specific airline; it is designed to make you undeniably hirable across the entire commercial aviation spectrum—whether you're flying cargo at 3 AM, navigating complex corporate charter operations, or flying for a legacy carrier. By focusing intensely on the core fundamentals that all operators actually evaluate during simulator checks and technical interviews, we take your "Low-Timer" risk and forge it into verifiable "High-Competency" value.
+                                </p>
+                                <p>
+                                    As you complete this module and generate irrefutable Pilot Quality Assurance (PQA) metrics, you build a data-driven portfolio. This portfolio proves that you have the psychological maturity, the standardized behavior, and the advanced CRM capabilities that the industry desperately seeks. You will have transitioned from a student pilot into a professional airman.
+                                </p>
+                                <div style={{ padding: '1.5rem', borderLeft: '4px solid #2563eb', backgroundColor: '#f8fafc', borderRadius: '0 8px 8px 0', marginTop: '0.5rem' }}>
+                                    <p style={{ margin: 0, fontSize: '1.05rem', fontStyle: 'italic', fontWeight: 500, color: '#1e293b' }}>
+                                        "We don't just teach you to fly a plane; we prepare you to lead a career across the entire industry. This is the foundation of turning flight hours into true operational knowledge."
+                                    </p>
                                 </div>
                             </div>
                         </section>
@@ -2309,7 +4610,7 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                     </div>
                 );
 
-            case 6:
+            case 5:
                 return (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', animation: 'fadeIn 0.5s ease-in-out' }}>
                         {/* Final Activities */}
@@ -2522,30 +4823,31 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                         {([
                             { title: 'Welcome Aboard', id: 0, topics: [{ label: 'Welcome Aboard', slug: 'welcome' }] },
+                            { title: 'Our Mission', id: 0, topics: [{ label: 'Our Mission', slug: 'mission' }] },
+                            { title: 'Program Syllabus', id: 0, topics: [{ label: 'Program Syllabus', slug: 'program-syllabus' }] },
                             { title: 'Introduction & Overview', id: 0 },
                             {
                                 title: 'The "What"', id: 1,
                                 topics: [
                                     { label: 'What is a Low-Timer Pilot?', slug: 'what-low-timer' },
-                                    { label: 'The Pilot Paradox & Shortage', slug: 'what-pilot-shortage' },
+                                    { label: 'The Pilot Shortage & Paradox', slug: 'what-pilot-shortage' },
+                                    { divider: true },
                                     { label: 'What is the Pilot Gap?', slug: 'what-pilot-gap' },
-                                    { label: 'What is a Type Rating?', slug: 'what-type-rating' },
+                                    { label: 'What is Pilot Risk Management?', slug: 'pilot-risk-management' },
                                     { label: 'What is Pilot Recognition?', slug: 'what-pilot-recognition' },
-                                    { label: 'Banker vs Casino', slug: 'type-rating-psychology' },
+                                    { label: 'What Now?', slug: 'what-now' },
+
                                 ],
                             },
                             {
-                                title: 'The "Why"', id: 2,
+                                title: 'The "Solution"', id: 2,
                                 topics: [
-                                    { label: 'The Statistical Reality', slug: 'why-statistics' },
-                                    { label: 'The Easy Way Out Trap', slug: 'why-trap' },
-                                    { label: 'The Golden Handcuffs', slug: 'why-flight-bond' },
+                                    { label: 'Initial Examinations for the Foundational Program', slug: 'why-statistics' },
+                                    { label: 'Application Walkthrough & Guide', slug: 'w1000-poh' },
+                                    { label: 'Initial Examination Access', slug: 'initial-exam-access' },
                                 ]
                             },
-                            { title: 'The Expected Standard', id: 3 },
-                            { title: 'The "How"', id: 4 },
-                            { title: 'The Result Factor', id: 5 },
-                            { title: 'Final Recommendation', id: 6 },
+
                         ] as Array<{ title: string; id: number; topics?: Array<{ label: string; slug: string }> }>)
                             .map((item, index) => {
                                 const isChapterActive = currentChapter === item.id && !currentTopic;
