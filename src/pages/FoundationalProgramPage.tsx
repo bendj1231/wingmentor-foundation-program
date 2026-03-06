@@ -47,7 +47,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
         {
             id: 'stage-1',
             number: '01',
-            title: 'Industry Familiarization & Indoctrination',
+            title: 'Initial Program Module',
             bullets: [
                 'Current Industry Status',
                 'Pilot Gap Market Analysis',
@@ -63,86 +63,99 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
         {
             id: 'stage-2',
             number: '02',
-            title: 'Introduction to Mentorship',
+            title: 'Initial Examination Module',
             bullets: [
-                'Mentorship Protocols',
-                'Professional Boundaries',
-                'Credential Limitations'
+                'Academic Bridge Knowledge',
+                'Baseline Retention',
+                'Initial Skills Record'
             ],
-            description: 'Learn the core protocols of peer-to-peer mentorship. This stage defines the essential boundaries and limitations of the WingMentor framework, ensuring professional integrity and effective knowledge transfer.',
-            icon: 'Users',
-            onLaunch: onLaunchModule02
+            description: 'After the initial induction, you must prepare for a knowledge assessment based on the industry information provided. Your baseline retention is evaluated using integrated FAA/CAAP standards to establish your first verified skills record.',
+            status: 'Examination',
+            icon: 'FileText',
+            onLaunch: () => console.log('Launch Initial Examination Module')
         },
         {
             id: 'stage-3',
             number: '03',
-            title: 'Applications & Examinations',
+            title: 'Global Industry Registry',
             bullets: [
-                'FAA Pilot Knowledge',
-                'Internal Gap Examinations',
-                'Competency Assessments'
+                'Centralized Professional Record',
+                'Recruitment Transparency',
+                'Pilot Recognition Metrics'
             ],
-            description: 'Test your preparedness through comprehensive examinations. This stage covers FAA-standard pilot knowledge and specialized WingMentor Gap assessments to verify your technical and conceptual foundation.',
-            icon: 'FileText',
-            onLaunch: onLaunchModule03
+            description: 'All examination outcomes are safely archived within the Global Industry Registry. This serves as your verifiable professional record, ensuring transparency and credibility for airline recruitment partners.',
+            icon: 'Book',
+            onLaunch: () => console.log('Launch Stage 3')
         },
         {
             id: 'stage-4',
             number: '04',
-            title: 'Practical Mentorship & Skills Assessment',
+            title: 'Mentorship Module',
+            bullets: [
+                'Mentorship Fundamentals',
+                'Psychological Awareness',
+                'Peer Observation Psychology'
+            ],
+            description: 'Learn the core difference between instructing and mentoring. This stage focuses on self-assessment, issue-resolution techniques, and the pre-psychology of peer observation.',
+            icon: 'Users',
+            onLaunch: onLaunchModule02
+        },
+        {
+            id: 'stage-5',
+            number: '05',
+            title: 'Pre-Mentorship Examination & Observation',
+            bullets: [
+                'Mentorship Prep Exam',
+                'Practical Interview',
+                '10hr Observation Requirement'
+            ],
+            description: 'Prior to your 20-hour official supervised phase, you must pass a pre-examination on mentorship knowledge and complete 10 hours of active peer mentorship observation.',
+            status: 'Examination',
+            icon: 'Activity',
+            onLaunch: onLaunchModule03
+        },
+        {
+            id: 'stage-6',
+            number: '06',
+            title: 'Supervised Mentorship',
             bullets: [
                 '20-Hour Mentorship Goal',
-                'Clinical Skills Evaluation',
-                'Behavioral Core Evaluation'
+                'Objective Logging',
+                'Consultation Delivery'
             ],
-            description: 'Transition to active practice. Reach your first major milestone of 20 hours of practical mentorship, including a comprehensive clinical assessment of your instructional and feedback capabilities.',
+            description: 'Execute 20 hours of supervised, tracked peer mentorship. You must maintain highly detailed, objective logs delivering accurate problem-solving consultations and prescriptions.',
             badge: '20h Milestone',
             badgeColor: '#fff7ed',
             icon: 'Award',
             onLaunch: onLaunchW1000
         },
         {
-            id: 'stage-5',
-            number: '05',
-            title: 'Roadtrip to 50 Hours',
+            id: 'stage-7',
+            number: '07',
+            title: 'Accreditation & Professional Prescription',
             bullets: [
-                'Advanced Mentorship Labs',
-                'Outsourcing Framework',
-                '50-Hour Cumulative Path'
+                'Mentorship Evaluation',
+                'Industry Credentials',
+                'Advanced Ecosystem Placement'
             ],
-            description: 'Continue your progression toward the 50-hour mastery goal. This stage focuses on deep mentorship immersion and the application of the WingMentor outsourcing framework.',
-            icon: 'Map',
+            description: 'Upon meeting criteria, your experience is accredited against industry standards recognized by major partners, authorizing you for advanced placement within the ecosystem.',
+            icon: 'Briefcase',
             onLaunch: onLaunchMentorship
         },
         {
-            id: 'stage-6',
-            number: '06',
-            title: 'Interview & Portfolio Building',
+            id: 'stage-8',
+            number: '08',
+            title: 'Runway to 50hrs & AIRBUS Recognition',
             bullets: [
-                'WingMentor Board Interview',
-                'Data-Driven Portfolio',
-                'Professional Branding'
+                '50-Hour Milestone',
+                'Leadership Demonstration',
+                'AIRBUS Recognition Interview'
             ],
-            description: 'Prepare for your final board interview. This stage involves synthesizing your data-driven portfolio, showcasing your mentorship achievements and industry-ready leadership credentials.',
-            badge: 'Board Review',
-            badgeColor: '#eff6ff',
-            icon: 'Briefcase',
-            onLaunch: () => console.log('Launch Stage 6 Portfolio')
-        },
-        {
-            id: 'stage-7',
-            number: '07',
-            title: 'Certification & Recognition',
-            bullets: [
-                'Official WingMentor Credential',
-                'Industry Network Badge',
-                'Global Recognition'
-            ],
-            description: 'The culmination of your journey. Receive your official WingMentor certification and industry recognition badges, granting you verified status within the global aviation mentorship network.',
+            description: 'Continue your mentorship to the 50-hour milestone to demonstrate sustained leadership, culminating in the AIRBUS Recognition Interview to verify readiness for airline placement.',
             badge: 'Certification',
             badgeColor: '#fef2f2',
             icon: 'CheckCircle',
-            onLaunch: () => console.log('Launch Stage 7 Certification')
+            onLaunch: () => console.log('Launch Stage 8')
         }
     ];
 
@@ -388,7 +401,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                     <p style={{
                         color: '#64748b',
                         fontSize: '0.875rem',
-                        maxWidth: '28rem',
+                        maxWidth: '42rem',
                         margin: '0 auto 1.5rem',
                         padding: '0 1rem',
                         lineHeight: '1.625',
@@ -396,7 +409,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                     }}>
                         {activeView === 'overview'
                             ? "Explore the core pillars of the WingMentor Foundational Program. Designed to bridge the pilot gap through EBT and CBTA standards, our data-driven mentorship and accredited methodology provide the verifiable credentials required for the airline flight deck."
-                            : "Bridge the critical gap between 200 and 1,500 hours. Maintain flight proficiency, build verifiable leadership credentials by mentoring peers, and generate the data-driven portfolio airlines and insurers trust while preparing for your flight deck interview."
+                            : "Navigate the 200-to-1,500 hour gap through a structured journey: from 'The Whats'—analyzing low-timer identity and industry risk—to 'The Solutions'—mastering CRM and building a verifiable leadership portfolio through 20+ hours of peer mentorship. Start aligning your profile with airline-level EBT standards today."
                         }
                     </p>
 
@@ -718,49 +731,68 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                         </div>
                     ) : activeView === 'core' ? (
                         <div className="animate-fade-in" style={{ paddingBottom: '2rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
                                 <div>
-                                    <h2 style={{ fontSize: '2.2rem', color: '#0f172a', marginBottom: '0.5rem', fontWeight: 700 }}>Program Core Home</h2>
-                                    <p style={{ color: '#64748b', fontSize: '1rem' }}>Your active pathways and foundational assessments.</p>
-                                </div>
-                                <div style={{
-                                    padding: '0.75rem 1.25rem',
-                                    backgroundColor: '#f0f9ff',
-                                    border: '1px solid #bae6fd',
-                                    borderRadius: '12px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.75rem'
-                                }}>
-                                    <Icons.Award style={{ width: 20, height: 20, color: '#0284c7' }} />
-                                    <div>
-                                        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0369a1', textTransform: 'uppercase' }}>Current Rank</div>
-                                        <div style={{ fontSize: '1rem', fontWeight: 600, color: '#0c4a6e' }}>Cadet WingMentor</div>
+                                    <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                                        FOUNDATIONAL PROGRAM
                                     </div>
+                                    <h2 style={{ fontSize: '1.8rem', fontWeight: 400, color: '#0f172a', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>
+                                        Program Core Home
+                                    </h2>
+                                    <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, margin: 0 }}>
+                                        Your active pathways and foundational assessments.
+                                    </p>
                                 </div>
                             </div>
 
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', position: 'relative' }}>
+                                {/* Pathway connecting line */}
+                                <div style={{
+                                    position: 'absolute',
+                                    left: '46px', /* 24px padding + 22px half of badge */
+                                    top: '30px',
+                                    bottom: '30px',
+                                    width: '2px',
+                                    background: 'linear-gradient(to bottom, #cbd5e1 0%, #e2e8f0 50%, #cbd5e1 100%)',
+                                    zIndex: 0
+                                }} />
+
                                 {modules.map((module) => {
                                     const isHovered = hoveredModule === module.id;
+                                    const isExam = module.status === 'Examination';
+                                    const isResultFactor = module.number === '03';
+
                                     return (
                                         <div
                                             key={module.id}
                                             style={{
-                                                background: isHovered ? '#ffffff' : '#f8fafc',
-                                                border: `1px solid ${isHovered ? '#cbd5e1' : '#e2e8f0'}`,
-                                                borderRadius: '16px',
-                                                cursor: 'pointer',
+                                                position: 'relative',
+                                                backgroundColor: isExam
+                                                    ? (isHovered ? 'rgba(255, 255, 255, 0.95)' : 'rgba(239, 246, 255, 0.55)')
+                                                    : (isResultFactor
+                                                        ? (isHovered ? 'rgba(220, 252, 231, 0.8)' : 'rgba(220, 252, 231, 0.4)')
+                                                        : (isHovered ? 'rgba(255, 255, 255, 0.95)' : 'rgba(241, 245, 249, 0.6)')),
+                                                backdropFilter: 'blur(16px)',
+                                                WebkitBackdropFilter: 'blur(16px)',
+                                                border: isExam
+                                                    ? '1px solid rgba(191, 219, 254, 0.6)'
+                                                    : (isResultFactor ? '1px solid rgba(134, 239, 172, 0.5)' : '1px solid rgba(255, 255, 255, 0.8)'),
+                                                borderLeft: isExam ? '4px solid #1e3a8a' : (isResultFactor ? '4px solid #22c55e' : '1px solid rgba(255, 255, 255, 0.8)'),
+                                                borderRadius: '24px',
+                                                cursor: isResultFactor ? 'default' : 'pointer',
                                                 boxShadow: isHovered
                                                     ? '0 12px 24px -4px rgba(0,0,0,0.08), 0 4px 8px -2px rgba(0,0,0,0.04)'
-                                                    : '0 1px 2px rgba(0,0,0,0.02)',
+                                                    : (isExam ? '0 8px 32px rgba(15, 23, 42, 0.05)' : '0 8px 32px rgba(15, 23, 42, 0.04)'),
                                                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                                transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
-                                                overflow: 'hidden'
+                                                transform: (isHovered && !isResultFactor) ? 'translateY(-2px)' : 'translateY(0)',
+                                                overflow: 'hidden',
+                                                zIndex: 1
                                             }}
                                             onClick={() => {
-                                                setSelectedModule(module);
-                                                setActiveView('module-detail');
+                                                if (!isResultFactor) {
+                                                    setSelectedModule(module);
+                                                    setActiveView('module-detail');
+                                                }
                                             }}
                                             onMouseEnter={() => setHoveredModule(module.id)}
                                             onMouseLeave={() => setHoveredModule(null)}
@@ -769,55 +801,80 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                             <div style={{
                                                 display: 'flex',
                                                 alignItems: 'center',
-                                                gap: '1.25rem',
-                                                padding: '1.1rem 1.5rem',
+                                                gap: '1.5rem',
+                                                padding: '1.5rem 1.5rem',
                                             }}>
                                                 <div style={{
                                                     width: '44px',
                                                     height: '44px',
                                                     borderRadius: '12px',
-                                                    backgroundColor: isHovered ? '#0f172a' : '#ffffff',
-                                                    border: '1px solid #e2e8f0',
+                                                    background: isExam
+                                                        ? (isHovered ? 'linear-gradient(135deg, #eab308 0%, #ca8a04 100%)' : 'linear-gradient(135deg, #facc15 0%, #eab308 100%)')
+                                                        : (isResultFactor ? (isHovered ? '#16a34a' : '#22c55e') : (isHovered ? '#0f172a' : '#ffffff')),
+                                                    border: isExam ? '1px solid #fef08a' : (isResultFactor ? 'none' : '1px solid #e2e8f0'),
                                                     display: 'flex',
                                                     alignItems: 'center',
                                                     justifyContent: 'center',
                                                     flexShrink: 0,
                                                     fontSize: '0.85rem',
                                                     fontWeight: 800,
-                                                    color: isHovered ? '#ffffff' : '#1e293b',
+                                                    color: isExam ? '#ffffff' : (isResultFactor ? '#ffffff' : (isHovered ? '#ffffff' : '#1e293b')),
+                                                    textShadow: isExam ? '0 1px 2px rgba(0,0,0,0.1)' : 'none',
                                                     transition: 'all 0.3s ease',
-                                                    boxShadow: '0 2px 6px rgba(0,0,0,0.04)'
+                                                    boxShadow: isExam ? '0 4px 12px rgba(234, 179, 8, 0.4)' : '0 2px 6px rgba(0,0,0,0.04)',
+                                                    zIndex: 2 // sit above connecting line
                                                 }}>
                                                     {module.number}
                                                 </div>
                                                 <div style={{ flex: 1, minWidth: 0 }}>
-                                                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#3b82f6', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.2rem' }}>Stage {module.number}</div>
-                                                    <h3 style={{ fontSize: '0.975rem', fontWeight: 700, color: '#0f172a', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{module.title}</h3>
+                                                    <div style={{
+                                                        fontSize: '0.75rem',
+                                                        fontWeight: 700,
+                                                        color: isExam ? '#0f172a' : (isResultFactor ? '#15803d' : '#0284c7'),
+                                                        textTransform: 'uppercase',
+                                                        letterSpacing: '0.15em',
+                                                        marginBottom: '0.4rem',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '0.4rem'
+                                                    }}>
+                                                        {isExam ? (
+                                                            <>
+                                                                <Icons.Activity style={{ width: 12, height: 12 }} />
+                                                                {module.number === '02' ? 'INITIAL EXAMINATION' : 'MENTORSHIP EXAMINATION & EVALUATION'}
+                                                            </>
+                                                        ) : (
+                                                            `STAGE ${module.number}`
+                                                        )}
+                                                    </div>
+                                                    <h3 style={{ fontSize: '1.4rem', fontWeight: 400, fontFamily: 'Georgia, serif', color: '#0f172a', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{module.title}</h3>
                                                 </div>
                                                 {module.badge && (
                                                     <span style={{
-                                                        padding: '0.3rem 0.75rem',
+                                                        padding: '0.35rem 0.85rem',
                                                         backgroundColor: module.badgeColor === '#fef2f2' ? '#fee2e2' :
-                                                            module.badgeColor === '#fff7ed' ? '#fed7aa' : '#dbeafe',
-                                                        color: module.badgeColor === '#fef2f2' ? '#b91c1c' :
-                                                            module.badgeColor === '#fff7ed' ? '#c2410c' : '#1d4ed8',
+                                                            module.badgeColor === '#fff7ed' ? '#ffedd5' : '#dbeafe',
+                                                        color: module.badgeColor === '#fef2f2' ? '#991b1b' :
+                                                            module.badgeColor === '#fff7ed' ? '#9a3412' : '#1e40af',
                                                         borderRadius: '20px',
                                                         fontSize: '0.7rem',
-                                                        fontWeight: 700,
+                                                        fontWeight: 800,
                                                         textTransform: 'uppercase',
                                                         letterSpacing: '0.04em',
                                                         whiteSpace: 'nowrap',
                                                         flexShrink: 0
                                                     }}>{module.badge}</span>
                                                 )}
-                                                <Icons.ChevronRight style={{
-                                                    width: 16,
-                                                    height: 16,
-                                                    color: '#94a3b8',
-                                                    flexShrink: 0,
-                                                    transition: 'transform 0.3s ease',
-                                                    transform: isHovered ? 'translateX(3px)' : 'translateX(0)'
-                                                }} />
+                                                {!isResultFactor && (
+                                                    <Icons.ChevronRight style={{
+                                                        width: 18,
+                                                        height: 18,
+                                                        color: isHovered ? (isExam ? '#1d4ed8' : '#3b82f6') : '#94a3b8',
+                                                        flexShrink: 0,
+                                                        transition: 'all 0.3s ease',
+                                                        transform: isHovered ? 'translateX(3px)' : 'translateX(0)'
+                                                    }} />
+                                                )}
                                             </div>
 
                                             {/* Expanded content - revealed on hover */}
@@ -828,13 +885,14 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                             }}>
                                                 <div style={{
                                                     padding: '0 1.5rem 1.25rem 1.5rem',
-                                                    paddingLeft: 'calc(1.5rem + 44px + 1.25rem)',
+                                                    paddingLeft: 'calc(1.5rem + 44px + 1.5rem)',
                                                 }}>
                                                     <p style={{
-                                                        fontSize: '0.85rem',
-                                                        color: '#64748b',
-                                                        margin: '0 0 0.75rem 0',
-                                                        lineHeight: 1.55,
+                                                        fontSize: '0.9rem',
+                                                        color: isExam ? '#1e40af' : '#64748b',
+                                                        margin: '0 0 1rem 0',
+                                                        lineHeight: 1.6,
+                                                        fontWeight: isExam ? 500 : 400
                                                     }}>{module.description}</p>
                                                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                                                         {module.bullets.map((bullet, idx) => (
@@ -844,12 +902,12 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                                 gap: '0.4rem',
                                                                 fontSize: '0.75rem',
                                                                 fontWeight: 600,
-                                                                color: '#475569',
-                                                                background: '#f1f5f9',
+                                                                color: isExam ? '#1e3a8a' : '#475569',
+                                                                background: isExam ? '#dbeafe' : '#f1f5f9',
                                                                 borderRadius: '8px',
-                                                                padding: '0.3rem 0.65rem',
+                                                                padding: '0.35rem 0.75rem',
                                                             }}>
-                                                                <div style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#3b82f6' }} />
+                                                                <div style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: isExam ? '#2563eb' : '#3b82f6' }} />
                                                                 {bullet}
                                                             </span>
                                                         ))}
@@ -883,62 +941,123 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                 Back to Modules
                             </button>
 
-                            <div style={{ backgroundColor: 'white', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '3rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
-                                    <div>
-                                        <div style={{ fontSize: '0.875rem', fontWeight: 700, color: '#2563eb', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>Module {selectedModule.number}</div>
-                                        <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#0f172a' }}>{selectedModule.title}</h2>
+                            {selectedModule.number === '01' ? (
+                                // New Hard Truths style design for Module 01
+                                <div style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                    backdropFilter: 'blur(16px)',
+                                    WebkitBackdropFilter: 'blur(16px)',
+                                    borderRadius: '24px',
+                                    padding: '4rem 3rem',
+                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                                    textAlign: 'center',
+                                    width: '100%',
+                                    boxSizing: 'border-box'
+                                }}>
+                                    <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem', display: 'block', margin: '0 auto 1.5rem auto' }} />
+
+                                    <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                                        FOUNDATIONAL MODULE
                                     </div>
-                                    <div style={{
-                                        width: '80px',
-                                        height: '80px',
-                                        borderRadius: '20px',
-                                        backgroundColor: selectedModule.badgeColor || '#f1f5f9',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center'
-                                    }}>
-                                        {React.createElement(Icons[selectedModule.icon], { style: { width: 40, height: 40, color: '#2563eb' } })}
+
+                                    <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
+                                        {selectedModule.title}
+                                    </h2>
+
+                                    <div style={{ maxWidth: '42rem', margin: '0 auto 3rem auto', textAlign: 'left' }}>
+                                        <p style={{ fontSize: '1.15rem', color: '#475569', lineHeight: 1.8 }}>
+                                            {selectedModule.description}
+                                        </p>
+                                    </div>
+
+                                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                        <button
+                                            onClick={selectedModule.onLaunch}
+                                            style={{
+                                                backgroundColor: '#2563eb',
+                                                color: 'white',
+                                                border: 'none',
+                                                padding: '1rem 3rem',
+                                                borderRadius: '12px',
+                                                fontWeight: 600,
+                                                fontSize: '1rem',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.2s ease',
+                                                boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.2)'
+                                            }}
+                                            onMouseOver={(e) => {
+                                                e.currentTarget.style.backgroundColor = '#1d4ed8';
+                                                e.currentTarget.style.transform = 'translateY(-1px)';
+                                            }}
+                                            onMouseOut={(e) => {
+                                                e.currentTarget.style.backgroundColor = '#2563eb';
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                            }}
+                                        >
+                                            Launch Module Viewer
+                                        </button>
                                     </div>
                                 </div>
+                            ) : (
+                                // Standard design for other modules
+                                <div style={{ backgroundColor: 'white', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '3rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
+                                        <div>
+                                            <div style={{ fontSize: '0.875rem', fontWeight: 700, color: '#2563eb', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>Module {selectedModule.number}</div>
+                                            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#0f172a' }}>{selectedModule.title}</h2>
+                                        </div>
+                                        <div style={{
+                                            width: '80px',
+                                            height: '80px',
+                                            borderRadius: '20px',
+                                            backgroundColor: selectedModule.badgeColor || '#f1f5f9',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center'
+                                        }}>
+                                            {React.createElement(Icons[selectedModule.icon], { style: { width: 40, height: 40, color: '#2563eb' } })}
+                                        </div>
+                                    </div>
 
-                                <div style={{ borderBottom: '1px solid #f1f5f9', marginBottom: '2.5rem' }}></div>
+                                    <div style={{ borderBottom: '1px solid #f1f5f9', marginBottom: '2.5rem' }}></div>
 
-                                <div style={{ marginBottom: '3rem' }}>
-                                    <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Description</h4>
-                                    <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.8 }}>
-                                        {selectedModule.description}
-                                    </p>
+                                    <div style={{ marginBottom: '3rem' }}>
+                                        <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Description</h4>
+                                        <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.8 }}>
+                                            {selectedModule.description}
+                                        </p>
+                                    </div>
+
+                                    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                                        <button
+                                            onClick={selectedModule.onLaunch}
+                                            style={{
+                                                backgroundColor: '#2563eb',
+                                                color: 'white',
+                                                border: 'none',
+                                                padding: '1rem 3rem',
+                                                borderRadius: '12px',
+                                                fontWeight: 600,
+                                                fontSize: '1rem',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.2s ease',
+                                                boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.2)'
+                                            }}
+                                            onMouseOver={(e) => {
+                                                e.currentTarget.style.backgroundColor = '#1d4ed8';
+                                                e.currentTarget.style.transform = 'translateY(-1px)';
+                                            }}
+                                            onMouseOut={(e) => {
+                                                e.currentTarget.style.backgroundColor = '#2563eb';
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                            }}
+                                        >
+                                            Launch Module
+                                        </button>
+                                    </div>
                                 </div>
-
-                                <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                                    <button
-                                        onClick={selectedModule.onLaunch}
-                                        style={{
-                                            backgroundColor: '#2563eb',
-                                            color: 'white',
-                                            border: 'none',
-                                            padding: '1rem 3rem',
-                                            borderRadius: '12px',
-                                            fontWeight: 600,
-                                            fontSize: '1rem',
-                                            cursor: 'pointer',
-                                            transition: 'all 0.2s ease',
-                                            boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.2)'
-                                        }}
-                                        onMouseOver={(e) => {
-                                            e.currentTarget.style.backgroundColor = '#1d4ed8';
-                                            e.currentTarget.style.transform = 'translateY(-1px)';
-                                        }}
-                                        onMouseOut={(e) => {
-                                            e.currentTarget.style.backgroundColor = '#2563eb';
-                                            e.currentTarget.style.transform = 'translateY(0)';
-                                        }}
-                                    >
-                                        Launch Module
-                                    </button>
-                                </div>
-                            </div>
+                            )}
                         </div>
                     ) : (
                         <div className="animate-fade-in">
