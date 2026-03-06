@@ -4780,6 +4780,35 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
             <div style={{ display: 'flex', minHeight: 'calc(100vh - 80px)' }}>
                 {/* Module Viewer Sidebar */}
                 <aside style={{ width: '320px', flexShrink: 0, backgroundColor: 'white', borderRight: '1px solid #e2e8f0', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', position: 'sticky', top: '104px', height: 'calc(100vh - 104px)', overflowY: 'auto' }}>
+                    <button
+                        onClick={onBack}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            padding: '0.5rem 0',
+                            marginBottom: '0',
+                            border: 'none',
+                            background: 'transparent',
+                            color: '#64748b',
+                            cursor: 'pointer',
+                            fontSize: '0.875rem',
+                            fontWeight: 500,
+                            transition: 'all 0.2s',
+                            width: 'fit-content'
+                        }}
+                        onMouseOver={e => {
+                            e.currentTarget.style.color = '#0f172a';
+                            e.currentTarget.style.transform = 'translateX(-4px)';
+                        }}
+                        onMouseOut={e => {
+                            e.currentTarget.style.color = '#64748b';
+                            e.currentTarget.style.transform = 'translateX(0)';
+                        }}
+                    >
+                        <Icons.ArrowLeft style={{ width: 16, height: 16 }} />
+                        Exit Module
+                    </button>
                     <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Module Viewer</div>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                         {([
