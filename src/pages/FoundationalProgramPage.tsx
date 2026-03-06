@@ -172,6 +172,21 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
             badgeColor: '#ecfdf5',
             icon: 'Activity',
             onLaunch: () => console.log('Launch Stage 9')
+        },
+        {
+            id: 'stage-10',
+            number: '10',
+            title: 'WingMentor Certification & Recognition',
+            bullets: [
+                'Final Accreditation',
+                'Industry Endorsement',
+                'Registry Verification'
+            ],
+            description: 'Official certification of all mentorship hours and industry recognition. Your profile is now verified for our global airline partners and the industry registry.',
+            badge: 'Certified',
+            badgeColor: '#ecfdf5',
+            icon: 'CheckCircle',
+            onLaunch: () => console.log('Launch Stage 10')
         }
     ];
 
@@ -776,7 +791,7 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                 {modules.map((module) => {
                                     const isHovered = hoveredModule === module.id;
                                     const isExam = module.status === 'Examination';
-                                    const isSuccessStage = ['03', '07', '08', '09'].includes(module.number);
+                                    const isSuccessStage = ['03', '07', '08', '09', '10'].includes(module.number);
                                     const isResultFactor = module.number === '03';
 
                                     return (
