@@ -864,20 +864,14 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                     <div style={{
                                                         fontSize: '0.75rem',
                                                         fontWeight: 700,
-                                                        color: isExam ? '#0f172a' : (isSuccessStage ? '#15803d' : '#0284c7'),
-                                                        textTransform: 'uppercase',
-                                                        letterSpacing: '0.15em',
-                                                        marginBottom: '0.4rem',
+                                                        color: '#64748b',
+                                                        letterSpacing: '0.05em',
+                                                        marginBottom: '2px',
                                                         display: 'flex',
                                                         alignItems: 'center',
-                                                        gap: '0.4rem'
+                                                        gap: '6px'
                                                     }}>
-                                                        {isExam ? (
-                                                            <>
-                                                                <Icons.Activity style={{ width: 12, height: 12 }} />
-                                                                {module.number === '02' ? 'INITIAL EXAMINATION' : 'MENTORSHIP EXAMINATION & EVALUATION'}
-                                                            </>
-                                                        ) : module.number === '03' ? (
+                                                        {module.number === '03' ? (
                                                             'INDUSTRY REPOSITORY'
                                                         ) : module.number === '07' ? (
                                                             'INDUSTRY ACCREDITATION'
