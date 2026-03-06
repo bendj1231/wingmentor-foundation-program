@@ -941,123 +941,70 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                 Back to Modules
                             </button>
 
-                            {selectedModule.number === '01' ? (
-                                // New Hard Truths style design for Module 01
+                            {/* High-Fidelity Detail View for All Modules */}
+                            <div style={{
+                                backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                                backdropFilter: 'blur(16px)',
+                                WebkitBackdropFilter: 'blur(16px)',
+                                borderRadius: '24px',
+                                padding: '4rem 3rem',
+                                boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
+                                border: '1px solid rgba(255, 255, 255, 0.8)',
+                                textAlign: 'center',
+                                width: '100%',
+                                boxSizing: 'border-box'
+                            }}>
+                                <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem', display: 'block', margin: '0 auto 1.5rem auto' }} />
+
                                 <div style={{
-                                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                                    backdropFilter: 'blur(16px)',
-                                    WebkitBackdropFilter: 'blur(16px)',
-                                    borderRadius: '24px',
-                                    padding: '4rem 3rem',
-                                    boxShadow: '0 8px 32px rgba(15, 23, 42, 0.04)',
-                                    border: '1px solid rgba(255, 255, 255, 0.8)',
-                                    textAlign: 'center',
-                                    width: '100%',
-                                    boxSizing: 'border-box'
+                                    color: selectedModule.status === 'Examination' ? '#e11d48' : '#0284c7',
+                                    fontSize: '0.875rem',
+                                    fontWeight: 700,
+                                    letterSpacing: '0.25em',
+                                    textTransform: 'uppercase',
+                                    marginBottom: '1rem'
                                 }}>
-                                    <img src="/logo.png" alt="WingMentor Logo" style={{ height: '110px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem', display: 'block', margin: '0 auto 1.5rem auto' }} />
-
-                                    <div style={{ color: '#0284c7', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '1rem' }}>
-                                        FOUNDATIONAL MODULE
-                                    </div>
-
-                                    <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
-                                        {selectedModule.title}
-                                    </h2>
-
-                                    <div style={{ maxWidth: '42rem', margin: '0 auto 3rem auto', textAlign: 'left' }}>
-                                        <p style={{ fontSize: '1.15rem', color: '#475569', lineHeight: 1.8 }}>
-                                            {selectedModule.description}
-                                        </p>
-                                    </div>
-
-                                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                        <button
-                                            onClick={selectedModule.onLaunch}
-                                            style={{
-                                                backgroundColor: '#2563eb',
-                                                color: 'white',
-                                                border: 'none',
-                                                padding: '1rem 3rem',
-                                                borderRadius: '12px',
-                                                fontWeight: 600,
-                                                fontSize: '1rem',
-                                                cursor: 'pointer',
-                                                transition: 'all 0.2s ease',
-                                                boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.2)'
-                                            }}
-                                            onMouseOver={(e) => {
-                                                e.currentTarget.style.backgroundColor = '#1d4ed8';
-                                                e.currentTarget.style.transform = 'translateY(-1px)';
-                                            }}
-                                            onMouseOut={(e) => {
-                                                e.currentTarget.style.backgroundColor = '#2563eb';
-                                                e.currentTarget.style.transform = 'translateY(0)';
-                                            }}
-                                        >
-                                            Launch Module Viewer
-                                        </button>
-                                    </div>
+                                    {selectedModule.status === 'Examination' ? 'MANDATORY EXAMINATION' : `MODULE ${selectedModule.number}`}
                                 </div>
-                            ) : (
-                                // Standard design for other modules
-                                <div style={{ backgroundColor: 'white', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '3rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
-                                        <div>
-                                            <div style={{ fontSize: '0.875rem', fontWeight: 700, color: '#2563eb', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>Module {selectedModule.number}</div>
-                                            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#0f172a' }}>{selectedModule.title}</h2>
-                                        </div>
-                                        <div style={{
-                                            width: '80px',
-                                            height: '80px',
-                                            borderRadius: '20px',
-                                            backgroundColor: selectedModule.badgeColor || '#f1f5f9',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center'
-                                        }}>
-                                            {React.createElement(Icons[selectedModule.icon], { style: { width: 40, height: 40, color: '#2563eb' } })}
-                                        </div>
-                                    </div>
 
-                                    <div style={{ borderBottom: '1px solid #f1f5f9', marginBottom: '2.5rem' }}></div>
+                                <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#0f172a', marginBottom: '2.5rem', fontFamily: 'Georgia, serif' }}>
+                                    {selectedModule.title}
+                                </h2>
 
-                                    <div style={{ marginBottom: '3rem' }}>
-                                        <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Description</h4>
-                                        <p style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.8 }}>
-                                            {selectedModule.description}
-                                        </p>
-                                    </div>
-
-                                    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                                        <button
-                                            onClick={selectedModule.onLaunch}
-                                            style={{
-                                                backgroundColor: '#2563eb',
-                                                color: 'white',
-                                                border: 'none',
-                                                padding: '1rem 3rem',
-                                                borderRadius: '12px',
-                                                fontWeight: 600,
-                                                fontSize: '1rem',
-                                                cursor: 'pointer',
-                                                transition: 'all 0.2s ease',
-                                                boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.2)'
-                                            }}
-                                            onMouseOver={(e) => {
-                                                e.currentTarget.style.backgroundColor = '#1d4ed8';
-                                                e.currentTarget.style.transform = 'translateY(-1px)';
-                                            }}
-                                            onMouseOut={(e) => {
-                                                e.currentTarget.style.backgroundColor = '#2563eb';
-                                                e.currentTarget.style.transform = 'translateY(0)';
-                                            }}
-                                        >
-                                            Launch Module
-                                        </button>
-                                    </div>
+                                <div style={{ maxWidth: '42rem', margin: '0 auto 3rem auto', textAlign: 'left' }}>
+                                    <p style={{ fontSize: '1.15rem', color: '#475569', lineHeight: 1.8 }}>
+                                        {selectedModule.description}
+                                    </p>
                                 </div>
-                            )}
+
+                                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                    <button
+                                        onClick={selectedModule.onLaunch}
+                                        style={{
+                                            backgroundColor: '#2563eb',
+                                            color: 'white',
+                                            border: 'none',
+                                            padding: '1rem 3rem',
+                                            borderRadius: '12px',
+                                            fontWeight: 600,
+                                            fontSize: '1rem',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.2s ease',
+                                            boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.2)'
+                                        }}
+                                        onMouseOver={(e) => {
+                                            e.currentTarget.style.backgroundColor = '#1d4ed8';
+                                            e.currentTarget.style.transform = 'translateY(-1px)';
+                                        }}
+                                        onMouseOut={(e) => {
+                                            e.currentTarget.style.backgroundColor = '#2563eb';
+                                            e.currentTarget.style.transform = 'translateY(0)';
+                                        }}
+                                    >
+                                        Launch Module Viewer
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     ) : (
                         <div className="animate-fade-in">
