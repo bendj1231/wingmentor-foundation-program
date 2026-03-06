@@ -858,7 +858,10 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                 }}>
                                                     {module.number === '03' ? <Icons.BookOpen style={{ width: 22, height: 22 }} /> :
                                                         module.number === '07' ? <Icons.Briefcase style={{ width: 22, height: 22 }} /> :
-                                                            module.number}
+                                                            module.number === '08' ? <Icons.Award style={{ width: 22, height: 22 }} /> :
+                                                                module.number === '09' ? <Icons.Activity style={{ width: 22, height: 22 }} /> :
+                                                                    module.number === '10' ? <Icons.CheckCircle style={{ width: 22, height: 22 }} /> :
+                                                                        module.number}
                                                 </div>
                                                 <div style={{ flex: 1, minWidth: 0 }}>
                                                     <div style={{
@@ -881,6 +884,12 @@ const FoundationalProgramPage: React.FC<FoundationalProgramPageProps> = ({
                                                             'INDUSTRY REPOSITORY'
                                                         ) : module.number === '07' ? (
                                                             'INDUSTRY ACCREDITATION'
+                                                        ) : module.number === '08' ? (
+                                                            'LEADERSHIP MILESTONE'
+                                                        ) : module.number === '09' ? (
+                                                            'FINAL EVALUATION'
+                                                        ) : module.number === '10' ? (
+                                                            'OFFICIAL CERTIFICATION'
                                                         ) : (
                                                             `STAGE ${module.number}`
                                                         )}
