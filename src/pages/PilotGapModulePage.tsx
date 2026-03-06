@@ -6,8 +6,6 @@ interface PilotGapModulePageProps {
 }
 
 const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
-    const [showCalculator, setShowCalculator] = useState(false);
-    const [investment, setInvestment] = useState(30000);
     const [currentChapter, setCurrentChapter] = useState(0);
     const [currentTopic, setCurrentTopic] = useState<string | null>('welcome');
 
@@ -99,18 +97,13 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
         { chapter: 1, topic: 'what-low-timer' },
         { chapter: 1, topic: 'what-pilot-shortage' },
         { chapter: 1, topic: 'what-pilot-gap' },
-        { chapter: 1, topic: 'what-type-rating' },
+        { chapter: 1, topic: 'pilot-risk-management' },
         { chapter: 1, topic: 'what-pilot-recognition' },
         { chapter: 1, topic: 'what-now' },
-
-        { chapter: 1, topic: 'type-rating-psychology' },
         { chapter: 2, topic: null }, // The Solution
         { chapter: 2, topic: 'why-statistics' },
         { chapter: 2, topic: 'w1000-poh' },
-        { chapter: 2, topic: 'initial-exam-access' },
-        { chapter: 3, topic: null }, // The How
-        { chapter: 4, topic: null }, // The Result
-        { chapter: 5, topic: null }, // Reality Check
+        { chapter: 2, topic: 'initial-exam-access' }
     ];
 
     const getCurrentStepIndex = () => {
@@ -4491,159 +4484,6 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                         </div>
                     </div>
                 );
-            case 3:
-                return (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', animation: 'fadeIn 0.5s ease-in-out' }}>
-                        {/* Chapter 3: The How */}
-                        <section>
-                            <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
-                                <div style={{ paddingTop: '0.6rem' }}>
-                                    <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
-                                </div>
-                                <div>
-                                    <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                                        Chapter 03
-                                    </div>
-                                    <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                        The "How": How are you going to take part?
-                                    </h2>
-                                </div>
-                            </div>
-                            <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                <p>
-                                    We bridge this intimidating gap not by tossing you into the deep end, but through the new global industry standard: structured, psychologically-driven <strong>Evidence-Based Training and Assessment (EBTA)</strong>. It is no longer about <i>how long</i> you've flown, but <i>how well</i> you handle specific behavioural cores under operational stress.
-                                </p>
-                                <p>
-                                    You will take part through rigorous peer-mentorship, deep scenario-based evaluations, and guided indoctrination into professional workflows aimed directly at mitigating that perceived risk. We dissect the pilot into three core psychological pillars. We reconstruct your <strong>Behaviorism</strong> so that adhering to SOPs becomes an ingrained reflex rather than an active choice. We elevate your <strong>Cognitive Thinking</strong> so you learn to anticipate industry-wide multi-crew dynamics, manage immense workloads, and make critical, split-second safety decisions.
-                                </p>
-                                <p>
-                                    Finally, we foster true <strong>Constructivism</strong>: teaching you how to build upon your failures constructively, actively self-critique your performances, and continuously learn in the cockpit, day after day.
-                                </p>
-                                <div style={{ padding: '2rem', backgroundColor: '#eff6ff', borderRadius: '12px', border: '1px solid #dbeafe' }}>
-                                    <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#1e40af', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                        <Icons.Zap style={{ width: 20, height: 20 }} /> The 3 Psychological Cores
-                                    </h3>
-                                    <ul style={{ margin: 0, paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', color: '#1e3a8a' }}>
-                                        <li><strong>Behaviorism:</strong> Unlearning flight-school reflex actions; developing standardized procedures and strict SOP adherence for all industry sectors.</li>
-                                        <li><strong>Cognitive Abilities:</strong> Evolving from single-pilot test-taking to processing complex systemic information, managing high-stress workloads, and making mature command decisions.</li>
-                                        <li><strong>Constructivism:</strong> Building a framework to continuously learn from operational experiences, self-critique deeply, and adapt to unpredictable environments.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                );
-
-            case 4:
-                return (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', animation: 'fadeIn 0.5s ease-in-out' }}>
-                        {/* Chapter 4: The Result */}
-                        <section>
-                            <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
-                                <div style={{ paddingTop: '0.6rem' }}>
-                                    <div style={{ width: '6px', height: '6px', backgroundColor: '#0f172a', borderRadius: '50%' }}></div>
-                                </div>
-                                <div>
-                                    <div style={{ color: '#2563eb', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                                        Chapter 04
-                                    </div>
-                                    <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.2 }}>
-                                        The Result Factor: What will you achieve?
-                                    </h2>
-                                </div>
-                            </div>
-                            <div style={{ color: '#475569', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                <p>
-                                    Experience is the true foundation of knowledge. The ultimate result of this rigorous module is unquestionable <strong>Industry Credibility</strong>.
-                                </p>
-                                <p>
-                                    This program isn't designed to get you a job at one specific airline; it is designed to make you undeniably hirable across the entire commercial aviation spectrum—whether you're flying cargo at 3 AM, navigating complex corporate charter operations, or flying for a legacy carrier. By focusing intensely on the core fundamentals that all operators actually evaluate during simulator checks and technical interviews, we take your "Low-Timer" risk and forge it into verifiable "High-Competency" value.
-                                </p>
-                                <p>
-                                    As you complete this module and generate irrefutable Pilot Quality Assurance (PQA) metrics, you build a data-driven portfolio. This portfolio proves that you have the psychological maturity, the standardized behavior, and the advanced CRM capabilities that the industry desperately seeks. You will have transitioned from a student pilot into a professional airman.
-                                </p>
-                                <div style={{ padding: '1.5rem', borderLeft: '4px solid #2563eb', backgroundColor: '#f8fafc', borderRadius: '0 8px 8px 0', marginTop: '0.5rem' }}>
-                                    <p style={{ margin: 0, fontSize: '1.05rem', fontStyle: 'italic', fontWeight: 500, color: '#1e293b' }}>
-                                        "We don't just teach you to fly a plane; we prepare you to lead a career across the entire industry. This is the foundation of turning flight hours into true operational knowledge."
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                );
-            case 5:
-                return (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', animation: 'fadeIn 0.5s ease-in-out' }}>
-                        {/* Final Activities */}
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                            {/* ROI Calculator */}
-                            <div style={{ backgroundColor: '#1e3a8a', color: 'white', padding: '2rem', borderRadius: '16px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', position: 'relative', overflow: 'hidden' }}>
-                                <div style={{ position: 'relative', zIndex: 10 }}>
-                                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem', margin: 0 }}>Type Rating ROI</h3>
-                                    <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-                                        Analyze the financial impact of self-funded type ratings versus structured cadet pathways.
-                                    </p>
-                                    <button
-                                        onClick={() => setShowCalculator(!showCalculator)}
-                                        style={{ width: '100%', backgroundColor: '#3b82f6', color: 'white', fontWeight: 700, padding: '0.75rem', borderRadius: '12px', border: 'none', cursor: 'pointer', transition: 'background-color 0.2s', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
-                                        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
-                                        onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#3b82f6'}
-                                    >
-                                        {showCalculator ? 'Close Calculator' : 'Launch ROI Calculator'}
-                                    </button>
-                                    {showCalculator && (
-                                        <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(59, 130, 246, 0.5)', display: 'flex', flexDirection: 'column', gap: '1.5rem', animation: 'fadeIn 0.3s ease-in-out' }}>
-                                            <div>
-                                                <label style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', color: '#93c5fd', display: 'block', marginBottom: '0.5rem' }}>Investment Amount (€)</label>
-                                                <input
-                                                    type="range" min="15000" max="45000" step="1000"
-                                                    value={investment}
-                                                    onChange={(e) => setInvestment(parseInt(e.target.value))}
-                                                    style={{ width: '100%', cursor: 'pointer' }}
-                                                />
-                                                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.5rem', fontSize: '0.75rem', fontFamily: 'monospace', color: '#bfdbfe' }}>
-                                                    <span>€15k</span>
-                                                    <span style={{ color: 'white', fontWeight: 700, fontSize: '0.875rem' }}>€{investment.toLocaleString()}</span>
-                                                    <span>€45k</span>
-                                                </div>
-                                            </div>
-                                            <div style={{ padding: '1rem', backgroundColor: 'rgba(30, 58, 138, 0.5)', borderRadius: '12px', border: '1px solid rgba(59, 130, 246, 0.3)' }}>
-                                                <div style={{ fontSize: '0.75rem', color: '#93c5fd', marginBottom: '0.25rem' }}>Est. Payback Period</div>
-                                                <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white' }}>{(investment / 12000).toFixed(1)} Years</div>
-                                                <div style={{ fontSize: '0.7rem', color: '#93c5fd', marginTop: '0.5rem' }}>*Based on Junior FO average salary minus living expenses.</div>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-
-                            {/* Gap Theory Quiz */}
-                            <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '2rem', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)' }}>
-                                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '0 0 1.5rem 0' }}>
-                                    <Icons.Zap style={{ width: 22, height: 22, color: '#2563eb' }} />
-                                    Gap Theory Quiz
-                                </h3>
-                                <div style={{ padding: '1.5rem', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', cursor: 'pointer', transition: 'all 0.2s ease-in-out' }}
-                                    onMouseOver={(e) => {
-                                        e.currentTarget.style.borderColor = '#93c5fd';
-                                        e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-                                    }}
-                                    onMouseOut={(e) => {
-                                        e.currentTarget.style.borderColor = '#e2e8f0';
-                                        e.currentTarget.style.boxShadow = 'none';
-                                    }}
-                                >
-                                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Internal Exam 01.A</div>
-                                    <h4 style={{ fontSize: '1rem', fontWeight: 600, color: '#1e293b', marginBottom: '0.5rem', margin: '0 0 0.5rem 0' }}>The Multi-Engine Piston to Jet Transition</h4>
-                                    <p style={{ fontSize: '0.875rem', color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: 1.5 }}>"What is the single highest cause of checklist non-compliance during line operations?"</p>
-                                    <button style={{ color: '#2563eb', fontSize: '0.875rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
-                                        Start Quiz <Icons.ArrowRight style={{ width: 16, height: 16 }} />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                );
             default:
                 return null;
         }
@@ -4812,9 +4652,9 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                     <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Module Viewer</div>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                         {([
-                            { title: 'Welcome Aboard', id: 0, topics: [{ label: 'Welcome Aboard', slug: 'welcome' }] },
-                            { title: 'Our Mission', id: 0, topics: [{ label: 'Our Mission', slug: 'mission' }] },
-                            { title: 'Program Syllabus', id: 0, topics: [{ label: 'Program Syllabus', slug: 'program-syllabus' }] },
+                            { title: 'Welcome Aboard', id: 0 },
+                            { title: 'Our Mission', id: 0 },
+                            { title: 'Program Syllabus', id: 0 },
                             { title: 'Introduction & Overview', id: 0 },
                             {
                                 title: 'The "What"', id: 1,
@@ -4840,10 +4680,15 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
 
                         ] as Array<{ title: string; id: number; topics?: Array<{ label: string; slug: string }> }>)
                             .map((item, index) => {
-                                const isChapterActive = currentChapter === item.id && !currentTopic;
                                 const hasTopics = item.topics && item.topics.length > 0;
-                                const isParentOfActiveTopic = currentChapter === item.id && hasTopics && !!currentTopic;
-                                const isHighlighted = isChapterActive || isParentOfActiveTopic;
+                                const isTopicActive = currentTopic && hasTopics && item.topics!.some(t => t.slug === currentTopic);
+                                const isChapterHubActive = !currentTopic && currentChapter === item.id && (item.title === 'Introduction & Overview' || item.id !== 0);
+                                const isDirectPageActive = currentTopic && !hasTopics && (
+                                    (item.title === 'Welcome Aboard' && currentTopic === 'welcome') ||
+                                    (item.title === 'Our Mission' && currentTopic === 'mission') ||
+                                    (item.title === 'Program Syllabus' && currentTopic === 'program-syllabus')
+                                );
+                                const isHighlighted = isTopicActive || isChapterHubActive || isDirectPageActive;
 
                                 return (
                                     <li key={index}>
@@ -4851,7 +4696,10 @@ const PilotGapModulePage: React.FC<PilotGapModulePageProps> = ({ onBack }) => {
                                         <button
                                             onClick={() => {
                                                 setCurrentChapter(item.id);
-                                                setCurrentTopic(null);
+                                                if (item.title === 'Welcome Aboard') setCurrentTopic('welcome');
+                                                else if (item.title === 'Our Mission') setCurrentTopic('mission');
+                                                else if (item.title === 'Program Syllabus') setCurrentTopic('program-syllabus');
+                                                else setCurrentTopic(null);
                                             }}
                                             style={{
                                                 display: 'block', width: '100%', textAlign: 'left',
